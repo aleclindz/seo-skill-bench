@@ -74,9 +74,10 @@ function gatherOutput(runDir) {
   }
   const a = path.join(runDir, 'artifacts');
   if (fs.existsSync(a)) {
+    const EXCLUDED_DIRS = new Set(['.claude', '.next', 'node_modules', 'dist', 'build', '.turbo', '.cache']);
     for (const f of walk(a)) {
       const rel = path.relative(a, f);
-      if (rel.split(path.sep).includes('.claude')) continue; // installed skill files, not the entrant's output
+      if (rel.split(path.sep).some((seg) => EXCLUDED_DIRS.has(seg))) continue; // skill machinery + build noise, not authored output
       try {
         text += `--- file: ${rel} ---\n${fs.readFileSync(f, 'utf8')}\n\n`;
       } catch {
