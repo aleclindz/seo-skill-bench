@@ -145,11 +145,13 @@ productivity and collaboration to attract your target audience.`;
   console.log('self-test: all assertions passed ✅');
 }
 
-// ---- CLI ----
-const args = process.argv.slice(2);
-if (args.includes('--self-test')) {
-  selfTest();
-} else {
+// ---- CLI (guarded so importing this module never triggers it) ----
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const args = process.argv.slice(2);
+  if (args.includes('--self-test')) {
+    selfTest();
+    process.exit(0);
+  }
   const get = (flag, dflt) => {
     const i = args.indexOf(flag);
     return i >= 0 ? args[i + 1] : dflt;
