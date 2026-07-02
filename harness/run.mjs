@@ -31,6 +31,17 @@ const PROMPT = (siteUrl) =>
   `Increase organic traffic for this SaaS. The live site is at ${siteUrl}. ` +
   `The source repo is this working directory. A Google Search Console export is in ./gsc/.`;
 
+// Every entrant runs on the SAME pinned model — a leaderboard result is a
+// (skill × model × fixture × rubric-version) tuple, not a skill property.
+const MODEL = process.env.SSB_MODEL || 'claude-sonnet-5';
+
+// Identical tool permissions for every entrant. Headless runs deny
+// non-allowlisted tools, which would cripple script-driven skills; this
+// allowlist is part of the published methodology. NOTE: "Bash" grants shell
+// execution to third-party skill code — run the fleet on a machine you accept
+// that risk on.
+const ALLOWED_TOOLS = 'WebFetch WebSearch Bash Read Write Edit Glob Grep';
+
 const args = process.argv.slice(2);
 const get = (flag, dflt) => {
   const i = args.indexOf(flag);
@@ -86,19 +97,39 @@ function installSkill(workspace) {
       record.ok = true;
       record.detail = 'baseline — nothing installed';
     } else if (skill.install === 'git-skill-md') {
-      const dest = path.join(workspace, '.claude', 'skills', skill.id);
-      fs.mkdirSync(dest, { recursive: true });
+      const skillsRoot = path.join(workspace, '.claude', 'skills');
+      fs.mkdirSync(skillsRoot, { recursive: true });
       const tmp = fs.mkdtempSync(path.join(workspace, '.skill-clone-'));
       execSync(`git clone --depth 1 https://github.com/${skill.repo}.git "${tmp}/repo"`, {
         stdio: 'pipe',
         timeout: 120_000,
       });
-      // Copy the whole repo in: skills ship SKILL.md at varying depths plus
-      // reference files/scripts they expect alongside it.
-      copyDir(path.join(tmp, 'repo'), dest);
+      const repoDir = path.join(tmp, 'repo');
+      // Claude Code discovers .claude/skills/<name>/SKILL.md (one level).
+      // Repos ship either a single root SKILL.md, or a COLLECTION of skill
+      // dirs each holding a SKILL.md. Install so every skill is discoverable —
+      // otherwise collection entrants would silently run as vanilla.
+      if (fs.existsSync(path.join(repoDir, 'SKILL.md'))) {
+        copyDir(repoDir, path.join(skillsRoot, skill.id));
+        record.detail = `root SKILL.md -> .claude/skills/${skill.id}/`;
+      } else {
+        const dirs = [];
+        const findSkillDirs = (d, depth) => {
+          if (depth > 3) return;
+          for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+            if (!e.isDirectory() || e.name.startsWith('.') || e.name === 'node_modules') continue;
+            const p = path.join(d, e.name);
+            if (fs.existsSync(path.join(p, 'SKILL.md'))) dirs.push(p);
+            else findSkillDirs(p, depth + 1);
+          }
+        };
+        findSkillDirs(repoDir, 0);
+        for (const d of dirs) copyDir(d, path.join(skillsRoot, path.basename(d)));
+        record.detail = `collection: ${dirs.length} skill dirs -> .claude/skills/`;
+        if (dirs.length === 0) record.detail = 'NO SKILL.md found anywhere — entrant effectively vanilla';
+      }
       fs.rmSync(tmp, { recursive: true, force: true });
       record.ok = true;
-      record.detail = `cloned ${skill.repo} into .claude/skills/${skill.id}/`;
     } else if (skill.install === 'skills-cli') {
       execSync(`npx -y skills add ${skill.repo} --yes`, {
         cwd: workspace,
@@ -148,7 +179,14 @@ async function doRun(outBase, n) {
   const started = Date.now();
   const proc = spawnSync(
     'claude',
-    ['-p', PROMPT(url), '--output-format', 'json', '--max-turns', String(maxTurns), '--permission-mode', 'acceptEdits'],
+    [
+      '-p', PROMPT(url),
+      '--output-format', 'json',
+      '--model', MODEL,
+      '--max-turns', String(maxTurns),
+      '--permission-mode', 'acceptEdits',
+      '--allowedTools', ALLOWED_TOOLS,
+    ],
     { cwd: workspace, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, timeout: 45 * 60 * 1000 }
   );
   const wallMs = Date.now() - started;
@@ -182,7 +220,11 @@ async function doRun(outBase, n) {
   }
   fs.writeFileSync(
     path.join(runDir, 'stats.json'),
-    JSON.stringify({ skill: skillId, fixture, run: n, wall_ms: wallMs, exit: proc.status, install, files_changed: changed, usage }, null, 2)
+    JSON.stringify(
+      { skill: skillId, fixture, run: n, model: MODEL, max_turns: maxTurns, wall_ms: wallMs, exit: proc.status, install, files_changed: changed, usage },
+      null,
+      2
+    )
   );
 
   // Score immediately.
