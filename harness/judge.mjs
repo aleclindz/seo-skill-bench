@@ -75,8 +75,10 @@ function gatherOutput(runDir) {
   const a = path.join(runDir, 'artifacts');
   if (fs.existsSync(a)) {
     for (const f of walk(a)) {
+      const rel = path.relative(a, f);
+      if (rel.split(path.sep).includes('.claude')) continue; // installed skill files, not the entrant's output
       try {
-        text += `--- file: ${path.relative(a, f)} ---\n${fs.readFileSync(f, 'utf8')}\n\n`;
+        text += `--- file: ${rel} ---\n${fs.readFileSync(f, 'utf8')}\n\n`;
       } catch {
         /* binary */
       }

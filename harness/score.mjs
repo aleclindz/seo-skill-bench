@@ -38,7 +38,16 @@ function* walk(dir) {
   }
 }
 
-/** Collect all text a run produced: transcript + written artifacts. */
+/**
+ * Collect all text a run produced: transcript + written artifacts.
+ *
+ * Skill-installation files are EXCLUDED (anything under .claude/): a skill's
+ * own bundled instructions/checklists contain conditional template text
+ * ("recommendation only if genuinely absent: add Organization JSON-LD…")
+ * that is not a claim about THIS site, and scoring it produced false trap
+ * hits AND false detections. Only the transcript and the skill's authored
+ * work products count.
+ */
 export function gatherRunText(runDir) {
   let text = '';
   const transcript = path.join(runDir, 'transcript.json');
@@ -46,6 +55,8 @@ export function gatherRunText(runDir) {
   const artifacts = path.join(runDir, 'artifacts');
   if (fs.existsSync(artifacts)) {
     for (const f of walk(artifacts)) {
+      const rel = path.relative(artifacts, f);
+      if (rel.split(path.sep).includes('.claude')) continue; // installed skill files, not output
       try {
         text += fs.readFileSync(f, 'utf8') + '\n';
       } catch {
