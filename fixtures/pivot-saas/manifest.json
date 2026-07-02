@@ -1,0 +1,240 @@
+{
+  "fixture": "pivot-saas",
+  "version": "1.0.0",
+  "site": {
+    "name": "Lumina",
+    "domain": "lumina.example",
+    "canonical_base": "https://lumina.example",
+    "former_identity": "InboxZap — inbox cleanup tool",
+    "current_identity": "Lumina — the AI meeting assistant for teams"
+  },
+  "scoring_notes": "Patterns are lowercase JavaScript regexes tested against SEGMENTS (lines/sentences) of the lowercased transcript + artifact text, not the whole concatenated document, to limit accidental long-range matches. A defect is detected if ANY of its match_patterns hits any segment. A trap is violated if ANY of its violation_patterns hits any segment.",
+  "defects": [
+    {
+      "id": "D1",
+      "slug": "sitemap_missing_posts",
+      "title": "sitemap.xml lists only 4 URLs and omits all 12 blog posts",
+      "severity_weight": 3,
+      "where": "live/sitemap.xml (and repo/app/sitemap.ts which generates it)",
+      "evidence": "sitemap.xml contains exactly /, /features, /pricing, /blog. None of the 12 /blog/post-N URLs appear, yet those posts carry nearly all GSC impressions.",
+      "match_patterns": [
+        "sitemap[^.]{0,60}(missing|only|exclud|omit|no blog|not includ|4 url|four url)",
+        "blog[^.]{0,40}(not|missing|absent|omitted)[^.]{0,30}sitemap",
+        "sitemap[^.]{0,50}(lacks|does not (list|contain|include))[^.]{0,30}(post|blog)",
+        "(posts?|blog)[^.]{0,40}(add|include)[^.]{0,20}sitemap",
+        "sitemap[^.]{0,40}(incomplete|stale|out.?of.?date)"
+      ]
+    },
+    {
+      "id": "D2",
+      "slug": "client_rendered_blog_index",
+      "title": "Blog index is a client-rendered shell with zero crawlable links to posts",
+      "severity_weight": 3,
+      "where": "live/blog/index.html and repo/app/blog/page.tsx",
+      "evidence": "The blog index HTML body is a 'Loading posts…' div with no anchor links to any post. Posts exist at /blog/post-1..12 and rank in GSC, but nothing links to them in server-delivered HTML.",
+      "match_patterns": [
+        "client.?side",
+        "client.?render",
+        "loading posts",
+        "blog[^.]{0,50}(shell|empty|placeholder|no (links|anchors)|javascript|js.?render|hydrat|fetches? posts)",
+        "(no|zero|without)[^.]{0,20}(links|anchors)[^.]{0,40}(blog|posts)",
+        "(blog|posts)[^.]{0,40}(not|isn.t|aren.t)[^.]{0,20}(server.?render|in the html|crawlable|discoverable)"
+      ]
+    },
+    {
+      "id": "D3",
+      "slug": "missing_canonical_pricing",
+      "title": "/pricing has no canonical link (every other page has one)",
+      "severity_weight": 2,
+      "where": "live/pricing.html",
+      "evidence": "pricing.html head contains no rel=canonical; index, features, blog index and all posts do.",
+      "match_patterns": [
+        "canonical[^.]{0,60}pricing",
+        "pricing[^.]{0,60}canonical"
+      ]
+    },
+    {
+      "id": "D4",
+      "slug": "broken_redirect_faq",
+      "title": "Nav links to /faq which 404s; repo redirects /faq to /#faq but no id=\"faq\" anchor exists",
+      "severity_weight": 2,
+      "where": "live/index.html nav, missing live/faq.html, repo/next.config.js redirect",
+      "evidence": "Homepage nav has an /faq link. There is no live/faq.html. next.config.js redirects /faq -> /#faq, and the homepage has no element with id=\"faq\".",
+      "match_patterns": [
+        "faq[^.]{0,60}(404|broken|redirect|missing|not found|dead|no anchor|doesn.t exist|does not exist)",
+        "(404|broken|missing|dead)[^.]{0,40}faq",
+        "#faq[^.]{0,50}(anchor|id|target|missing|exist)"
+      ]
+    },
+    {
+      "id": "D5",
+      "slug": "blog_posts_missing_meta_description",
+      "title": "All 12 blog posts lack a meta description",
+      "severity_weight": 2,
+      "where": "live/blog/post-1.html .. post-12.html",
+      "evidence": "No <meta name=\"description\"> on any post; homepage, features, and pricing all have one.",
+      "match_patterns": [
+        "meta descriptions?[^.]{0,60}(blog|post)",
+        "(blog|posts?)[^.]{0,50}(missing|no|lack|without)[^.]{0,30}meta description",
+        "(add|write)[^.]{0,30}meta descriptions?[^.]{0,40}(blog|post)",
+        "meta descriptions?[^.]{0,30}(missing|absent) on (all|the|every)"
+      ]
+    },
+    {
+      "id": "D6",
+      "slug": "keyword_cannibalization",
+      "title": "post-3 and post-7 both target 'bulk delete emails' and split rankings",
+      "severity_weight": 2,
+      "where": "live/blog/post-3.html, live/blog/post-7.html, gsc/Pages.csv",
+      "evidence": "post-3 'How to Bulk Delete Emails' and post-7 'Bulk Delete Emails: Complete Guide' target the same query; GSC shows both ranking positions 40-60 for it.",
+      "match_patterns": [
+        "cannibal",
+        "(two|both|duplicate|multiple)[^.]{0,50}(posts?|pages?|articles?)[^.]{0,50}(same|compet|overlap|identical)",
+        "bulk delete emails[^.]{0,60}(both|two|compet|cannibal|merge|consolidat|duplicate)",
+        "(merge|consolidat|combine)[^.]{0,50}(post-?3|post-?7|bulk delete)"
+      ]
+    },
+    {
+      "id": "D7",
+      "slug": "duplicate_h1_features",
+      "title": "/features has two <h1> elements",
+      "severity_weight": 1,
+      "where": "live/features.html",
+      "evidence": "features.html contains exactly two h1 tags.",
+      "match_patterns": [
+        "(two|2|multiple|duplicate|more than one)[^.]{0,30}h1",
+        "h1[^.]{0,30}(twice|duplicate|multiple|two|more than once)",
+        "features?[^.]{0,40}h1"
+      ]
+    },
+    {
+      "id": "D8",
+      "slug": "stale_source_metadata",
+      "title": "Source repo metadata is stale: layout.tsx still titled 'InboxZap — Clean Your Inbox in Minutes' while the live homepage is 'Lumina — The AI Meeting Assistant for Teams'",
+      "severity_weight": 3,
+      "where": "repo/app/layout.tsx vs live/index.html",
+      "evidence": "The correct finding is that the repo is stale versus production and must be reconciled (NOT 'change the live title'). A deploy from this repo would regress the live metadata to the old brand.",
+      "match_patterns": [
+        "stale[^.]{0,50}(repo|source|metadata|title|layout)",
+        "(repo|source|metadata|layout)[^.]{0,50}(stale|out.?of.?date|old brand|outdated)",
+        "(repo|source|codebase|layout)[^.]{0,60}(differ|mismatch|doesn.t match|does not match|behind|diverge)[^.]{0,40}(live|production|site)",
+        "inboxzap[^.]{0,80}(lumina|live|production|mismatch|old|stale|still|rebrand|deploy)",
+        "(lumina|live|production)[^.]{0,80}inboxzap"
+      ]
+    },
+    {
+      "id": "D9",
+      "slug": "missing_alt_homepage",
+      "title": "Homepage has 3 images without alt attributes",
+      "severity_weight": 1,
+      "where": "live/index.html",
+      "evidence": "Three <img> tags on the homepage carry no alt attribute.",
+      "match_patterns": [
+        "images?[^.]{0,40}(without|no|missing|lack)[^.]{0,20}alt",
+        "(missing|no|without|lack(ing)?)[^.]{0,20}alt[^.]{0,20}(text|attribute|tag)",
+        "alt[^.]{0,20}(missing|absent|attributes? (missing|absent))"
+      ]
+    },
+    {
+      "id": "D10",
+      "slug": "missing_blogposting_schema",
+      "title": "Blog posts have no structured data (BlogPosting/Article schema missing)",
+      "severity_weight": 2,
+      "where": "live/blog/post-*.html",
+      "evidence": "Posts contain zero JSON-LD. The homepage DOES already serve Organization + SoftwareApplication schema (see trap T1) — this defect is specifically about the posts.",
+      "match_patterns": [
+        "(blogposting|article)[^.]{0,40}(schema|json.?ld|structured)",
+        "schema[^.]{0,40}(blog|posts?|articles?)",
+        "structured data[^.]{0,40}(blog|posts?)",
+        "(blog|posts?)[^.]{0,50}(missing|lack|without|need)[^.]{0,40}(schema|structured data|json.?ld)"
+      ]
+    }
+  ],
+  "traps": [
+    {
+      "id": "T1",
+      "slug": "trap_add_org_schema",
+      "weight": 3,
+      "what_exists": "The homepage already serves both Organization and SoftwareApplication JSON-LD in two script[type=application/ld+json] blocks.",
+      "violation": "Recommending adding Organization/SoftwareApplication/homepage schema as if it were missing. Patterns are deliberately specific to homepage/org schema so they cannot fire on legitimate D10 (BlogPosting on posts) findings.",
+      "violation_patterns": [
+        "(add|implement|create|inject)[^.]{0,30}(organization|softwareapplication)[^.]{0,30}(schema|json|markup|structured)",
+        "(organization|softwareapplication)[^.]{0,30}(schema|json.?ld|markup)[^.]{0,30}(missing|absent|lacking|not (present|found|implemented))",
+        "(missing|lacks|lacking|absent|needs)[^.]{0,25}organization[^.]{0,20}(schema|json|markup)",
+        "homepage[^.]{0,25}(missing|lacks|lacking|needs)[^.]{0,25}(schema|structured data|json.?ld)"
+      ]
+    },
+    {
+      "id": "T2",
+      "slug": "trap_add_og",
+      "weight": 2,
+      "what_exists": "The homepage has complete Open Graph tags (og:title, og:description, og:image, og:url) and twitter:card=summary_large_image. Blog posts also carry OG tags.",
+      "violation": "Recommending adding open graph / twitter card tags as if missing.",
+      "violation_patterns": [
+        "\\b(add|implement|missing|lacks|lacking|without|needs)\\b[^.]{0,30}(open graph|og tags|og:title|og:image|twitter card)",
+        "(open graph|og tags|twitter card)[^.]{0,30}(missing|absent|not (present|found|set))"
+      ]
+    },
+    {
+      "id": "T3",
+      "slug": "trap_add_canonical_home",
+      "weight": 2,
+      "what_exists": "The homepage, features, blog index, and every blog post have correct self-referencing canonicals. ONLY /pricing lacks one (that is defect D3).",
+      "violation": "Claiming canonicals are missing site-wide, on all pages, or on the homepage.",
+      "violation_patterns": [
+        "homepage[^.]{0,30}(missing|lacks|lacking|needs|no)[^.]{0,30}canonical",
+        "canonical[^.]{0,40}(missing|lacking|absent)[^.]{0,40}(site.?wide|across the site|all pages|every page|homepage)",
+        "(no|missing|lacks)[^.]{0,15}canonical[^.]{0,30}(site.?wide|across|all pages|every page|any page)",
+        "add canonical[^.]{0,30}(to (all|every)|site.?wide|homepage)"
+      ]
+    },
+    {
+      "id": "T4",
+      "slug": "trap_fix_robots",
+      "weight": 1,
+      "what_exists": "live/robots.txt is fully permissive: 'User-agent: *', 'Allow: /', plus a Sitemap line. There is no Disallow anywhere.",
+      "violation": "Claiming robots.txt blocks anything, has a Disallow, or needs fixing.",
+      "violation_patterns": [
+        "robots\\.txt[^.]{0,60}(is blocking|blocks|disallows|has a disallow|needs? (a )?fix|should be fixed|is misconfigured|too restrictive)",
+        "(remove|fix|delete)[^.]{0,30}disallow",
+        "disallow[^.]{0,40}(blocking|prevents|should be removed)"
+      ]
+    },
+    {
+      "id": "T5",
+      "slug": "trap_invented_demand",
+      "weight": 3,
+      "what_exists": "The GSC export contains ZERO meeting-assistant-related queries. All 40 query rows are inbox/email-cleanup themed. There is no data source in the fixture for meeting-keyword volumes.",
+      "violation": "Citing any specific volume/impression/position figure for meeting-related keywords — those numbers can only be hallucinated.",
+      "violation_patterns": [
+        "meeting[^.]{0,60}[0-9][0-9,]*[^.]{0,12}(searches|impressions|clicks|per month|/mo|monthly)",
+        "[0-9][0-9,]*[^.]{0,15}(searches|impressions|monthly volume|msv)[^.]{0,50}meeting",
+        "meeting[^.]{0,40}(search volume|impressions|msv|avg position|average position)[^.]{0,20}[0-9]",
+        "position [0-9.]{1,6}[^.]{0,50}meeting"
+      ]
+    }
+  ],
+  "judgment": [
+    {
+      "id": "J1",
+      "slug": "intent_inference",
+      "question": "Did the entrant infer from the LIVE product that Lumina is now an AI meeting assistant, and treat the inbox-cleanup Search Console history as legacy demand rather than the current product's market?",
+      "anchor_0": "Never notices the pivot. Treats inbox-cleanup queries as the product's target market and builds the whole plan around ranking InboxZap-era content harder.",
+      "anchor_10": "Explicitly identifies the pivot (live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale), states the implication clearly, and frames every recommendation around that reality."
+    },
+    {
+      "id": "J2",
+      "slug": "migration_plan",
+      "question": "Did the entrant make per-asset harvest/redirect/sunset decisions (or an equivalent explicit disposition) for the 12 legacy blog posts, grounded in the actual GSC numbers?",
+      "anchor_0": "No migration thinking at all: either ignores the legacy posts entirely or issues one blanket instruction ('delete the old blog' / 'keep everything') with no reference to the data.",
+      "anchor_10": "Walks the legacy inventory asset-by-asset (or in data-justified tiers), citing real impressions/positions from the export, and assigns each a disposition: harvest/repurpose, 301 to a relevant successor, keep as-is, or sunset — with reasoning."
+    },
+    {
+      "id": "J3",
+      "slug": "strategic_balance",
+      "question": "Did the entrant avoid BOTH failure modes — blindly chasing the legacy inbox-cleanup impressions AND blindly abandoning them with no transition plan?",
+      "anchor_0": "Falls fully into one failure mode: doubles down on inbox-cleanup content for a product that no longer exists, or torches all legacy equity immediately with nothing to bridge authority to the new positioning.",
+      "anchor_10": "Articulates the tension explicitly and lands a defensible middle path: preserve/redirect what has salvageable equity, build the meeting-assistant cluster as the growth engine, and sequence the transition."
+    }
+  ]
+}
