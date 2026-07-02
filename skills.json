@@ -1,0 +1,68 @@
+{
+  "$comment": "Entrant registry for seo-skill-bench. install: how the harness installs the skill into the run workspace. 'git-skill-md' = shallow-clone the GitHub repo and copy its SKILL.md/skills into .claude/skills/<id>/. 'skills-cli' = npx skills add <repo> --yes. 'npm' = npx -y <pkg> init --yes inside the workspace (never npm i -g). 'none' = baseline, nothing installed.",
+  "skills": [
+    {
+      "id": "vanilla",
+      "name": "Vanilla baseline (no skill)",
+      "repo": null,
+      "install": "none",
+      "notes": "Claude Code with no SEO skill installed. Any entrant must beat this to have positive value."
+    },
+    {
+      "id": "agentic-seo-skill",
+      "name": "Agentic SEO Skill",
+      "repo": "Bhanunamikaze/Agentic-SEO-Skill",
+      "install": "git-skill-md",
+      "notes": ""
+    },
+    {
+      "id": "claude-seo",
+      "name": "claude-seo",
+      "repo": "AgriciDaniel/claude-seo",
+      "install": "git-skill-md",
+      "notes": ""
+    },
+    {
+      "id": "seo-geo-claude-skills",
+      "name": "SEO/GEO Claude Skills",
+      "repo": "aaron-he-zhu/seo-geo-claude-skills",
+      "install": "git-skill-md",
+      "notes": ""
+    },
+    {
+      "id": "mango-claude-seo-skill",
+      "name": "claude-seo-skill (mangollc)",
+      "repo": "mangollc/claude-seo-skill",
+      "install": "git-skill-md",
+      "notes": ""
+    },
+    {
+      "id": "lhitches-claude-seo-skills",
+      "name": "claude-seo-skills (lhitches)",
+      "repo": "lhitches/claude-seo-skills",
+      "install": "git-skill-md",
+      "notes": ""
+    },
+    {
+      "id": "lionkiii-claude-seo-skills",
+      "name": "claude-seo-skills (lionkiii)",
+      "repo": "lionkiii/claude-seo-skills",
+      "install": "git-skill-md",
+      "notes": ""
+    },
+    {
+      "id": "distribb-skill",
+      "name": "Distribb Skill",
+      "repo": "Bomx/distribb-skill",
+      "install": "git-skill-md",
+      "notes": ""
+    },
+    {
+      "id": "seoagent",
+      "name": "SEOAgent",
+      "repo": "@seoagent-official/seoagent",
+      "install": "npm",
+      "notes": "Maintained by the benchmark maintainer (SEOAgent). Conflict of interest disclosed in README.md and RUBRIC.md."
+    }
+  ]
+}
