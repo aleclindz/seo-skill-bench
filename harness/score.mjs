@@ -54,9 +54,14 @@ export function gatherRunText(runDir) {
   if (fs.existsSync(transcript)) text += fs.readFileSync(transcript, 'utf8') + '\n';
   const artifacts = path.join(runDir, 'artifacts');
   if (fs.existsSync(artifacts)) {
+    const EXCLUDED_DIRS = new Set(['.claude', '.next', 'node_modules', 'dist', 'build', '.turbo', '.cache']);
     for (const f of walk(artifacts)) {
       const rel = path.relative(artifacts, f);
-      if (rel.split(path.sep).includes('.claude')) continue; // installed skill files, not output
+      // Skip installed-skill files and build outputs: bundled checklist text
+      // and compiled copies of the entrant's own pages are not claims about
+      // the fixture site (a created pricing page's "5 meetings per month"
+      // tripped the invented-demand trap via .next/ compilation artifacts).
+      if (rel.split(path.sep).some((seg) => EXCLUDED_DIRS.has(seg))) continue;
       try {
         text += fs.readFileSync(f, 'utf8') + '\n';
       } catch {
