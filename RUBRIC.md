@@ -70,6 +70,13 @@ Each entrant runs **N ≥ 3** times per fixture. The published score per entrant
 fixture is the **median** composite across runs; the spread (min–max) is published
 alongside it. High variance is reported as a finding, not smoothed away.
 
+**Invalid-run policy (uniform for every entrant):** a run whose transcript is empty
+because the harness killed a hung process is a failed *measurement* — there is no
+output to score — and is retried exactly once, with the original preserved as
+`run-N-invalid` in the published results. Runs that produce any output at all score
+as-is, however bad. A skill halting itself (auth gate, refusal, crash with output)
+is a measured result, not an invalid run.
+
 ## Conflict of interest
 
 This benchmark is maintained by SEOAgent (seoagent.com), which enters its own skill.

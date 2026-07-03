@@ -241,8 +241,35 @@ const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
 const outBase = path.join(ROOT, 'results', `${ts}-${skillId}-${fixture}`);
 fs.mkdirSync(outBase, { recursive: true });
 
+/**
+ * Invalid-run policy (uniform for every entrant, see RUBRIC.md): a run whose
+ * transcript is EMPTY because the process was killed (hang -> SIGTERM) is a
+ * failed MEASUREMENT, not a measured failure — there is no output to score.
+ * It is retried exactly once (the original is preserved as run-N-invalid).
+ * Runs that produce any output score as-is, including bad ones.
+ */
+function transcriptIsEmpty(runDir) {
+  try {
+    return fs.readFileSync(path.join(runDir, 'transcript.json'), 'utf8').trim().length === 0;
+  } catch {
+    return true;
+  }
+}
+
 const all = [];
-for (let n = 1; n <= runs; n++) all.push(await doRun(outBase, n));
+for (let n = 1; n <= runs; n++) {
+  let result = await doRun(outBase, n);
+  const runDir = path.join(outBase, `run-${n}`);
+  if (transcriptIsEmpty(runDir)) {
+    console.log(`[run ${n}] INVALID (empty transcript — process died without output); retrying once`);
+    fs.renameSync(runDir, path.join(outBase, `run-${n}-invalid`));
+    result = await doRun(outBase, n);
+    if (transcriptIsEmpty(path.join(outBase, `run-${n}`))) {
+      console.log(`[run ${n}] retry also produced no output — scoring the empty run as-is`);
+    }
+  }
+  all.push(result);
+}
 
 // Median summary across runs.
 const med = (xs) => {
