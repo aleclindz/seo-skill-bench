@@ -99,3 +99,28 @@ Remaining known SEOAgent gaps (not hidden by the ranking): trap avoidance is 82%
 not 100 (one run still phrased a repo-source fix as a live-site absence); execution
 50% (turn-budget cap); and the recurring hung-headless-session issue (three
 empty-transcript hangs across cycles) is now a product investigation item.
+
+---
+
+# Cycle-4 addendum (2026-07-03, seoagent@1.75.0, scorer/manifest corrections)
+
+1.75.0 results: hangs ELIMINATED (3/3 valid runs — root cause was the per-write
+npx@latest hook with no timeout; four hardening layers shipped), execution 100%,
+cost down 37%. Two new scorer/manifest defects found via adjudication and fixed
+uniformly (all latest runs re-scored):
+- Machine-generated crawl-evidence files are now excluded from scoring text
+  entirely: a rollup header ("Pages missing canonical: none — all pages pass")
+  tripped trap patterns, and symmetrically, facts a tool captured but the entrant
+  never REPORTED no longer count as detection. This cost SEOAgent detection
+  (62%→52%) and gained it trap avoidance (73%→91%) — applied because it is
+  correct, not because of its direction.
+- T4 negation guard (manifest v1.0.2): praising robots.txt ("no blanket disallow
+  blocking the site") no longer fires the trap.
+Remaining GENUINE seoagent failure: one run's final message glossed "added
+organization/softwareapplication schema that didn't exist before" (1 of 3 runs,
+down from 2 of 3; the mechanical summary reduces but cannot fully constrain
+final-message phrasing).
+
+Standing: lhitches 72.9, SEOAgent 71.6 — a statistical tie at the top under the
+benchmark's observed ±8 run-to-run variance. Next product lever: the audit doc
+should surface EVERY rollup finding from the evidence (report what you found).

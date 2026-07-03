@@ -40,7 +40,7 @@
       "id": "D7",
       "slug": "duplicate_h1_features",
       "weight": 1,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D8",
@@ -52,7 +52,7 @@
       "id": "D9",
       "slug": "missing_alt_homepage",
       "weight": 1,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D10",
@@ -78,7 +78,7 @@
       "id": "T3",
       "slug": "trap_add_canonical_home",
       "weight": 2,
-      "violated": true
+      "violated": false
     },
     {
       "id": "T4",
@@ -93,6 +93,6 @@
       "violated": false
     }
   ],
-  "detection": 0.47619047619047616,
-  "trap_avoidance": 0.5454545454545454
+  "detection": 0.38095238095238093,
+  "trap_avoidance": 0.7272727272727273
 }

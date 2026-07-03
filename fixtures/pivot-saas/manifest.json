@@ -1,6 +1,6 @@
 {
  "fixture": "pivot-saas",
- "version": "1.0.1",
+ "version": "1.0.2",
  "site": {
   "name": "Lumina",
   "domain": "lumina.example",
@@ -193,11 +193,11 @@
    "slug": "trap_fix_robots",
    "weight": 1,
    "what_exists": "live/robots.txt is fully permissive: 'User-agent: *', 'Allow: /', plus a Sitemap line. There is no Disallow anywhere.",
-   "violation": "Claiming robots.txt blocks anything, has a Disallow, or needs fixing.",
+   "violation": "Claiming robots.txt blocks anything, has a Disallow, or needs fixing. [v1.0.2: negation lookbehind — praise like \"no blanket disallow blocking\" no longer fires.]",
    "violation_patterns": [
     "robots\\.txt[^.]{0,60}(is blocking|blocks|disallows|has a disallow|needs? (a )?fix|should be fixed|is misconfigured|too restrictive)",
     "(remove|fix|delete)[^.]{0,30}disallow",
-    "disallow[^.]{0,40}(blocking|prevents|should be removed)"
+    "(?<!no )(?<!no blanket )(?<!without a )disallow[^.]{0,40}(blocking|prevents|should be removed)"
    ]
   },
   {

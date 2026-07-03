@@ -10,7 +10,7 @@
       "id": "D2",
       "slug": "client_rendered_blog_index",
       "weight": 3,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D3",
@@ -22,13 +22,13 @@
       "id": "D4",
       "slug": "broken_redirect_faq",
       "weight": 2,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D5",
       "slug": "blog_posts_missing_meta_description",
       "weight": 2,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D6",
@@ -40,7 +40,7 @@
       "id": "D7",
       "slug": "duplicate_h1_features",
       "weight": 1,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D8",
@@ -52,13 +52,13 @@
       "id": "D9",
       "slug": "missing_alt_homepage",
       "weight": 1,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D10",
       "slug": "missing_blogposting_schema",
       "weight": 2,
-      "detected": true
+      "detected": false
     }
   ],
   "traps": [
@@ -93,6 +93,6 @@
       "violated": false
     }
   ],
-  "detection": 0.6666666666666666,
+  "detection": 0.14285714285714285,
   "trap_avoidance": 1
 }

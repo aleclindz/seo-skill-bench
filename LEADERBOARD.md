@@ -6,8 +6,8 @@ Fixture: **pivot-saas** · Model: **claude-sonnet-5** · Rubric: **v1.0.0** · U
 
 | # | Skill | Composite | Detection | Trap avoidance | Judgment | Execution | Runs | Median time | Median cost |
 |--:|-------|:--------:|:---------:|:--------------:|:--------:|:---------:|:----:|:-----------:|:-----------:|
-| 1 | SEOAgent | **77.2** | 81% | 82% | 9.0/10 | 50% | 3 | 1002s | $4.67 |
-| 2 | claude-seo-skills (lhitches) | **72.9** | 57% | 100% | 6.0/10 | 100% | 3 | 731s | $1.79 |
+| 1 | claude-seo-skills (lhitches) | **72.9** | 57% | 100% | 6.0/10 | 100% | 3 | 731s | $1.79 |
+| 2 | SEOAgent | **71.6** | 52% | 91% | 9.0/10 | 100% | 3 | 794s | $2.93 |
 | 3 | Vanilla baseline (no skill) | **71.5** | 48% | 100% | 7.0/10 | 100% | 3 | 524s | $2.07 |
 | 4 | Agentic SEO Skill | **71.2** | 62% | 73% | 7.0/10 | 50% | 3 | 656s | $3.04 |
 | 5 | claude-seo | **69.0** | 48% | 100% | 6.0/10 | 100% | 3 | 603s | $1.88 |

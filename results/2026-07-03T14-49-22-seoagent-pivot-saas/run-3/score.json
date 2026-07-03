@@ -40,7 +40,7 @@
       "id": "D7",
       "slug": "duplicate_h1_features",
       "weight": 1,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D8",
@@ -52,7 +52,7 @@
       "id": "D9",
       "slug": "missing_alt_homepage",
       "weight": 1,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D10",
@@ -93,6 +93,6 @@
       "violated": false
     }
   ],
-  "detection": 0.5714285714285714,
+  "detection": 0.47619047619047616,
   "trap_avoidance": 0.7272727272727273
 }

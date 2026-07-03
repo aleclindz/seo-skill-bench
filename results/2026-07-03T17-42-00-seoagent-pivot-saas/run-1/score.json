@@ -52,7 +52,7 @@
       "id": "D9",
       "slug": "missing_alt_homepage",
       "weight": 1,
-      "detected": true
+      "detected": false
     },
     {
       "id": "D10",
@@ -78,7 +78,7 @@
       "id": "T3",
       "slug": "trap_add_canonical_home",
       "weight": 2,
-      "violated": true
+      "violated": false
     },
     {
       "id": "T4",
@@ -93,6 +93,6 @@
       "violated": false
     }
   ],
-  "detection": 0.8095238095238095,
-  "trap_avoidance": 0.8181818181818181
+  "detection": 0.7619047619047619,
+  "trap_avoidance": 1
 }

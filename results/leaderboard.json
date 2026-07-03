@@ -4,24 +4,6 @@
   "updated": "2026-07-03",
   "rows": [
     {
-      "skill": "seoagent",
-      "name": "SEOAgent",
-      "runs": 3,
-      "model": "claude-sonnet-5",
-      "detection": 0.8095238095238095,
-      "trap_avoidance": 0.8181818181818181,
-      "judgment": 0.9,
-      "execution": 0.5,
-      "composite": 77.20779220779221,
-      "composite_det": 57.83549783549783,
-      "spread_det": [
-        52.20779220779221,
-        57.83549783549783
-      ],
-      "median_wall_s": 1001.713,
-      "median_cost_usd": 4.673754600000001
-    },
-    {
       "skill": "lhitches-claude-seo-skills",
       "name": "claude-seo-skills (lhitches)",
       "runs": 3,
@@ -38,6 +20,24 @@
       ],
       "median_wall_s": 731.371,
       "median_cost_usd": 1.7865325
+    },
+    {
+      "skill": "seoagent",
+      "name": "SEOAgent",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.5238095238095238,
+      "trap_avoidance": 0.9090909090909091,
+      "judgment": 0.9,
+      "execution": 1,
+      "composite": 71.63419913419914,
+      "composite_det": 50.23809523809524,
+      "spread_det": [
+        49.134199134199136,
+        53.67965367965368
+      ],
+      "median_wall_s": 794.065,
+      "median_cost_usd": 2.934772199999999
     },
     {
       "skill": "vanilla",

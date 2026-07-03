@@ -62,6 +62,11 @@ export function gatherRunText(runDir) {
       // the fixture site (a created pricing page's "5 meetings per month"
       // tripped the invented-demand trap via .next/ compilation artifacts).
       if (rel.split(path.sep).some((seg) => EXCLUDED_DIRS.has(seg))) continue;
+      // Skip machine-generated crawl-evidence files: tool output is neither an
+      // authored claim (a rollup header like "Pages missing canonical: none"
+      // tripped trap patterns) nor a reported finding (facts a tool captured
+      // but the entrant never surfaced don't count as detection).
+      if (path.basename(rel) === 'evidence.md' && rel.includes('audit')) continue;
       try {
         text += fs.readFileSync(f, 'utf8') + '\n';
       } catch {
