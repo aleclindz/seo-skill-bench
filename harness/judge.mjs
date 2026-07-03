@@ -85,7 +85,9 @@ function gatherOutput(runDir) {
       }
     }
   }
-  return text.slice(0, MAX_OUTPUT_CHARS);
+  // Binary-ish artifacts read as utf8 can carry null bytes, which spawnSync
+  // rejects in argv; strip them (and other C0 controls except \n\t).
+  return text.replace(/[\0\x01-\x08\x0b\x0c\x0e-\x1f]/g, '').slice(0, MAX_OUTPUT_CHARS);
 }
 
 function anonymize(text) {
