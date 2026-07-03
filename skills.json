@@ -60,7 +60,7 @@
   {
    "id": "seoagent",
    "name": "SEOAgent",
-   "repo": "@seoagent-official/seoagent@1.74.0",
+   "repo": "@seoagent-official/seoagent@1.75.0",
    "install": "npm",
    "notes": "Maintained by the benchmark maintainer (SEOAgent). Conflict of interest disclosed in README.md and RUBRIC.md. Version PINNED per benchmark cycle for reproducibility (an unpinned npx latest resolved to a stale version mid-cycle once)."
   }
