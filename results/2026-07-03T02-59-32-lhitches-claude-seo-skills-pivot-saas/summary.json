@@ -1,0 +1,17 @@
+{
+  "skill": "lhitches-claude-seo-skills",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.5714285714285714,
+  "detection_all": [
+    0.6190476190476191,
+    0.5714285714285714,
+    0.5714285714285714
+  ],
+  "trap_avoidance_median": 1,
+  "trap_avoidance_all": [
+    1,
+    1,
+    1
+  ]
+}

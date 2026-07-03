@@ -1,0 +1,17 @@
+{
+  "skill": "seo-geo-claude-skills",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.3333333333333333,
+  "detection_all": [
+    0.3333333333333333,
+    0.3333333333333333,
+    0.47619047619047616
+  ],
+  "trap_avoidance_median": 0.7272727272727273,
+  "trap_avoidance_all": [
+    0.5454545454545454,
+    1,
+    0.7272727272727273
+  ]
+}

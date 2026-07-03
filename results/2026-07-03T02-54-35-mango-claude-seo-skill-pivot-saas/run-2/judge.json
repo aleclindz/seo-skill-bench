@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an old product (InboxZap, an email-cleanup tool) but the SEO layer never followed... GSC shows ~12 old blog URLs still pulling thousands of impressions for legacy email-cleanup queries that no longer map to anything on the site",
+          "rationale": "Explicitly identifies the pivot from the live product, frames the InboxZap GSC history as legacy demand, and grounds every recommendation in the meeting-assistant reality. Falls just short of anchor_10 because the 'thousands of impressions' figure is qualitative rather than citing the specific numbers."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "301-redirected the orphaned `/blog/post-{n}` legacy URLs to `/blog` instead of soft-404ing, to reclaim residual authority",
+          "rationale": "Issues a single blanket 301 for all 12 legacy posts to the blog index rather than per-asset dispositions grounded in each URL's actual impressions/positions; the 'inbox zero, bulk delete emails, gmail storage, unsubscribe' keywords are named but no per-post GSC numbers drive the decision."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "the legacy rankings... are for a product that no longer exists on this domain — there's no honest way to keep serving that intent, so the redirect just prevents them from soft-404ing rather than pretending they're still relevant... the 5 posts target the actual demand gap",
+          "rationale": "Avoids both failure modes — doesn't chase inbox queries and doesn't torch equity (blanket 301 preserves residual authority) while building the meeting-assistant cluster as the growth engine. Falls short of the top anchor because the transition is a uniform redirect rather than a sequenced, equity-tiered bridge."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina pivoted from an old product (InboxZap, an email-cleanup tool) but the SEO layer never followed... GSC shows ~12 old blog URLs still pulling thousands of impressions for legacy email-cleanup queries that no longer map to anything on the site",
+          "rationale": "Explicitly names the pivot (live = meeting assistant, GSC = legacy inbox demand, repo = stale metadata/broken blog) and frames every recommendation around the new positioning."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "301-redirected the orphaned `/blog/post-{n}` legacy URLs to `/blog` instead of soft-404ing, to reclaim residual authority",
+          "rationale": "Applies a single blanket 301 of all 12 posts to /blog with no per-asset disposition and only category-level query references — no real impressions/positions cited, no harvest/keep/sunset tiering."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "there's no honest way to keep serving that intent, so the redirect just prevents them from soft-404ing rather than pretending they're still relevant... the 5 posts target the actual demand gap",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content, doesn't torch equity outright (redirects to bridge authority while building the meeting cluster) — but the middle path is asserted rather than reasoned from the equity actually salvageable per asset."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an old product (InboxZap, an email-cleanup tool) but the SEO layer never followed... GSC shows ~12 old blog URLs still pulling thousands of impressions for legacy email-cleanup queries that no longer map to anything on the site.",
+          "rationale": "Explicitly names the pivot, treats live site as meeting assistant and GSC as legacy demand, and frames every fix around the current product — essentially anchor_10, docked slightly because the legacy-vs-current framing is asserted rather than tied to specific evidence per surface."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "301-redirected the orphaned /blog/post-{n} legacy URLs to /blog instead of soft-404ing, to reclaim residual authority.",
+          "rationale": "One blanket disposition (all 12 posts → /blog) with a rationale, but no per-asset walk, no harvest/repurpose of any high-impression post, and no citing of individual impressions/positions from the export — well short of the asset-by-asset triage anchor_10 asks for."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "the legacy rankings... are for a product that no longer exists on this domain — there's no honest way to keep serving that intent, so the redirect just prevents them from soft-404ing... the 5 posts target the actual demand gap.",
+          "rationale": "Names the tension and lands a defensible middle path — redirect to preserve residual equity rather than torch it, while building the meeting-assistant cluster as the growth engine — but the 'bridge' is thin (a single 301 to the blog index) with no graduated sequencing."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

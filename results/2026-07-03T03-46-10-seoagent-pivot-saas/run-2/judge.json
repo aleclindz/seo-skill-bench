@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "\"Root cause: Lumina Labs pivoted from 'InboxZap' (Gmail inbox-cleanup tool) to 'Lumina' (AI meeting assistant), but the migration was left half-done\" and \"real, current brand-search traffic for the *old* name landing on the *new* product\"",
+          "rationale": "Explicitly names the pivot, treats the inbox-cleanup GSC history as legacy demand, flags the repo as half-migrated, and frames every recommendation (metadata rewrite, sunset, new cluster) around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "Homepage: \"18 clicks, 600 impressions, position 4.5\" driven by `inboxzap` (14 clicks/320 impr, pos 4.1); sunset tier: \"~13,880 impressions, ~7 clicks, avg positions 42–58\" citing `gmail storage full` 790 impr, `how to reach inbox zero` 1180 impr, `bulk delete emails` 210 impr",
+          "rationale": "Assigns clear dispositions (harvest homepage, sunset all 12) grounded in real export numbers and even reasons about why no 301 destination exists; falls short of a full 10 because the 12 posts are handled as one data-justified tier rather than truly asset-by-asset."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "\"the homepage's brand-query traffic is real and worth protecting; the 12 old posts... have zero audience overlap... recommended sunsetting them\" plus \"build the meeting-notes cluster... Depth-first\" and the explicit override of the CLI's backwards classification",
+          "rationale": "Names the tension directly, preserves salvageable equity (homepage + 'Formerly InboxZap' bridge) while declining to chase dead impressions, and sequences a new-cluster growth engine — a defensible middle path avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina Labs pivoted from \"InboxZap\" (Gmail inbox-cleanup tool) to \"Lumina\" (AI meeting assistant), but the migration was left half-done — the site was actively broken and mismatched.",
+          "rationale": "Explicitly nails the pivot: live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale, and frames every fix and the whole migration plan around that reality. Just short of 10 only because framing is spread across artifacts rather than one crisp thesis statement."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "combined ~13,880 impressions, ~7 clicks, avg positions 42–58 (page 5–6)... there's no equity worth fighting to preserve... scored \"gmail storage full\" (790 impr) as merely \"redirect\"... rather than recognizing it... has no plausible destination",
+          "rationale": "Assigns explicit dispositions grounded in real GSC numbers — harvest the homepage (18 clicks/600 impr/pos 4.5, brand queries itemized), sunset all 12 posts with per-query impression citations, and explicitly rejects 301-redirect with reasoning. Falls short of 10 because it disposes of the 12 posts as one data-justified tier rather than walking each asset individually."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "the homepage's brand-query traffic is real and worth protecting; the 12 old posts... have zero audience overlap... recommended sunsetting them rather than forcing an awkward rewrite",
+          "rationale": "Cleanly avoids both failure modes: preserves salvageable homepage equity (with a 'Formerly InboxZap' bridge), refuses to chase off-topic inbox impressions, and builds the meeting-notes cluster as the growth engine with a sequenced transition. Explicitly names the tension and the 'don't blindly adopt GSC seeds' rule."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Root cause: Lumina Labs pivoted from \"InboxZap\" (Gmail inbox-cleanup tool) to \"Lumina\" (AI meeting assistant), but the migration was left half-done",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant and GSC/blog as legacy inbox demand, and frames every recommendation (metadata rewrite, new cluster, sunset of old posts) around that reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "gmail storage full 790 impr, how to reach inbox zero 1180 impr, bulk delete emails 210 impr... combined ~13,880 impressions, ~7 clicks, avg positions 42–58; homepage — 18 clicks, 600 impressions, position 4.5, driven by brand queries inboxzap (14 clicks/320 impr, pos 4.1)",
+          "rationale": "Assigns explicit dispositions (harvest the homepage, sunset all 12 posts, no-redirect since they're already soft-404s) grounded in real GSC numbers, but treats the 12 legacy posts as one blanket tier rather than walking them asset-by-asset."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "the homepage's brand-query traffic is real and worth protecting... the 12 old posts... have zero audience overlap... recommended sunsetting them rather than forcing an awkward rewrite",
+          "rationale": "Names the tension directly and lands a defensible, sequenced middle path — preserve/bridge the salvageable brand equity (kept URL, 'Formerly InboxZap' footer), build the meeting-notes cluster as the growth engine, and let genuinely off-topic content decay without torching or chasing it."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

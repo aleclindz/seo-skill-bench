@@ -1,0 +1,59 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 2,
+  "judges": [
+    {
+      "lens": "evidence",
+      "error": "Expected ',' or '}' after property value in JSON at position 1825 (line 1 column 1826)"
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products (email-cleanup \"InboxZap\" → AI meeting assistant \"Lumina\") but the SEO surface never caught up, which is what was actually suppressing organic traffic",
+          "rationale": "Explicitly names the pivot, treats the GSC/InboxZap surface as stale legacy that never caught up, and frames every fix (metadata, blog topics, pages) around the current meeting-assistant product. Slightly short of a full 10 because it never crisply labels the GSC impressions themselves as 'legacy inbox-cleanup demand' as distinct from the new market."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "reusing the existing `post-1`..`post-12` URLs (to preserve any residual indexing/link equity) with 12 genuinely useful posts on meeting-productivity topics relevant to the current product",
+          "rationale": "Applies a single blanket disposition to all 12 posts — reuse every URL, replace every post with meeting content — citing only the aggregate ~13,000 impressions, with no asset-by-asset walk, no individual impressions/positions, and no differentiated harvest/301/keep/sunset decisions."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "reusing the existing `post-1`..`post-12` URLs (to preserve any residual indexing/link equity)... with 12 genuinely useful posts on meeting-productivity topics relevant to the current product",
+          "rationale": "Avoids both extremes — it neither doubles down on inbox content nor deletes the legacy URLs — landing an implicit middle path (keep URLs, build the meeting cluster). But it never articulates the equity-vs-relevance tension, and repurposing inbox-ranking URLs into off-topic meeting content risks forfeiting the very equity it claims to preserve, with no sequenced transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "The site had pivoted products (email-cleanup \"InboxZap\" → AI meeting assistant \"Lumina\") but the SEO surface never caught up",
+          "rationale": "Explicitly names the pivot and reframes every action around Lumina (metadata, blog topics, new pages all target the meeting-assistant product); loses points only for not sharply labeling the old inbox-cleanup GSC queries as legacy *demand* distinct from the current market — it treats the URLs as equity but never examines whether the searchers behind them are the wrong audience."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Rebuilt as server-rendered with a real [slug] route, reusing the existing post-1..post-12 URLs (to preserve any residual indexing/link equity) ... with 12 genuinely useful posts on meeting-productivity topics",
+          "rationale": "Applies one blanket disposition — keep all 12 URLs, replace all content — grounded only in an aggregate '~13,000 monthly impressions combined' figure with no per-post impressions/positions or asset-by-asset harvest/redirect/keep/sunset calls; it's more executed than anchor_0 but far short of a data-justified per-asset migration."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "reusing the existing post-1..post-12 URLs (to preserve any residual indexing/link equity) ... with 12 genuinely useful posts on meeting-productivity topics relevant to the current product",
+          "rationale": "Avoids both failure modes in practice — doesn't chase dead inbox content, doesn't torch the URLs — by keeping the equity-bearing slugs while swapping in meeting-assistant content, but it never articulates the tension or sequences a transition (e.g., which old-intent queries get redirected vs. abandoned), so the middle path is implicit and somewhat crude rather than deliberately reasoned."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 8.5,
+    "J2": 3,
+    "J3": 5.5
+  },
+  "judgment": 0.55
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This site is the aftermath of a rebrand — **InboxZap** (an email-cleanup tool) pivoted to **Lumina** (an AI meeting assistant) — and the SEO surface never caught up",
+          "rationale": "Explicitly identifies the pivot from live product vs. legacy GSC demand and frames every fix around it, even grounding the branded-search concern in a real 4.38% CTR figure; falls just short of a full legacy-demand strategy since it treats the pivot mostly as a metadata/routing cleanup."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "301-redirected legacy `/blog/post-N` and `/app` URLs instead of leaving them 404 ... No 1:1 replacement exists, so send them to the blog index",
+          "rationale": "Applies a single blanket 301 of all 12 posts to the blog index with only a vague 'thousands of impressions' reference — no per-asset or tiered disposition and no cited per-post impressions/positions from the export, so it's well short of asset-by-asset grounding."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "301-redirected legacy ... (preserves some crawl equity) ... added 4 substantive on-brand posts targeting meeting-notes/async-work keywords ... a brief \"InboxZap is now Lumina\" note",
+          "rationale": "Lands a defensible middle path — redirects preserve legacy equity while new meeting-assistant content is the growth engine, avoiding both torch-it-all and double-down failures — but the tension and transition sequencing are implicit in the implementation rather than articulated as strategy."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This site is the aftermath of a rebrand — InboxZap (an email-cleanup tool) pivoted to Lumina (an AI meeting assistant) — and the SEO surface never caught up",
+          "rationale": "Explicitly names the pivot, reads the live site as the meeting assistant, treats InboxZap GSC/branded queries as legacy, and frames every fix around Lumina; only slightly short of a full read because it doesn't distinguish stale-repo vs. live-site layers as sharply."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "301-redirected legacy /blog/post-N ... 'No 1:1 replacement exists, so send them to the blog index instead of letting them 404.'",
+          "rationale": "Applies one blanket redirect rule for all 12 posts to the blog index rather than per-asset harvest/redirect/keep decisions, and cites only vague 'thousands of impressions' rather than individual GSC positions/impressions — better than 404ing but essentially a single undifferentiated disposition."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "301-redirected legacy ... (preserves some crawl equity) ... added 4 substantive on-brand posts targeting meeting-notes/async-work keywords ... a brief 'InboxZap is now Lumina' note so branded searchers aren't confused",
+          "rationale": "Lands a defensible middle path — doesn't chase dead inbox demand, doesn't torch equity (redirects + branded bridge note), and builds the new meeting cluster — but never articulates the tension and the blanket redirect-to-index sacrifices salvageable topical equity, so it's competent rather than deliberate."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This site is the aftermath of a rebrand — **InboxZap** (an email-cleanup tool) pivoted to **Lumina** (an AI meeting assistant) — and the SEO surface never caught up",
+          "rationale": "Explicitly names the pivot, treats the inbox-cleanup GSC history as legacy demand, and frames every fix (metadata, new blog cluster, rebrand note) around the meeting-assistant reality. Loses a point only because the legacy/current distinction is asserted rather than tied to specific GSC segmentation."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "301-redirected legacy `/blog/post-N`... 'Legacy InboxZap blog posts (pre-pivot). No 1:1 replacement exists, so send them to the blog index'",
+          "rationale": "It made a real disposition — a blanket 301 of all 12 posts to the blog index rather than letting them 404 — but treated all 12 identically with no asset-by-asset walk, no per-post impressions/positions cited, and no harvest/repurpose of any salvageable legacy content. Better than ignoring them, far short of a data-justified per-asset plan."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301-redirected legacy `/blog/post-N` and `/app` URLs instead of leaving them 404 (preserves some crawl equity)... added 4 substantive on-brand posts targeting meeting-notes/async-work keywords... a brief 'InboxZap is now Lumina' note so branded searchers aren't confused",
+          "rationale": "Cleanly avoids both failure modes: doesn't chase dead inbox-cleanup demand, and doesn't torch legacy equity — it redirects, bridges branded searchers with a rebrand note, and builds the meeting-assistant cluster as the growth engine. Held back from top marks because the transition is executed rather than articulated as a sequenced tension, and the equity 'bridge' is thin (index redirect, not topical successors)."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site was mid-pivot: product changed from \"Lumina\" (meeting-notes AI) to \"InboxZap\" (email cleanup)... Homepage copy still described the old product while <head> metadata described the new one",
+          "rationale": "The entrant explicitly identifies the pivot and grounds it in evidence (live metadata vs. body copy, GSC branded query performance), but reads the pivot direction as Lumina→InboxZap, treating inbox-cleanup as the CURRENT product rather than legacy demand — so it inverts the framing the question rewards while still cleanly separating the two identities and building around the live product."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "kept the original post-1…post-12 URLs to preserve existing search equity... This rebuild inferred each post's topic from GSC impression-rank correlation with query-cluster impression volume",
+          "rationale": "It makes one blanket disposition (preserve all 12 URLs and rebuild content on them) grounded in aggregate GSC numbers, but never walks the inventory asset-by-asset with per-URL impressions/positions or assigns harvest/redirect/keep/sunset per post — it rebuilds everything uniformly rather than triaging."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "InboxZap groups your entire inbox by sender... build the meeting-assistant cluster [absent]",
+          "rationale": "Because the entrant concluded inbox-cleanup IS the current product, it avoids torching legacy equity (preserves URLs, rebuilds content) but effectively doubles down on the inbox-cleanup content as the growth engine and never sequences a transition toward a meeting-assistant positioning — it sidesteps rather than resolves the tension the question targets."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "\"product changed from 'Lumina' (meeting-notes AI) to 'InboxZap' (email cleanup)\" and \"Rewrote homepage copy to describe InboxZap (email cleanup) instead of Lumina (meeting assistant)\"",
+          "rationale": "The entrant inverted the pivot: it treated inbox-cleanup as the current product and the meeting-assistant copy as stale, then rebuilt the entire site around InboxZap — the exact opposite of the correct reading (live = meeting assistant, inbox demand = legacy). Noticing a mismatch is worth a hair above zero, but the strategic conclusion is the anchor_0 failure verbatim."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "\"12 blog URLs: ~13,900 combined impressions, position 40–58\" ... \"kept the original post-1…post-12 URLs to preserve existing search equity\"",
+          "rationale": "It engaged the GSC numbers in detail but applied a single uniform disposition — rebuild-and-keep all 12 as inbox-cleanup content — with no per-asset harvest/redirect/sunset differentiation, and in service of preserving equity for the wrong (abandoned) product rather than transitioning it."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "\"Rebuilt /blog and /blog/[slug] ... with real content ... for all 12 posts\" — all inbox-cleanup topics (inbox zero, bulk delete, unsubscribe)",
+          "rationale": "This lands squarely in anchor_0's first failure mode: doubling down on inbox-cleanup content for the product the site has pivoted away from, with no bridge toward the meeting-assistant positioning. The tension is never articulated because the entrant believes the legacy market is the current one."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This is a **mid-pivot SaaS**: the product changed from \"Lumina\" (an AI meeting-notes assistant) to \"InboxZap\" (a Gmail/Outlook inbox-cleanup tool), and the migration was left half-finished.",
+          "rationale": "The entrant identifies a pivot clearly and correctly maps the split between live/metadata/GSC signals, but reads the pivot direction as meeting-notes→inbox-cleanup with inbox demand as the CURRENT product's market — the inverse of the intended framing where inbox-cleanup is the legacy demand and meeting-assistant is the new product. Diagnostically sharp and internally consistent, but the target market it optimizes toward differs from the answer key's."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "kept the original `post-1`…`post-12` URLs to preserve existing search equity ... This rebuild inferred each post's topic from GSC impression-rank correlation with query-cluster impression volume",
+          "rationale": "It treats all 12 legacy URLs as a single tier — blanket 'rebuild and preserve all slugs' — rather than making per-asset harvest/redirect/keep/sunset dispositions; it does cite real aggregate GSC numbers (~13,900 impressions, position 40–58, 11/12 ≤1 click) and flags the topic-mapping as an unverified heuristic, which lifts it above a pure blanket instruction, but there is no asset-by-asset disposition grounded in per-URL data."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "kept the original `post-1`…`post-12` URLs to preserve existing search equity instead of starting fresh",
+          "rationale": "It avoids both torching equity and starting from zero by preserving all legacy URLs and rebuilding content, and sequences done-vs-next work — a defensible practical middle path — but because it reads inbox-cleanup as the current product rather than legacy demand, it doubles down on the inbox-cleanup cluster rather than bridging authority toward a distinct new positioning, so the strategic tension the question targets is never actually articulated."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 5
+  },
+  "judgment": 0.5
+}

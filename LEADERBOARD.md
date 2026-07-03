@@ -6,15 +6,15 @@ Fixture: **pivot-saas** · Model: **claude-sonnet-5** · Rubric: **v1.0.0** · U
 
 | # | Skill | Composite | Detection | Trap avoidance | Judgment | Execution | Runs | Median time | Median cost |
 |--:|-------|:--------:|:---------:|:--------------:|:--------:|:---------:|:----:|:-----------:|:-----------:|
-| 1 | claude-seo-skill (mangollc) | **72.3** | 57% | 100% | 7.0/10 | 50% | 3 | 901s | $3.29 |
-| 2 | Agentic SEO Skill | **65.9** | 38% | 73% | 8.0/10 | 100% | 3 | 649s | $1.03 |
-| 3 | claude-seo | **63.9** | 33% | 100% | 6.0/10 | 100% | 3 | 772s | $3.07 |
-| 4 | SEO/GEO Claude Skills | **62.8** | 62% | 73% | 7.0/10 | 100% | 3 | 915s | $3.42 |
-| 5 | claude-seo-skills (lhitches) | **60.9** | 38% | 73% | 6.0/10 | 100% | 3 | 927s | $1.87 |
-| 6 | Distribb Skill | **59.6** | 43% | 100% | 4.0/10 | 100% | 3 | 732s | $2.25 |
-| 7 | Vanilla baseline (no skill) | **59.5** | 24% | 100% | 6.0/10 | 100% | 3 | 763s | $1.99 |
-| 8 | claude-seo-skills (lionkiii) | **57.2** | 48% | 73% | 6.0/10 | 100% | 3 | 1139s | $3.00 |
-| 9 | SEOAgent | **51.1** | 38% | 64% | 6.0/10 | 50% | 3 | 2700s | — |
+| 1 | claude-seo-skills (lhitches) | **72.9** | 57% | 100% | 6.0/10 | 100% | 3 | 731s | $1.79 |
+| 2 | SEOAgent | **72.3** | 67% | 73% | 9.0/10 | 50% | 3 | 1028s | $4.19 |
+| 3 | Vanilla baseline (no skill) | **71.5** | 48% | 100% | 7.0/10 | 100% | 3 | 524s | $2.07 |
+| 4 | Agentic SEO Skill | **71.2** | 62% | 73% | 7.0/10 | 50% | 3 | 656s | $3.04 |
+| 5 | claude-seo | **69.0** | 48% | 100% | 6.0/10 | 100% | 3 | 603s | $1.88 |
+| 6 | claude-seo-skill (mangollc) | **64.6** | 43% | 100% | 7.0/10 | 100% | 3 | 791s | $2.26 |
+| 7 | claude-seo-skills (lionkiii) | **62.2** | 48% | 73% | 7.0/10 | 100% | 3 | 412s | $2.08 |
+| 8 | SEO/GEO Claude Skills | **59.7** | 33% | 73% | 5.0/10 | 100% | 3 | 520s | $2.06 |
+| 9 | Distribb Skill | **59.5** | 24% | 100% | 6.0/10 | 100% | 3 | 473s | $1.44 |
 
 
 

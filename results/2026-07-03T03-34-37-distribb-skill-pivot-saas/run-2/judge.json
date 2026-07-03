@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site's core problem: it's mid-pivot. The product became **Lumina**... but the SEO surface still belonged to **InboxZap**... The GSC export confirms it — literally 100% of current clicks/rankings are for `inboxzap`, `inbox zero`, `bulk delete emails`",
+          "rationale": "Explicitly identifies the pivot, ties it to the live product vs. the legacy GSC demand, and frames every fix (metadata, blog, redirects) around the meeting-assistant reality. Slightly short of a perfect 10 because it asserts '100%' without laying out the actual per-query numbers."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC showed `/blog/post-1`…`post-12` (old InboxZap-era posts) still indexed with real impressions but currently 404ing. Added 301s to `/blog` so that crawl equity isn't wasted on hard 404s.",
+          "rationale": "There is genuine migration thinking — a 301 disposition grounded in the fact that legacy posts were indexed with impressions — but it's a single blanket redirect for all 12, with no per-asset (or tiered) dispositions and no specific cited impressions/positions distinguishing harvest-worthy posts from sunset candidates."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "send that crawl equity to the current blog index instead of hard-404ing... Rebuilt it as server-rendered... targeting keywords relevant to the actual product (meeting minutes, action items...)",
+          "rationale": "Cleanly avoids both failure modes: it neither doubles down on inbox-cleanup content nor torches legacy equity — it redirects the old posts to preserve authority while building the meeting-assistant cluster as the growth engine. Falls short of 10 because the tension and transition sequencing are implied rather than explicitly articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site's core problem: it's mid-pivot. The product became **Lumina** (an AI meeting-notes assistant), but the SEO surface still belonged to **InboxZap**... The GSC export confirms it — literally 100% of current clicks/rankings are for `inboxzap`, `inbox zero`, `bulk delete emails`, etc.",
+          "rationale": "Explicitly names the pivot, correctly reads the live product as the meeting assistant and the GSC history as legacy inbox demand, and frames every fix around that reality. Textbook anchor_10."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC showed `/blog/post-1`…`post-12` (old InboxZap-era posts) still indexed with real impressions but currently 404ing. Added 301s to `/blog` so that crawl equity isn't wasted on hard 404s.",
+          "rationale": "It acknowledges the legacy posts carry impressions and chooses redirect over hard 404 (above anchor_0), but issues one blanket 301 of all 12 to /blog with no per-asset dispositions, no cited per-post impressions/positions, and no harvest/repurpose triage."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "send that crawl equity to the current blog index instead of hard-404ing... Rebuilt it as server-rendered... targeting keywords relevant to the actual product",
+          "rationale": "Avoids both failure modes — neither chases inbox-cleanup nor torches equity, redirecting legacy URLs while standing up a meeting-assistant content cluster — but the tension and transition sequencing are handled implicitly rather than articulated, and the blanket redirect to /blog is topically loose."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site's core problem: it's mid-pivot. The product became **Lumina** ... but the SEO surface still belonged to **InboxZap** ... literally 100% of current clicks/rankings are for `inboxzap`, `inbox zero`, `bulk delete emails`, etc., none of which have anything to do with what the product now does.",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant and the GSC history as legacy inbox demand, and frames every fix around the new reality — a textbook anchor_10 match."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC showed `/blog/post-1`…`post-12` (old InboxZap-era posts) still indexed with real impressions but currently 404ing. Added 301s to `/blog` so that crawl equity isn't wasted on hard 404s.",
+          "rationale": "It acknowledges the legacy posts had real impressions and prevents hard 404s, but it applies a single blanket `/blog/post-:id → /blog` redirect with no per-asset harvest/repurpose/keep/sunset decisions and no individual impression/position figures — closer to the 'one blanket instruction' failure than to an asset-by-asset disposition."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "send that crawl equity to the current blog index instead of hard-404ing ... Rebuilt it as server-rendered ... targeting keywords relevant to the actual product (meeting minutes, action items, AI vs. manual notes, recap emails, meeting fatigue).",
+          "rationale": "Cleanly avoids both failure modes — it neither chases inbox-cleanup content nor torches equity, redirecting legacy URLs while standing up a meeting-assistant content cluster as the growth engine; but the transition is a blunt catch-all redirect rather than an explicitly sequenced equity-bridging plan, so it lands short of the fully articulated middle path."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

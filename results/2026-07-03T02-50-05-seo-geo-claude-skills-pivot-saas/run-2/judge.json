@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "the site was mid-pivot from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the code hadn't caught up... GSC showing thousands of historical impressions on URLs like /blog/post-1–/blog/post-12",
+          "rationale": "Explicitly identifies the pivot (live=Lumina meeting assistant, metadata/GSC=legacy InboxZap demand) and frames every change around that reality, treating the old inbox-cleanup topics as legacy rather than the target market. Falls short of a full 10 only because it's framed as an engineering fix rather than an explicit demand-vs-market strategic thesis."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "the old GSC-ranked blog topics (bulk-delete emails, Gmail storage, unsubscribe tools) are irrelevant... so rather than resurrect that content verbatim I reused the same URLs with content aligned to the current product",
+          "rationale": "Makes a single blanket disposition (reuse all 12 URLs with new content) with only a vague data reference ('thousands of impressions'); never walks the inventory asset-by-asset or cites real per-post impressions/positions to justify differentiated harvest/redirect/sunset calls."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "reused the same URLs with content aligned to the current product... preserves whatever URL equity remains without bait-and-switching visitors onto an unrelated tool",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — retain URL equity while pointing content at the new meeting-assistant positioning — avoiding both doubling-down and total abandonment; loses points for no per-asset redirect/sequencing plan and no data-driven prioritization of which equity was worth saving."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the site was mid-pivot from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the code hadn't caught up... 12 posts on topics that actually match the current product (meeting notes, transcripts, action items) instead of the old email-cleanup topics",
+          "rationale": "Explicitly identifies the pivot, names live site as meeting assistant vs. legacy GSC inbox demand, flags the repo as stale, and frames every change around the new positioning."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "the old GSC-ranked blog topics... are irrelevant to what Lumina sells today, so rather than resurrect that content verbatim I reused the same URLs with content aligned to the current product",
+          "rationale": "Applies a single blanket disposition (repurpose all 12 URLs identically) and only cites GSC impressions in aggregate ('thousands... on /blog/post-1–12') — no asset-by-asset or tiered treatment grounded in real per-post impressions/positions, so no harvest/redirect/sunset differentiation."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "reused the same URLs with content aligned to the current product — preserves whatever URL equity remains without bait-and-switching visitors onto an unrelated tool",
+          "rationale": "Explicitly names the tension and lands a defensible middle path (preserve URL equity while building meeting-assistant content), avoiding both doubling-down on inbox content and torching all equity; loses points for a coarse uniform treatment with no differentiated sequencing or redirect decisions."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the site was mid-pivot from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the code hadn't caught up",
+          "rationale": "Explicitly identifies the pivot, treats the inbox-cleanup blog topics as legacy/irrelevant, and frames every change around the live meeting-assistant product — exactly the required intent inference."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "rather than resurrect that content verbatim I reused the same URLs with content aligned to the current product — preserves whatever URL equity remains",
+          "rationale": "Applies one blanket disposition to all 12 posts (reuse URLs, replace content) and only gestures at \"thousands of historical impressions\" — no per-asset or tiered decisions grounded in actual per-URL impressions/positions from the export."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "so rather than resurrect that content verbatim I reused the same URLs with content aligned to the current product — preserves whatever URL equity remains without bait-and-switching visitors onto an unrelated tool",
+          "rationale": "Cleanly avoids both failure modes and names the tension, landing a defensible middle path (keep the URLs' equity, rebuild the cluster around meetings) — but offers no explicit sequencing or transition plan, so short of the anchor_10 bar."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

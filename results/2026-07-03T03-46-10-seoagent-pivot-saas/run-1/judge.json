@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"Pivot note (Confirmed from repo + GSC): this site previously operated as InboxZap... while the on-page content and nav now describe Lumina. gsc/Queries.csv and gsc/Pages.csv are entirely legacy InboxZap-era demand\"; H1 \"Never take meeting notes again\", body \"Lumina is the AI meeting assistant for teams\"",
+          "rationale": "Explicitly and correctly identifies the pivot: live site = AI meeting assistant, GSC = legacy InboxZap demand, repo metadata partially stale, with the brand-mismatch implication stated clearly. Falls just short of anchor_10 because it doesn't frame forward-looking recommendations around it — the doc is diagnostic."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "\"GSC's Pages.csv export shows 12 distinct /blog/post-N URLs (post-1 through post-12) carrying 13,700 combined impressions and 6 total clicks, all with positions 42–58 — historically indexed, now dead.\"",
+          "rationale": "Cites real aggregate GSC numbers and flags the 12 legacy posts as dead, but treats them as one undifferentiated block — no asset-by-asset (or tiered) harvest/redirect/keep/sunset dispositions and no per-post impression breakdown."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "\"This is a upstream_dependency_unreachable + page_renders_empty critical: the blog is permanently broken\"; brand-mismatch flagged as critical",
+          "rationale": "Avoids both failure modes only by omission — it neither chases inbox-cleanup content nor advocates torching equity — but it never articulates the tension or lands a transition path (redirect salvageable equity, build the meeting-assistant cluster, sequence the move); it stays purely diagnostic."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"Type: SaaS — AI meeting assistant\" ... \"Pivot note (Confirmed from repo + GSC): this site previously operated as InboxZap ... app/layout.tsx metadata still serves the old InboxZap copy ... gsc/Queries.csv and gsc/Pages.csv are entirely legacy InboxZap-era demand\"",
+          "rationale": "The entrant explicitly nails the pivot: live/on-page product = AI meeting assistant, head metadata = stale InboxZap, and GSC = entirely legacy inbox-cleanup demand, framing it as the core reality. Just short of a 10 because the framing is diagnostic rather than threaded through every forward recommendation."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "\"GSC's Pages.csv export shows 12 distinct /blog/post-N URLs (post-1 through post-12) carrying 13,700 combined impressions and 6 total clicks, all with positions 42–58 — historically indexed, now dead.\"",
+          "rationale": "It cites the aggregate legacy numbers and confirms the 12 posts now 404, but never walks the inventory asset-by-asset or assigns any harvest/redirect/keep/sunset disposition to individual posts — it's evidence-gathering, not a migration plan."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "\"12 /blog/post-N URLs with real impressions that now 404\" and \"Google will index/snippet the InboxZap copy while users clicking through land on an unrelated product.\"",
+          "rationale": "It correctly avoids doubling down on dead inbox-cleanup content and flags the lost legacy equity, so it doesn't fall fully into either failure mode, but it never articulates the tension as a choice or lands a defensible middle path (what to redirect vs. rebuild, how to sequence the transition)."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"Pivot note (Confirmed from repo + GSC): this site previously operated as InboxZap... `app/layout.tsx` metadata... still serves the old InboxZap copy on every page, while the on-page content and nav now describe Lumina. `gsc/Queries.csv` and `gsc/Pages.csv` are entirely legacy InboxZap-era demand\"",
+          "rationale": "Explicitly nails the pivot: live site/nav = Lumina meeting assistant, head metadata = stale InboxZap, GSC = entirely legacy inbox demand, and states the implication (Google snippets InboxZap while users land on an unrelated product). Essentially anchor_10."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "\"GSC's `Pages.csv` export shows 12 distinct `/blog/post-N` URLs (post-1 through post-12) carrying 13,700 combined impressions and 6 total clicks, all with positions 42–58 — historically indexed, now dead.\"",
+          "rationale": "Identifies the 12-post inventory and cites real aggregate GSC numbers, but stops at 'now dead' — no per-asset (or tiered) harvest/redirect/keep/sunset dispositions, leaving all the actual migration work undone."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "\"This is a upstream_dependency_unreachable + page_renders_empty critical: the blog is permanently broken\" / brand-mismatch findings — no transition strategy section present",
+          "rationale": "It avoids both failure modes (never chases inbox content, never says torch everything), but it's a pure diagnostic audit — it never articulates the equity-vs-growth tension or sequences a bridge from legacy authority to the meeting-assistant positioning."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 2,
+    "J3": 3
+  },
+  "judgment": 0.3
+}

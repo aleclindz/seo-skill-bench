@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site was mid-pivot from an old product (\"InboxZap,\" an inbox-cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant)... the historical GSC traffic is almost entirely branded/topic-matched to the old InboxZap product... that traffic will naturally decay since it's irrelevant to Lumina",
+          "rationale": "Explicitly identifies the pivot, correctly frames GSC inbox history as legacy/decaying demand distinct from Lumina's market, and orients every fix (metadata, new blog topics, structured data) around the meeting-assistant reality. Falls just short of a full asset-level framing of the legacy demand."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC shows `/blog/post-1` through `post-12` (from the old product) still getting impressions with no page behind them anymore. Added 301s to `/blog` instead of leaving them as 404s.",
+          "rationale": "It notices all 12 legacy posts and cites an aggregate ~13k monthly impressions, but applies a single blanket 301 to the blog index with no per-asset (or tiered) dispositions and no per-post impressions/positions — no harvest/repurpose decisions grounded in individual numbers."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Added 301s to `/blog` instead of leaving them as 404s... rebuilt as server-rendered with 6 new posts targeting the actual product's topics... that traffic will naturally decay since it's irrelevant to Lumina",
+          "rationale": "Avoids both failure modes — preserves link equity via redirects rather than torching it, and builds the meeting-assistant content cluster as the growth engine. But the transition is thin: a blanket redirect plus 'it will decay,' with sequencing left as an open question rather than a deliberate bridge plan."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site was mid-pivot from an old product (\"InboxZap,\" an inbox-cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant) ... the historical GSC traffic is almost entirely branded/topic-matched to the old InboxZap product ... that traffic will naturally decay since it's irrelevant to Lumina",
+          "rationale": "Explicitly identifies the pivot from live/source content, correctly frames GSC history as legacy inbox demand irrelevant to the current product, and orients every fix around Lumina. Falls just short of a perfect 10 because the live URL was unresponsive so the 'live = meeting assistant' confirmation came from source rather than the live site, but the intent read is unambiguous."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Old InboxZap-era blog posts (still indexed, see GSC) have no Lumina equivalent — send them to the blog index instead of 404ing ... source: '/blog/post-:id', destination: '/blog', permanent: true",
+          "rationale": "Applies a single blanket 301 of all 12 legacy posts to the blog index rather than an asset-by-asset (or tiered) disposition, and cites only an aggregate ~13k impressions with no per-post impressions/positions from the export; no harvest/repurpose of any salvageable post is considered."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "the historical GSC traffic is almost entirely branded/topic-matched to the old InboxZap product ... that traffic will naturally decay ... Worth deciding whether to invest in paid/content promotion for the new meeting-assistant keyword space ... 301s to /blog instead of leaving them as 404s",
+          "rationale": "Avoids both failure modes: doesn't chase inbox-cleanup content, and preserves rather than torches legacy equity via 301s while building the meeting-assistant cluster as the growth engine. Held back from top marks because the bridge is a crude redirect-all-to-index (low topical relevance for equity transfer) and the transition sequencing is left as an open recommendation rather than an articulated plan."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site was mid-pivot from an old product (\"InboxZap,\" an inbox-cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant)... the historical GSC traffic is almost entirely branded/topic-matched to the old InboxZap product... that traffic will naturally decay since it's irrelevant to Lumina",
+          "rationale": "Explicitly identifies the pivot, correctly frames GSC history as legacy inbox demand and the repo as partially stale, and reorients every fix (metadata, new blog cluster, structured data) around the meeting-assistant reality. Slight ding: it inferred the live product from source since the live URL was unresponsive, rather than observing it directly."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Old InboxZap-era blog posts (still indexed, see GSC) have no Lumina equivalent — send them to the blog index instead of 404ing... Added 301s to /blog",
+          "rationale": "It applies one blanket 301 of all /blog/post-1..12 to the index, citing only an aggregate ~13k impressions figure — no per-post impressions/positions and no asset-by-asset harvest/repurpose/keep/sunset decisions, so it lands just above the pure-blanket floor."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Added 301s to /blog instead of leaving them as 404s... Rebuilt as server-rendered with 6 new posts targeting the actual product's topics... that traffic will naturally decay... Worth deciding whether to invest in paid/content promotion for the new meeting-assistant keyword space",
+          "rationale": "Avoids both failure modes — preserves legacy equity via redirects rather than torching or chasing it, and builds the meeting-assistant cluster as the growth engine while flagging the decay tradeoff — but the equity bridge is a coarse redirect-to-index rather than a sequenced transition, keeping it short of the top anchor."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

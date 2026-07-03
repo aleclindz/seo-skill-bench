@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products (InboxZap, an email-cleanup tool → Lumina, an AI meeting assistant) but the SEO/technical layer never caught up",
+          "rationale": "Explicitly identifies the pivot from live product vs. legacy GSC demand, notes the repo was partially stale, and frames every fix (title, blog, redirects) around the new meeting-assistant reality. Falls just short of a fully articulated 'inbox demand is legacy, not our market' thesis but the framing is clearly there."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC showed /blog/post-1…/post-12 still carrying ~13k impressions... Added a 301 from the old numeric slugs to /blog",
+          "rationale": "Grounds the decision in a real aggregate GSC number and picks 301-over-404, but treats all 12 posts as one undifferentiated blanket redirect with no per-asset (or tiered) impressions/positions and no harvest/repurpose reasoning — well short of an asset-by-asset disposition."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "send their residual search traffic to the current blog instead of 404ing",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content and doesn't torch equity via 404 — and builds the Lumina cluster as the growth engine, but the bridge is a weak topically-irrelevant redirect to a generic /blog with no sequencing or salvage-vs-sunset triage, so the middle path is only partially defensible."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products (InboxZap, an email-cleanup tool → Lumina, an AI meeting assistant) but the SEO/technical layer never caught up.",
+          "rationale": "Explicitly names the pivot, treats the ~13k inbox-cleanup GSC impressions as legacy demand for a defunct product, and frames every fix around the live Lumina product. Falls just short of a 10 only because it doesn't dwell on the repo being partially stale as a distinct third signal, though it implies it."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC showed `/blog/post-1`…`/post-12` still carrying ~13k impressions, but those routes don't exist and the topic (email/inbox) has nothing to do with the new product. Added a 301 from the old numeric slugs to `/blog`.",
+          "rationale": "Better than a blanket ignore — it cites the aggregate impressions and gives a reasoned disposition (301 the whole numeric range to /blog) — but it treats all 12 as one undifferentiated bucket with no per-asset or tiered impressions/positions and no harvest/repurpose consideration for any salvageable topic."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "send their residual search traffic to the current blog instead of leaving them 404... Rebuilt it as server-rendered with real content... Blog — Lumina AI Meeting Assistant",
+          "rationale": "Avoids both failure modes: it neither doubles down on inbox content nor hard-torches the equity, redirecting legacy URLs while standing up a meeting-assistant blog cluster. But 301ing 12 topically-unrelated posts to a generic /blog index risks being treated as soft-404s, and it never explicitly articulates the equity-transition tension or sequences the migration, so it lands at a defensible-but-shallow middle."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products (InboxZap, an email-cleanup tool → Lumina, an AI meeting assistant) but the SEO/technical layer never caught up... GSC showed /blog/post-1…/post-12 still carrying ~13k impressions, but those routes don't exist and the topic (email/inbox) has nothing to do with the new product.",
+          "rationale": "Explicitly names the pivot, treats the inbox GSC impressions as legacy/off-topic demand, and reorients all new content and metadata to the meeting-assistant product. Falls just short of a full framing narrative but the intent inference is clear and drives every action."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Added a 301 from the old numeric slugs to /blog instead of leaving them 404... source: '/blog/post-:id(\\d+)', destination: '/blog', permanent: true",
+          "rationale": "Made one blanket 301 disposition for all 12 posts, referencing only aggregate impressions (~13k) and a topic-mismatch rationale — better than a bare delete/keep, but no per-asset walk, no individual positions/impressions, and no harvest-vs-sunset distinction, so most of the disposition work is undone."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "send their residual search traffic to the current blog instead of 404ing... Rebuilt it as server-rendered with real content, added dynamic /blog/[slug] post pages... [3 meeting-assistant posts]",
+          "rationale": "Avoids both traps — doesn't chase inbox content and doesn't torch legacy equity, using a 301 bridge while standing up the meeting-assistant cluster as the growth engine. The middle path is defensible but the tension is left implicit and a mass redirect to a generic index risks soft-404 equity loss rather than mapping to topical successors."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

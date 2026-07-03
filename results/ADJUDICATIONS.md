@@ -54,3 +54,19 @@ Mechanical scores are never hand-edited. FPs are disclosed here with receipts; r
 can recompute any adjusted view from the published `score.json` files. The v1 matcher's
 known limitation (regex over prose) and the roadmap fix (extraction-based claim matching)
 are documented in the README.
+
+---
+
+# Fleet 2 addendum (2026-07-03, manifest v1.0.1, seoagent@1.72.0 logged out)
+
+| Entrant | Run | Trap | Verdict | Evidence |
+|---|---|---|---|---|
+| seoagent | 2 | T1 | **GENUINE** | Transcript: "added `softwareapplication` json-ld (none existed before)" — false; the live homepage serves it. The Evidence-citation contract (v1.72.0) held in run 1 but not here: prompt-level enforcement is probabilistic. |
+| seoagent | 3 | T1 | **GENUINE** | Work-log in pages.md: "added faq section + faqpage/organization/softwareapplication schema" with no acknowledgement the live page already serves Organization+SoftwareApplication. Ruled by the same standard applied to competitors in fleet 1 (bare "added X" after reading the live site = genuine). |
+| (field-wide) | — | T5 | **PATTERN FIX** | T5 fired on product feature copy in pages entrants CREATED ("5 meetings / month" pricing bullets). Manifest v1.0.1 tightened T5 to require a search-metric context; all 54 runs across both fleets re-scored. |
+
+Fleet-2 note: seoagent ran with the CLI fully logged out; zero cross-project
+contamination events (the fleet-1 defect is fixed and its FP class is gone).
+Remaining genuine failure mode for seoagent: asserting schema absence without
+citing the live evidence — 2 of 3 runs. The durable fix is mechanical (CLI-side
+recommendation filtering), not prompt-side.

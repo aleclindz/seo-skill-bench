@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "this is a SaaS mid-pivot — the product changed from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), but the site's SEO/technical plumbing never caught up... the old content had nothing to do with what Lumina now sells, so it could never convert even if it ranked",
+          "rationale": "Explicitly names the pivot, treats the inbox-cleanup blog topics as stale legacy demand, and reframes content around the meeting-assistant reality; falls short of a full 10 only because it never distinguishes the GSC-export queries from live product intent as data, treating the pivot as an engineering-plumbing problem more than a demand-analysis one."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC showing up to 3,900 impressions/post on `/blog/post-1..12`... kept the existing slugs to preserve whatever indexing/URL equity Google already has, but rewrote the content",
+          "rationale": "Cites only a single aggregate impressions figure and applies one blanket disposition (keep all 12 slugs, rewrite content) to every post — no per-asset walk, no individual impressions/positions, and no redirect/sunset differentiation grounded in the export."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "kept the existing slugs to preserve whatever indexing/URL equity Google already has, but rewrote the content from stale email-cleanup topics to genuinely relevant meeting-productivity topics",
+          "rationale": "Lands a defensible middle path — preserve URL equity while repositioning content toward the growth product — avoiding both wholesale abandonment and doubling down on inbox content, but never explicitly articulates the equity-vs-relevance tension or sequences the transition, and glosses over that rewriting content on inbox-ranked URLs may forfeit the very equity it claims to preserve."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this is a SaaS mid-pivot — the product changed from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), but the site's SEO/technical plumbing never caught up",
+          "rationale": "Explicitly names the pivot, correctly frames InboxZap-era content as legacy that 'could never convert even if it ranked,' and orients the whole plan around the live meeting-assistant product. Falls just short of anchor_10 for not separately characterizing the repo as partially stale."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC showing up to 3,900 impressions/post on /blog/post-1..12 ... kept the existing slugs to preserve whatever indexing/URL equity Google already has, but rewrote the content from stale email-cleanup topics to genuinely relevant meeting-productivity topics",
+          "rationale": "Applies a single blanket disposition (keep-slug, rewrite-in-place) to all 12 posts and cites only one aggregate impressions figure, rather than walking the inventory asset-by-asset with per-post impressions/positions and differentiated harvest/redirect/keep/sunset calls."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "kept the existing slugs to preserve whatever indexing/URL equity Google already has, but rewrote the content ... the old content had nothing to do with what Lumina now sells, so it could never convert even if it ranked",
+          "rationale": "Lands a defensible middle path — preserves URL equity while pivoting content to the new positioning — avoiding both wholesale abandonment and doubling down on inbox-cleanup, but never explicitly articulates the equity-vs-relevance tension or sequences the transition, and glosses over the risk that rewriting off-topic drops the very email queries that earned the impressions."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this is a SaaS mid-pivot — the product changed from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), but the site's SEO/technical plumbing never caught up",
+          "rationale": "Explicitly nails the pivot, reads GSC as legacy inbox demand, and frames every fix around the new meeting-assistant reality; only shy of 10 because it never states the legacy queries are the wrong market to chase, it just quietly rewrites away from them."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "kept the existing slugs to preserve whatever indexing/URL equity Google already has, but rewrote the content from stale email-cleanup topics to genuinely relevant meeting-productivity topics",
+          "rationale": "Applies one blanket disposition to all 12 posts (keep URL, rewrite content) with only a generic 'up to 3,900 impressions/post' reference — no per-asset walk, no per-post impressions/positions, and no harvest/redirect/sunset differentiation grounded in the actual export."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "kept the existing slugs to preserve whatever indexing/URL equity... rewrote the content... the old content had nothing to do with what Lumina now sells, so it could never convert even if it ranked",
+          "rationale": "Lands a defensible middle path — preserve URL equity while repointing to the meeting-assistant cluster — avoiding both blind failure modes, but never articulates the tension explicitly or sequences the transition, and swapping topic under retained URLs risks the very relevance loss it doesn't address."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

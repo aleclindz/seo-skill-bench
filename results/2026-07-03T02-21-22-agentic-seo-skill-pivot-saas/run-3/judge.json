@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS **pivoted products** (InboxZap, an email inbox-cleanup tool → Lumina, an AI meeting assistant) and the migration was left half-finished. Nearly every organic-traffic problem traces back to that... Even fixed, this traffic doesn't want a meeting AI product",
+          "rationale": "Explicitly names the pivot, triangulates live site vs. GSC vs. stale repo, and frames every recommendation around the reality that legacy inbox demand is not the current product's market."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "GSC shows 12 indexed /blog/post-N URLs with real impressions (up to 3,900) targeting InboxZap-era queries... All of it sits at position 40–60 with near-zero CTR... 301-redirected legacy /blog/post-:id URLs to /blog",
+          "rationale": "Cites real impression/position/CTR figures and gives a data-justified disposition (301 to hub, no re-investment), but applies one blanket redirect to all 12 rather than walking them asset-by-asset or in tiers with per-asset harvest/keep/sunset calls."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Branded equity is still alive and worth protecting. The query `inboxzap` still converts (14 clicks, position 4.1)... consolidate their link equity instead of leaving them as 404s... build a content calendar around meeting-AI intent clusters",
+          "rationale": "Explicitly names the tension between salvageable branded equity and off-strategy legacy content, preserving/redirecting the former (branded FAQ answer, 301s) while building the meeting-AI cluster as the growth engine and sequencing the transition — avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS **pivoted products** (InboxZap, an email inbox-cleanup tool → Lumina, an AI meeting assistant) and the migration was left half-finished",
+          "rationale": "Explicitly nails the pivot, correctly reads the live site as Lumina, the GSC history as legacy InboxZap demand, and the repo as half-migrated, and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "GSC shows 12 indexed `/blog/post-N` URLs with real impressions (up to 3,900)... at position 40–60 with near-zero CTR. Even fixed, this traffic doesn't want a meeting AI product... 301-redirected legacy /blog/post-:id URLs to /blog",
+          "rationale": "Cites real GSC numbers and reasons from them, and splits legacy brand equity (inboxzap position 4.1 → dedicated FAQ answer) from off-topic posts, but treats all 12 posts as one blanket 301-to-hub bucket rather than walking them asset-by-asset or in data-justified tiers for harvest vs. sunset."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "consolidate their link equity instead of leaving them as 404s (no honest 1:1 topical match exists...); Branded equity is still alive and worth protecting... visitors actively searching for the old brand need a clear answer",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — preserve branded equity via a targeted FAQ, redirect (not torch) legacy URLs to consolidate authority, and build the meeting-AI cluster as the growth engine — avoiding both doubling-down and scorched-earth."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS **pivoted products** (InboxZap, an email inbox-cleanup tool → Lumina, an AI meeting assistant) and the migration was left half-finished. Nearly every organic-traffic problem traces back to that",
+          "rationale": "Explicitly names the pivot, identifies live site = meeting assistant vs GSC = legacy inbox demand vs repo = half-migrated, and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301-redirected legacy `/blog/post-N` URLs to `/blog`... no honest 1:1 topical match exists for InboxZap-era posts, so they route to the nearest live hub",
+          "rationale": "Cites real GSC numbers (up to 3,900 impressions, position 40-60, near-zero CTR) to justify its call, but applies a single blanket 301-to-hub disposition to all 12 posts rather than walking the inventory asset-by-asset or in tiers — no post is individually assessed for harvest."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "301-redirected... to consolidate their link equity instead of leaving them as 404s... Added a real FAQ section... including a direct answer for 'Is Lumina the same as InboxZap?' to capture and convert residual branded search traffic",
+          "rationale": "Lands a defensible middle path: preserves salvageable branded equity (inboxzap at 4.1) via redirects and an FAQ bridge, sunsets off-strategy inbox content, and builds the meeting-AI cluster as the growth engine with a sequenced transition — avoiding both blind chasing and blind torching."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the company rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the migration was left half-finished",
+          "rationale": "Explicitly identifies the pivot, correctly reads the live site as the meeting assistant and the old blog/GSC impressions as legacy demand, and frames every fix around the new positioning. Falls just short of a 10 only because it never quotes GSC to characterize inbox-cleanup as the legacy market beyond the impression total."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "All 12 historic blog posts were 404 despite still holding ~13,900 GSC impressions → added 301 redirects to `/blog` (no topical overlap with the new product, so a hub redirect beats a fake 1:1 mapping)",
+          "rationale": "Cites a real aggregate GSC figure and assigns a reasoned disposition (blanket 301 to a hub), which clears anchor_0, but it treats all 12 as one undifferentiated bucket with no per-asset impressions/positions and no harvest/keep/sunset differentiation, so it lands well below the asset-by-asset anchor_10."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "added 301 redirects to `/blog` ... instead of leaving indexed URLs dead ... **New content**, since the old blog was 100% off-topic for the pivoted product",
+          "rationale": "Avoids both failure modes — it neither doubles down on inbox-cleanup content nor torches equity, using 301s to bridge authority while building the meeting-assistant cluster as the growth engine. It stops short of a 10 because the tension is enacted rather than articulated, and there is no explicit sequencing of the transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the migration was left half-finished",
+          "rationale": "The entrant explicitly identifies the pivot from the live product, treats the old blog as legacy/off-topic, and frames every recommendation (metadata rewrite, new cluster) around the meeting-assistant reality. Slight ding: it leans on repo/live evidence but never cites the GSC history as the specific signal of legacy demand."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "All 12 historic blog posts were 404 despite still holding ~13,900 GSC impressions → added 301 redirects to `/blog` (no topical overlap with the new product, so a hub redirect beats a fake 1:1 mapping)",
+          "rationale": "It gives a defensible blanket disposition (301 all 12 to the blog hub) with a stated rationale grounded in the aggregate impression figure, but it never walks the inventory asset-by-asset or in tiers, and cites no per-post impressions/positions — so it lands well short of a data-justified, per-asset plan."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "added 301 redirects to `/blog` ... instead of leaving indexed URLs dead ... **New content**, since the old blog was 100% off-topic ... build the meeting-assistant cluster",
+          "rationale": "It avoids both failure modes — preserving legacy link equity via redirects rather than torching it, while building the meeting-assistant cluster as the growth engine — but the tension is handled implicitly and the transition isn't sequenced, so it stops short of the fully articulated middle path."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the company rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the migration was left half-finished",
+          "rationale": "Explicitly names the pivot, treats the old inbox-cleanup blog as legacy/off-topic, and frames every fix and all new content around the meeting-assistant reality. Falls just short of a 10 only because it doesn't distinguish the GSC-as-legacy-demand framing quite as sharply as it could."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "All 12 historic blog posts were 404 despite still holding ~13,900 GSC impressions → added 301 redirects to /blog (no topical overlap with the new product, so a hub redirect beats a fake 1:1 mapping)",
+          "rationale": "It issues a single blanket disposition (301 everything to the hub) rather than walking the inventory asset-by-asset, but it is grounded in an aggregate GSC number and defended with reasoning, so it clears the no-data blanket floor without reaching per-asset tiering."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "added 301 redirects to /blog...instead of leaving indexed URLs dead...New content, since the old blog was 100% off-topic for the pivoted product: 3 new in-depth posts",
+          "rationale": "Cleanly avoids both traps — it preserves legacy equity through redirects rather than torching it, and builds the meeting-assistant cluster as the growth engine without chasing inbox queries. The tension is handled implicitly and the transition sequencing is thin, keeping it short of a top score."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

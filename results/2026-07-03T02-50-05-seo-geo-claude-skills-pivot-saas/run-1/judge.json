@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "\"content had moved from the old product (\\\"InboxZap\\\", an email-cleanup tool) to the new one (\\\"Lumina\\\", an AI meeting assistant), but the technical SEO surface was never updated to match\" and \"12 historic post URLs ... that still carry GSC impressions\"",
+          "rationale": "Explicitly identifies the pivot, treats the old blog URLs as legacy inbox-era demand and builds all new content around the meeting-assistant reality; loses a point only because it never cites the actual GSC figures to anchor the 'legacy vs. current market' framing."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "\"added 301 redirects from the old dead post URLs to `/blog`\" / redirect rule `source: '/blog/post-:id', destination: '/blog'`",
+          "rationale": "It avoids a naive 404/ignore by 301-ing residual traffic, but treats all 12 posts as one undifferentiated blanket redirect to the blog index with no per-asset harvest/repurpose/sunset decisions and no reference to real impressions or positions from the export."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "\"so that residual search traffic doesn't hit a 404\" plus building a new meeting-assistant blog cluster (4 posts) as the growth engine",
+          "rationale": "Lands a partial middle path — it preserves some legacy equity via redirects and builds the new cluster rather than chasing inbox content — but the tension is never articulated, redirects dump to a generic index rather than relevant successors, and there's no sequenced transition plan."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "content had moved from the old product (\"InboxZap\", an email-cleanup tool) to the new one (\"Lumina\", an AI meeting assistant), but the technical SEO surface was never updated to match",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant and the InboxZap-era blog as legacy demand, and frames every fix around the current product; only shy of 10 because it doesn't distinguish repo-staleness nuance."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "added 301 redirects from the old dead post URLs to `/blog` so that residual search traffic doesn't hit a 404",
+          "rationale": "Applies one blanket 301 of all 12 posts to /blog with no per-asset disposition and no citation of actual impressions/positions from the export — closer to a single blanket instruction than a data-grounded inventory walk."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "added 301 redirects from the old dead post URLs to `/blog`... Rebuilt the blog... on the current product's topic",
+          "rationale": "Avoids both failure modes — preserves legacy equity via redirects while building the meeting-assistant cluster as the growth engine — but the bridge is crude (blanket redirect to /blog rather than topically relevant successors) and the transition is not explicitly sequenced."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "content had moved from the old product (\"InboxZap\", an email-cleanup tool) to the new one (\"Lumina\", an AI meeting assistant), but the technical SEO surface was never updated to match",
+          "rationale": "Explicitly names the pivot, treats InboxZap as legacy and Lumina as the current product, and frames every fix around the meeting-assistant reality. Falls short of a perfect 10 only because it never distinguishes the GSC-history vs. live-site vs. repo evidence sources."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "added 301 redirects from the old dead post URLs to `/blog` so that residual search traffic doesn't hit a 404",
+          "rationale": "Acknowledges the 12 posts 'still carry GSC impressions' but applies one blanket 301 to the blog index — no per-asset disposition, no cited impressions/positions, and no harvest-to-relevant-successor decisions. Barely above the blanket-instruction floor."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "added 301 redirects from the old dead post URLs to `/blog` ... Rebuilt the blog ... on the current product's topic",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content and doesn't torch equity into 404s, bridging via redirects while building the meeting cluster — but the transition is crude (all legacy URLs to a generic index) with no sequencing or tiering of salvageable equity."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 5
+  },
+  "judgment": 0.5
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 6,
+          "basis": "FAQ: 'Lumina is the same company, evolved. We started as InboxZap, an inbox cleanup tool, and rebuilt the product from the ground up as an AI meeting assistant... InboxZap's inbox-cleanup features are no longer available'",
+          "rationale": "The output clearly understands the pivot and bakes it into the site copy — a dedicated InboxZap FAQ treats inbox-cleanup as retired legacy. But it never states this as an SEO/strategy implication or references GSC legacy demand; the pivot is embodied in shipped code, not framed as strategic analysis."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "The output is entirely new Next.js page code for the meeting-assistant product; there is no disposition for the 12 legacy blog posts and no reference to GSC impressions/positions. The truncated response never touches migration."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "'InboxZap's inbox-cleanup features are no longer available; if you're looking for that tool, it has been retired.'",
+          "rationale": "It builds the meeting-assistant positioning (one half of the middle path) and acknowledges the legacy brand exists, but there is no transition plan, no equity preservation, and no redirect/harvest logic — the tension is never articulated, leaving it close to the abandon-with-no-bridge failure mode."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 5,
+          "basis": "'Lumina is the same company, evolved. We started as InboxZap, an inbox cleanup tool, and rebuilt the product from the ground up as an AI meeting assistant... InboxZap's inbox-cleanup features are no longer available'",
+          "rationale": "The entrant clearly built all content around the live meeting-assistant product and explicitly acknowledges the InboxZap pivot in the FAQ, but never articulates the strategic implication — that GSC's inbox-cleanup history is legacy demand and the repo is stale; the pivot is handled as product copy, not as an analyzed situation."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No migration thinking whatsoever — the 12 legacy blog posts, GSC impressions/positions, and any harvest/redirect/sunset dispositions are entirely missing; the output is truncated product code with no per-asset decisions."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "'InboxZap's inbox-cleanup features are no longer available; if you're looking for that tool, it has been retired.'",
+          "rationale": "Leans toward the abandon failure mode — it retires the legacy offering outright with no redirect or equity-transition plan, and never articulates the tension; the lone bridge is one FAQ explaining the evolution, so it doesn't cleanly torch everything but offers no defensible transition strategy."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 4,
+          "basis": "\"Is Lumina the same product as InboxZap? ... We started as InboxZap, an inbox cleanup tool, and rebuilt the product from the ground up as an AI meeting assistant ... InboxZap's inbox-cleanup features are no longer available; if you're looking for that tool, it has been retired.\"",
+          "rationale": "The output clearly builds around Lumina-as-meeting-assistant and even acknowledges the InboxZap pivot in an FAQ, so it's well above 'never notices,' but it never references the GSC legacy inbox demand, treats the repo as stale, or frames any strategic recommendation around that reality — it just ships product-page copy."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "There is no migration thinking whatsoever: the 12 legacy blog posts, their impressions/positions, and any harvest/redirect/keep/sunset dispositions are entirely unaddressed."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "\"InboxZap's inbox-cleanup features are no longer available; if you're looking for that tool, it has been retired.\"",
+          "rationale": "It avoids doubling down on inbox-cleanup content, but offers no transition plan to preserve or redirect salvageable legacy equity — a single FAQ retirement note is the only bridge, so it leans toward abandoning legacy authority without sequencing the tension."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 5,
+    "J2": 0,
+    "J3": 2
+  },
+  "judgment": 0.2
+}

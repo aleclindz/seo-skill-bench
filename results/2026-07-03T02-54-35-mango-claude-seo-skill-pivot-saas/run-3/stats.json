@@ -1,0 +1,49 @@
+{
+  "skill": "mango-claude-seo-skill",
+  "fixture": "pivot-saas",
+  "run": 3,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 1703246,
+  "exit": 0,
+  "install": {
+    "method": "git-skill-md",
+    "ok": true,
+    "detail": "collection: 6 skill dirs -> .claude/skills/"
+  },
+  "files_changed": 153,
+  "usage": {
+    "usage": {
+      "input_tokens": 11526,
+      "cache_creation_input_tokens": 155071,
+      "cache_read_input_tokens": 4059318,
+      "output_tokens": 43250,
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 155071,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1923,
+          "cache_read_input_tokens": 118580,
+          "cache_creation_input_tokens": 1456,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1456
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 2.832197400000001,
+    "num_turns": 92
+  }
+}

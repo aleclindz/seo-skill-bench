@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the site is mid-pivot from an old product (\"InboxZap,\" an email-cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant)... GSC shows /blog/post-1…/blog/post-12 still pulling thousands of monthly impressions each",
+          "rationale": "Explicitly identifies the pivot from live product, treats the GSC inbox-cleanup history as legacy demand for a product Lumina no longer offers, and frames every fix around the meeting-assistant reality. Falls just short of a 10 only because the legacy demand is characterized loosely rather than with cited figures."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "reused those exact 12 URLs with new, genuinely on-topic content... instead of the old off-brand inbox-cleanup topics the GSC queries showed they used to rank for",
+          "rationale": "Applies a single blanket disposition (repurpose all 12 URLs) rather than per-asset harvest/redirect/sunset decisions, and cites only a vague 'thousands of impressions each' with no per-post impressions or positions from the export."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "I didn't try to resurrect the old GSC-heavy queries... since they're about a product Lumina no longer offers... Redirected that intent implicitly by giving the same URLs fresh, relevant content instead",
+          "rationale": "Articulates the tension and lands a defensible middle path — preserves indexed URL equity while building the meeting cluster as the growth engine — but the plan to 'redirect intent implicitly' by keeping URLs with off-topic-to-the-old-query content is weaker than an explicit 301/transition sequence, capping it below the top anchor."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the site is mid-pivot from an old product (\"InboxZap,\" an email-cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant)... GSC shows /blog/post-1…/blog/post-12 still pulling thousands of monthly impressions each... the old off-brand inbox-cleanup topics the GSC queries showed they used to rank for",
+          "rationale": "Explicitly nails the pivot: live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale, and frames every fix around that reality. Falls just short of a 10 only because it doesn't dwell on the strategic implications beyond the technical fixes."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC shows /blog/post-1…/blog/post-12 still pulling thousands of monthly impressions each, but there was no [slug] route at all... Rebuilt the blog as SSR, and reused those exact 12 URLs with new, genuinely on-topic content",
+          "rationale": "It correctly recognizes the 12 URLs hold indexed equity, but applies a single blanket disposition — repurpose all 12 identically — with only an aggregate 'thousands each' hand-wave rather than per-asset impressions/positions or differentiated harvest/redirect/keep/sunset decisions."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "I didn't try to resurrect the old GSC-heavy queries... since they're about a product Lumina no longer offers — chasing that traffic would mean off-brand content with no conversion path. Redirected that intent implicitly by giving the same URLs fresh, relevant content instead.",
+          "rationale": "Explicitly articulates the tension and lands a defensible middle path — preserve URL-level equity while building the meeting-assistant cluster as the growth engine and refusing to chase dead inbox demand. Loses points because reusing indexed URLs for topically unrelated content risks relevance signals, and there's no explicit transition sequencing or redirect fallback."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the site is mid-pivot from an old product (\"InboxZap,\" an email-cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant)... GSC shows /blog/post-1…/blog/post-12 still pulling thousands of monthly impressions each... the old off-brand inbox-cleanup topics the GSC queries showed they used to rank for",
+          "rationale": "Explicitly names the pivot, correctly frames GSC inbox demand as legacy and off-brand, and threads that reading through every recommendation; falls just short of anchor_10 only in not calling out repo staleness as its own axis."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC shows /blog/post-1…/blog/post-12 still pulling thousands of monthly impressions each... Rebuilt the blog as SSR, and reused those exact 12 URLs with new, genuinely on-topic content",
+          "rationale": "Makes one defensible disposition (repurpose-in-place) applied uniformly to all 12 URLs and references aggregate impressions, but never walks the inventory asset-by-asset with real per-post impressions/positions or differentiates harvest vs. redirect vs. sunset per post."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "I didn't try to resurrect the old GSC-heavy queries... since they're about a product Lumina no longer offers — chasing that traffic would mean off-brand content with no conversion path. Redirected that intent implicitly by giving the same URLs fresh, relevant content instead",
+          "rationale": "Names the tension and lands a real middle path — preserve indexed URL equity while rebuilding the meeting-assistant cluster rather than torching or chasing legacy — but the transition is a single blanket move with no sequencing or salvage-tiering, so it stops short of the fully articulated balance."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

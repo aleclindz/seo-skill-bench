@@ -1,0 +1,17 @@
+{
+  "skill": "claude-seo",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.47619047619047616,
+  "detection_all": [
+    0.47619047619047616,
+    0.23809523809523808,
+    0.47619047619047616
+  ],
+  "trap_avoidance_median": 1,
+  "trap_avoidance_all": [
+    1,
+    1,
+    1
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This is a SaaS mid-pivot from an old product (\"InboxZap,\" an email/inbox cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant)... targeting real search intent for the *current* product... rather than resurrecting old inbox-cleanup content for a product Lumina no longer sells.",
+          "rationale": "Explicitly names the pivot, distinguishes live-site Lumina from InboxZap-era GSC history as legacy, and frames content around the current product — near-anchor_10."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "The 12 post URLs GSC shows historical impressions for (`/blog/post-1`...`post-12`, thousands of impressions each) don't correspond to any real route.",
+          "rationale": "Notices the legacy posts and gestures at 'thousands of impressions each,' but cites no per-asset GSC figures and assigns no dispositions (no harvest/301/keep/sunset) — it just builds new posts and drops the old URLs with no redirect plan."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "Added 6 genuine posts... targeting real search intent for the *current* product... rather than resurrecting old inbox-cleanup content.",
+          "rationale": "Avoids the double-down failure mode and builds the meeting-assistant growth engine, but abandons the legacy inbox equity with no 301 bridge or sequenced transition, and never articulates the tension — leaning into the 'torch legacy equity' side."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This is a SaaS mid-pivot from an old product (\"InboxZap,\" an email/inbox cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant)... Search results and social shares were selling a different product than the page delivered.",
+          "rationale": "Cleanly identifies the pivot, treats InboxZap-era metadata as stale, and frames every fix around the current meeting-assistant product; loses a point because it reads the 12 GSC posts as broken routes rather than explicitly naming them as legacy inbox-cleanup *demand* to be handled as such."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "The 12 post URLs GSC shows historical impressions for (`/blog/post-1`...`post-12`, thousands of impressions each) don't correspond to any real route.",
+          "rationale": "It notices the 12 legacy posts and their impressions but treats them purely as a broken-route bug — no per-asset harvest/redirect/keep/sunset disposition, no 301s from the old inbox URLs to successors; it simply builds 6 net-new posts and leaves the legacy equity unaddressed."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "Added 6 genuine posts... targeting real search intent for the *current* product... rather than resurrecting old inbox-cleanup content for a product Lumina no longer sells.",
+          "rationale": "It correctly avoids doubling down on inbox-cleanup content and builds the meeting-assistant cluster as the growth engine, but it lands closer to the abandon failure mode: the legacy impressions get no redirect or transition bridge to carry authority to the new positioning."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This is a SaaS mid-pivot from an old product (\"InboxZap,\" an email/inbox cleanup tool) to the current one (\"Lumina,\" an AI meeting assistant) — and the migration was left half-done",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup as legacy, and frames every recommendation around the current meeting-assistant product; only shy of full marks because it read the pivot off the repo rather than the (unreachable) live site."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "The 12 post URLs GSC shows historical impressions for (`/blog/post-1`...`post-12`, thousands of impressions each) don't correspond to any real route.",
+          "rationale": "It notices the 12 legacy URLs and their impressions but does no asset-by-asset disposition — no per-post numbers, no harvest/301/keep/sunset decisions; it simply builds 6 new posts and leaves the legacy URLs with no redirect or salvage plan."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "Added 6 genuine posts...targeting real search intent for the *current* product...rather than resurrecting old inbox-cleanup content for a product Lumina no longer sells.",
+          "rationale": "It correctly avoids doubling down on inbox content and builds the new cluster, but effectively abandons the legacy equity — the 12 URLs with thousands of impressions get no redirect or bridge — so it lands closer to the 'torch the equity' failure mode than a sequenced middle path."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 2,
+    "J3": 3
+  },
+  "judgment": 0.3
+}

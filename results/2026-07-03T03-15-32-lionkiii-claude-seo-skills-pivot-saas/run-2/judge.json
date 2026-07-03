@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the SEO layer never caught up — that mismatch was the root cause... Since none of your current top queries are about meeting assistants",
+          "rationale": "Explicitly identifies the pivot, correctly frames the inbox-cleanup GSC history as legacy demand versus the current meeting-assistant product, and threads that reality through every recommendation. Falls just short of a 10 only because it reads GSC as one aggregate rather than distinguishing the data sources in detail."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC showed 12 old `/blog/post-N` URLs still pulling ~13,800 impressions/month, but those routes no longer existed in the codebase at all (pure 404s). Added a 301 redirect to `/blog`",
+          "rationale": "Grounds the decision in a real (if aggregate) GSC figure and picks a disposition, but applies one blanket 301 to all 12 posts rather than walking the inventory asset-by-asset with per-URL impressions/positions and differentiated harvest/redirect/sunset calls."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Added a 301 redirect to `/blog` instead of losing that indexed equity outright... the next real lever is building topical authority for that space... replacing the old inbox-zero content that no longer matches the product",
+          "rationale": "Avoids both failure modes — preserves legacy equity via redirect rather than torching it, and builds the meeting-assistant cluster as the growth engine — but the transition is a coarse catch-all redirect rather than a sequenced, equity-tiered bridge, so the tension is handled implicitly rather than articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the SEO layer never caught up — that mismatch was the root cause of poor organic performance... Since none of your current top queries are about meeting assistants, the next real lever is building topical authority for that space",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup GSC history as legacy demand, and frames every fix (metadata, content, redirects) around the current meeting-assistant reality. Only shy of a 10 because the legacy-vs-current distinction is stated cleanly but not deeply quantified."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC showed 12 old `/blog/post-N` URLs still pulling ~13,800 impressions/month, but those routes no longer existed in the codebase at all (pure 404s). Added a 301 redirect to `/blog` instead of losing that indexed equity outright.",
+          "rationale": "References the real aggregate GSC number and takes a disposition (blanket 301), which clears anchor_0, but treats all 12 posts as one bucket — no per-asset impressions/positions, no harvest/repurpose vs keep vs sunset differentiation, and a wildcard redirect to a topically-mismatched index risks soft-404s."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "**Reclaimed dying legacy equity**... Added a 301 redirect to `/blog`... replacing the old inbox-zero content that no longer matches the product... the next real lever is building topical authority for that space",
+          "rationale": "Avoids both failure modes — doesn't double down on inbox content and doesn't torch equity outright, preserving it via redirect while standing up the meeting cluster as the growth engine — but the transition is crude (single blanket redirect) rather than a sequenced, equity-graded bridge, so the middle path is defensible but under-engineered."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the SEO layer never caught up — that mismatch was the root cause of poor organic performance.",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup GSC data as legacy demand, and frames every fix around the live meeting-assistant product; only shy of 10 because it asserts the pivot without walking the three evidence sources (live/GSC/repo) distinctly."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC showed 12 old `/blog/post-N` URLs still pulling ~13,800 impressions/month, but those routes no longer existed in the codebase at all (pure 404s). Added a 301 redirect to `/blog` instead of losing that indexed equity outright.",
+          "rationale": "It references a real aggregate impressions figure and takes a disposition, but applies one blanket 301 to all 12 posts rather than walking them asset-by-asset or in tiers with per-post impressions/positions and harvest-vs-sunset reasoning."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Reclaimed dying legacy equity ... Added a 301 redirect to `/blog` instead of losing that indexed equity outright ... building topical authority for that space",
+          "rationale": "Cleanly avoids both traps — preserves legacy equity via redirect while replacing stale inbox content and standing up a 5-post meeting-assistant cluster as the growth engine — but the tension and transition sequencing are handled implicitly rather than argued out."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}
