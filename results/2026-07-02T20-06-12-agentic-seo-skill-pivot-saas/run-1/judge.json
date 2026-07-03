@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the site is mid-pivot from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the pivot is broken in ways that map directly onto the GSC data",
+          "rationale": "Explicitly identifies the pivot from live/homepage content vs. legacy InboxZap metadata and GSC history, states the implication (branded legacy demand vs. zero coverage for new category), and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "GSC shows 12 posts (`/blog/post-1`…`/post-12`) with ~11,900 combined impressions and no serving route. Decide and implement one: (a) 301-redirect each to the closest equivalent... or (b) 301-redirect all... to a single transition/announcement page",
+          "rationale": "Cites real aggregate GSC numbers and lays out concrete disposition options (harvest-redirect vs. transition-page 301 vs. protect branded pages), but works from combined impressions rather than walking the inventory asset-by-asset with per-post impressions/positions, so it stops short of tiered, data-justified per-asset dispositions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "keep any still-valuable legacy 'inboxzap' branded pages/redirects live rather than deleting outright... don't sever that equity mid-transition... Build a keyword-mapped content cluster here before investing further in the old email-cleanup topic cluster",
+          "rationale": "Articulates the tension explicitly and lands a defensible middle path — preserve/redirect salvageable branded equity, sequence the transition, and build the meeting-assistant cluster as the growth engine — grounded in the converting-branded-query data."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the site is mid-pivot from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the pivot is broken in ways that map directly onto the GSC data ... `app/layout.tsx` still has InboxZap title/meta/OG copy, while `app/page.tsx` is 100% Lumina content",
+          "rationale": "Explicitly diagnoses the pivot from live/repo product vs. legacy GSC demand and threads that reading through every recommendation — old inbox-cleanup queries treated as legacy, new meeting-assistant category flagged as the open growth ground."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "GSC shows 12 posts (`/blog/post-1`…`/post-12`) with ~11,900 combined impressions and no serving route. Decide and implement one: (a) 301-redirect each to the closest equivalent new-product content ... or (b) 301-redirect all of them to a single transition/announcement page",
+          "rationale": "Grounds the disposition in real GSC numbers and offers concrete redirect options, but works at the aggregate level (one blanket 301 policy with two variants) rather than walking the inventory asset-by-asset or in data-justified tiers with per-post impressions/positions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "keep any still-valuable legacy \"inboxzap\" branded pages/redirects live rather than deleting outright ... don't sever that equity mid-transition. ... Build a keyword-mapped content cluster here before investing further in the old email-cleanup topic cluster",
+          "rationale": "Names the tension directly and lands a defensible middle path: protect converting branded equity, 301 legacy posts to bridge authority, and build the meeting-assistant cluster as the growth engine — avoiding both the double-down and the scorched-earth failure modes, with sequencing across immediate/quick/strategic tiers."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the site is mid-pivot from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the pivot is broken in ways that map directly onto the GSC data",
+          "rationale": "The entrant explicitly identifies the live-product pivot, treats inbox-cleanup queries as legacy branded equity rather than the target market, and frames every recommendation (metadata rewrite, new-category content cluster, redirect strategy) around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "GSC shows 12 posts (`/blog/post-1`…`/post-12`) with ~11,900 combined impressions and no serving route. Decide and implement one: (a) 301-redirect each to the closest equivalent new-product content... or (b) 301-redirect all of them to a single transition/announcement page",
+          "rationale": "The entrant gives a concrete, data-cited disposition for the legacy posts (301 to successor or transition page, preserve branded equity) grounded in real impression numbers, but treats the 12 posts as one block rather than walking them asset-by-asset or in data-justified tiers with per-post positions/impressions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Build a keyword-mapped content cluster here before investing further in the old email-cleanup topic cluster... keep any still-valuable legacy \"inboxzap\" branded pages/redirects live rather than deleting outright — branded queries... are the only queries currently converting",
+          "rationale": "The entrant explicitly names the tension and lands a defensible middle path: preserve/redirect salvageable branded equity, sequence the transition via redirects, and build the meeting-assistant cluster as the growth engine — avoiding both doubling-down and torching equity."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

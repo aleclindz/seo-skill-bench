@@ -1,0 +1,17 @@
+{
+  "skill": "distribb-skill",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.7619047619047619,
+  "detection_all": [
+    0.23809523809523808,
+    0.7619047619047619,
+    0.7619047619047619
+  ],
+  "trap_avoidance_median": 1,
+  "trap_avoidance_all": [
+    1,
+    1,
+    1
+  ]
+}

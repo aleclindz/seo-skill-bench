@@ -1,0 +1,59 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 2,
+  "judges": [
+    {
+      "lens": "evidence",
+      "error": "Expected ',' or '}' after property value in JSON at position 1405 (line 1 column 1406)"
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this site is **mid-pivot** — it used to be \"InboxZap\" (bulk email cleanup) and is now \"Lumina\" (AI meeting assistant), but the migration was incomplete... All of the GSC history is old InboxZap queries at terrible positions (30-60)",
+          "rationale": "Explicitly nails the pivot: live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale, and frames every fix (metadata, blog seeding, keyword strategy) around the new category. Just shy of 10 because the implication is stated but the reframing is mostly asserted rather than woven through each recommendation."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC shows this blog once had real traffic (`post-1`…`post-12`, up to 3,900 impressions each), but there's no `[slug]` route at all — and that old content is about email cleanup anyway, irrelevant to Lumina now.",
+          "rationale": "Cites real impression figures but issues a near-blanket 'irrelevant, no recoverable traffic' verdict rather than per-asset harvest/redirect/keep/sunset dispositions; no 301s or repurpose decisions for any of the 12 posts individually."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "there's no real \"recoverable\" traffic there — the priority now is building a real content/keyword strategy for the new \"AI meeting assistant\" category.",
+          "rationale": "Avoids the double-down failure mode and correctly builds the meeting-assistant engine, but leans into the second failure mode: torches all legacy equity (no redirects/bridge) on a thin position-30-60 justification, without sequencing a transition to preserve salvageable authority."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this site is **mid-pivot** — it used to be \"InboxZap\" (bulk email cleanup) and is now \"Lumina\" (AI meeting assistant), but the migration was incomplete... that old content is about email cleanup anyway, irrelevant to Lumina now",
+          "rationale": "Explicitly nails the pivot, cites live-site-vs-repo-vs-GSC evidence, and frames every fix around the new meeting-assistant reality; falls just short of a perfect 10 only because it never enumerates the three sources as cleanly as anchor_10."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC shows this blog once had real traffic (`post-1`…`post-12`, up to 3,900 impressions each)... that old content is about email cleanup anyway, irrelevant to Lumina now",
+          "rationale": "References the legacy inventory in aggregate but issues a single blanket 'irrelevant, no recoverable traffic' verdict rather than per-asset harvest/redirect/keep/sunset dispositions; no 301 map for the 12 posts despite citing 3,900-impression pages."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "All of the GSC history is old InboxZap queries at terrible positions (30-60), so there's no real \"recoverable\" traffic there — the priority now is building a real content/keyword strategy",
+          "rationale": "Correctly avoids doubling down on inbox-cleanup and stands up the new meeting-assistant content engine, but leans into near-total abandonment of legacy equity with no redirect/harvest bridge, so it partly falls into the second failure mode."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 4
+  },
+  "judgment": 0.4
+}

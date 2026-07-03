@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This is a SaaS mid-pivot: **InboxZap** (email cleanup tool) relaunched as **Lumina** (AI meeting assistant)... GSC shows real \"inboxzap\" branded demand (pos ~4...) landing on a page with zero acknowledgment of the rename",
+          "rationale": "Explicitly identifies the pivot from live/repo evidence, treats the inbox-cleanup GSC history as legacy branded demand rather than the target market, and frames every fix around the meeting-assistant reality. Loses a point only because the pivot read leans on repo/title evidence since the live site didn't respond."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Added 301 redirects for the legacy `/blog/post-1…12` URLs to `/blog`, so any residual link equity/crawl traffic lands somewhere real instead of a 404.",
+          "rationale": "One blanket disposition (all 12 legacy posts 301'd to the blog index) with no per-asset harvest/repurpose/keep decisions and no citation of actual impressions or positions per post — barely above the blanket-instruction floor because it at least preserves equity via redirect rather than deleting."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "continuing to chase \"bulk delete emails\" keywords would fight the new product's topical relevance ... a direct answer for \"Is this the same company as InboxZap?\" to capture the branded searchers GSC shows are still looking",
+          "rationale": "Clearly avoids both failure modes — it neither doubles down on inbox-cleanup content nor torches branded equity (it captures branded searchers via FAQ and 301s the old URLs) — but the transition is under-sequenced and the blanket redirect-to-index sacrifices individual post equity rather than bridging it."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This is a SaaS mid-pivot: **InboxZap** (email cleanup tool) relaunched as **Lumina** (AI meeting assistant)... New posts target Lumina's actual topic... not the old email-cleanup niche — continuing to chase \"bulk delete emails\" keywords would fight the new product's topical relevance.",
+          "rationale": "Explicitly names the pivot, reads GSC 'inboxzap' branded demand as legacy, and frames every fix (metadata, blog topics, FAQ) around the meeting-assistant reality. Docks one point because it doesn't distinguish the repo's partial staleness as sharply as it could."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Added 301 redirects for the legacy `/blog/post-1…12` URLs to `/blog`, so any residual link equity/crawl traffic lands somewhere real instead of a 404.",
+          "rationale": "It applies a single blanket redirect for all 12 posts to /blog rather than an asset-by-asset disposition grounded in actual impression/position numbers; there's reasoning but no per-post harvest/redirect/keep/sunset decision citing the export, keeping it just above anchor_0."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "including a direct answer for \"Is this the same company as InboxZap?\" to capture the branded searchers GSC shows are still looking... New posts target Lumina's actual topic... continuing to chase \"bulk delete emails\" keywords would fight the new product's topical relevance.",
+          "rationale": "Cleanly avoids both traps — builds the meeting-assistant cluster as the growth engine while preserving branded equity via a targeted FAQ and 301s instead of hard 404s. Held below the top anchor because the bridge is coarse (blanket redirect to /blog rather than topic-matched successors) and the sequencing is only lightly articulated."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This is a SaaS mid-pivot: **InboxZap** (email cleanup tool) relaunched as **Lumina** (AI meeting assistant)... GSC shows real \"inboxzap\" branded demand... New posts target Lumina's actual topic... not the old email-cleanup niche",
+          "rationale": "Explicitly identifies the pivot from live/repo evidence, treats GSC inbox demand as legacy, and frames every fix (metadata, FAQ, blog topics) around the meeting-assistant reality. Falls just short of anchor_10 only because the GSC 'legacy demand' framing is asserted rather than quantified."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Added 301 redirects for the legacy `/blog/post-1…12` URLs to `/blog`, so any residual link equity/crawl traffic lands somewhere real instead of a 404.",
+          "rationale": "There is a concrete, executable disposition — a blanket 301 of all 12 posts to the blog index — which beats ignoring them, but it is uniform rather than per-asset: no impressions/positions cited, no harvest/repurpose/redirect-to-successor differentiation, and no reuse of the old posts' content."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "including a direct answer for \"Is this the same company as InboxZap?\" to capture the branded searchers GSC shows are still looking... continuing to chase \"bulk delete emails\" keywords would fight the new product's topical relevance",
+          "rationale": "Names the tension and lands a defensible middle path — preserve branded equity via the FAQ answer + 301s while building the meeting cluster as the growth engine. The 'preserve' side is thin (a single FAQ line plus blanket redirects rather than mapped equity), keeping it below the top anchor."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

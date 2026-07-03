@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "the actual homepage copy was still the old product — an AI meeting-notes assistant called \"Lumina\" ... Rewrote the homepage to actually describe InboxZap",
+          "rationale": "The entrant noticed a brand/content mismatch but inferred the pivot exactly backwards — it treats the live meeting-assistant product as stale 'old' copy and InboxZap inbox-cleanup as the real current product, then rebuilds everything to chase legacy inbox demand. That is the anchor_0 failure: legacy queries treated as the target market."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "mapped them onto the 9 highest-impression legacy slugs to preserve indexing history. The 3 lowest-value slugs 301-redirect into the closest topical match",
+          "rationale": "There is a real tiered disposition (harvest 9 top-impression slugs, 301 the 3 lowest), which shows migration thinking, but it cites only relative rankings ('highest-impression','lowest-value') with no actual impression/position figures from the export, so the grounding is asserted rather than shown."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "clustered the GSC query export into 9 keyword clusters ... wrote a full article for each ... InboxZap runs the same search-and-bulk-delete pattern",
+          "rationale": "The plan commits fully to building out inbox-cleanup content as the growth engine — the exact 'double down on a product that no longer exists' failure mode — with no recognition of the tension or transition to the actual live product."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "the `<title>`/meta description correctly described \"InboxZap\" (email cleanup), but the actual homepage copy was still the old product — an AI meeting-notes assistant called \"Lumina.\" ... Rewrote the homepage to actually describe InboxZap",
+          "rationale": "The entrant noticed the mismatch but resolved the pivot direction exactly backwards — treating the meeting-assistant (the live/current product) as stale leftover and inbox-cleanup as the real product, then rebuilt everything around InboxZap-era content. That is the anchor_0 failure with a wrong-way rationalization layered on top."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "clustered the GSC query export into 9 keyword clusters by opportunity ... mapped them onto the 9 highest-impression legacy slugs to preserve indexing history. The 3 lowest-value slugs 301-redirect into the closest topical match",
+          "rationale": "There is genuine per-asset disposition logic — harvest the 9 highest-impression slugs, 301 the 3 lowest — tiered by impressions, but it cites no specific per-slug impressions/positions from the export and the whole harvest is aimed at the wrong product direction."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Rebuilt the blog as server-rendered ... wrote a full article for each [inbox-cleanup cluster]",
+          "rationale": "The plan falls fully into one failure mode: it doubles down on building an entire inbox-cleanup content engine for the product the ground truth says has been sunset, with no transition toward the meeting-assistant positioning."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "the `<title>`/meta description correctly described \"InboxZap\" (email cleanup), but the actual homepage copy was still the old product — an AI meeting-notes assistant called \"Lumina.\" ... Rewrote the homepage to actually describe InboxZap",
+          "rationale": "The entrant read the pivot exactly backwards — it treated the meeting-assistant content as the stale leftover to be discarded and inbox-cleanup as the true product, then rebuilt everything around InboxZap. This is anchor_0 behavior (builds the whole plan around ranking InboxZap-era content harder), made worse by confidently mislabeling a real pivot as a bug."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "clustered the GSC query export into 9 keyword clusters by opportunity ... mapped them onto the 9 highest-impression legacy slugs to preserve indexing history. The 3 lowest-value slugs 301-redirect into the closest topical match",
+          "rationale": "There is an explicit tiered per-asset disposition (9 repurpose-onto-slug, 3 redirect), which is mechanically real, but it cites no specific impressions/positions per URL and every disposition serves the wrong (inverted) product direction, so the migration is executable but built on a false premise."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Rebuilt the blog as server-rendered ... wrote a full article for each [inbox-cleanup cluster]",
+          "rationale": "The entrant falls fully into one failure mode — doubling down on inbox-cleanup content for a product that (per the actual live site) has moved on — and never articulates any tension between preserving legacy equity and building the new positioning."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 4,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

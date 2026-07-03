@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant, but the SEO/technical layer never caught up. The GSC export is entirely for the old product",
+          "rationale": "Explicitly names the pivot, labels the GSC data as legacy InboxZap demand and the repo as partially stale, and frames every content/metadata recommendation around the meeting-assistant reality; only shy of 10 because the 'legacy vs current market' framing is stated once rather than threaded through as a governing principle."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "all existing visibility ... is for old InboxZap terms ... at positions 40–60 with near-zero CTR, for post URLs (/blog/post-1...post-12) that don't exist in this codebase at all (already ghost-404ing)",
+          "rationale": "Cites only an aggregate position range (40–60) rather than per-asset impressions/positions, and instead of assigning each of the 12 posts a disposition it defers the whole thing ('worth deciding between clean 404/410 or reviving'), which is closer to a blanket punt than a data-justified asset walk."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "redirecting unrelated content to unrelated content is bad practice, so I didn't force redirects ... I wrote 3 new posts aimed at that gap ... rather than inventing content for a product the site no longer sells",
+          "rationale": "Clearly avoids both failure modes—builds the meeting-assistant cluster as the growth engine and refuses to either chase dead inbox terms or blindly 301 everything—but the transition is under-sequenced and the equity-preservation call is deferred to the reader rather than resolved into a staged bridge."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant, but the SEO/technical layer never caught up. The GSC export is entirely for the old product... I wrote 3 new posts aimed at that gap ... rather than inventing content for a product the site no longer sells.",
+          "rationale": "Nails the pivot on all three axes — live site = meeting assistant, GSC = legacy inbox demand, repo partially stale — and frames every recommendation around it. Falls just short of a perfect 10 because it doesn't quantify the legacy demand it's walking away from."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "all existing visibility ... is for old InboxZap terms ... at positions 40–60 with near-zero CTR, for post URLs (/blog/post-1...post-12) that don't exist in this codebase at all (already ghost-404ing) ... worth deciding between clean 404/410 or reviving InboxZap content",
+          "rationale": "Cites only aggregate figures (positions 40–60, near-zero CTR) rather than per-asset impressions/positions, and explicitly punts the disposition of the 12 posts back to the user instead of assigning harvest/redirect/keep/sunset per asset. Better than a blanket instruction, but well short of an asset-by-asset plan grounded in the export."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "redirecting unrelated content to unrelated content is bad practice, so I didn't force redirects; worth deciding between clean 404/410 or reviving InboxZap content ... I wrote 3 new posts aimed at that gap",
+          "rationale": "Avoids both failure modes — builds the meeting-assistant cluster as the growth engine while declining to torch or blindly chase legacy equity — and its 'low equity so don't force irrelevant redirects' judgment is defensible given the weak GSC numbers. But it leaves the transition/bridge as an open question rather than sequencing a concrete middle path, so it doesn't fully land the resolution."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant, but the SEO/technical layer never caught up. The GSC export is entirely for the old product",
+          "rationale": "Explicitly nails the pivot, labels all GSC visibility as legacy InboxZap demand, and frames every content/metadata fix around the meeting-assistant reality. Only shy of 10 because it doesn't distinguish the repo's partially-stale state as a third axis."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "What to do with the old /blog/post-* URLs — ... I didn't force redirects; worth deciding between clean 404/410 or reviving InboxZap content",
+          "rationale": "It references the aggregate GSC picture (positions 40–60, near-zero CTR) and notes the post URLs already 404, but makes no per-asset harvest/redirect/sunset disposition for the 12 posts — it explicitly punts the whole decision back to the operator, leaving the migration work undone."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "I wrote 3 new posts aimed at that gap ... rather than inventing content for a product the site no longer sells",
+          "rationale": "Cleanly avoids both failure modes — doesn't chase inbox-cleanup terms and doesn't recklessly torch equity — and builds the meeting-assistant cluster as the growth engine, but the bridge/transition step is left unsequenced and undecided rather than an executable middle path."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

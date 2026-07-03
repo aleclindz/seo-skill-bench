@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from a product called InboxZap (email cleanup) to an AI meeting assistant, but the SEO surface never caught up. Your GSC export confirms it — every query with real impression volume (inbox zero, gmail storage...) is 100% legacy InboxZap topic, ranking position 40–65 with near-zero clicks",
+          "rationale": "Explicitly names the pivot, grounds it in the live site vs. GSC vs. repo split, and frames every recommendation around the new product reality — essentially anchor_10, docked one point because the framing leans on aggregate rather than per-query legacy evidence."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Rewrote all 12 posts from email-cleanup topics to Lumina-relevant ones... same slugs, so any existing indexing/link equity carries over",
+          "rationale": "Made one blanket disposition (repurpose all 12 in place) justified by aggregate GSC signal, but never walks the inventory asset-by-asset or cites individual impressions/positions to justify differentiated harvest/redirect/sunset calls."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "same slugs, so any existing indexing/link equity carries over instead of starting from zero... GSC shows these pages already have real impressions, so they need a reliable discovery path",
+          "rationale": "Avoids both failure modes — it neither chases inbox-cleanup rankings nor torches equity, instead preserving slugs/sitemap while building the meeting-assistant cluster; but the tension and transition sequencing are handled implicitly rather than argued out."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina pivoted from a product called InboxZap (email cleanup) to an AI meeting assistant, but the SEO surface never caught up... every query with real impression volume... is 100% legacy InboxZap topic... There's currently zero content targeting what Lumina actually sells.",
+          "rationale": "Explicitly nails the pivot across all three surfaces (live = meeting assistant, GSC = legacy inbox demand, repo = drifted/stale) and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Rewrote all 12 posts from email-cleanup topics to Lumina-relevant ones... same slugs, so any existing indexing/link equity carries over",
+          "rationale": "There is real migration thinking — repurpose-in-place on the same slugs to preserve equity — but it's a blanket disposition applied uniformly to all 12, not a per-asset walk citing each post's actual impressions/positions from the export."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "same slugs, so any existing indexing/link equity carries over instead of starting from zero... GSC shows these pages already have real impressions, so they need a reliable discovery path",
+          "rationale": "Lands a defensible middle path — preserves crawl equity via slug reuse and sitemap inclusion while pivoting content to the meeting-assistant cluster — but the tension is handled implicitly rather than explicitly articulated and sequenced."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina pivoted from a product called InboxZap (email cleanup) to an AI meeting assistant, but the SEO surface never caught up... every query with real impression volume... is 100% legacy InboxZap topic... There's currently zero content targeting what Lumina actually sells.",
+          "rationale": "The pivot is identified explicitly across all three sources (live product, GSC as legacy demand, drifted repo), and every recommendation is framed around the new meeting-assistant reality. Textbook anchor_10."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Rewrote all 12 posts from email-cleanup topics to Lumina-relevant ones... same slugs, so any existing indexing/link equity carries over instead of starting from zero.",
+          "rationale": "It applies one blanket disposition (repurpose-in-place) to all 12 with a sound equity rationale, but never walks the inventory asset-by-asset or cites per-post impressions/positions to justify why each specific post was repurposed rather than 301'd or sunset — the data reference stays aggregate ('position 40–65')."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "same slugs, so any existing indexing/link equity carries over instead of starting from zero... GSC shows these pages already have real impressions, so they need a reliable discovery path.",
+          "rationale": "Lands a clearly defensible middle path — preserve URL/link equity by retaining slugs and sitemap discovery while replacing content to seed the meeting-assistant cluster — avoiding both torch-it-all and chase-dead-demand. Slightly short of 10 because the tension is enacted rather than argued out as an explicit sequenced transition."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

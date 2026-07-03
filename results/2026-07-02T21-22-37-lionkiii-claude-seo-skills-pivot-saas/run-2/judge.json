@@ -1,0 +1,59 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 2,
+  "judges": [
+    {
+      "lens": "evidence",
+      "error": "Expected ',' or '}' after property value in JSON at position 1085 (line 1 column 1086)"
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The GSC data is 100% legacy... belongs to the *old* product — an email-cleanup tool called InboxZap. There is **zero** search visibility for the current product's actual category (AI meeting notes/transcription).",
+          "rationale": "Explicitly nails the pivot (live site = meeting assistant, GSC = legacy InboxZap demand, repo half-migrated), diagnoses the title/content mismatch as the root cause, and frames every fix around the new positioning."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "the 12 old email-focused posts in GSC no longer have backing content in the repo. Worth deciding: 301-redirect the highest-authority ones to relevant new posts, or let them decay.",
+          "rationale": "Acknowledges the legacy inventory and offers a coarse tier (highest-authority → 301, rest decay), but never walks assets individually or cites any real impressions/positions from the export, and defers the decision rather than making dispositions."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "301-redirect the highest-authority ones to relevant new posts, or let them decay.",
+          "rationale": "Cleanly avoids both failure modes — builds the meeting-assistant cluster as the growth engine while proposing to preserve high-value legacy equity via redirects — but the tension and transition sequencing are only lightly sketched and left as an open question rather than resolved."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The GSC data is 100% legacy... belongs to the *old* product — an email-cleanup tool called InboxZap. There is **zero** search visibility for the current product's actual category (AI meeting notes/transcription).",
+          "rationale": "Explicitly identifies the pivot, correctly reads live site vs GSC vs stale repo, diagnoses the content-mismatch as the root cause, and frames every fix around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "the 12 old email-focused posts in GSC no longer have backing content in the repo. Worth deciding: 301-redirect the highest-authority ones to relevant new posts, or let them decay.",
+          "rationale": "It names the 12 posts and offers a redirect-vs-decay frame, but punts the actual disposition to the user with no asset-by-asset walk, no cited impressions/positions, and no tiering — the migration work is left undone."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "301-redirect the highest-authority ones to relevant new posts, or let them decay... seed articles targeting the product's actual category (AI meeting notes) so the site has crawlable, on-topic content post-pivot.",
+          "rationale": "Avoids both failure modes — it builds the meeting-assistant cluster as the growth engine and proposes preserving high-authority legacy equity via redirects rather than torching it — but the transition is under-sequenced and the legacy-equity half is deferred rather than executed."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

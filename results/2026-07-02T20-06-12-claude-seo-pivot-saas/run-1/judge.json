@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "GSC shows people searching the *new* brand name \"inboxzap\" (position 4.1) and real InboxZap-relevant topics — but the entire live site ... still described the *old* meeting-assistant product",
+          "rationale": "The entrant noticed a brand/content mismatch and cited data, but inverted the pivot direction the rubric treats as ground truth: it declares the meeting-assistant live site the stale artifact and inbox-cleanup the current market, then rebuilds everything around inbox content — matching anchor_0's 'builds the whole plan around ranking InboxZap-era content harder.'"
+        },
+        "J2": {
+          "score": 3,
+          "basis": "posts 3, 7, and 12 all targeted \"bulk delete emails\" variants, splitting ~1,660 impressions three ways with none of them ranking. Merged them into one pillar post and added 301s from the other two",
+          "rationale": "There is one genuine data-grounded disposition (a cannibalization merge with a real impressions figure and 301s), but no asset-by-asset or tiered walk of the 12 posts citing impressions/positions, and the legacy inbox posts are kept/rewritten as the go-forward blog rather than dispositioned as legacy."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "Finished the rebrand — page.tsx, layout.tsx nav/footer, new features/page.tsx and pricing/page.tsx ... now consistently describe InboxZap",
+          "rationale": "Rather than balancing the tension, the entrant falls fully into one failure mode — doubling down on inbox-cleanup content and torching the meeting-assistant positioning entirely, with no successor cluster or transition sequencing for the product the rubric treats as current."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "The site is a half-finished pivot from \"Lumina\" (AI meeting assistant) to \"InboxZap\" (email cleanup app)... the entire live site... still described the *old* meeting-assistant product",
+          "rationale": "The entrant noticed a mismatch but inverted the pivot direction — it read the live meeting-assistant product as stale and inbox-cleanup as the current/new market, then rebuilt everything around InboxZap-era inbox content, which is precisely the anchor_0 failure of treating legacy demand as the target market."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "posts 3, 7, and 12 all targeted \"bulk delete emails\" variants, splitting ~1,660 impressions three ways with none of them ranking. Merged them into one pillar post and added 301s from the other two",
+          "rationale": "There is genuine migration mechanics — a merge/301 disposition citing one real impressions figure — but only for three posts; the other nine are kept wholesale with no per-asset impressions/positions, and every disposition is oriented toward preserving inbox content rather than transitioning legacy equity."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Finished the rebrand — page.tsx, layout.tsx... now consistently describe InboxZap, matching what people are actually searching for",
+          "rationale": "The entrant lands fully in a failure mode: it torches the current meeting-assistant positioning and doubles down on inbox-cleanup content for the legacy demand, with no acknowledgment of the tension or any bridge — the opposite of a sequenced middle path."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "The site is a half-finished pivot from \"Lumina\" (AI meeting assistant) to \"InboxZap\" (email cleanup app)... the entire live site... still described the *old* meeting-assistant product",
+          "rationale": "The entrant noticed a pivot (so not a zero), but inverted its direction — it concluded the meeting-assistant identity was the stale legacy and that inbox-cleanup is the current product's real market, then rebuilt everything toward InboxZap. That is precisely anchor_0's failure of treating inbox-cleanup queries as the target market."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "posts 3, 7, and 12 all targeted \"bulk delete emails\" variants, splitting ~1,660 impressions three ways with none of them ranking. Merged them into one pillar post and added 301s from the other two",
+          "rationale": "It made a genuine, data-cited redirect/merge disposition for three posts, but every other legacy post was simply kept and re-skinned with no per-asset impressions/position review or harvest/sunset reasoning — one data point, not an inventory walk."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "Finished the rebrand... now consistently describe InboxZap, matching what people are actually searching for",
+          "rationale": "The plan lands squarely in one failure mode — it doubles down on inbox-cleanup content and builds the entire engine around it, with no meeting-assistant cluster and no articulated tension or bridging of equity between positionings."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 2,
+    "J2": 3,
+    "J3": 2
+  },
+  "judgment": 0.2
+}

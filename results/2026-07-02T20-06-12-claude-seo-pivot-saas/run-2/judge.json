@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"classic mid-pivot fallout — homepage got updated to the new 'Lumina' AI meeting-assistant product, but nothing else did\" and \"the old inbox-cleanup topics are irrelevant to the business now\"",
+          "rationale": "Explicitly identifies the pivot (live site = meeting assistant, layout/GSC = legacy InboxZap), frames every fix around the current product; falls just short of anchor_10 only because it never quotes the GSC export's actual legacy-demand figures to characterize that history."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "\"Added 301 redirects from the legacy /blog/post-1...post-12 URLs (which GSC shows still carry real impression volume) to /blog\"",
+          "rationale": "One blanket disposition — 301 every legacy post to the blog index — with no asset-by-asset or tiered analysis and no real impressions/positions cited; the vague 'GSC shows impression volume' nudges it just above anchor_0's data-free blanket instruction."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "\"Redirect to the new blog index instead of hard-404ing them... so that history isn't lost to hard 404s\" plus 6 new meeting-assistant posts as the growth engine",
+          "rationale": "Avoids both failure modes — builds the new cluster while preserving legacy equity via redirects rather than torching it — but never articulates the tension explicitly, doesn't sequence the transition, and funnels all legacy inbox-cleanup equity into a topically unrelated blog index rather than relevant successors."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "classic mid-pivot fallout — homepage got updated to the new \"Lumina\" AI meeting-assistant product, but nothing else did... the old inbox-cleanup topics are irrelevant to the business now",
+          "rationale": "Explicitly names the pivot, correctly frames GSC inbox demand as legacy, and orients every fix around the meeting-assistant reality. Slightly short of a full articulation of the three-source (live/GSC/repo) triangulation, but the implication is stated clearly and drives the plan."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Added 301 redirects from the legacy /blog/post-1...post-12 URLs (which GSC shows still carry real impression volume) to /blog",
+          "rationale": "Beats anchor_0 by choosing 301-over-404 and gesturing at GSC data, but it's a single blanket redirect of all 12 posts to the blog index with no per-asset dispositions, no cited impressions/positions, and no harvest/repurpose vs. redirect-to-successor differentiation."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Redirect to the new blog index instead of hard-404ing them, so that history isn't lost to hard 404s... the old inbox-cleanup topics are irrelevant to the business now",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content, builds the meeting cluster as the growth engine, and preserves legacy URLs via redirect. But the 'bridge' is a coarse blanket redirect to /blog with no per-asset equity preservation or explicit sequencing, so the middle path is defensible but shallow."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"classic mid-pivot fallout — homepage got updated to the new 'Lumina' AI meeting-assistant product, but nothing else did\" and \"the old inbox-cleanup topics are irrelevant to the business now\"",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting-assistant product and the inbox-cleanup material as legacy, and frames every fix around the current product. Falls just short of a 10 only because it never separately characterizes the GSC export vs. repo state as distinct evidence layers."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "\"Added 301 redirects from the legacy /blog/post-1...post-12 URLs (which GSC shows still carry real impression volume) to /blog\"",
+          "rationale": "This is essentially one blanket disposition — 301 all twelve posts to the blog index — with only a hand-wave at the data ('carry real impression volume'); no per-asset walk, no cited impressions/positions, and no harvest-to-relevant-successor moves, so most of the migration judgment is left undone."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "\"Redirect to the new blog index instead of hard-404ing them\" plus rebuilding \"6 new posts on topics relevant to the current product\"",
+          "rationale": "Avoids both failure modes — doesn't resurrect inbox content and doesn't torch legacy equity, instead bridging via 301s while building the meeting-assistant cluster — but the tension is only implied and the transition is a blunt redirect-to-index rather than a sequenced, equity-preserving handoff."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

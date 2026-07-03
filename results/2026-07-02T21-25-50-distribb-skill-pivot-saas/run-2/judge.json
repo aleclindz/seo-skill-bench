@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site is mid-pivot from an old product (\"InboxZap,\" email cleanup) to a new one (\"Lumina,\" AI meeting assistant)... targeting keywords that actually match the product",
+          "rationale": "Explicitly names the pivot, treats GSC InboxZap impressions as legacy, notes the repo was partially stale (bugs), and frames every fix and new article around the meeting-assistant reality. Falls just short of a full transition framing."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "the old InboxZap posts (post-1...post-12) still carry real impressions (post-1: 3,900) but now 404 — moot either way since their topics (bulk email delete, Gmail storage) are irrelevant to the new product",
+          "rationale": "Cites one real GSC figure but then issues a single blanket 'moot either way' dismissal of all 12 posts with no per-asset harvest/redirect/keep/sunset disposition — closer to the blanket-instruction failure than an asset-by-asset walk."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "moot either way since their topics... are irrelevant to the new product",
+          "rationale": "Correctly avoids doubling down on dead inbox-cleanup content and builds the meeting-assistant cluster as the growth engine, but leaves ~3,900+ impressions worth of legacy pages 404'd with no redirect or bridge — sliding into the 'abandon legacy equity with no transition' failure mode and never articulating the tension."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "The site is mid-pivot from an old product (\"InboxZap,\" email cleanup) to a new one (\"Lumina,\" AI meeting assistant)... Per your GSC export, the old InboxZap posts (post-1...post-12) still carry real impressions (post-1: 3,900) but now 404 — moot either way since their topics (bulk email delete, Gmail storage) are irrelevant to the new product.",
+          "rationale": "The entrant clearly identifies the pivot (live site = meeting assistant, GSC = legacy inbox demand) and frames every fix and both new articles around the new positioning. Falls short of a 10 because it doesn't fully articulate the strategic implication of the legacy demand beyond calling it 'moot,' but the pivot itself is read correctly and drives the whole plan."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Per your GSC export, the old InboxZap posts (post-1...post-12) still carry real impressions (post-1: 3,900) but now 404 — moot either way since their topics (bulk email delete, Gmail storage) are irrelevant to the new product.",
+          "rationale": "It references the real GSC numbers and acknowledges the 12 legacy posts, but issues a single blanket dismissal ('moot either way') rather than per-asset harvest/redirect/keep/sunset dispositions grounded in the data. No asset-by-asset or tiered migration walk, and no 301 strategy to preserve salvageable equity."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "moot either way since their topics (bulk email delete, Gmail storage) are irrelevant to the new product... Next step once traffic starts coming in for the new keywords: connect GSC for real and start the optimize/audit loop",
+          "rationale": "The entrant correctly avoids chasing dead inbox-cleanup content and builds the meeting-assistant cluster as the growth engine, so it dodges one failure mode. But by dismissing all legacy equity as 'moot' with no redirect or bridge plan, it leans toward the abandonment failure mode and never articulates the tension or a sequenced transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site is mid-pivot from an old product (\"InboxZap,\" email cleanup) to a new one (\"Lumina,\" AI meeting assistant)... Wrote and published two launch articles targeting keywords that actually match the product",
+          "rationale": "Explicitly names the pivot, treats InboxZap GSC impressions as legacy, and frames every fix and new article around the meeting-assistant reality. Only shy of 10 because it never distinguishes repo staleness as a separate axis or states the legacy-vs-new-market implication as sharply as an operator strategy would."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "the old InboxZap posts (post-1...post-12) still carry real impressions (post-1: 3,900) but now 404 — moot either way since their topics (bulk email delete, Gmail storage) are irrelevant to the new product.",
+          "rationale": "One blanket 'moot either way' verdict citing a single impression figure; no asset-by-asset or tiered disposition, no harvest/redirect/keep/sunset decisions, and the posts are left 404ing with no action assigned. This is exactly the un-executable migration gap the practicality lens punishes."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "still carry real impressions (post-1: 3,900) but now 404 — moot either way... Next step once traffic starts coming in for the *new* keywords: connect GSC",
+          "rationale": "Avoids the first failure mode (doesn't chase inbox-cleanup) and builds the new cluster, but drifts into the second: it dismisses ~3,900+ impressions of salvageable equity as 'moot' and leaves the legacy URLs dead with no redirect or bridge, never articulating or resolving the transition tension."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 2,
+    "J3": 3
+  },
+  "judgment": 0.3
+}

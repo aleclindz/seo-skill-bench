@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an old product, **InboxZap** (email cleanup), and the `<head>` metadata... still advertised \"InboxZap\" while 100% of the visible content said \"Lumina\" (AI meeting assistant)",
+          "rationale": "Explicitly names the pivot, distinguishes live product (meeting assistant) from legacy InboxZap, and grounds it in the visible entity mismatch plus GSC 'inboxzap' brand queries as legacy demand."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "~13,600 impressions of legacy `/blog/post-1..12` URLs had no redirect... Added `/blog/post-:slug*` → `/blog`",
+          "rationale": "Cites a real aggregate impression figure and a migration-plan.md claiming per-asset harvest/redirect/sunset dispositions, but the visible action is one blanket 308 redirect of all 12 posts to /blog rather than per-asset, data-justified decisions shown here."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "so confused legacy searchers now get confirmation instead of landing on what looks like the wrong site... `roadmap.md` (forward keyword clusters for \"AI meeting assistant\"...)",
+          "rationale": "Lands a defensible middle path: preserves salvageable legacy equity via redirects and a 'formerly InboxZap' note (grounded in 18 clicks/pos 4-8) while building the meeting-assistant cluster as the growth engine, without torching or blindly chasing the old demand."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an old product, InboxZap (email cleanup), and the `<head>` metadata... still advertised 'InboxZap' while 100% of the visible content said 'Lumina' (AI meeting assistant)",
+          "rationale": "Explicitly nails the pivot — live site = meeting assistant, GSC/metadata = legacy InboxZap demand — and frames the entity-mismatch fix and 'formerly InboxZap' bridge around exactly that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "~13,600 impressions of legacy `/blog/post-1..12` URLs had no redirect... Added `/blog/post-:slug*` → `/blog`",
+          "rationale": "It cites an aggregate GSC number and claims a harvest/redirect/sunset migration-plan.md, but the visible disposition is a single blanket 301 of all 12 posts to /blog, not per-asset decisions grounded in each post's impressions/position."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "GSC shows 'inboxzap' brand searches are the site's best-performing query... so confused legacy searchers now get confirmation",
+          "rationale": "Lands a defensible middle path — redirects/footer note preserve salvageable legacy equity while a forward 'AI meeting assistant' roadmap becomes the growth engine — though it doesn't articulate the tension as explicitly as it enacts it."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "Lumina pivoted from an old product, InboxZap (email cleanup)... while 100% of the visible content said 'Lumina' (AI meeting assistant)",
+          "rationale": "Explicitly names the pivot, reads the live site as the meeting-assistant product and treats the inboxzap GSC queries/legacy blog impressions as legacy demand, and frames the metadata fix and footer note around that reality. Loses a point because the meeting-assistant target market is asserted more than built out (roadmap is only WebSearch-estimated)."
+        },
+        "J2": {
+          "score": 4,
+          "basis": ".Entrant/strategy/migration-plan.md (harvest/redirect/sunset disposition for all legacy GSC assets)",
+          "rationale": "The only executed migration action visible is a single blanket 301 of /blog/post-:slug* → /blog citing one aggregate figure (~13,600 impressions); a per-asset harvest/redirect/sunset plan is claimed to exist in a file but its content is not shown, so no asset-by-asset disposition grounded in individual GSC numbers is demonstrated."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "so confused legacy searchers now get confirmation instead of landing on what looks like the wrong site... roadmap.md (forward keyword clusters for 'AI meeting assistant')",
+          "rationale": "Lands a defensible middle path — preserves legacy equity via 301s and a 'formerly InboxZap' footer bridge while pointing the growth engine at the meeting-assistant category, rather than doubling down on or torching the old demand. Slightly short of full marks because the forward cluster is only sketched and the tension isn't argued as explicitly as the transition mechanics."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this is a SaaS mid-pivot. It used to be \"InboxZap\" (email cleanup), now the homepage is \"Lumina\" (AI meeting assistant)... 100% of current organic clicks/impressions are for the abandoned InboxZap positioning — zero visibility yet for anything meeting-assistant related",
+          "rationale": "Explicitly identifies the pivot, correctly frames GSC as legacy inbox demand vs. the live meeting-assistant product, and threads that reality through every recommendation; only shy of a 10 because it leans on the code/metadata mismatch as the framing more than the market-demand implication."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "GSC shows these still receiving up to ~3,900 impressions/month combined... Option A: rebuild as real pages... Option B: 301-redirect each to the most topically relevant current page",
+          "rationale": "It grounds the legacy posts in real aggregate GSC numbers and offers a harvest-vs-redirect disposition framework, but treats all 12 as one block rather than walking them asset-by-asset (or in data-justified tiers) with per-post impressions/positions, and defers the actual call to the user."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Either 301-redirect the legacy InboxZap blog content to relevant new content/sunset it deliberately... build topic clusters around meeting notes... Fix metadata and rebuild /pricing/features before investing in new content, or the new traffic will hit the same broken funnel",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — preserve/redirect salvageable equity, build the meeting-assistant cluster as the growth engine, and sequence the transition — avoiding both blind-chase and scorched-earth; slightly short of full marks because the redirect-vs-rebuild decision is left conditional/unresolved."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this is a SaaS mid-pivot. It used to be \"InboxZap\" (email cleanup), now the homepage is \"Lumina\" (AI meeting assistant) — but the pivot only touched the visible homepage copy... 100% of current organic clicks/impressions are for the abandoned InboxZap positioning",
+          "rationale": "Explicitly identifies the pivot across all three sources (live=Lumina, GSC=legacy InboxZap, repo=partially stale) and frames every recommendation around it, including that new-product SEO footprint is zero."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Option A: If the underlying content still exists... rebuild as real server-rendered pages. Option B: If not, 301-redirect each to the most topically relevant current page... GSC shows these still receiving up to ~3,900 impressions/month combined",
+          "rationale": "Assigns a real disposition framework (rebuild vs. 301 vs. don't-leave-as-404) grounded in aggregate GSC numbers, but treats all 12 posts as one block rather than walking them asset-by-asset or in data-justified tiers with per-post positions/impressions."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "don't leave them as dead links — that burns indexed equity... Build topic clusters around meeting notes, call transcription... Fix metadata and rebuild /pricing/features before investing in new content, or the new traffic will hit the same broken funnel",
+          "rationale": "Avoids both failure modes: preserves salvageable legacy equity via harvest-or-redirect while making the meeting-assistant cluster the growth engine, and sequences the transition — though the tension is framed more operationally than as an explicit strategic tradeoff."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this is a SaaS mid-pivot. It used to be \"InboxZap\" (email cleanup), now the homepage is \"Lumina\" (AI meeting assistant)... 100% of current organic clicks/impressions are for the abandoned InboxZap positioning",
+          "rationale": "Explicitly and repeatedly identifies the pivot, correctly frames GSC inbox demand as legacy/abandoned and the live site as the current meeting-assistant product, and threads that reality through every recommendation. Falls just short of 10 only because the repo-vs-live-vs-legacy framing is slightly less crisply enumerated as a three-way split."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Option A: If the underlying content still exists... rebuild... Option B: If not, 301-redirect each to the most topically relevant current page... GSC shows these still receiving up to ~3,900 impressions/month combined",
+          "rationale": "Gives a real disposition framework (rebuild vs. 301 vs. don't-leave-as-404) grounded in aggregate GSC numbers, but treats all 12 posts as one block and explicitly punts the actual per-asset call to the user rather than walking the inventory post-by-post with individual impressions/positions and assigning each a decision."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Do not leave them as silent 404s — that's actively losing indexed equity... Build topic clusters around meeting notes, call transcription... there's no point driving new organic traffic to a 'Start free' button that 404s",
+          "rationale": "Cleanly avoids both failure modes — doesn't chase InboxZap content, doesn't torch legacy equity, and explicitly sequences transition (fix funnel first, redirect/preserve legacy, then build the new cluster). Held below 9 because the legacy-preservation half stays at the level of options-to-decide rather than a committed transition path."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 5,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

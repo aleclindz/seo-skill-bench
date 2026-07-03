@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The repo was mid-pivot: Lumina (AI meeting assistant) replacing InboxZap (email cleanup)... GSC shows the real story: 12 old blog posts pull ~11,400 impressions/month on email-cleanup queries at position 42–58 (irrelevant to the current product), while there's zero content targeting what Lumina actually does",
+          "rationale": "Explicitly names the pivot, classifies live site as meeting assistant vs GSC as legacy inbox demand, flags the source as partially stale, and frames the growth thesis around that reality. Falls just short of anchor_10 only because it doesn't recut every single recommendation through the pivot lens."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "I kept the legacy posts live (with an honest one-line notice, rather than deleting indexed URLs)",
+          "rationale": "It cites aggregate GSC numbers (~11.4k impressions, position 42–58) but applies a single blanket disposition — keep-all-with-a-notice — rather than per-asset or data-tiered harvest/redirect/sunset decisions; no individual post's impressions or position drive any differentiated call."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Fixing the plumbing stops active damage but isn't what grows traffic... I kept the legacy posts live... and added two seed posts in the real product's keyword space as a template — a full content calendar there is the highest-leverage next step",
+          "rationale": "Clearly avoids both failure modes — doesn't torch indexed legacy URLs and doesn't double down on inbox content — and names the new meeting cluster as the growth engine, but the transition is under-sequenced and equity is merely 'kept live' rather than actively redirected to bridge authority."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The repo was mid-pivot: Lumina (AI meeting assistant) replacing InboxZap (email cleanup)... 12 old blog posts pull ~11,400 impressions/month on email-cleanup queries at position 42–58 (irrelevant to the current product), while there's zero content targeting what Lumina actually does",
+          "rationale": "Nails the pivot: live product = meeting assistant, GSC = legacy inbox demand explicitly called irrelevant to the current product, and every recommendation is framed around that reality including per-page metadata and legacy notices."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "I kept the legacy posts live (with an honest one-line notice, rather than deleting indexed URLs)",
+          "rationale": "Cites real aggregate GSC data (~11,400 impressions, position 42–58) and reasons about not deleting indexed URLs, but applies a single blanket 'keep all 12 with a notice' disposition rather than walking the inventory asset-by-asset with per-post impressions and differentiated harvest/redirect/sunset calls."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Fixing the plumbing stops active damage but isn't what grows traffic... I kept the legacy posts live... and added two seed posts in the real product's keyword space as a template — a full content calendar there is the highest-leverage next step",
+          "rationale": "Explicitly articulates the tension and lands a defensible middle path — preserve legacy equity via retained URLs + honest notices, build the meeting-assistant cluster as the growth engine — losing points only because the transition sequencing stays high-level rather than a staged plan."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The repo was mid-pivot: Lumina (AI meeting assistant) replacing InboxZap (email cleanup)... 12 old blog posts pull ~11,400 impressions/month on email-cleanup queries... (irrelevant to the current product), while there's zero content targeting what Lumina actually does",
+          "rationale": "Explicitly identifies the pivot, tags the inbox-cleanup GSC demand as legacy/irrelevant to the live product, and frames the growth lever around the meeting-assistant gap. Falls just short of a 10 only because the legacy-vs-live implication drives fixes more than a full strategic reframing."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "I kept the legacy posts live (with an honest one-line notice, rather than deleting indexed URLs)",
+          "rationale": "Cites aggregate GSC data (~11,400 impressions, position 42–58) and makes one defensible blanket call, but applies a single uniform disposition to all 12 posts with no per-asset (or tiered) harvest/301/keep/sunset decisions grounded in each post's numbers — the operator still has to decide which legacy URLs to redirect or repurpose."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "I kept the legacy posts live... and added two seed posts in the real product's keyword space as a template — a full content calendar there is the highest-leverage next step",
+          "rationale": "Cleanly avoids both failure modes — preserves indexed equity instead of torching it, and stands up a meeting-assistant content beachhead as the growth engine — but the transition is under-sequenced: 'a full content calendar is the next step' names the lever without scoping topics, cadence, or how legacy equity bridges to the new cluster."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

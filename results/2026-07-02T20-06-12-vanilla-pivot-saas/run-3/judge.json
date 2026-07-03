@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 7,
+          "basis": "the legacy blog's email-cleanup topics won't carry into the new positioning ... start building non-brand content/targeting toward meeting-notes intent (currently zero footprint in GSC)",
+          "rationale": "Clearly recognizes the pivot — live site rewritten as AI meeting assistant, email-cleanup treated as legacy, meeting-notes as the new (currently unranked) target — but the pivot is asserted in passing rather than framed up front as the plan's organizing reality, and it never contrasts the live product against the GSC history explicitly."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "Rebuild /blog/[slug] route + /api/posts ... so the 12 already-ranking post URLs serve real content again",
+          "rationale": "Treats the 12 posts as a single undifferentiated block to restore wholesale — no per-asset disposition, no harvest/redirect/sunset choices, and not a single impression or position figure from the GSC export is cited to justify the blanket 'serve them all again' call."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "those URLs already carry real search demand that's currently being thrown away ... the legacy blog's email-cleanup topics won't carry into the new positioning",
+          "rationale": "Avoids both extremes in spirit — it preserves legacy URL equity (restore the ranking pages) while pushing new meeting-notes content — but it never names the tension, doesn't sequence the transition, and doesn't reconcile restoring inbox-cleanup pages with its own claim that those topics won't carry, leaving the middle path asserted rather than grounded."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 6,
+          "basis": "start building non-brand content/targeting toward meeting-notes intent (currently zero footprint in GSC) — the legacy blog's email-cleanup topics won't carry into the new positioning",
+          "rationale": "Correctly identifies the pivot (live product is the AI meeting assistant, email-cleanup is legacy) and updates the metadata accordingly, but it doesn't fully frame the GSC ranking history as demand for a defunct product — in #3 it still treats those legacy URLs as pure upside to recapture."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "Rebuild /blog/[slug] route + /api/posts ... so the 12 already-ranking post URLs serve real content again",
+          "rationale": "Treats all 12 posts as one undifferentiated block to restore, with no per-asset harvest/redirect/sunset disposition and zero citation of actual impressions/positions from the export — essentially a blanket 'keep/restore everything.'"
+        },
+        "J3": {
+          "score": 4,
+          "basis": "those URLs already carry real search demand that's currently being thrown away ... the legacy blog's email-cleanup topics won't carry into the new positioning",
+          "rationale": "Gestures at both sides (restore legacy equity in #3, build meeting-notes cluster in #6) but never articulates the tension or a bridging/redirect plan, and the two items contradict — restoring email-cleanup content while conceding it won't carry is closer to muddled than a sequenced transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 7,
+          "basis": "start building non-brand content/targeting toward meeting-notes intent (currently zero footprint in GSC) — the legacy blog's email-cleanup topics won't carry into the new positioning",
+          "rationale": "The entrant clearly recognizes the pivot — it rewrites metadata to the AI meeting assistant and explicitly notes the email-cleanup legacy topics won't carry forward — but it never lays out the three-source picture (live site vs. legacy GSC vs. stale repo) as a stated framing, keeping the inference implicit."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "Rebuild `/blog/[slug]` route + `/api/posts` ... so the 12 already-ranking post URLs serve real content again",
+          "rationale": "The 12 posts are treated as one undifferentiated block to 'serve real content again' with no per-asset harvest/redirect/sunset disposition and no citation of actual impressions or positions from the GSC export — just a blanket 'restore them all' instruction."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "those URLs already carry real search demand that's currently being thrown away ... the legacy blog's email-cleanup topics won't carry into the new positioning",
+          "rationale": "It avoids both extremes — preserving the ranking URLs' equity while pushing a new meeting-notes cluster — but the tension is never articulated and the plan is internally muddy (restore all 12 inbox-era posts yet declare their topics irrelevant), with no real sequencing of the transition."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 7,
+    "J2": 2,
+    "J3": 4
+  },
+  "judgment": 0.4
+}

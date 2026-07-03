@@ -1,0 +1,169 @@
+{
+  "fixture": "pivot-saas",
+  "rubric": "v1.0.0",
+  "updated": "2026-07-03",
+  "rows": [
+    {
+      "skill": "mango-claude-seo-skill",
+      "name": "claude-seo-skill (mangollc)",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.5714285714285714,
+      "trap_avoidance": 1,
+      "judgment": 0.7,
+      "execution": 0.5,
+      "composite": 72.26190476190476,
+      "composite_det": 52.857142857142854,
+      "spread_det": [
+        50.23809523809524,
+        54.76190476190476
+      ],
+      "median_wall_s": 901.464,
+      "median_cost_usd": 3.2888466
+    },
+    {
+      "skill": "agentic-seo-skill",
+      "name": "Agentic SEO Skill",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.38095238095238093,
+      "trap_avoidance": 0.7272727272727273,
+      "judgment": 0.8,
+      "execution": 1,
+      "composite": 65.91991341991343,
+      "composite_det": 43.41991341991342,
+      "spread_det": [
+        33.16017316017316,
+        65.47619047619048
+      ],
+      "median_wall_s": 649.203,
+      "median_cost_usd": 1.0305397
+    },
+    {
+      "skill": "claude-seo",
+      "name": "claude-seo",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.3333333333333333,
+      "trap_avoidance": 1,
+      "judgment": 0.6,
+      "execution": 1,
+      "composite": 63.92857142857143,
+      "composite_det": 46.42857142857143,
+      "spread_det": [
+        41.515151515151516,
+        69.28571428571428
+      ],
+      "median_wall_s": 771.698,
+      "median_cost_usd": 3.0742146000000012
+    },
+    {
+      "skill": "seo-geo-claude-skills",
+      "name": "SEO/GEO Claude Skills",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.6190476190476191,
+      "trap_avoidance": 0.7272727272727273,
+      "judgment": 0.7,
+      "execution": 1,
+      "composite": 62.824675324675326,
+      "composite_det": 47.943722943722946,
+      "spread_det": [
+        45.324675324675326,
+        52.943722943722946
+      ],
+      "median_wall_s": 914.874,
+      "median_cost_usd": 3.4233540999999996
+    },
+    {
+      "skill": "lhitches-claude-seo-skills",
+      "name": "claude-seo-skills (lhitches)",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.38095238095238093,
+      "trap_avoidance": 0.7272727272727273,
+      "judgment": 0.6,
+      "execution": 1,
+      "composite": 60.91991341991342,
+      "composite_det": 41.515151515151516,
+      "spread_det": [
+        38.41991341991342,
+        54.04761904761905
+      ],
+      "median_wall_s": 927.294,
+      "median_cost_usd": 1.8717740999999999
+    },
+    {
+      "skill": "distribb-skill",
+      "name": "Distribb Skill",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.42857142857142855,
+      "trap_avoidance": 1,
+      "judgment": 0.4,
+      "execution": 1,
+      "composite": 59.64285714285714,
+      "composite_det": 52.14285714285714,
+      "spread_det": [
+        44.523809523809526,
+        57.857142857142854
+      ],
+      "median_wall_s": 732.065,
+      "median_cost_usd": 2.252946
+    },
+    {
+      "skill": "vanilla",
+      "name": "Vanilla baseline (no skill)",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.23809523809523808,
+      "trap_avoidance": 1,
+      "judgment": 0.6,
+      "execution": 1,
+      "composite": 59.523809523809526,
+      "composite_det": 44.523809523809526,
+      "spread_det": [
+        38.80952380952381,
+        59.76190476190476
+      ],
+      "median_wall_s": 763.002,
+      "median_cost_usd": 1.9915020000000005
+    },
+    {
+      "skill": "lionkiii-claude-seo-skills",
+      "name": "claude-seo-skills (lionkiii)",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.47619047619047616,
+      "trap_avoidance": 0.7272727272727273,
+      "judgment": 0.6,
+      "execution": 1,
+      "composite": 57.22943722943723,
+      "composite_det": 42.22943722943723,
+      "spread_det": [
+        37.705627705627705,
+        59.76190476190476
+      ],
+      "median_wall_s": 1139.378,
+      "median_cost_usd": 2.9971872
+    },
+    {
+      "skill": "seoagent",
+      "name": "SEOAgent",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.38095238095238093,
+      "trap_avoidance": 0.6363636363636364,
+      "judgment": 0.6,
+      "execution": 0.5,
+      "composite": 51.14718614718615,
+      "composite_det": 36.14718614718615,
+      "spread_det": [
+        36.14718614718615,
+        51.38528138528138
+      ],
+      "median_wall_s": 2700.427,
+      "median_cost_usd": null
+    }
+  ]
+}

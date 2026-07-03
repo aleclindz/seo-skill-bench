@@ -1,0 +1,17 @@
+{
+  "skill": "vanilla",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.23809523809523808,
+  "detection_all": [
+    0.6190476190476191,
+    0.23809523809523808,
+    0.09523809523809523
+  ],
+  "trap_avoidance_median": 1,
+  "trap_avoidance_all": [
+    1,
+    1,
+    1
+  ]
+}

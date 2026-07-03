@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Diagnosed the site as a **mid-pivot SaaS**: it used to be *InboxZap*... and is now *Lumina*... only `app/page.tsx` had been updated... the GSC data confirmed the damage (only the branded query \"inboxzap\" ranks; every legacy informational query sits at position 40–60 with near-zero clicks, and none of it matches what Lumina sells)",
+          "rationale": "Explicitly identifies the pivot across all three sources (live site, GSC, partially-stale repo), grounds it in real Search Console signals (branded-only ranking, position 40-60, near-zero clicks), and frames every fix around the new positioning. Just short of 10 for not stating per-query numbers."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Kept the existing `post-1`…`post-12` slugs since GSC shows they're already indexed, but rewrote every post around Lumina/meeting-assistant keywords instead of the old inbox-zero/email-cleanup topics",
+          "rationale": "Applies a single blanket disposition (keep all 12 URLs, repurpose all content) loosely justified by 'they're already indexed,' but never walks the inventory asset-by-asset and cites no per-post impressions/positions to differentiate harvest vs. redirect vs. sunset. Above anchor_0 because it does reason from the export, but far from the tiered, data-cited dispositions anchor_10 requires."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Kept the existing `post-1`…`post-12` slugs since GSC shows they're already indexed, but rewrote every post around Lumina/meeting-assistant keywords",
+          "rationale": "Lands a defensible middle path — preserves indexed URL equity as a bridge while building the meeting-assistant cluster as the growth engine, avoiding both doubling-down and total torching. Held below high marks because the tension is handled implicitly rather than articulated, and there's no explicit sequencing or transition plan (e.g. redirect timing, monitoring the legacy impressions)."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Diagnosed the site as a **mid-pivot SaaS**: it used to be *InboxZap*... and is now *Lumina*... but only `app/page.tsx` had been updated... the GSC data confirmed the damage (only the branded query \"inboxzap\" ranks; every legacy informational query sits at position 40–60 with near-zero clicks, and none of it matches what Lumina sells)",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the current product and GSC as legacy demand, and frames the whole plan around that reality — right at the top anchor."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Kept the existing `post-1`…`post-12` slugs since GSC shows they're already indexed, but rewrote every post around Lumina/meeting-assistant keywords",
+          "rationale": "Applies one blanket disposition (keep-slug + rewrite) to all 12 posts using only aggregate GSC framing; no per-asset impressions/positions cited and no differentiated harvest/301/sunset decisions, so it sits well below an asset-by-asset migration."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Kept the existing `post-1`…`post-12` slugs since GSC shows they're already indexed, but rewrote every post around Lumina/meeting-assistant keywords instead of the old inbox-zero/email-cleanup topics",
+          "rationale": "Avoids both failure modes — doesn't chase dead inbox queries and preserves indexed-URL equity while building the meeting-assistant cluster — but the tension is only implicit and there's no explicit redirect strategy or sequenced transition, keeping it a defensible-but-thin middle path."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Diagnosed the site as a **mid-pivot SaaS**: it used to be *InboxZap*... and is now *Lumina*... the GSC data confirmed the damage (only the branded query \"inboxzap\" ranks; every legacy informational query sits at position 40–60 with near-zero clicks, and none of it matches what Lumina sells).",
+          "rationale": "Explicitly nails the pivot from live product, correctly reads GSC as legacy demand, and frames every fix (metadata, blog rewrite, new pages) around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Kept the existing post-1…post-12 slugs since GSC shows they're already indexed, but rewrote every post around Lumina/meeting-assistant keywords instead of the old inbox-zero/email-cleanup topics.",
+          "rationale": "Applies one uniform disposition — preserve slug, rewrite in place — to all 12 posts rather than per-asset (or tiered) harvest/redirect/sunset calls citing individual impressions/positions; the GSC grounding is only a blanket 'position 40–60' aggregate."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Kept the existing post-1…post-12 slugs since GSC shows they're already indexed... but rewrote every post around Lumina/meeting-assistant keywords.",
+          "rationale": "Avoids both failure modes in practice — preserves the indexed-URL equity while retargeting content to the new positioning — but never articulates the tension explicitly or sequences the transition, doing a wholesale rewrite instead of a staged bridge."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

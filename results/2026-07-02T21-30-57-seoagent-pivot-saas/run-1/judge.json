@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 7,
+          "basis": "The 2026-06-19 rebrand (PR #610) updated the marketing modules but missed llms.txt... current = free Skill / $49 Pro... old product: 'Set it and forget it SEO automation'",
+          "rationale": "The entrant clearly identifies a product pivot — live/current positioning ('SEO engine for coding agents') vs. retired autopilot/CMS-publishing positioning — and treats old-branding pages and llms.txt as stale legacy to rebrand-or-prune, framing recommendations around current reality. It stops short of anchor_10 because it never frames the old Search Console demand itself as a legacy market to be transitioned away from; it mostly harvests overlapping queries into the new cluster."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "Content debt carried over: ~30 /lovable-* + /seo-for-* programmatic pages and 14 older marketing pages still reflect old positioning (Phase 2 prune-or-rebrand decision still open)... /web-development minimal de-brand — flagged as prune candidate",
+          "rationale": "There is real per-asset disposition thinking (rebrand /shopify + /vercel, prune /web-development, 19 modules rewritten) and GSC-grounded decisions on the /compare pages (700-900 impressions, pos 37-78 cited), but the legacy inventory is handled in broad buckets with the prune-or-rebrand call explicitly deferred, not walked asset-by-asset with per-item impressions/positions and a firm disposition each."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "The clearscope/marketmuse 'alternative' queries land on existing /compare/Entrant-vs-* pages → optimize those, do NOT write duplicate blog posts... folded in GSC recoveries (internal linking automation, frase vs marketmuse)",
+          "rationale": "The entrant avoids both failure modes — it preserves and optimizes equity-bearing legacy pages using real GSC impressions rather than torching them, harvests recoverable queries, and builds the new cluster as the growth engine with phased sequencing. It falls short of anchor_10 because the legacy-vs-new tension is enacted rather than explicitly articulated as a strategic choice."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 4,
+          "basis": "\"14 marketing/SEO pages still use OLD autopilot/CMS-publishing branding (verified live, 0 current-positioning markers)... need rebrand-or-prune\" and \"Rebrand: wrote context.md with current 'SEO engine for coding agents' positioning... + old-autopilot framing to avoid\"",
+          "rationale": "The entrant clearly recognizes a positioning pivot and treats the old autopilot/auto-blogging identity as legacy while reframing work around the current product — the right competency — but it is an autopilot→coding-agent-SEO pivot; nothing identifies a meeting-assistant product or reframes an inbox-cleanup demand history as legacy, so the specific intent inference the question targets is absent."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "\"Content debt carried over: ~30 /lovable-* + /seo-for-* programmatic pages and 14 older marketing pages still reflect old positioning (Phase 2 prune-or-rebrand decision still open)\" and the GSC-grounded /compare pass citing \"700-900 impressions each but rank pos 37-78\"",
+          "rationale": "There is genuine asset-level, data-grounded disposition thinking (prune-or-rebrand tiers, real GSC impressions/positions driving keep-and-optimize vs sunset on the /compare and legacy pages), but it never walks the 12 legacy blog posts asset-by-asset with per-post harvest/redirect/sunset calls tied to the export, so the specific migration ledger the question asks for is only partially met."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "\"Restructured 1 cluster → 3... Total ~32 articles planned\" as the growth engine, alongside preserving equity — \"the clearscope/marketmuse 'alternative' queries land on existing /compare pages → optimize those, do NOT write duplicate blog posts\" and the open \"Phase 2 prune-or-rebrand\" transition",
+          "rationale": "The plan avoids both failure modes — it builds a large new-positioning cluster as the growth engine while explicitly preserving and re-optimizing salvageable legacy equity (GSC striking-distance /compare pages) rather than torching it, and sequences the transition; it just never articulates the tension around the inbox-cleanup/meeting-assistant reality the question frames."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 6,
+          "basis": "llms.txt described 'the old product: Set it and forget it SEO automation… (all false now — current = free Skill / $49 Pro)'; changelog 'Re-anchored cluster: pillar now seo agent (vol 27100, #60 in GSC)… folded in GSC recoveries… deprioritized AEO/GEO head terms'",
+          "rationale": "The entrant clearly recognizes its product's positioning pivot (old autopilot/auto-publish branding is treated as stale legacy; live/current positioning drives the plan) and re-anchors its cluster on GSC history rather than blindly ranking old-era content — matching the pattern the question rewards, though it frames this as a branding/positioning pivot rather than an explicit 'legacy demand vs current market' statement."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "'/compare optimization (GSC-driven, 5 pages): pulled real per-page GSC queries — the /compare/…{clearscope,marketmuse,frase} pages earn 700-900 impressions each but rank pos 37-78… Optimized all 5'; 'clearscope alternative (#74, KD0)… land on existing /compare pages → optimize those, do NOT write duplicate blog posts'",
+          "rationale": "Real per-asset dispositions grounded in cited GSC impressions/positions exist (optimize these 5 pages, don't cannibalize with new posts), but the broad legacy inventory (~30 programmatic + 14 marketing pages) is left as 'Phase 2 prune-or-rebrand decision still open' — flagged, not dispositioned asset-by-asset."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "'~30 /lovable-* + /seo-for-* programmatic pages and 14 older marketing pages still reflect old positioning (Phase 2 prune-or-rebrand decision still open)'; rebrands 19 stale modules + optimizes GSC-earning /compare pages rather than deleting them, while building 3 new clusters as the growth engine",
+          "rationale": "Lands a defensible middle path — preserves/redirects salvageable equity (rebrand not torch, keep GSC-impressed comparison pages), builds new clusters for growth, and sequences the transition in phases — but never articulates the tension as sharply as the top anchor."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 6,
+    "J2": 5,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

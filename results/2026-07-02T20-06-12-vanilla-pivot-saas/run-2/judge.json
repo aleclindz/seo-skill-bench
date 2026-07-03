@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "\"title/description/OG tags describe Lumina (not InboxZap)\" and \"there's no source content anywhere in the repo for the 12 posts GSC shows getting impressions\"; migrate option is framed as rebranding \"toward Lumina where topically relevant\"",
+          "rationale": "The entrant clearly grasps the pivot — live product is the Lumina meeting assistant, the GSC blog impressions are legacy InboxZap demand — and frames every recommendation around Lumina. It never explicitly labels the repo as 'partially stale' in strategic terms, but the recognition is unambiguous and consistently applied."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "\"forfeits the ~600 impressions/month the old posts already get\" — a single aggregate figure with no per-post impressions/positions and no asset-by-asset disposition",
+          "rationale": "There is genuine migration thinking (301s, preserve-vs-sunset, rebrand where topically relevant), lifting it above a blanket instruction, but the 12 posts are treated as one undifferentiated block with only an aggregate impression number and no per-asset decisions grounded in the actual export."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "\"Migrate old InboxZap posts... preserves the existing (if weak) rankings and lets us redirect/rebrand them toward Lumina\" vs \"Sunset them and start fresh... unless we 301 the old URLs to new relevant content\"",
+          "rationale": "The entrant explicitly names the tension and gestures at a defensible middle path (301 legacy equity to Lumina-relevant successors while building fresh meeting-assistant content), avoiding both failure modes, but it defers the actual decision to the user rather than committing to and sequencing the transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "\"title/description/OG tags describe Lumina (not InboxZap)\" and \"Migrate old InboxZap posts ... toward Lumina where topically relevant\"",
+          "rationale": "Clearly recognizes the pivot, rebuilds all metadata/pages around the meeting-assistant product, and explicitly frames the legacy blog posts as InboxZap-era legacy demand rather than the current market. Falls short of a full 10 only because the pivot is treated as self-evident background rather than stated as an explicit strategic thesis with the GSC-vs-live reasoning spelled out."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "\"there's no source content anywhere in the repo for the 12 posts GSC shows getting impressions (`/blog/post-1` through `post-12`)\" ... \"forfeits the ~600 impressions/month\"",
+          "rationale": "References the legacy inventory and one aggregate impressions figure, and frames migrate-vs-sunset options, but never walks the posts asset-by-asset or cites per-post impressions/positions to justify individual harvest/301/sunset dispositions — it defers the actual decisions back to the user instead of making them."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "\"preserves the existing (if weak) rankings and lets us redirect/rebrand them toward Lumina\" vs. \"forfeits the ~600 impressions/month the old posts already get, unless we 301 the old URLs to new relevant content\"",
+          "rationale": "Names the tension between preserving legacy equity and rebuilding for the new positioning and floats a defensible bridge (301 legacy URLs to relevant Lumina content), avoiding both failure modes — but it presents this as an open question for the user rather than committing to and sequencing the middle path itself."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "title/description/OG tags describe Lumina (not InboxZap)... there's no source content anywhere in the repo for the 12 posts GSC shows getting impressions",
+          "rationale": "The entrant fully internalized the pivot — every built page (features, pricing, FAQ) is meeting-assistant content, and it explicitly labels the InboxZap blog posts as legacy demand distinct from the current product. Slightly short of a formal three-source (live/GSC/repo) framing, but the implication drives the whole build."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "the ~600 impressions/month the old posts already get, unless we 301 the old URLs to new relevant content",
+          "rationale": "It treats all 12 posts as a single block with one aggregate impressions figure and offers two blanket options rather than per-asset dispositions grounded in each post's impressions/position. No asset-by-asset or tiered decision was made — and the disposition is punted to the client."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "preserves the existing (if weak) rankings and lets us redirect/rebrand them... vs Sunset them... unless we 301 the old URLs to new relevant content",
+          "rationale": "It clearly names the tension between preserving equity and starting fresh and avoids torching everything (301 bridge is on the table), but it stops at presenting the fork and asks the operator to choose rather than landing and sequencing a defensible middle path itself."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 8,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

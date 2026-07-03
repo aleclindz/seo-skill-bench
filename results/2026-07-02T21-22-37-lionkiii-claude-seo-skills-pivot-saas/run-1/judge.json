@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "the company rebranded from **Lumina** (an AI meeting-notes assistant) to **InboxZap** (an inbox-cleanup tool)",
+          "rationale": "The entrant noticed a Lumina/InboxZap discrepancy but inverted the actual direction — it treats inbox-cleanup as the go-forward product and rebuilds the entire site and plan around ranking the legacy InboxZap-era content harder, exactly the anchor_0 failure. It never entertains that the live meeting-assistant product is current and the inbox demand is legacy."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "Those posts carry ~14,000 combined monthly impressions at avg. position 40–60 — essentially orphaned pages. `sitemap.ts` now includes all of them.",
+          "rationale": "There is one blanket disposition — keep and promote all 12 posts — with only an aggregate impression/position figure rather than per-asset GSC numbers driving harvest/redirect/sunset calls. The lone per-post note is the post-3/post-7 cannibalization flag, far short of an asset-by-asset migration ledger."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Rewrote hero copy, features, pricing, and Organization/SoftwareApplication schema to match the actual product... homepage is 100% InboxZap with no leftover \"Lumina\" references.",
+          "rationale": "The entrant lands fully in one failure mode: it doubles down on inbox-cleanup content and simultaneously torches all meeting-assistant positioning, with no articulation of the tension or a bridging transition. There is no defensible middle path, just an all-in bet on the legacy demand."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "\"the company rebranded from Lumina (an AI meeting-notes assistant) to InboxZap (an inbox-cleanup tool)... The live site (lumina.example) is still serving the old all-Lumina version\"",
+          "rationale": "The entrant noticed a brand/content mismatch but read the pivot exactly backwards — it treats the live meeting-assistant product as the 'old' version and inbox-cleanup as the current product, then rebuilds the entire site around inbox-cleanup. That is the anchor_0 failure of treating legacy inbox demand as the target market, dressed up in sophisticated diagnosis."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "\"Those posts carry ~14,000 combined monthly impressions at avg. position 40–60\" and \"post-3 and post-7 both target 'bulk delete emails' — mild cannibalization risk\"",
+          "rationale": "There is no per-asset disposition: all 12 posts get one blanket treatment (server-render + add to sitemap), justified only by an aggregate impression figure and a single cannibalization pair, with no individual harvest/redirect/keep/sunset calls grounded in per-post GSC numbers."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "\"Rewrote hero copy, features, pricing, and Organization/SoftwareApplication schema to match the actual product... homepage is 100% InboxZap with no leftover 'Lumina' references\"",
+          "rationale": "Falls squarely into a failure mode — it torches the live meeting-assistant positioning entirely and doubles down on inbox-cleanup content, with no articulation of the tension and no bridging/transition plan; the legacy-vs-growth balance is never even framed."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "the company rebranded from **Lumina** (an AI meeting-notes assistant) to **InboxZap** (an inbox-cleanup tool)... 12 blog posts are well-matched to real non-brand demand (inbox zero, bulk delete...)",
+          "rationale": "The entrant inverted the pivot: it treats the meeting-assistant identity as the OLD product and inbox-cleanup as the CURRENT product, then builds the entire plan around ranking the legacy inbox-cleanup content harder — precisely the anchor_0 failure of treating legacy demand as the target market."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "Those posts carry ~14,000 combined monthly impressions at avg. position 40–60 — essentially orphaned pages. `sitemap.ts` now includes all of them.",
+          "rationale": "No per-asset disposition framework — all 12 posts get one blanket treatment (rebuild, republish, sitemap-add) as current-product growth content; it cites only an aggregate impression figure and a lone cannibalization note (post-3/post-7), never harvest/redirect/sunset decisions grounded in each asset's numbers."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Rewrote hero copy, features, pricing, and Organization/SoftwareApplication schema to match the actual product... homepage is 100% InboxZap with no leftover 'Lumina' references.",
+          "rationale": "Falls fully into one failure mode: it torches the meeting-assistant positioning entirely and doubles down on the inbox-cleanup cluster as the growth engine, with no articulation of the tension and no bridge — the mirror-image of a defensible transition plan."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 2,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

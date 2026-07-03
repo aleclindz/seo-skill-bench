@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina is mid-pivot from a product called InboxZap (email cleanup) to an AI meeting-notes assistant... inboxzap-branded queries still rank OK (position 4–9)... but every topical query... has cratered to position 40–60 with near-zero clicks despite huge impressions (300–3900)",
+          "rationale": "Explicitly nails the pivot and grounds it in real GSC positions/impressions, framing inbox-cleanup demand as legacy and the metadata mismatch as the cause. Loses a point only because the framing is diagnostic rather than carried through every recommendation."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "app/sitemap.ts — now includes all blog post URLs dynamically... app/blog/page.tsx — converted to an async Server Component, rendering real <Link href> per post",
+          "rationale": "No per-asset disposition for the 12 legacy posts — it blanket re-surfaces ALL of them via sitemap and internal links with no harvest/redirect/sunset decision and no citation of individual post impressions/positions, which is the opposite of a data-justified inventory walk."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "kept a \"(formerly InboxZap)\" mention to preserve the residual branded-search equity shown in GSC rather than discarding it outright",
+          "rationale": "Avoids torching equity (preserves branded mention, fixes positioning) but leans toward the other failure mode by wholesale re-exposing all legacy inbox-cleanup posts with no sequenced transition plan or meeting-assistant content cluster; the tension is never explicitly articulated or resolved."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "**Lumina is mid-pivot** from a product called InboxZap (email cleanup) to an AI meeting-notes assistant... Google is indexing a page whose title/description contradict its content",
+          "rationale": "Explicitly nails the pivot, cross-references GSC vs. source, correctly reads inbox queries as legacy demand and the title/meta mismatch as the cause, and frames the fixes around the new positioning. Loses a point only because the legacy-vs-new distinction drives on-page fixes but not the content strategy."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "**`app/sitemap.ts`** — now includes all blog post URLs dynamically instead of the stubbed static list",
+          "rationale": "No per-asset harvest/redirect/sunset dispositions and no citation of individual post impressions/positions; it treats all 12 legacy posts as an undifferentiated bundle to re-expose, which is nearly the opposite of a migration plan."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "kept a \"(formerly InboxZap)\" mention to preserve the residual branded-search equity shown in GSC rather than discarding it outright",
+          "rationale": "Preserves branded equity and builds the meeting-assistant positioning (avoids torching everything), but by re-exposing all inbox-cleanup posts to crawlers with no disposition or sequencing it drifts toward re-chasing legacy content and never articulates the transition tension explicitly."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina is mid-pivot from a product called InboxZap (email cleanup) to an AI meeting-notes assistant... `inboxzap`-branded queries still rank OK... but every topical query... has cratered to position 40–60",
+          "rationale": "Explicitly nails the pivot, correctly reads GSC as legacy inbox demand vs. the live meeting-assistant product, and frames the diagnosis around it. Falls just short of anchor_10 because it doesn't note the repo being partially stale as a distinct 'reality' beyond the title-tag bug."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "`app/sitemap.ts` — now includes all blog post URLs dynamically instead of the stubbed static list",
+          "rationale": "No per-asset disposition: the 12 legacy inbox posts are cited only in aggregate (impressions 300–3900, pos 40–60) and are all blanket-resurfaced into the sitemap/blog index — the opposite of a harvest/301/keep/sunset decision grounded in each post's numbers."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "kept a '(formerly InboxZap)' mention to preserve the residual branded-search equity shown in GSC rather than discarding it outright",
+          "rationale": "Preserves branded equity and builds the meeting-assistant framing (good middle-ground instinct), but re-exposing every legacy inbox-cleanup post wholesale with no transition or repositioning plan leans toward doubling down on demand for a product that no longer exists; the tension is never articulated or sequenced."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 2,
+    "J3": 4
+  },
+  "judgment": 0.4
+}

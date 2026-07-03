@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "every query in the GSC export targets the old InboxZap product — Lumina has zero organic visibility for \"AI meeting assistant.\" ... was still shipping InboxZap's title/description/OG image",
+          "rationale": "Explicitly nails the three-way pivot: live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale branding. Every recommendation is framed around ranking for the new category, treating inbox queries as legacy. Falls just short of a full articulation of implications per data segment."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Kept live (and preserved verbatim) because it still carries real backlinks and search equity; each post gets a Lumina callout instead of a rewrite.",
+          "rationale": "There is a clear, reasoned disposition (keep-live + callout to harvest residual traffic), which lifts it above anchor_0, but it is a single blanket policy applied uniformly to all 12 posts with zero actual GSC impressions/positions cited — no asset-by-asset or tiered data justification, and no redirect/sunset differentiation."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "prioritized: meeting-minutes/action-item templates and competitor-alternative pages first (low difficulty, fast wins) ... category head terms later ... [legacy posts] Kept live ... each post gets a Lumina callout",
+          "rationale": "Lands a defensible middle path: preserves legacy equity via keep-plus-callout while building the meeting-assistant cluster as the growth engine and sequencing wins into an 8-week calendar. The tension is implied and handled well, though not named as explicitly as anchor_10, and the transition sequencing rests on figures self-labeled 'Estimated.'"
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "every query in the GSC export targets the old InboxZap product — Lumina has zero organic visibility for 'AI meeting assistant'... Legacy content published before the InboxZap -> Lumina pivot",
+          "rationale": "Explicitly identifies the pivot across live site, repo (stale layout still shipping InboxZap branding), and GSC (all queries are legacy inbox demand), and frames the whole plan around building for the new category. Falls just short of a 10 only because it doesn't quantify the legacy demand it's foregoing."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Kept live (and preserved verbatim) because it still carries real backlinks and search equity; each post gets a Lumina callout instead of a rewrite.",
+          "rationale": "Applies one blanket disposition (keep all 12 + add a callout) rather than per-asset harvest/redirect/sunset decisions, and cites no actual impressions/positions from the GSC export to justify any post's treatment. It's better than pure neglect but is essentially 'keep everything' with generic equity reasoning."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "prioritized: meeting-minutes/action-item templates and competitor-alternative pages first... category head terms later once there's supporting content... a short 'try Lumina' callout to each legacy post — it recaptures some value from that traffic",
+          "rationale": "Lands a defensible middle path — preserve legacy equity via retained posts plus product callouts while building the meeting-assistant cluster as the sequenced growth engine — avoiding both chasing dead inbox demand and torching equity. Docks a bit because the tension is enacted rather than explicitly articulated and the bridge is data-thin."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "every query in the GSC export targets the old InboxZap product — Lumina has zero organic visibility for 'AI meeting assistant.'",
+          "rationale": "Explicitly nails the pivot: live site = meeting assistant, GSC = legacy InboxZap demand, repo = partially stale (layout.tsx still shipping InboxZap branding). Frames the whole plan around ranking the new category."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Kept live (and preserved verbatim) because it still carries real backlinks and search equity; each post gets a Lumina callout instead of a rewrite.",
+          "rationale": "Applies one blanket disposition — keep all 12 verbatim + add a callout — rather than per-asset harvest/redirect/sunset decisions; cites no per-post impressions or positions from the export, so the disposition is asserted, not data-justified."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "prioritized: meeting-minutes/action-item templates and competitor-alternative pages first (low difficulty, fast wins... category head terms later once there's supporting content",
+          "rationale": "Cleanly avoids both traps — preserves legacy equity via live posts + bridging callouts while building the meeting-assistant cluster as the sequenced growth engine (fast wins → head terms, 8-week calendar). Loses points on practicality because the actual calendar/volumes live in an unshown 'write-up above' and figures are unvalidated estimates."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

@@ -1,0 +1,17 @@
+{
+  "skill": "mango-claude-seo-skill",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.8571428571428571,
+  "detection_all": [
+    0.8571428571428571,
+    0.8571428571428571,
+    0.38095238095238093
+  ],
+  "trap_avoidance_median": 1,
+  "trap_avoidance_all": [
+    0.7272727272727273,
+    1,
+    1
+  ]
+}

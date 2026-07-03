@@ -1,0 +1,49 @@
+{
+  "skill": "agentic-seo-skill",
+  "fixture": "pivot-saas",
+  "run": 2,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 649203,
+  "exit": 0,
+  "install": {
+    "method": "git-skill-md",
+    "ok": true,
+    "detail": "root SKILL.md -> .claude/skills/agentic-seo-skill/"
+  },
+  "files_changed": 2,
+  "usage": {
+    "usage": {
+      "input_tokens": 9341,
+      "cache_creation_input_tokens": 55441,
+      "cache_read_input_tokens": 1179209,
+      "output_tokens": 21031,
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 55441,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 131,
+          "output_tokens": 1301,
+          "cache_read_input_tokens": 79723,
+          "cache_creation_input_tokens": 1910,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1910
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 1.0305397,
+    "num_turns": 35
+  }
+}

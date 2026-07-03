@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant... GSC shows 100% of impressions on legacy email-cleanup queries (inbox zero, Gmail storage, bulk-delete) and zero visibility for anything Lumina sells",
+          "rationale": "Explicitly names the pivot, reads the live/repo state as half-migrated, and frames GSC impressions as legacy demand versus the new product's zero-visibility market — every recommendation flows from that reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "Added contextual 'bridge' CTAs... on the 6 highest-impression legacy posts, rather than rewriting them off-topic and losing their existing rankings",
+          "rationale": "It assigns a real, GSC-grounded disposition (bridge the top-impression tier, keep the rest as-is) and cites post-1's 3,900 impressions, but stops short of a genuine asset-by-asset walk — no per-post impressions/positions and no redirect/sunset calls for the lower tier."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Added contextual 'bridge' CTAs (inbox chaos → meeting chaos → Lumina)... rather than rewriting them off-topic and losing their existing rankings; Seeded the actual content gap with 2 new on-target posts... as the first entries in a real topical cluster",
+          "rationale": "Cleanly avoids both traps — preserves legacy ranking equity via bridge CTAs instead of torching it, while explicitly building the meeting-assistant cluster as the growth engine and sequencing the transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant, but the migration was left half-finished in the code... GSC shows 100% of impressions on legacy email-cleanup queries... and zero visibility for anything Lumina sells",
+          "rationale": "Explicitly names the pivot, correctly reads the live product as meeting assistant, GSC as legacy inbox demand, and the repo as stale mid-migration; every fix is framed around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Added contextual \"bridge\" CTAs (inbox chaos → meeting chaos → Lumina) on the 6 highest-impression legacy posts, rather than rewriting them off-topic and losing their existing rankings",
+          "rationale": "Applies a defensible data-justified tier (top-6 by impressions get bridges, rest kept as-is) but only cites one concrete GSC number (post-1: 3,900) and issues no true per-asset harvest/301/sunset dispositions with each post's own impressions/positions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "rather than rewriting them off-topic and losing their existing rankings... Seeded the actual content gap with 2 new on-target posts... as the first entries in a real topical cluster",
+          "rationale": "Cleanly avoids both failure modes: preserves legacy equity via bridges instead of torching it, and builds the meeting-assistant cluster as the growth engine while sequencing the transition (stop bleeding → seed cluster → roadmap)."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"Lumina pivoted from an email-cleanup product (\\\"InboxZap\\\") to an AI meeting assistant, but the migration was left half-finished in the code\" and \"GSC shows 100% of impressions on legacy email-cleanup queries ... and zero visibility for anything Lumina sells\"",
+          "rationale": "The pivot is stated explicitly, the GSC history is correctly framed as legacy demand, and every fix is oriented around the meeting-assistant reality — near-perfect on this lens."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "\"Added contextual 'bridge' CTAs ... on the 6 highest-impression legacy posts, rather than rewriting them off-topic and losing their existing rankings\" and \"post-1 alone: 3,900\"",
+          "rationale": "It tiers the 12 posts by impressions (top 6 get bridge CTAs, rest kept as-is) and cites one real GSC number, but stops short of a per-asset disposition with impressions/positions for each post and never considers 301/sunset options."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "\"Added contextual 'bridge' CTAs (inbox chaos → meeting chaos → Lumina) ... rather than rewriting them off-topic and losing their existing rankings\" plus \"Seeded the actual content gap with 2 new on-target posts ... as the first entries in a real topical cluster\"",
+          "rationale": "It explicitly names the tension and lands a defensible middle path — preserve legacy equity via bridges while building the meeting cluster as the growth engine, with a sequenced roadmap for what comes next."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 5,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

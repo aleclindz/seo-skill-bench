@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site is mid-pivot from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), and the SEO layer never caught up with the product... GSC confirmed the damage: `inboxzap` branded queries still hold position ~4 (fading brand equity)... while every content-relevant keyword for the old product sits at position 40–65 with near-zero clicks — expected, since the product no longer serves that intent.",
+          "rationale": "Explicitly names the pivot, correctly reads live site as the product and GSC as legacy inbox demand, and frames every fix around not continuing to write about email cleanup. Falls just short of anchor_10 because the repo-is-stale framing and 'implication' is asserted more than each recommendation being individually anchored to it."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "**Dead old-topic blog URLs** (`/blog/post-1`…`post-12`) — 301'd to `/blog` instead of 404ing, to consolidate any residual link equity cleanly.",
+          "rationale": "Cites some real numbers (3,900 impressions on one, position ~4 brand vs 40–65 content), but applies a single blanket disposition — all 12 posts 301'd to the blog index — rather than an asset-by-asset or data-tiered harvest/redirect/keep/sunset decision; the highest-impression post gets the same treatment as a dead one."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301'd to `/blog`... to consolidate any residual link equity cleanly... 4 genuine, structured posts targeting real Lumina-relevant search intent... instead of continuing to write about email cleanup.",
+          "rationale": "Cleanly avoids both failure modes: preserves residual equity via redirects while building the meeting-assistant content cluster as the growth engine, and flags brand-equity as fading rather than torching it. Short of anchor_10 because the transition is executed but the tension and sequencing are stated only implicitly, not articulated as an explicit staged plan."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site is mid-pivot from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), and the SEO layer never caught up with the product",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant and treats the inbox-era GSC queries as fading legacy demand ('the product no longer serves that intent'), and frames every fix around the new positioning. Falls just short of a perfect 10 only because it doesn't tier the repo staleness as crisply as it does the site/GSC split."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Dead old-topic blog URLs (`/blog/post-1`…`post-12`) — 301'd to `/blog` instead of 404ing, to consolidate any residual link equity cleanly",
+          "rationale": "Cites some real GSC figures (3,900 impressions, position ~4 brand, 40–65 for old content) and correctly avoids leaving 404s, but applies a single blanket 301 of all 12 posts to the index — no asset-by-asset or tiered disposition, no harvest/repurpose call for any individual high-impression legacy post."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301'd to `/blog` instead of 404ing, to consolidate any residual link equity cleanly ... 4 genuine, structured posts targeting real Lumina-relevant search intent ... instead of continuing to write about email cleanup",
+          "rationale": "Lands a defensible middle path — preserves legacy equity via redirects while building the meeting-assistant cluster as the growth engine — rather than chasing dead inbox demand or torching equity. Short of 10 because the tension is handled implicitly and the redirect bridge is coarse (all-to-index) rather than a sequenced, equity-weighted transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site is mid-pivot from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), and the SEO layer never caught up... `inboxzap` branded queries still hold position ~4 (fading brand equity)... while every content-relevant keyword for the old product sits at position 40–65 with near-zero clicks — expected, since the product no longer serves that intent.",
+          "rationale": "Explicitly names the pivot, reads the live site as meeting-assistant, treats GSC inbox demand as legacy/fading, and frames every fix around the new reality — exactly the anchor_10 behavior."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "**Dead old-topic blog URLs** (`/blog/post-1`…`post-12`) — 301'd to `/blog` instead of 404ing, to consolidate any residual link equity cleanly.",
+          "rationale": "One blanket 301-to-index disposition for all 12 posts, executable and vaguely data-aware (cites the 3,900-impression post and position 40–65 band), but it never walks the inventory asset-by-asset or tiers them — no per-post harvest/redirect-to-successor/keep/sunset calls grounded in each post's actual numbers."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301'd to `/blog`... to consolidate any residual link equity cleanly... 4 genuine, structured posts targeting real Lumina-relevant search intent... Keep publishing on the new topics; 4 posts is a start, not a calendar.",
+          "rationale": "Lands a defensible middle path — preserves legacy equity via redirects while building the meeting-assistant cluster as the growth engine and flagging next steps — avoiding both failure modes, though the tension is enacted more than explicitly articulated and equity is bridged bluntly rather than to matched successors."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

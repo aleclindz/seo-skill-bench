@@ -1,0 +1,16 @@
+{
+  "skill": "seoagent",
+  "fixture": "pivot-saas",
+  "run": 1,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 2700427,
+  "exit": 143,
+  "install": {
+    "method": "npm",
+    "ok": true,
+    "detail": "npx -y @seoagent-official/seoagent init"
+  },
+  "files_changed": 53,
+  "usage": null
+}
