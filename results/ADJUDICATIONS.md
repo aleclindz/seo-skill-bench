@@ -70,3 +70,32 @@ contamination events (the fleet-1 defect is fixed and its FP class is gone).
 Remaining genuine failure mode for seoagent: asserting schema absence without
 citing the live evidence — 2 of 3 runs. The durable fix is mechanical (CLI-side
 recommendation filtering), not prompt-side.
+
+---
+
+# Cycle-3 addendum (2026-07-03, seoagent@1.74.0 PINNED, logged out)
+
+Product changes since fleet 2: crawl origin binding (--url contract, origin recorded
+in evidence, self-started dev servers demoted to "source render"), verify-recs invoked
+mechanically by the sync hook, session-economy rules (PRs #692, #693 → npm 1.73.0/1.74.0).
+
+Process receipts, in order:
+- 2026-07-03T14-49 rerun: ran on a stale-cached 1.73.0 (npx resolved pre-publish
+  "latest") — results committed as receipts but superseded; registry now PINS exact
+  entrant versions per cycle. One run invalid (empty transcript, SIGTERM).
+- 2026-07-03T17-42 rerun (pinned 1.74.0): two hung-process invalid runs auto-retried
+  per the published invalid-run policy (originals preserved as run-N-invalid).
+  Final: detection [81, 71, 81]→median 81%, traps [82, 55, 82]→median 82%,
+  judgment [0.9, 1.0, 0.3]→median 0.9, execution 50%. Composite 77.2 → #1.
+
+Fairness note (maintainer's own skill): SEOAgent's row reflects v1.74.0 while
+competitors' rows reflect their versions as of fleet 2 (2026-07-03). Every entrant's
+row is its LATEST results at its latest benchmarked version; competitor re-runs are
+welcome (open an issue / PR a version bump) and the planned monthly re-run refreshes
+everyone. All intermediate SEOAgent attempts — including the superseded and invalid
+runs — are committed in results/ rather than discarded.
+
+Remaining known SEOAgent gaps (not hidden by the ranking): trap avoidance is 82%,
+not 100 (one run still phrased a repo-source fix as a live-site absence); execution
+50% (turn-budget cap); and the recurring hung-headless-session issue (three
+empty-transcript hangs across cycles) is now a product investigation item.
