@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "your homepage's `<title>`/meta description/social preview still said *\"InboxZap — Clean Your Inbox in Minutes\"* (your old email-cleanup product) while the actual page is about Lumina, your AI meeting assistant... Treat GSC-seeded keywords as legacy/off-strategy by default",
+          "rationale": "Explicitly identifies the pivot from live product (Lumina meeting assistant) vs. legacy GSC inbox demand vs. stale repo metadata, states the implication, and frames every recommendation (keywords, migration, roadmap) around it."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`https://lumina.example/blog/post-1` — Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3 ... 301-redirect into the most relevant new page",
+          "rationale": "Walks all 12 legacy posts asset-by-asset with real per-URL impressions/positions and assigns a disposition, plus a well-reasoned correction reclassifying the homepage to harvest; docked slightly because all 12 get an identical blanket 'redirect' with no harvest/sunset differentiation among the posts (e.g. the 80-impression, 0-click post-7 arguably warrants sunset)."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Redirect the 12 legacy `/blog/post-N` URLs into the new cluster's pillar/sub-pillar pages once those exist — not before... The branded query `inboxzap` still converts... real, defendable equity worth protecting through the transition, not a liability.",
+          "rationale": "Avoids both failure modes — preserves salvageable equity (redirect legacy posts, defend the branded inboxzap ranking) while building the meeting-assistant cluster as the growth engine, with explicit sequencing that avoids redirecting to not-yet-existent targets."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "your homepage's `<title>`/meta description/social preview still said *\"InboxZap — Clean Your Inbox in Minutes\"* (your old email-cleanup product) while the actual page is about Lumina, your AI meeting assistant... Your branded search term \"inboxzap\" still converts well... real equity worth protecting through the rebrand, not dead weight",
+          "rationale": "Explicitly identifies the pivot (live = Lumina meeting assistant, GSC/metadata = legacy InboxZap), frames the entire plan and keyword strategy around treating inbox queries as legacy demand while building the meeting-assistant cluster."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "migration-plan.md ... 13 assets classified ... Redirect — 301 the legacy authority ... `post-1` 3900 impressions, 2 clicks, avg position 42.3 ... Harvest homepage 600 impr, pos 4.5 ... corrected homepage misclassification",
+          "rationale": "Walks the legacy inventory asset-by-asset with real GSC impressions/positions and assigns dispositions, even catching a false-positive homepage misclassification; slightly short of 10 because all 12 posts get an identical blanket 'redirect' with no per-asset target reasoning and no post scored for harvest/sunset differentiation."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "The branded query \"inboxzap\" still converts... real equity worth protecting through the transition, not a liability... Redirect the 12 legacy `/blog/post-N` URLs into the new cluster's pillar/sub-pillar pages once those exist — not before",
+          "rationale": "Names the tension explicitly and lands a defensible middle path: defend converting branded equity, redirect salvageable post authority, build the meeting cluster as the growth engine, and correctly sequences redirects only after targets exist rather than torching or blindly chasing legacy demand."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "your homepage's `<title>`/meta description/social preview still said *\"InboxZap — Clean Your Inbox in Minutes\"* (your old email-cleanup product) while the actual page is about Lumina, your AI meeting assistant... Treat GSC-seeded keywords as legacy/off-strategy by default",
+          "rationale": "Explicitly names the pivot (live=Lumina meeting assistant, GSC=legacy inbox demand, repo=stale metadata), states the implication, and every recommendation — metadata fix, legacy-vs-new keyword split, migration plan — is framed around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`https://lumina.example/blog/post-1` — Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3 ... 301-redirect into the most relevant new page",
+          "rationale": "Walks all 12 legacy posts asset-by-asset with real GSC impressions/positions and assigns each a disposition plus reasoning, and corrects the homepage false-positive to harvest; loses points because every post gets the same 'redirect' verdict with no tiering (e.g. the 80-impression post-7 vs 3900-impression post-1) and no concrete target mapping yet."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "preserve/redirect... 'harvest what's already earned' before spending on new content... Redirect the 12 legacy `/blog/post-N` URLs into the new cluster's pillar/sub-pillar pages once those exist — not before",
+          "rationale": "Explicitly holds the tension: protects converting branded equity (inboxzap ~pos 4) and legacy blog authority via 301s while building the meeting-assistant cluster as the growth engine, and sequences the transition so redirects don't fire before targets exist — neither failure mode."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "**Pivot note:** the repo shows the product rebranded from **InboxZap**... All historical GSC demand... is InboxZap-era email/inbox queries — none of it is on-topic for Lumina.",
+          "rationale": "Explicitly identifies the pivot (live body = Lumina meeting assistant, stale InboxZap metadata, GSC = legacy inbox demand) and frames every recommendation — metadata fix, redirects, deferred content plan — around treating the inbox history as legacy equity, not the current market."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`/blog/post-1` — Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3 ... Action: 301-redirect ... into the most relevant new page",
+          "rationale": "Walks all 13 legacy assets one-by-one with real per-URL impressions/clicks/position and assigns a disposition with reasoning, plus correctly flags the homepage as a false-positive to keep; docked because every asset lands on the same 'redirect' verdict with no genuine harvest/sunset differentiation and targets left as placeholders."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "worth 301'ing into new Lumina content once it exists, rather than letting ~14,880 impressions of history evaporate ... protected, not redirected: keep the URL",
+          "rationale": "Avoids both failure modes — it neither doubles down on inbox content nor torches equity, instead sequencing a 301-preservation of legacy authority while deferring the Lumina content cluster; slightly short of full marks because the growth-engine half is only gestured at (deferred) rather than articulated as an explicit balanced strategy."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the homepage body is 100% \"Lumina,\" the AI meeting assistant... All historical GSC demand (gsc/Queries.csv, gsc/Pages.csv) is InboxZap-era email/inbox queries — none of it is on-topic for Lumina",
+          "rationale": "Explicitly identifies the InboxZap→Lumina pivot from live/repo evidence, classifies GSC history as legacy inbox demand, notes the repo is partially stale, and frames every recommendation (metadata fix, migration, deferred content) around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "migration-plan.md walks all 13 legacy URLs citing real GSC impressions/positions (e.g. post-1: 3900 impressions, avg position 42.3) with a redirect disposition each; plus catches the homepage false-positive",
+          "rationale": "Genuine asset-by-asset dispositions grounded in the real export, and smartly overrides the tool's homepage-as-redirect artifact to 'protect/keep'; docked because every non-homepage asset lands on the same 'redirect' bucket with no harvest/keep/sunset differentiation and 301 targets are deferred ('choose the closest new page')."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "worth 301'ing into new Lumina content once it exists, rather than letting ~14,880 impressions of history evaporate... build the meeting-assistant cluster as the growth engine (deferred this session per the roadmap)",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content, doesn't torch equity — and sequences preserve-via-301 plus a deferred Lumina content cluster; slightly short of full marks because the bridge is real but thin (301s can't fire until targets/content exist, and that dependency is punted rather than scaffolded)."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"Stale 'InboxZap' branding is still in `<head>` metadata... while the homepage body is 100% 'Lumina,' the AI meeting assistant\" and \"All historical GSC demand... is InboxZap-era email/inbox queries — none of it is on-topic for Lumina.\"",
+          "rationale": "Explicitly nails the pivot (live = Lumina meeting assistant, GSC = legacy InboxZap demand, repo = partially stale metadata) and frames every recommendation around it, including protecting vs. redirecting the right assets. Just shy of 10 because the framing is repeated but consistent throughout."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "\"13 legacy assets classified: 0 harvest · 13 redirect · 0 sunset\" with per-URL evidence e.g. \"post-1... 3900 impressions, 2 clicks, avg position 42.3... 301-redirect... into the most relevant new page\"",
+          "rationale": "Walks every legacy URL asset-by-asset with real GSC impressions/positions and assigns a disposition, plus catches the homepage false-positive — genuinely executable groundwork. Held back because every asset lands on the identical 'redirect' bucket with no harvest/keep differentiation and redirect targets are all left as '<choose the closest new page>', so an operator still can't actually wire the 301s next week."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "\"worth 301'ing into new Lumina content once it exists, rather than letting ~14,880 impressions of history evaporate\" and homepage \"should be kept and re-optimized, not redirected\"; Phase 2 content cluster \"deferred\"",
+          "rationale": "Cleanly avoids both failure modes — preserves salvageable equity via 301s, protects the ranking homepage, and refuses to double down on inbox content — while sequencing the Lumina cluster as future growth work. Not a 10 because the growth-engine side is deferred and the bridge depends on redirect targets that don't yet exist."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

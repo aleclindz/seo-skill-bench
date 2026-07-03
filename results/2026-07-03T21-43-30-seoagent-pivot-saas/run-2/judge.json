@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is a **pivot**, not a cold start: the repo shows the product rebranded from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant) ... GSC history is all legacy InboxZap demand, tracked separately",
+          "rationale": "Explicitly identifies the pivot across all three sources (live=meeting assistant, GSC=legacy inbox demand, repo=partially stale metadata), states the CTR/conversion implication of the mismatch, and frames every recommendation around it."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "migration-plan.md walks all 13 assets with per-URL GSC evidence, e.g. `post-1` 3900 impressions/avg position 42.3 → harvest; homepage 600 impr/18 clicks/pos 4.5 reclassified from redirect to harvest",
+          "rationale": "Genuinely asset-by-asset with real impressions/positions and explicit dispositions plus a hand-corrected homepage false-positive; slightly short of 10 because all 12 posts land on a uniform 'harvest' from a 50%-fallback classifier rather than differentiated per-post dispositions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "\"'Harvest' ... is still the right call here **only because the slugs are generic** ... rewriting in place costs nothing in URL equity\" plus forward cluster order building the meeting-assistant engine",
+          "rationale": "Names the tension directly, preserves salvageable equity via in-place harvest/redirect while sequencing the new meeting-assistant cluster as the growth engine, and prioritizes by impression volume rather than torching or blindly chasing legacy demand."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is a **pivot**, not a cold start: the repo shows the product rebranded from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant)... GSC history is all legacy InboxZap demand, tracked separately in strategy/migration-plan.md, not reused here.",
+          "rationale": "Explicitly names the pivot, treats the live site as the meeting-assistant reality, GSC as legacy inbox demand, and the repo metadata as stale (still 'InboxZap' in <head>) — and every recommendation is framed around that split."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "13 legacy assets classified... `blog/post-1` 3900 impressions, 2 clicks, avg position 42.3 — harvest... homepage reclassified harvest (auto-classifier had it as redirect, a false positive)",
+          "rationale": "Walks all 13 assets with real GSC impressions/positions and assigns dispositions, even hand-correcting the homepage false positive and cross-referencing Queries.csv to prove the topics are 100% old-product; slightly short of a 10 because all 12 posts collapse to one 'harvest' disposition with no sunset even for the ~80–130 impression stragglers."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "harvestable in place due to generic slugs... Refresh/repurpose into the new narrative (keep the URL)... plus a forward keyword/content plan (4 clusters, 11 articles) with sequenced cluster order",
+          "rationale": "Lands the defensible middle path — preserves salvageable equity by rewriting generic-slug URLs in place rather than torching or blindly ranking them, builds the meeting-assistant cluster as the growth engine, and explicitly reasons that the legacy content is off-topic yet worth harvesting only because there's no URL equity to lose."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is a **pivot**, not a cold start: the repo shows the product rebranded from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant)... GSC history is all legacy InboxZap demand, tracked separately",
+          "rationale": "Explicitly names the pivot, identifies live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale (stale <head> metadata), and frames the whole plan (forward Lumina clusters + legacy migration) around that reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "13 legacy assets classified: 12 harvest · 1 redirect · 0 sunset... `blog/post-1` 3900 impressions, 2 clicks, avg position 42.3 — Refresh/repurpose... keep the URL",
+          "rationale": "Walks all 13 assets one-by-one with real GSC impressions/positions and assigns a disposition each, plus a reasoned homepage-redirect override; only soft spot is the flat 'relevance 50%' classifier fallback, which the reviewer note candidly flags and corrects via Queries.csv."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "\"Harvest\" (keep the URL, rewrite the content) is still the right call here only because the slugs are generic... Prioritize by impressions... the long tail below ~1,000 impressions is lower-priority filler",
+          "rationale": "Explicitly articulates the tension — content is 100% old-product yet the URLs carry equity — and lands a sequenced middle path: preserve equity by rewriting top-impression posts in place, redirect nothing prematurely, and build the meeting-assistant cluster as the growth engine in ordered phases."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 9,
+    "J3": 9
+  },
+  "judgment": 0.9
+}
