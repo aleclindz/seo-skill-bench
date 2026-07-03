@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "\"Your live site's `<head>` was still advertising the product you pivoted away from... the actual page content is 100% Lumina, an AI meeting assistant\" and \"treat it as **legacy** equity to disposition (harvest/redirect/sunset), never as validation for the current strategy\"",
+          "rationale": "Explicitly identifies the pivot (live/source-render = meeting assistant, GSC = legacy inbox demand, repo = stale head tags), states the implication, and frames every recommendation around the new positioning — a textbook anchor_10."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "\"53 legacy assets — 3 brand-transition, 37 sunset, 12 redirect\" with a per-asset table citing real GSC numbers (`inboxzap` 320 impr/14 clicks/pos 4.1; `/blog/post-1` 3,900 impr; ~12,400 combined historical impressions at positions 42–58)",
+          "rationale": "Walks the inventory in data-justified tiers with a per-asset disposition grounded in the actual export; slight ding because the 12 blog posts get a single blanket bulk-301 rather than individual dispositions, though the reasoning (no content to reverse-engineer, pos 40+) is defensibly explained."
+        },
+        "J3": {
+          "score": 10,
+          "basis": "\"preserve/redirect what has salvageable equity... I overrode that — Lumina doesn't clean up email, and building pages promising that would tank conversion\" plus forward clusters `ai-meeting-notes`/`meeting-culture` gated on infra fixes",
+          "rationale": "Names the tension explicitly, protects the one salvageable slice (branded inboxzap traffic via a bridge line), refuses to chase off-strategy email demand, builds the meeting-assistant cluster as the growth engine, and sequences the transition behind infra fixes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "\"the visible page content is 100% Lumina, an AI meeting assistant — a completely different product... This site pivoted from an email-cleanup tool ('InboxZap')... treat it as legacy equity to disposition (harvest/redirect/sunset), never as validation for the current strategy\"",
+          "rationale": "Explicitly names the pivot, correctly maps live=Lumina / GSC=legacy inbox demand / repo=partially stale, and frames every recommendation (content clusters, sunset list, brand bridge) around the meeting-assistant reality. Textbook anchor_10."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "\"Brand transition — 3 assets ... | inboxzap | 320 | 14 | 4.1 | ... Redirect — 12 dead blog-post URLs ... ~12,400 historical impressions (post-1 alone: 3,900) at positions 42–58 ... Sunset — 37 assets ... positions are 38–64\"",
+          "rationale": "Full per-tier disposition grounded in real GSC impressions/clicks/positions, with a justified reason for bulk-redirecting the 12 posts rather than individual targets. Slightly short of 10 only because the 37 sunset and 12 redirect assets are handled as data-justified groups rather than truly asset-by-asset."
+        },
+        "J3": {
+          "score": 10,
+          "basis": "\"I override[d] the automated migration classifier... Shared vocabulary is not shared intent... preserve the ~18 clicks/month of branded search... build the meeting-assistant cluster as the growth engine... Do this as cleanup once the blog pipeline is fixed, not as a growth lever\"",
+          "rationale": "Names the tension directly and lands the defensible middle: protects the only salvageable equity (branded inboxzap traffic), sunsets zero-fit demand while explicitly refusing to chase it, and sequences the meeting-assistant build behind infra fixes. Avoids both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This site **pivoted** from an email-cleanup tool ('InboxZap'...) to an AI meeting-notes assistant ('Lumina')... treat it as **legacy** equity to disposition... never as validation for the current strategy",
+          "rationale": "Explicitly names the pivot across all three evidence sources (live head vs. Lumina body, GSC = legacy InboxZap demand, repo partially stale) and frames every recommendation — sunset list, brand bridge, new clusters — around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "53 legacy assets — 3 brand-transition, 37 sunset, 12 redirect... `inboxzap` 320 impr/14 clicks/pos 4.1... 12 blog-post URLs... ~12,400 historical impressions (post-1 alone: 3,900) at positions 42–58",
+          "rationale": "Every asset gets an explicit disposition grounded in real GSC impressions/positions/clicks, and the bulk-redirect and bulk-sunset groupings are data-justified (positions 40+); loses points only because 37 sunsets and 12 redirects are handled as tiers rather than per-asset targeting, which is defensible but slightly less granular than anchor_10."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "the 3 branded `inboxzap*` queries at position 4–9 are the one part worth protecting... I sunset [the email-cleanup queries] rather than build content chasing that demand... build the meeting-assistant cluster as the growth engine... Shared vocabulary is not shared intent",
+          "rationale": "Lands a clearly-articulated middle path — protects/bridges the only salvageable equity (branded search), sunsets off-strategy demand with reasoning, and sequences the new cluster behind the blog-infra fix — even overriding an auto-classifier that would have chased legacy demand."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 9,
+    "J3": 10
+  },
+  "judgment": 1
+}

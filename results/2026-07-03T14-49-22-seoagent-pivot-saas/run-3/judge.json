@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the entire `<head>` (title, meta description, OG, Twitter) is 100% about the OLD product (InboxZap, email cleanup) while 100% of the visible body is about the NEW product (Lumina, meeting assistant)... GSC history in `gsc/` is 100% InboxZap-era demand... does not transfer topically",
+          "rationale": "Explicitly nails the three-way state — live site = meeting assistant, GSC = legacy inbox demand, repo = stale metadata — and frames every recommendation (metadata rewrite, migration, new clusters) around that pivot. Textbook anchor_10."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "Walks post-1..12 individually: e.g. `/blog/post-1` 3900 impressions, 2 clicks, avg position 42.3 → 301; flags `post-3` (130 impr.) and `post-7` (80 impr., position 55.8) as borderline-low value... overrode classifier's homepage misclassification (18 clicks/mo, position 4.5)",
+          "rationale": "Per-asset dispositions grounded in real GSC impressions/positions, with a defensible operator correction on the homepage; loses points because every disposition collapses to a single blanket '301 → /' target with no harvest/repurpose differentiation, so the asset-by-asset reasoning doesn't translate into varied dispositions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "301 all 12 to `/` rather than letting them 404... this preserves whatever residual authority/backlinks they hold instead of forfeiting it... Sequencing: protect existing equity first → build the new clusters → measure and iterate",
+          "rationale": "Explicitly names the tension (don't chase dead inbox demand, don't torch equity), lands the middle path — redirect salvageable equity, build the meeting-assistant cluster as the growth engine, add a 'formerly InboxZap' brand-protection note — and sequences the transition. Only shy of 10 because it candidly expects most redirected authority to decay, slightly undercutting the 'preserve' rationale."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your `gsc/` export shows real historical demand — but it's **entirely InboxZap-era** ... and doesn't transfer to \"AI meeting assistant.\" ... the entire `<head>` ... is 100% about the OLD product (InboxZap) while 100% of the visible body is about the NEW product (Lumina, meeting assistant)",
+          "rationale": "Explicitly nails the pivot: live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale metadata, and frames every recommendation (topics-to-avoid, migration, new clusters) around that reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "The 12 legacy `/blog/post-N` URLs have no topical match ... I set them to 301 → `/` ... `post-3` (130 impr.) and `post-7` (80 impr., 0 clicks, position 55.8) are borderline-low value",
+          "rationale": "Walks the legacy inventory asset-by-asset with real GSC impressions/positions and assigns explicit dispositions, plus overrides the classifier's homepage-redirect false positive; loses a point because nearly every disposition collapses to '301 → /' with no genuine harvest/sunset differentiation beyond noting the topic mismatch."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "protect existing equity first → build the new clusters → measure and iterate ... 301 all 12 to `/` rather than letting them 404 ... a \"Lumina, formerly InboxZap\" note ... protects the ~14 clicks/mo",
+          "rationale": "Explicitly holds the tension: preserves salvageable equity via redirects and a brand-continuity note while refusing to build new inbox-cleanup content, and sequences the meeting-assistant cluster as the growth engine — a defensible middle path, not either failure mode."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Confirmed pivot: the codebase and domain (`lumina.example`) were previously an email-inbox-cleanup tool called \"InboxZap\"... GSC history in `gsc/` is 100% InboxZap-era demand... Treat it as legacy authority to harvest/redirect/sunset, not as the basis for new content strategy.",
+          "rationale": "Explicitly identifies the live site as the meeting assistant, names the GSC export as entirely legacy InboxZap demand that doesn't transfer topically, and frames every recommendation (metadata rewrite, migration, new clusters) around that reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "Redirect list walks each `/blog/post-N` with real GSC evidence (e.g. `post-1`: 3900 impressions, 2 clicks, avg position 42.3) and assigns 301→/, plus the operator override keeping `/` live and the 'formerly InboxZap' brand-protection move.",
+          "rationale": "Genuinely per-asset with real impressions/positions cited and a disposition for each; slightly short of a perfect 10 because every off-topic post gets the same blanket 301→/ target with no differentiation (harvest vs sunset never used for the tail like post-7 at 80 impr/pos 55.8, which it flags but still redirects)."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Sequencing: protect existing equity first → build the new clusters → measure and iterate... 301 all 12 to `/` rather than let them 404... expect most of this authority to decay over 6-12 months regardless, since the topic mismatch is real.",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — redirect salvageable equity, protect the brand-name traffic, build the meeting-assistant cluster as the growth engine — while honestly acknowledging the redirected authority will decay given the topic mismatch."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 9,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

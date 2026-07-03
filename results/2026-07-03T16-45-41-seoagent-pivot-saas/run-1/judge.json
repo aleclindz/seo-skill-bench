@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Your Search Console history is **100% legacy demand from a discontinued product.** ... The current homepage sells something unrelated: Lumina, an AI meeting assistant.",
+          "rationale": "Explicitly names the pivot, treats GSC as legacy InboxZap demand and repo metadata as stale (fixed it), and frames every recommendation around that reality. Docked one point because the 'live' product read is actually inferred from the repo homepage — the live site was unreachable — though the entrant is honest about that."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "table with per-query Impressions/Position/Disposition: `inboxzap` 320/4.1 Redirect; 37 more at 38–65 position never page 1 → **Sunset**; plus overriding the planner's redirect-all-40 output",
+          "rationale": "Assigns real dispositions grounded in cited GSC impressions/positions, tiered by branded-vs-generic and page-1 rank, and reasons about why sunset beats redirect for the 37. Slightly short of full asset-by-asset for the generic 37 (grouped), but the tiering is data-justified."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Real per-asset disposition (not a blind 'redirect everything') ... redirecting that intent to an AI meeting-notes page is a bait-and-switch, not an SEO win ... A new, forward-looking keyword strategy for Lumina ... needs fresh research",
+          "rationale": "Explicitly names both failure modes and lands a defensible middle: preserve the 3 branded queries with salvageable equity, sunset off-intent traffic, and build the Lumina cluster as the growth engine sequenced for next session. Slightly abandonment-leaning (growth work fully deferred), but justified for a full pivot."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your Search Console history is 100% legacy demand from a discontinued product... The current homepage sells something unrelated: Lumina, an AI meeting assistant. None of that historical traffic will ever convert",
+          "rationale": "Explicitly names the pivot, correctly frames GSC as legacy inbox-cleanup demand vs. the live Lumina meeting-assistant product, and threads that reality through every recommendation (metadata rewrite, migration disposition, net-new keyword research)."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "Real per-asset disposition (not a blind 'redirect everything')... 3 branded queries → Redirect... 37 generic ones → Sunset, with per-query impressions/positions cited",
+          "rationale": "Assigns data-grounded dispositions in tiers (redirect the 3 branded high-CTR queries at position ~4-9, sunset the never-page-1 generics) citing real GSC impressions/positions, and explicitly overrides the mechanical redirect-everything planner; falls short of a full asset-by-asset walk with harvest/repurpose consideration for any post."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "chasing it... would just create irrelevant landing experiences... redirecting that intent to an AI meeting-notes page is a bait-and-switch, not an SEO win",
+          "rationale": "Names both failure modes explicitly and lands a defensible middle path — preserve branded equity via honest redirects, sunset non-salvageable generics, and build the Lumina cluster as net-new growth — with sequencing deferred to next session; slightly shy of full because the forward-looking cluster is only gestured at, not yet planned."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your Search Console history is **100% legacy demand from a discontinued product.** ... The current homepage sells something unrelated: Lumina, an AI meeting assistant. None of that historical traffic will ever convert",
+          "rationale": "Explicitly names the pivot, distinguishes live product from legacy GSC demand, notes the repo is partially stale, and frames every recommendation (redirect/sunset/net-new research) around that reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "Per-asset disposition table with impressions/position columns; branded `inboxzap`/`inboxzap app`/`inboxzap review` → **Redirect**, the '37 more ... 96–1,180 each ... 38–65' → **Sunset — let decay, don't redirect'",
+          "rationale": "Assigns real, data-grounded dispositions and justifies redirect-vs-sunset by branded intent and page-1 position, with full per-asset detail in migration-plan.md; docks one point because the 37 generic queries are tiered rather than individually walked in the delivered output."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "'redirecting that intent to an AI meeting-notes page is a bait-and-switch, not an SEO win' ... narrows real redirects to the 3 branded queries only ... and sunsets the other 37 ... 'A new, forward-looking keyword strategy ... needs fresh research — that's the next session's work'",
+          "rationale": "Names the tension and lands a defensible middle path — preserve the 3 branded-equity redirects, don't torch or chase the rest, and sequence the Lumina cluster as net-new work; slightly dinged on practicality because the growth-engine build is deferred rather than started."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 9,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

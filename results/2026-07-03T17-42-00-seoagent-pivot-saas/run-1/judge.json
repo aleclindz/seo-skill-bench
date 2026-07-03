@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Every page on the site was serving metadata for **InboxZap**, a discontinued email-cleanup tool... while the actual homepage sells **Lumina**, an AI meeting assistant. Your GSC export is **100% legacy demand from InboxZap**",
+          "rationale": "Explicitly names the pivot with live-site vs. GSC framing, treats the inbox-cleanup history as legacy off-strategy demand, and frames every recommendation around the meeting-assistant reality — matches anchor_10."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "`inboxzap` — 320 impressions, 14 clicks, avg position 4.1 ... The 12 `/blog/post-1`…`/blog/post-12` URLs (80–3,900 impressions each, ~12.9k combined, all ranking position 42-58)... all 12 now 301 to `/blog/inboxzap-is-now-lumina`",
+          "rationale": "Assigns explicit dispositions (harvest 3 branded, redirect 12 pages, sunset 37 queries) grounded in cited real impressions/positions; handles queries in data-justified tiers rather than one-by-one, slightly short of exhaustive per-asset detail but clearly anchor_10 territory."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "overrode... only the 3 branded queries... are worth keeping... The other 37 queries... get nothing — building pages for them would be chasing traffic with zero purchase intent... 12 dead legacy blog URLs now 301 into [the rebrand post]",
+          "rationale": "Articulates the tension explicitly, rejects the auto-harvest false positive (avoids chasing legacy impressions) while preserving salvageable branded/navigational equity via redirect and building the meeting cluster as the growth engine — a defensible sequenced middle path."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This site pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant). GSC's entire ranking history — 40 queries, 12 blog posts, ~14k combined impressions — is demand for the old, discontinued product.",
+          "rationale": "Explicitly identifies the pivot, correctly maps live site = meeting assistant vs. GSC = legacy inbox demand vs. repo = partially stale (InboxZap metadata still serving), states the implication, and frames every recommendation around it."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "auto-classified 28 of those 40 queries as 'harvest'... I overrode it: only the 3 branded queries... The 12 dead legacy blog URLs now 301 into [the rebrand post]. The other 37 queries... get nothing",
+          "rationale": "Assigns explicit dispositions grounded in real GSC numbers (cites per-query impressions/clicks/positions like inboxzap 320 imp/14 clk/pos 4.1, and the 12 posts at ~12.9k combined, pos 42-58); handles legacy posts as a tier-based 301 consolidation rather than per-URL, which is well-justified but slightly less granular than a strict asset-by-asset walk."
+        },
+        "J3": {
+          "score": 10,
+          "basis": "building pages for them would be chasing traffic with zero purchase intent for a meeting-notes product... [vs] Losing them to a dead end (404...) throws away real navigational intent.",
+          "rationale": "Articulates the tension explicitly, rejects both failure modes (won't chase off-strategy impressions, won't torch salvageable branded equity), preserves navigational equity via 301s to an honest rebrand bridge, and sequences the meeting-assistant cluster as the growth engine."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your GSC export is **100% legacy demand from InboxZap** — 40 queries and 12 blog posts, ~14k combined impressions, all about email cleanup/inbox zero",
+          "rationale": "Explicitly names the pivot (live/source = Lumina meeting assistant, GSC = legacy InboxZap demand, repo = partially stale), states the implication, and frames every recommendation and content cluster around the meeting-assistant reality — even overriding an auto-tool's harvest call as invented demand."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "`inboxzap` — 320 impressions, 14 clicks, avg position 4.1 ... The 12 `/blog/post-1` … `/blog/post-12` URLs (80–3,900 impressions each, ~12.9k combined, all ranking position 42-58) ... all 12 now 301 to `/blog/inboxzap-is-now-lumina`",
+          "rationale": "Walks the inventory in data-justified tiers with real impression/position/click figures and assigns each a concrete disposition (harvest 3 branded → rebrand post, 301 the 12 legacy pages, sunset 37 off-strategy queries), all wired into next.config.js and roadmap; minor ding that the 37 sunset queries are handled as a bucket rather than individually, but that is defensibly data-justified."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "consolidates whatever residual authority they carry into one honest, on-brand page instead of leaving them as dead links or letting that link equity evaporate into a 404 ... Real Lumina demand has no GSC history yet — see roadmap.md for the forward-looking keyword clusters",
+          "rationale": "Names the tension directly and lands a sequenced middle path: preserve/redirect salvageable branded equity, refuse to chase zero-intent legacy impressions, and stand up the meeting-assistant cluster as the growth engine with briefs and a proof-of-concept article — avoiding both the double-down and scorched-earth failure modes."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 9,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

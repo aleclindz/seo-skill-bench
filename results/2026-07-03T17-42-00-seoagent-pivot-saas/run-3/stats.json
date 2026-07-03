@@ -1,0 +1,49 @@
+{
+  "skill": "seoagent",
+  "fixture": "pivot-saas",
+  "run": 3,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 1050319,
+  "exit": 1,
+  "install": {
+    "method": "npm",
+    "ok": true,
+    "detail": "npx -y @seoagent-official/seoagent@1.74.0 init"
+  },
+  "files_changed": 172,
+  "usage": {
+    "usage": {
+      "input_tokens": 10721,
+      "cache_creation_input_tokens": 191995,
+      "cache_read_input_tokens": 8864222,
+      "output_tokens": 55357,
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 191995,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 104,
+          "cache_read_input_tokens": 160448,
+          "cache_creation_input_tokens": 140,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 140
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 4.673754600000001,
+    "num_turns": 81
+  }
+}

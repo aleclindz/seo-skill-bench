@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 3,
+          "basis": "\"InboxZap (rebrand in progress; legacy brand 'Lumina' — AI meeting assistant — still live on production)\" and \"finish the pivot consistently — homepage/nav/footer copy... all need to describe InboxZap\"",
+          "rationale": "The entrant richly identifies two identities and cites data throughout, but inverts the pivot: it treats the live meeting-assistant product as the stale legacy to overwrite and the inbox-cleanup GSC history as the go-forward target market — the reverse of the intended read, privileging a head-tag edit over the entire live product body/nav/JSON-LD it itself observed is 100% meeting-assistant."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "\"post-1... Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3 ... Action: Refresh/repurpose ... post-7 ... 80 impressions ... 55.8\" — every one of 13 assets gets a disposition with cited impressions/clicks/position",
+          "rationale": "Genuinely walks the full legacy inventory asset-by-asset with real GSC numbers and an explicit disposition (12 harvest / 1 redirect / 0 sunset) plus reasoning, strongly anchor-10 in form; docked because the topical-fit signal is a flat mechanical 50% for every asset (so the all-harvest outcome isn't truly differentiated) and rests on the inverted pivot premise."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "\"All 12 legacy blog assets are on-topic for the new direction and were harvested in place ... content being progressively refreshed\" plus the roadmap sequencing posts by impression volume",
+          "rationale": "It avoids the torch-everything mode (keeps equity, adds a 301, sequences a transition), but lands the doubling-down failure — building the growth engine around inbox-cleanup content for the product the fixture says pivoted away from it, rather than treating that demand as legacy to bridge."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "\"Finish the pivot consistently — homepage/nav/footer copy, /features, /pricing, and JSON-LD all need to describe InboxZap\" and \"real searchers already associate this domain with the new brand [InboxZap]\"",
+          "rationale": "The entrant noticed the head/body mismatch and that the meeting-assistant content is live, so it isn't blind to a pivot — but it inverted the direction: it treated the coherent live Lumina meeting-assistant site as the 'stale' state and InboxZap inbox-cleanup as the new product, then rewrote the whole site around the legacy inbox demand. That is precisely anchor_0's failure (building the plan around ranking InboxZap-era content harder)."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "\"13 legacy assets classified: 12 harvest · 1 redirect · 0 sunset\" with per-asset lines like \"blog/post-1 — 3900 impressions, 2 clicks, avg position 42.3 ... Bridgeable — keep the equity\"",
+          "rationale": "Structurally this nails anchor_10 — asset-by-asset dispositions citing real GSC impressions/positions with stated actions — but the reasoning is boilerplate-identical ('relevance 50% ... harvest') for all 12, and the dispositions are anchored to the inverted direction, so the substantive calls (harvest all inbox posts, redirect/rewrite the meeting-assistant home away) are largely wrong even though the form is disciplined."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "\"All 12 blog posts are on-topic for the new direction already and should be refreshed in place (not replaced)\" and homepage \"harvested (rewritten in place)\" into InboxZap",
+          "rationale": "The entrant fell squarely into one failure mode: it doubled down on the legacy inbox-cleanup corpus as the growth engine and overwrote the current meeting-assistant positioning (rewriting the live homepage/JSON-LD to inbox cleanup). It preserved 'equity' but toward the wrong pole, with no bridge for the actual current product — anchor_0's 'doubles down on inbox-cleanup content for a product that no longer exists.'"
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "\"The company is pivoting from its previous product, Lumina (an AI meeting-notes assistant)\" ... \"All 12 blog posts are on-topic for the new direction already and should be refreshed in place\"",
+          "rationale": "The entrant correctly observed the live site is a meeting assistant, but drew the inverted conclusion — treating the meeting-assistant identity as the legacy state and inbox-cleanup (InboxZap) as the current target market, then rewriting the live product accordingly. GSC's inbox-cleanup history is the historical/legacy signal, yet the entrant made it the destination, so the core intent inference is backwards."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "\"post-1 ... 3900 impressions, 2 clicks, avg position 42.3 ... Bridgeable — keep the equity. Action: Refresh/repurpose ... (keep the URL)\" — repeated asset-by-asset for all 13 with GSC numbers and a disposition",
+          "rationale": "Methodologically this matches anchor_10: it walks the legacy inventory asset-by-asset, cites real impressions/clicks/position from the export, and assigns each an explicit disposition (12 harvest, 1 redirect, 0 sunset) with reasoning. Weakened by a uniform mechanical '50% relevance, bridgeable' verdict on every post and a nonsensical 0%-relevance homepage-redirect flag, but the per-asset, data-grounded disposition work is genuinely present."
+        },
+        "J3": {
+          "score": 3,
+          "basis": "\"finish the pivot consistently — homepage/nav/footer copy, /features, /pricing, and JSON-LD all need to describe InboxZap\" and \"12 harvest ... All 12 legacy blog assets are on-topic for the new direction and were harvested in place\"",
+          "rationale": "Rather than balancing the two failure modes, the entrant fell squarely into one — doubling down on inbox-cleanup content and actively overwriting the current live meeting-assistant product into inbox-cleanup. It does sequence a transition and preserve equity, but aimed at the wrong positioning, so there is no defensible middle path."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 2,
+    "J2": 6,
+    "J3": 3
+  },
+  "judgment": 0.3
+}

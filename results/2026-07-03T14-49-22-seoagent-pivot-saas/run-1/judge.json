@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Every page's `<title>`, meta description, and Open Graph tags still describe the old \"InboxZap\" product, not Lumina... the visible nav, hero, and footer... are 100% \"Lumina\" — an AI meeting-notes assistant... every legacy query is InboxZap-shaped (email cleanup) and is handled in the migration plan",
+          "rationale": "Explicitly identifies the pivot with live-copy vs. GSC vs. repo evidence (live=Lumina meeting assistant, GSC=legacy InboxZap demand, metadata=stale), states the implication, and frames all recommendations around it — textbook anchor_10."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "`/blog/post-1` — Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3... `/blog/post-7`: 80 impressions, 0 clicks, avg position 55.8... every one is `redirect`",
+          "rationale": "Walks all 12 posts asset-by-asset citing real per-URL impressions/positions from the export, plus a well-reasoned homepage harvest override; docked because the disposition is uniform 'redirect into homepage' with no data-justified tiering (post-7 at 80 impr/0 clicks treated identically to post-1 at 3900, no sunset/repurpose differentiation)."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "fix the broken plumbing and harvest legacy equity first, then build the new-direction cluster, then measure... preserve/redirect what has salvageable equity while building the ai-meeting-assistant cluster as the growth engine",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — 301-preserve legacy authority rather than torch it, build the meeting-assistant cluster as the growth engine, and sequence the transition — avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "context.md Additional Notes: 'This repo previously shipped as \"InboxZap\"... The domain has already moved to lumina.example and the visible product is now Lumina, an AI meeting-notes assistant — a completely different category and audience'; project.md 'InboxZap → Lumina pivot detected'; keywords.md 'every legacy query is InboxZap-shaped (email cleanup) and is handled in the migration plan, not here'",
+          "rationale": "The entrant explicitly identifies the pivot from three independent evidence sources (live/repo copy = Lumina, GSC = legacy InboxZap demand, layout metadata = stale) and frames every downstream artifact — keywords, competitors, clusters, roadmap — around the meeting-assistant reality, treating inbox-cleanup history strictly as legacy equity to be transitioned."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "migration-plan.md walks all 13 assets with real GSC data, e.g. 'post-1: 3900 impressions, 2 clicks, avg position 42.3 → 301-redirect'; homepage override: 'it already IS the new Lumina homepage — the URL didn't change... Keep / as-is', reclassified from mechanical 'redirect' to 'harvest, in place'",
+          "rationale": "Genuine asset-by-asset dispositions grounded in the actual export, with a sharp homepage-harvest override showing real reasoning rather than mechanical output. Falls short of a 10 because every one of the 12 blog posts gets the identical 'redirect' disposition with no tiering — the 80-impression/0-click/pos-55 post-7 is treated the same as the 3,900-impression post-1, and no candidate is considered for sunset, so the 'harvest/repurpose vs sunset' axis is underused."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "roadmap.md: 'fix the broken plumbing and harvest legacy equity first, then build the new-direction cluster, then measure'; audit note: '301 each into the new homepage until dedicated Lumina content exists, so the equity isn't simply lost to a 404'; migration-plan preserves authority while cluster file builds the meeting-assistant growth engine",
+          "rationale": "Explicitly holds the tension — neither chases dead inbox-cleanup demand (all legacy queries pushed out of the keyword plan) nor torches equity (301s bridge authority forward, homepage harvested in place), with a sequenced transition that gates new content on the /blog rebuild. Loses a point only because the redirect targets are left as '<choose the closest new page>' placeholders, so the bridge is designed but not yet concretely wired."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Every page's `<title>`, meta description, and Open Graph tags still describe the old \"InboxZap\" product, not Lumina... the visible nav, hero, and footer... are 100% \"Lumina\" — an AI meeting-notes assistant",
+          "rationale": "The pivot is identified explicitly and correctly across every artifact (live product = meeting assistant, GSC = legacy inbox demand, repo = partially stale metadata), and every recommendation is framed around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`https://lumina.example/blog/post-1` — Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3 ... Action: 301-redirect ... The homepage row was reclassified ... to 'harvest, in place'",
+          "rationale": "Walks all 13 assets one-by-one citing real impressions/positions and assigns a disposition, with a smart harvest override on the homepage; docked slightly because 12 of 12 posts collapse to an identical 'redirect' with an unfilled `<choose the closest new page>` target (roadmap resolves this to 'redirect to homepage'), leaving the per-post target selection still to be made."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "fix the broken plumbing and harvest legacy equity first, then build the new-direction cluster, then measure... preserve/redirect what has salvageable equity... Building AI-meeting-assistant articles before /blog even renders would be wasted work",
+          "rationale": "Avoids both failure modes — preserves legacy equity via 301s rather than torching it, and builds the meeting-assistant cluster as the growth engine on a clearly sequenced transition; slightly blunt in that all off-topic inbox posts 301 to the homepage (soft-404 risk) as the bridge, but the tradeoff is reasoned."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "The output is only an initialized project.md config stub — no analysis of the live product, GSC history, or any pivot. Nothing addresses intent inference."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No mention of the 12 legacy posts, no impressions/positions data, and no harvest/redirect/sunset dispositions — no migration thinking whatsoever."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No strategy is present at all, so the entrant neither articulates nor navigates the tension between chasing and abandoning legacy demand."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "The output contains only a project.md config stub (domain, version, install_id); it never mentions the pivot, the meeting assistant, inbox-cleanup queries, or any product intent whatsoever."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No migration thinking of any kind — the legacy blog posts, GSC data, and disposition decisions are entirely unaddressed; the file is a blank initialization stub."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "Neither failure mode nor any strategic balance is discussed; there is no strategy content at all, so the tension is never engaged."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "# Entrant Project — unknown ... This file holds project-level configuration for the Entrant skill.",
+          "rationale": "The output is only a boilerplate config file; it never mentions the pivot, the meeting assistant, inbox-cleanup, or GSC history at all."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No legacy blog inventory, no dispositions, no GSC data — the output contains nothing but skill configuration metadata."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "There is no strategy of any kind, so neither the tension nor any transition path is addressed."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 0,
+    "J2": 0,
+    "J3": 0
+  },
+  "judgment": 0
+}

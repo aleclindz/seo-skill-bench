@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The product **pivoted from \"InboxZap\" (email inbox-cleanup) to \"Lumina\" (AI meeting assistant)** ... legacy SEO assets and GSC history are from the InboxZap era and are off-topic for the current direction",
+          "rationale": "Explicitly identifies the pivot with the live-site-vs-GSC-vs-repo distinction and frames every recommendation (metadata rewrite, redirects, forward clusters) around the meeting-assistant reality. Falls just short of a perfect 10 only because the live site was never actually reached, so the 'live = meeting assistant' half rests on repo source rather than a confirmed crawl."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "13 legacy assets classified: 0 harvest · 13 redirect · 0 sunset ... `/blog/post-1`: 3900 impressions, 2 clicks, avg position 42.3 ... Off-topic (relevance 0%) but holds authority",
+          "rationale": "Genuinely walks all 13 assets one-by-one citing real GSC impressions/clicks/position and assigns a disposition with reasoning — strong grounding. Held back because every asset gets the identical 'redirect, relevance 0%' verdict with no differentiation, and it misclassifies the live homepage (600 imp, 18 clicks, position 4.5 — clearly the current Lumina page ranking well) as an off-topic legacy redirect."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Legacy-harvest queries are NOT a target for new content ... document what to 301-redirect ... 1. Protect & harvest ... 301 the 13 legacy URLs ... 2. Build the new-direction clusters ... 3. Measure and iterate",
+          "rationale": "Articulates the tension and lands a defensible middle path: preserve equity via 301s rather than torch it, while explicitly refusing to build new inbox-cleanup content, and sequences the transition. Minor ding: the redirects are gated on destination pages that don't yet exist, leaving the bridge partly unspecified."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The product **pivoted from \"InboxZap\" (email inbox-cleanup) to \"Lumina\" (AI meeting assistant)** ... legacy SEO assets and GSC history are from the InboxZap era and are off-topic for the current direction",
+          "rationale": "Explicitly names the pivot, correctly frames GSC as legacy InboxZap demand vs. the repo's live Lumina content, flags the stale InboxZap metadata as partially-stale repo state, and threads that reality through every recommendation. Only shy of full marks because the live site was unreachable so the 'live = meeting assistant' leg is inferred from repo source rather than confirmed."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "`/blog/post-1` — 3900 impressions, 2 clicks, avg position 42.3 ... 13 legacy assets classified: 0 harvest · 13 redirect · 0 sunset",
+          "rationale": "Walks all 13 assets individually citing real GSC impressions/positions and assigns an explicit disposition to each — genuinely data-grounded. Docked for mechanical uniformity (every asset flagged '0% relevance → redirect' with no tiering, destinations all deferred to '<choose the closest new page>') and a misread that lumps the current homepage — position 4.5, 18 clicks — into the redirect bucket as 'off-topic'."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "1. **Protect & harvest** — 301 the 13 legacy URLs ... so existing authority carries forward instead of decaying to soft-404s. 2. **Build the new-direction clusters** ... 3. Measure and iterate — plus 'Legacy-harvest queries are NOT a target for new content'",
+          "rationale": "Cleanly avoids both traps: explicitly bars building new inbox-cleanup content while preserving legacy equity via 301s, and articulates a sequenced transition narrative with the meeting-assistant clusters as the growth engine. Falls just short of a 10 because the 'redirect everything' preservation plan is blocked on pages that don't exist yet and the harvest/salvage nuance is underdeveloped."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The product **pivoted from \"InboxZap\" (email inbox-cleanup) to \"Lumina\" (AI meeting assistant)** — but `app/layout.tsx`'s title/meta/OG tags are *still* the old InboxZap copy while the homepage content is 100% about Lumina",
+          "rationale": "Explicitly nails the pivot, correctly diagnoses the repo as partially stale (Lumina content but InboxZap metadata), and treats GSC as legacy inbox demand throughout; every recommendation is framed around this reality. Just short of 10 because the live-site-down issue somewhat dominates the framing."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Migration plan lists all 13 assets, e.g. `/blog/post-1` **3900 impressions, 2 clicks, avg position 42.3** ... 301-redirect ... and `https://lumina.example/` **600 impressions, 18 clicks, avg position 4.5**",
+          "rationale": "Genuinely walks the inventory asset-by-asset with real GSC impressions/positions and assigns a disposition to each — but every single one is a blanket 'redirect' (0 harvest/0 sunset) with no differentiation, and all destinations are left as '<choose the closest new page>', so the actual operator work is deferred rather than done. A practical plan would flag e.g. the position-4.5 homepage or the 80-impression post-7 as needing distinct handling."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "1. **Protect & harvest** — ... 301 the 13 legacy URLs ... so the ~13,900 impressions ... carry forward ... 2. **Build the new-direction clusters** — meeting-action-items first ... then ai-meeting-notetaker ... 3. **Measure and iterate**",
+          "rationale": "Explicitly names the tension (misdirected, not absent, demand) and lands a defensible middle path with a sequenced transition narrative — preserve equity via 301s, build the meeting cluster as growth engine, measure. Held below 9 because the redirect-preservation half stays theoretical (no destinations, all blocked on pages that don't exist yet)."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 7,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

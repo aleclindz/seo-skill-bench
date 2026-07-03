@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the actual page content is 100% about **Lumina**, an AI meeting assistant — the site pivoted products but never updated what Google shows... legacy `inboxzap` GSC queries treated as brand equity to bridge, not target market",
+          "rationale": "Explicitly identifies the pivot (live=Lumina meeting assistant, layout metadata + GSC=legacy InboxZap), states the trust/bounce implication, and frames every recommendation around the new positioning while explicitly refusing to build on inbox-cleanup demand."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`inboxzap` — 320 impressions, 14 clicks, avg position 4.1 ... legacy `/blog/post-1..12` carrying 600–3,900 impressions each, positions 42–58, 301'd to /; 3 harvest / 37 sunset with per-query intent reasoning",
+          "rationale": "Assigns real dispositions (harvest branded via FAQ, 301 legacy posts, sunset 37) grounded in cited GSC impressions/positions; the 37 sunset queries are handled as a data-justified tier (pos 38–65, 0–1 clicks) rather than truly per-asset, and 301s route to `/` rather than topical successors, keeping it just short of the top anchor."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "overrode [the auto-classifier] — Lumina has no email feature, so that traffic can never convert... branded searches still convert at position 4–9 — real equity, now captured via a homepage FAQ item bridging old brand to new; 301s so the equity isn't hard-dropped",
+          "rationale": "Names the tension explicitly and lands a defensible middle path: rejects blindly harvesting dead email demand (invented-demand reasoning) while preserving branded equity via FAQ + soft 301s and building the meeting-assistant cluster as the growth engine with a sequenced transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The homepage's `<title>`/meta description/OG tags described **InboxZap** ... while the actual page content is 100% about **Lumina**, an AI meeting assistant — the site pivoted products but never updated what Google shows ... Do not build new content strategy around InboxZap/email-cleanup keywords — that demand belongs to a discontinued product",
+          "rationale": "Explicitly names the three-way state — live/repo product is Lumina, layout.tsx metadata + GSC history are stale InboxZap legacy — and frames every recommendation (metadata rewrite, sunset the email queries, build meeting cluster) around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`gsc/Pages.csv` shows `/blog/post-1` through `/blog/post-12` carrying the impressions ... (600–3,900 impressions each, 0–2 clicks, positions 42–58) ... Added 301 redirects from `/blog/post-1..12` to `/`; 40 legacy queries classified: 3 harvest · 0 redirect · 37 sunset with per-query impressions/clicks/positions",
+          "rationale": "Assigns explicit dispositions in data-justified tiers citing real GSC impressions/positions (harvest 3 branded, sunset 37, 301 the 12 posts); loses points only because the 12 posts are dispositioned as one blanket 301→/ tier rather than walked individually, and the redirect target is the homepage rather than any topical successor."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "I overrode that — Lumina has no email feature, so that traffic can never convert ... Legacy blog posts now 301 to `/` instead of hard-404ing ... branded `inboxzap*` ... harvested via a homepage FAQ item bridging old brand to new; roadmap seeded with meeting-notes content cluster for forward growth",
+          "rationale": "Names the tension directly and lands a defensible middle: rejects chasing dead email demand, yet preserves salvageable branded equity via redirect + FAQ bridge while building the meeting-assistant cluster as the growth engine and sequencing the transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The homepage's `<title>`/meta description/OG tags described **InboxZap** ... while the actual page content is 100% about **Lumina**, an AI meeting assistant — the site pivoted products but never updated what Google shows... 'that demand belongs to a discontinued product and audience'",
+          "rationale": "Explicitly identifies the pivot (live content = Lumina meeting assistant, GSC/metadata = legacy InboxZap demand, repo partially stale) and frames every recommendation — content cluster, migration, redirects — around that reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "'Full corrected disposition (3 harvest / 37 sunset) is in migration-plan.md' with per-query numbers: `inboxzap` — 320 impressions, 14 clicks, avg position 4.1 ... and '12 legacy blog posts driving most of the site's historical search visibility (600–3,900 impressions each per gsc/Pages.csv)... 301s from /blog/post-1..12 → /'",
+          "rationale": "Assigns an explicit disposition to all 40 queries and the 12 posts with real GSC impressions/positions cited (harvest the 3 branded, sunset the 37 email-intent, 301 the dead blog URLs); slightly short of per-asset walkthrough since the 37 sunsets are handled as one data-justified tier rather than individually."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "'I overrode that — Lumina has no email feature, so that traffic can never convert' AND 'Added 301s from legacy /blog/post-1..12 → / so decommissioned URLs don't hard-404... captured via a homepage FAQ item bridging old brand to new'",
+          "rationale": "Explicitly names both failure modes and lands a defensible middle: rejects chasing invented inbox demand, yet preserves genuine branded equity via redirects + a bridging FAQ while sequencing the meeting-assistant cluster as the growth engine."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}
