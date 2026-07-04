@@ -124,3 +124,13 @@ final-message phrasing).
 Standing: lhitches 72.9, SEOAgent 71.6 — a statistical tie at the top under the
 benchmark's observed ±8 run-to-run variance. Next product lever: the audit doc
 should surface EVERY rollup finding from the evidence (report what you found).
+
+---
+
+# Entrant addition (2026-07-04): coreyhaines31/marketingskills
+
+46-skill general-marketing collection, ~36k stars — the most-starred entrant tested.
+Result: 67.9 (#6 of 10). Zero trap violations across all three runs (nothing to
+adjudicate — a genuinely clean record). Detection 57% median; judgment 4.0 median
+(weakest in the field: run 1 scored J1=1, never inferring the pivot from the live
+product). Breadth over depth: strong hygiene, little strategy.

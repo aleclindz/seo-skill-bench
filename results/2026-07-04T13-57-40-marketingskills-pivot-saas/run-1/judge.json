@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "\"this SaaS mid-pivoted from **Lumina** (AI meeting assistant) to **InboxZap** (inbox cleanup tool)\" ... \"the blog was fetching from an API that doesn't exist — while GSC showed the exact demand InboxZap should be capturing (bulk delete, gmail storage, unsubscribe, inbox zero)\"",
+          "rationale": "The entrant inverted the pivot: it treats the inbox-cleanup queries as the CURRENT product's target market and the meeting assistant as the legacy product, then builds the entire plan around ranking InboxZap-era content harder — matching anchor_0 almost verbatim."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "\"Replaced with 12 server-rendered posts (/blog/post-1…post-12, matching the URLs GSC already has indexed) each targeting a specific underperforming query cluster... 'gmail storage full' – 790 impressions at position 43.6, 'how to reach inbox zero' – 1180 impressions at position 41.2\"",
+          "rationale": "It cites real GSC impressions/positions, which earns minimal grounding credit, but there is no per-asset harvest/redirect/keep/sunset disposition — every legacy post is uniformly rebuilt and doubled down on rather than dispositioned against the data."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "\"Blog rebuilt... 12 server-rendered posts... each targeting a specific underperforming query cluster from gsc/Queries.csv\" and \"Homepage rewritten for the actual product... now match InboxZap\"",
+          "rationale": "The entrant falls fully into one failure mode — doubling down on inbox-cleanup content as the growth engine — with no tension articulated and no transition/redirect plan; it never balances legacy equity against a new positioning."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "this SaaS mid-pivoted from **Lumina** (AI meeting assistant) to **InboxZap** (inbox cleanup tool)... GSC showed the exact demand InboxZap should be capturing (bulk delete, gmail storage, unsubscribe, inbox zero)",
+          "rationale": "The entrant inverted the pivot: it read the meeting-assistant homepage as stale and the inbox-cleanup title/GSC as the current product, then built the entire plan around ranking InboxZap-era content harder — precisely the anchor_0 failure, just arrived at via a mistaken pivot direction rather than not noticing one."
+        },
+        "J2": {
+          "score": 1,
+          "basis": "Replaced with 12 server-rendered posts... each targeting a specific underperforming query cluster from `gsc/Queries.csv` (e.g. \"gmail storage full\" – 790 impressions at position 43.6...)",
+          "rationale": "No harvest/redirect/sunset dispositions are made for the legacy inventory; the GSC numbers are cited only to justify rebuilding and doubling down on inbox-cleanup content, which is the opposite of a migration plan for legacy assets."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "The core problem... GSC showed the exact demand InboxZap should be capturing... sitting on indexed pages ranking at position 40–60 with near-zero clicks... Blog rebuilt... targeting a specific underperforming query cluster",
+          "rationale": "The entrant lands squarely in the first failure mode — doubling down on inbox-cleanup content for the demand it wrongly treats as current — with no articulation of the tension and no bridge to the meeting-assistant positioning."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS mid-pivoted from **Lumina** (AI meeting assistant) to **InboxZap** (inbox cleanup tool)",
+          "rationale": "The entrant explicitly names the pivot and frames every fix around the InboxZap reality, but inverts the direction the panel expects (treats meeting-assistant as legacy and inbox-cleanup as current) — from a practicality lens it commits fully to one coherent product reality and executes against it, though it doesn't treat inbox-cleanup as legacy demand."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "12 server-rendered posts (`/blog/post-1`…`post-12`, matching the URLs GSC already has indexed) each targeting a specific underperforming query cluster from `gsc/Queries.csv` (e.g. \"gmail storage full\" – 790 impressions at position 43.6",
+          "rationale": "It rebuilds all 12 posts against real GSC impression/position numbers and maps each to a query cluster, which is concrete and executable, but it applies one blanket disposition (rewrite-all) rather than per-asset harvest/redirect/keep/sunset decisions grounded in each post's individual data."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "GSC showed the exact demand InboxZap should be capturing (bulk delete, gmail storage, unsubscribe, inbox zero) sitting on indexed pages ranking at position 40–60 with near-zero clicks",
+          "rationale": "It preserves indexed URLs and builds content against the demand rather than torching equity, so it avoids blind abandonment — but it never articulates the legacy-vs-current tension or sequences a transition, and (per its inverted read) leans fully into the inbox-cleanup queries as the current market rather than balancing a bridge."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 2,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

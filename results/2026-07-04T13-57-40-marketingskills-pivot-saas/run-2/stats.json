@@ -1,0 +1,49 @@
+{
+  "skill": "marketingskills",
+  "fixture": "pivot-saas",
+  "run": 2,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 769300,
+  "exit": 0,
+  "install": {
+    "method": "git-skill-md",
+    "ok": true,
+    "detail": "collection: 46 skill dirs -> .claude/skills/"
+  },
+  "files_changed": 169,
+  "usage": {
+    "usage": {
+      "input_tokens": 15838,
+      "cache_creation_input_tokens": 115835,
+      "cache_read_input_tokens": 2617443,
+      "output_tokens": 35342,
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 115835,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 901,
+          "cache_read_input_tokens": 97550,
+          "cache_creation_input_tokens": 429,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 429
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 2.0585349,
+    "num_turns": 58
+  }
+}

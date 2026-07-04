@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "The site had pivoted its product (InboxZap, an email cleanup tool → Lumina, an AI meeting assistant) without updating the SEO surface... content repositioned to Lumina's actual ICP (meeting notes, action items, async recaps) instead of the old email-cleanup topics that no longer match the product",
+          "rationale": "Clearly identifies the pivot from live site, treats email-cleanup topics as no-longer-matching legacy, and frames the rebuild around Lumina's real ICP; loses points for treating GSC only as a positions artifact rather than explicitly characterizing inbox-cleanup impressions as legacy demand distinct from the new market."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "This explains the terrible positions (42–58) on the 12 post URLs GSC still shows impressions for... Rebuilt as SSR/SSG with real per-slug routes... content repositioned to Lumina's actual ICP",
+          "rationale": "No per-asset disposition: the 12 legacy posts were wholesale overwritten with new meeting content on the same slugs, with no harvest/redirect/keep/sunset decisions and only a vague blanket position range (42–58) rather than per-URL impressions/positions from the export."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "Added a real FAQ section (including a 'what happened to InboxZap' entry to catch confused legacy-brand searchers)... content repositioned to Lumina's actual ICP... instead of the old email-cleanup topics",
+          "rationale": "Avoids doubling down on inbox-cleanup and preserves URL slugs plus a small brand-bridge FAQ, but never articulates the equity-vs-abandonment tension, sequences no transition, and effectively torches all legacy topical equity by replacing the posts outright — a mostly one-sided abandonment with only a token bridge."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted its product (InboxZap, an email cleanup tool → Lumina, an AI meeting assistant) without updating the SEO surface... content repositioned to Lumina's actual ICP (meeting notes, action items, async recaps) instead of the old email-cleanup topics that no longer match the product.",
+          "rationale": "Explicitly names the pivot, correctly reads live site as meeting assistant and the 12 legacy URLs as stale inbox-era demand, and frames the whole plan around Lumina's ICP. Falls just short of a full articulation that GSC impressions are legacy demand to be strategically weighed rather than simply outgrown."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "This explains the terrible positions (42–58) on the 12 post URLs GSC still shows impressions for. Rebuilt as SSR/SSG... content repositioned to Lumina's actual ICP.",
+          "rationale": "It references GSC positions only in aggregate and makes one blanket move — overwrite all 12 slugs with new meeting content — rather than an asset-by-asset harvest/redirect/keep/sunset disposition grounded in each post's impressions/position. No migration inventory or per-URL reasoning."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "Added a real FAQ section (including a 'what happened to InboxZap' entry to catch confused legacy-brand searchers)... content repositioned to Lumina's actual ICP... instead of the old email-cleanup topics.",
+          "rationale": "Avoids doubling down on inbox content and builds the meeting-assistant cluster as the growth engine, but effectively abandons the inbox-cleanup equity — reusing the URLs for unrelated topics with no redirects or equity-preservation, and only a single FAQ line as a bridge. The tension is never explicitly articulated and no transition is sequenced."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "content repositioned to Lumina's actual ICP (meeting notes, action items, async recaps) instead of the old email-cleanup topics that no longer match the product",
+          "rationale": "Explicitly names the pivot (InboxZap → Lumina), diagnoses that the SEO surface was never updated, and reframes every fix — metadata, blog, FAQ — around the meeting-assistant reality, treating inbox-cleanup as legacy."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "This explains the terrible positions (42–58) on the 12 post URLs GSC still shows impressions for ... content repositioned to Lumina's actual ICP",
+          "rationale": "It made a blanket disposition — reuse all 12 slugs, overwrite every post with new meeting content — rather than per-asset harvest/redirect/keep/sunset calls grounded in each post's actual impressions/position; only a single range (42–58) is cited, no asset-by-asset data-justified tiers."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "added a \"what happened to InboxZap\" entry to catch confused legacy-brand searchers ... Now includes all 12 post URLs",
+          "rationale": "Avoids both extremes in practice — doesn't chase inbox content, doesn't 404 the old URLs (reuses slugs to hold equity, adds a legacy-brand FAQ catch) — but never articulates the equity-vs-growth tension or a sequenced transition/redirect plan, so the balance is implicit rather than reasoned."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 4
+  },
+  "judgment": 0.4
+}

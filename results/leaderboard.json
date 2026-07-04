@@ -1,7 +1,7 @@
 {
   "fixture": "pivot-saas",
   "rubric": "v1.0.0",
-  "updated": "2026-07-03",
+  "updated": "2026-07-04",
   "rows": [
     {
       "skill": "lhitches-claude-seo-skills",
@@ -92,6 +92,24 @@
       ],
       "median_wall_s": 602.683,
       "median_cost_usd": 1.8794446
+    },
+    {
+      "skill": "marketingskills",
+      "name": "Marketing Skills (Corey Haines)",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.5714285714285714,
+      "trap_avoidance": 1,
+      "judgment": 0.4,
+      "execution": 1,
+      "composite": 67.85714285714286,
+      "composite_det": 57.857142857142854,
+      "spread_det": [
+        46.42857142857143,
+        57.857142857142854
+      ],
+      "median_wall_s": 817.22,
+      "median_cost_usd": 2.0585349
     },
     {
       "skill": "mango-claude-seo-skill",
