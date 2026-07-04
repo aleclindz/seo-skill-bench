@@ -7,11 +7,11 @@ Fixture: **pivot-saas** · Model: **claude-sonnet-5** · Rubric: **v1.0.0** · U
 | # | Skill | Composite | Detection | Trap avoidance | Judgment | Execution | Runs | Median time | Median cost |
 |--:|-------|:--------:|:---------:|:--------------:|:--------:|:---------:|:----:|:-----------:|:-----------:|
 | 1 | claude-seo-skills (lhitches) | **72.9** | 57% | 100% | 6.0/10 | 100% | 3 | 731s | $1.79 |
-| 2 | SEOAgent | **71.6** | 52% | 91% | 9.0/10 | 100% | 3 | 794s | $2.93 |
-| 3 | Vanilla baseline (no skill) | **71.5** | 48% | 100% | 7.0/10 | 100% | 3 | 524s | $2.07 |
-| 4 | Agentic SEO Skill | **71.2** | 62% | 73% | 7.0/10 | 50% | 3 | 656s | $3.04 |
-| 5 | claude-seo | **69.0** | 48% | 100% | 6.0/10 | 100% | 3 | 603s | $1.88 |
-| 6 | Marketing Skills (Corey Haines) | **67.9** | 57% | 100% | 4.0/10 | 100% | 3 | 817s | $2.06 |
+| 2 | Vanilla baseline (no skill) | **71.5** | 48% | 100% | 7.0/10 | 100% | 3 | 524s | $2.07 |
+| 3 | Agentic SEO Skill | **71.2** | 62% | 73% | 7.0/10 | 50% | 3 | 656s | $3.04 |
+| 4 | claude-seo | **69.0** | 48% | 100% | 6.0/10 | 100% | 3 | 603s | $1.88 |
+| 5 | Marketing Skills (Corey Haines) | **67.9** | 57% | 100% | 4.0/10 | 100% | 3 | 817s | $2.06 |
+| 6 | SEOAgent | **67.7** | 38% | 100% | 9.0/10 | 50% | 3 | 1074s | $3.54 |
 | 7 | claude-seo-skill (mangollc) | **64.6** | 43% | 100% | 7.0/10 | 100% | 3 | 791s | $2.26 |
 | 8 | claude-seo-skills (lionkiii) | **62.2** | 48% | 73% | 7.0/10 | 100% | 3 | 412s | $2.08 |
 | 9 | SEO/GEO Claude Skills | **59.7** | 33% | 73% | 5.0/10 | 100% | 3 | 520s | $2.06 |

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"still branded for **\"InboxZap\"** — the product's name before it pivoted to **Lumina**, an AI meeting assistant\" and roadmap: \"gsc/Queries.csv confirms real historical demand/rankings under inboxzap-branded and inbox-cleanup queries\"",
+          "rationale": "Explicitly nails the pivot (live/repo = Lumina meeting assistant, GSC = legacy inbox demand), flags the repo as partially stale, and frames every fix around it; falls just short of anchor_10 only because the legacy-demand-vs-current-market framing lives more in supporting files than the headline summary."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "migration-plan.md walks all 12 posts with real GSC figures (\"post-1: 3900 impressions, 2 clicks, avg position 42.3\" … per URL) plus the roadmap correction cross-referencing Queries.csv that the underlying demand is \"mostly off-topic legacy (bulk delete emails, gmail storage full…)\"",
+          "rationale": "Per-asset dispositions grounded in actual impressions/positions, an interim 301 already applied, and — notably — a sanity-check that downgrades the mechanical 'harvest all 12' to a placeholder using query-level evidence; only shy of 10 because final per-post harvest/redirect/sunset calls are explicitly deferred rather than made."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "\"Added interim redirects to /blog to stop the bleed; a per-post harvest/redirect/sunset decision is queued\" and roadmap: \"preserve accumulated GSC authority until each is individually reviewed\" while building the Lumina cluster as the growth engine",
+          "rationale": "Explicitly holds the tension — bridges legacy equity via interim redirect instead of torching it, flags that most legacy query demand is off-topic so it won't blindly chase it, and sequences the transition (interim redirect now → per-post decisions → forward keyword cluster next)."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "\"the product's name before it pivoted to **Lumina**, an AI meeting assistant\" ... \"12 legacy `/blog/post-N` URLs 404, but carry ~12k GSC impressions of real ranking history\" ... GSC queries characterized as \"mostly off-topic legacy (bulk delete emails, gmail storage full...)\"",
+          "rationale": "The entrant explicitly names the InboxZap→Lumina pivot, correctly reads the live/repo as the meeting-assistant product and GSC as legacy inbox demand, and frames every fix (metadata rebrand, migration plan, forward keyword research) around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "migration-plan.md walks each `/blog/post-N` with real GSC numbers (e.g. \"post-1: 3900 impressions, 2 clicks, avg position 42.3\"); roadmap corrects the tool's blanket \"harvest all 12 at 50%\" by cross-referencing Queries.csv and flagging the homepage redirect as a false positive",
+          "rationale": "Real per-asset impressions/positions are cited and dispositions assigned, and the entrant critically overrides the mechanical classifier's flat 50%-harvest and homepage false-positive; the deduction is that the final per-post harvest/redirect/sunset call is explicitly deferred to a follow-up session rather than resolved now."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "\"Added interim redirects to `/blog` to stop the bleeding; a per-post harvest/redirect/sunset decision is queued\" plus roadmap: preserve/redirect salvageable equity, note demand is \"mostly off-topic legacy,\" and run \"forward-looking keyword research for Lumina's actual positioning\"",
+          "rationale": "The entrant lands the defensible middle path — interim 301s bridge legacy authority without torching it, while refusing to double down on inbox-cleanup content and sequencing the meeting-assistant cluster as the growth engine; only shy of 10 because the tension is enacted more than crisply named as a tradeoff."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "\"branded for **\"InboxZap\"** — the product's name before it pivoted to **Lumina**, an AI meeting assistant... GSC = legacy inbox demand\" and the pivot flag in project.md tying gsc/Queries.csv to inbox-cleanup demand",
+          "rationale": "Explicitly nails the pivot from live/repo signals, labels GSC history as legacy inbox demand, and frames every recommendation (metadata rebrand, migration, forward keyword research) around Lumina's actual positioning."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "migration-plan.md walks each `/blog/post-N` with real GSC ('3900 impressions, 2 clicks, avg position 42.3', etc.) plus the roadmap correction cross-referencing Queries.csv to note the demand is 'mostly off-topic legacy'",
+          "rationale": "There's a genuine asset-by-asset inventory citing real impressions/positions and an interim 301, but the entrant honestly flags the mechanical 'harvest all 12 @ 50%' as a placeholder and defers the actual harvest/redirect/sunset call per post to a follow-up — real dispositions are queued, not yet made."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "\"Added interim redirects to /blog to stop the bleed\" + \"preserve the equity while real dispositions are decided\" alongside building /features, /pricing and queuing forward keyword research for meeting-notes positioning",
+          "rationale": "Lands a defensible middle path — bridges legacy equity via interim redirects rather than torching or chasing it, corrects a heuristic that would have dumped the homepage, and sequences the meeting-assistant cluster as the growth engine."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

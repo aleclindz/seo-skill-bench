@@ -134,3 +134,28 @@ Result: 67.9 (#6 of 10). Zero trap violations across all three runs (nothing to
 adjudicate — a genuinely clean record). Detection 57% median; judgment 4.0 median
 (weakest in the field: run 1 scored J1=1, never inferring the pivot from the live
 product). Breadth over depth: strong hygiene, little strategy.
+
+---
+
+# Cycle-5 addendum (2026-07-04, seoagent@1.76.0 PINNED, logged out)
+
+Release: code-generated findings.md (every crawl finding surfaced mechanically),
+summary carries all finding titles, verify-recs learns the "didn't exist" family.
+Result: traps 100/100/73 (median 100 — the mechanical chain works), judgment
+0.9/0.9/0.9 (steadiest in the field), but detection FELL to 38% median and the
+composite to 67.7 (#6). One hung run auto-retried per policy.
+
+Root cause, diagnosed from receipts: `pages_crawled: 2` in ALL THREE runs
+(identical 2,985-byte findings.md). The surfacing pipeline faithfully reported a
+crawl that captured only 2 of 9 discoverable pages — the crawler's concurrent
+page fetches silently drop pages (a local repro showed 4/9 captured even outside
+a session). Detection is now bottlenecked by crawl CAPTURE reliability, not by
+reporting. Next release: per-page fetch retry, longer timeouts, sequential
+fallback, and treating captured<discovered as an error to repair rather than a
+number to report. The run-3-retry trap hit (72.7%) is unadjudicated as of this
+note. Scores stand mechanically; SEOAgent's leaderboard row reflects 1.76.0.
+
+Design disclosure: findings.md is machine-generated from crawl evidence but is a
+user-facing deliverable (readable findings with evidence citations), so it counts
+as reported output — unlike the raw evidence file, which stays excluded. Any
+entrant may ship equivalent tooling; that's product capability, not scorer bait.

@@ -1,0 +1,59 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 2,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This site clearly pivoted from **InboxZap** (an email-cleanup tool) to **Lumina** (an AI meeting assistant) — the GSC export is almost entirely legacy InboxZap demand ... none of it is Lumina-relevant content",
+          "rationale": "Explicitly names the pivot with three grounded axes (live/homepage = meeting assistant, GSC = legacy inbox demand, repo = stale InboxZap metadata) and frames every recommendation around that reality, including reclassifying the homepage."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "3900 impressions, 2 clicks, avg position 42.3 ... 301-redirect https://lumina.example/blog/post-1 ... [full per-asset table for all 13 URLs]",
+          "rationale": "Walks the legacy inventory asset-by-asset with real GSC impressions/clicks/positions and assigns an explicit disposition, plus a justified manual override on the homepage row; dinged slightly because all 12 posts collapse to a single 'redirect' verdict with no harvest/keep/sunset differentiation among them."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "(1) fix ... protect what little equity exists; (2) build the forward ai-meeting-assistant cluster ...; (3) re-audit and watch whether the redirected legacy pages hold position while the new cluster ramps",
+          "rationale": "Avoids both failure modes — preserves salvageable equity via 301s (explicitly refusing to rewrite inbox-zero posts as meeting-notes) while building the meeting-assistant cluster as the growth engine, and sequences the transition; only softness is that redirect targets default to the homepage for now."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "error": "no JSON object in judge response"
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This site clearly pivoted from **InboxZap** (an email-cleanup tool) to **Lumina** (an AI meeting assistant) — the GSC export is almost entirely legacy InboxZap demand",
+          "rationale": "Explicitly nails the pivot: live/homepage = Lumina meeting assistant, GSC = legacy InboxZap demand, and flags the repo metadata as stale — then frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "The other 12 (`/blog/post-1`…`post-12`) are genuinely legacy and should 301 forward... migration-plan.md walks each asset with real impressions/position (3900 imp, avg pos 42.3, etc.)",
+          "rationale": "Every legacy asset gets an explicit disposition grounded in real GSC impressions/positions, and the entrant even corrects the tool's homepage misclassification; loses a point because all 12 collapse to the same blanket 301 (no per-asset harvest/sunset differentiation and no successor targets yet)."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "(1) fix the origin + rebrand + patch dead routes — protect what little equity exists; (2) build the forward `ai-meeting-assistant` cluster... (3) re-audit and watch whether the redirected legacy pages hold position",
+          "rationale": "Names the tension directly (don't harvest inbox-zero posts into meeting content, don't torch the equity) and lands a sequenced middle path: 301 salvageable equity forward while building the meeting-assistant cluster as the growth engine."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8.5,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

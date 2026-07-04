@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your repo is mid-pivot: it used to be **InboxZap** (email cleanup), and is now **Lumina** (AI meeting assistant) — a completely different product... treat legacy InboxZap rankings as historical equity to disposition, not as the content direction to build on",
+          "rationale": "Explicitly identifies the pivot across all three sources (live=meeting assistant, GSC=legacy inbox demand, repo=partially stale metadata), states the implication clearly, and frames every recommendation and the forward cluster around the Lumina ICP."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "301-redirect https://lumina.example/blog/post-1 into the most relevant new page... 3900 impressions, 2 clicks, avg position 42.3 [and per-asset rows for all 12 posts with real GSC numbers]",
+          "rationale": "Walks the legacy inventory asset-by-asset citing real impressions/positions from the export and assigns each a disposition with reasoning, plus a well-justified harvest override on the homepage; docked slightly because all 12 posts collapse to a blanket 301→`/` with the actual target left as a placeholder rather than matched per-asset."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Protect & harvest — homepage metadata fixed, legacy blog posts redirected rather than left to 404 → no equity leaks... Build the new-direction cluster... roadmap proposes an 'AI meeting notes' pillar cluster... Measure & iterate",
+          "rationale": "Explicitly names the tension and lands the defensible middle path — preserve/redirect salvageable equity, build the meeting-assistant cluster as the growth engine, and sequence the transition — avoiding both the double-down and the torch-everything failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your repo is mid-pivot: it used to be **InboxZap** (email cleanup), and is now **Lumina** (AI meeting assistant) — a completely different product... treat legacy InboxZap rankings as historical equity to disposition... not as the content direction to build on",
+          "rationale": "Explicitly names the pivot, correctly reads the live body as already-Lumina vs. stale metadata, treats the GSC history as legacy inbox demand, and frames every recommendation (harvest homepage, redirect legacy posts, build new cluster) around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "migration-plan.md lists each `/blog/post-N` with real GSC (e.g. post-1: 3900 impressions, 2 clicks, avg position 42.3) and assigns 1 harvest / 12 redirect / 0 sunset; homepage harvested via manual override of the auto-classifier",
+          "rationale": "Genuine asset-by-asset dispositions grounded in the actual export numbers, including a defensible override on the homepage; docked slightly because all 12 posts get a blanket 301→/ with the successor target left as an unresolved '<choose the closest new page>' rather than differentiated or tiered redirect targets."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Protect & harvest... legacy blog posts redirected rather than left to 404 → no equity leaks... Build the new-direction cluster... roadmap proposes an 'AI meeting notes' pillar cluster... gated on real keyword research",
+          "rationale": "Clearly names the tension and lands a defensible middle path — preserve homepage authority in place, 301 salvageable legacy equity toward the new site, build the meeting-assistant cluster as the growth engine, and sequence it — avoiding both doubling-down on inbox content and torching all legacy equity."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your repo is mid-pivot: it used to be **InboxZap** (email cleanup), and is now **Lumina** (AI meeting assistant) — a completely different product... treat legacy InboxZap rankings as historical equity to disposition... not as the content direction to build on",
+          "rationale": "Explicitly names the pivot, correctly attributes GSC history to legacy inbox demand, flags repo as partially stale, and frames every recommendation (metadata fix, redirects, new cluster) around the meeting-assistant reality. Textbook anchor_10."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "migration-plan.md walks all 13 assets citing real GSC — e.g. '/blog/post-1: 3900 impressions, 2 clicks, avg position 42.3 ... 301-redirect' and homepage 'harvest ... 600 impressions, 18 clicks, avg position 4.5' with a documented override of the auto-classifier",
+          "rationale": "Genuine asset-by-asset disposition grounded in actual export numbers, with a defensible manual harvest override on the homepage. Held short of 10 on practicality because all 12 redirects resolve to a placeholder '→ /' / '<choose closest new page>' rather than assigning concrete successor targets, leaving that decision undone."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "'Protect & harvest — homepage metadata fixed, legacy blog posts redirected rather than left to 404 → no equity leaks ... Build the new-direction cluster ... roadmap proposes an \"AI meeting notes\" pillar cluster ... gated on real keyword research'",
+          "rationale": "Explicitly avoids both failure modes: preserves salvageable equity via 301s instead of torching it, refuses to build more inbox-cleanup content, and sequences the transition into a phased narrative. Docks one point only because the bridge is 301-to-homepage rather than to topical successors that would pass more relevant equity."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}
