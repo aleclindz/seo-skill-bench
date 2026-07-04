@@ -63,6 +63,13 @@
    "repo": "@seoagent-official/seoagent@1.75.0",
    "install": "npm",
    "notes": "Maintained by the benchmark maintainer (SEOAgent). Conflict of interest disclosed in README.md and RUBRIC.md. Version PINNED per benchmark cycle for reproducibility (an unpinned npx latest resolved to a stale version mid-cycle once)."
+  },
+  {
+   "id": "marketingskills",
+   "name": "Marketing Skills (Corey Haines)",
+   "repo": "coreyhaines31/marketingskills",
+   "install": "git-skill-md",
+   "notes": "46-skill marketing collection (CRO, copywriting, SEO, analytics). Most-starred entrant to date (~36k). Core skills are keyless instruction files. Installed at default-branch HEAD; SHA recorded in install detail."
   }
  ]
 }
