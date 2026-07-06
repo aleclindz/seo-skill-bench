@@ -260,8 +260,11 @@ const all = [];
 for (let n = 1; n <= runs; n++) {
   let result = await doRun(outBase, n);
   const runDir = path.join(outBase, `run-${n}`);
-  if (transcriptIsEmpty(runDir)) {
-    console.log(`[run ${n}] INVALID (empty transcript — process died without output); retrying once`);
+  const installFailed = (() => {
+    try { return JSON.parse(fs.readFileSync(path.join(runDir, 'stats.json'), 'utf8')).install?.ok === false; } catch { return false; }
+  })();
+  if (transcriptIsEmpty(runDir) || installFailed) {
+    console.log(`[run ${n}] INVALID (${installFailed ? 'install failed — measures the registry, not the skill' : 'empty transcript — process died without output'}); retrying once`);
     fs.renameSync(runDir, path.join(outBase, `run-${n}-invalid`));
     result = await doRun(outBase, n);
     if (transcriptIsEmpty(path.join(outBase, `run-${n}`))) {

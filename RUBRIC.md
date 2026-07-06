@@ -75,7 +75,10 @@ because the harness killed a hung process is a failed *measurement* — there is
 output to score — and is retried exactly once, with the original preserved as
 `run-N-invalid` in the published results. Runs that produce any output at all score
 as-is, however bad. A skill halting itself (auth gate, refusal, crash with output)
-is a measured result, not an invalid run.
+is a measured result, not an invalid run. A run whose SKILL INSTALL failed for
+infrastructure reasons (e.g. an npm-registry timeout before the session even
+started) is likewise a failed measurement — the entrant's skill never ran — and
+is retried once under the same rules.
 
 ## Conflict of interest
 
