@@ -1,0 +1,59 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 2,
+  "judges": [
+    {
+      "lens": "evidence",
+      "error": "no JSON object in judge response"
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"the repo is mid-rebrand. Visible homepage/nav copy is for **Lumina**... But `app/layout.tsx` head metadata... still advertise **InboxZap**... `gsc/Pages.csv` and `gsc/Queries.csv` are entirely InboxZap-era history... pre-dating the pivot to Lumina.\"",
+          "rationale": "Explicitly identifies the pivot with the exact three-way framing the anchor demands (live = meeting assistant, GSC = legacy inbox demand, repo = partially stale) and threads it through every recommendation, including refusing to build new pages for old-product topics."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "Disposition table: Homepage → \"Harvest, not redirect\"; \"/blog/post-1,2,4,5,6,8,9,10,11,12 (10 posts) | 690–3900 impressions each, 0-2 clicks, positions 42-58 | **Redirect (301) to `/blog`**\"; \"/blog/post-3, /blog/post-7 | 80-130 impressions... **Sunset**\"",
+          "rationale": "Walks the legacy inventory in data-justified tiers citing real impressions/positions, assigns each a harvest/redirect/sunset disposition with reasoning, and correctly overrides the auto-tool's vocabulary-overlap 'harvest' misclassification — squarely anchor_10 territory."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "\"Sequencing (protect equity → build forward → measure)\"; homepage metadata \"bridges the rebrand\" keeping `alternateName: InboxZap` while the 12 dead URLs \"301 to `/blog` instead of soft-404ing\"; \"no new pages should be built for old-product topics.\"",
+          "rationale": "Names the tension and lands the middle path: preserves salvageable brand equity via redirects/alternateName, refuses to chase dead inbox-cleanup content, and builds the meeting-assistant cluster as the sequenced growth engine."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale — 'Visible homepage/nav copy is for Lumina... But app/layout.tsx head metadata... still advertise InboxZap... gsc/*.csv are entirely InboxZap-era history'",
+          "rationale": "Explicitly nails the three-way split (live = meeting assistant, GSC = legacy demand, repo = mid-rebrand stale) and frames every recommendation — metadata rewrite, redirects, forward content — around it. Every disposition is justified by the pivot reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "Migration Plan table walks each asset with real numbers: 'post-1,2,4,5,6,8,9,10,11,12 (10 posts) | 690–3900 impressions each, 0-2 clicks, positions 42-58 | Redirect (301) to /blog' and 'post-3, post-7 | 80-130 impressions... Sunset'",
+          "rationale": "Delivers per-asset (data-justified tiered) dispositions grounded in actual GSC impressions/positions, and critically overrides the tool's wrong auto-classification with reasoning tied to the numbers (page-4-6 positions = not worth preserving as content). Minor deduction because the 10 posts are bundled rather than individually reasoned, but the tiering is defensible."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "'Sequencing (protect equity → build forward → measure)': 1. Protect... the 12 dead post URLs 301 to /blog... 2. Build forward... new Lumina content clusters — meeting productivity, async standups... sourced from context.md not GSC history 3. Measure",
+          "rationale": "Explicitly articulates the tension and lands the middle path — 301s preserve residual equity rather than torching it, homepage brand equity is bridged via alternateName/'(formerly InboxZap)', and the meeting-assistant cluster is the sequenced growth engine. Avoids both failure modes cleanly."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9.5,
+    "J2": 9,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"app/layout.tsx's <title>...still said InboxZap...while the actual homepage content is entirely about Lumina, an AI meeting assistant. Your GSC export confirms this was live\" and \"Legacy GSC ranking authority is entirely tied to the old InboxZap identity\"",
+          "rationale": "Explicitly identifies the pivot (live=Lumina meeting assistant, GSC/repo metadata=legacy InboxZap), states the implication, and frames every recommendation around treating inbox demand as legacy equity rather than the current market — just short of anchor_10 only because live rendering was never verified."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "migration-plan.md walks post-1 (3900 impressions, pos 42.3)…post-7 (80 impressions, pos 55.8) each with real GSC numbers, plus the homepage override (600 impr, 18 clicks, pos 4.5)",
+          "rationale": "Genuinely asset-by-asset with real impressions/positions cited per URL and a sharp catch overriding the homepage false-positive, but every legacy post collapses to the same disposition (301→/blog, 0 harvest/0 sunset) with no data-justified tiering between a 3,900-impression asset and an 80-impression one."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "\"send the equity to the blog index instead of a fabricated match…preserve whatever crawl equity remains instead of leaving bare 404s\" and roadmap: \"Keyword research + topic clusters for Lumina's actual space…no forward-looking cluster work was done this session\"",
+          "rationale": "Cleanly avoids both failure modes — preserves legacy equity via 301s and refuses to chase dead inbox content — but the growth-engine half is only named as a future task (no meeting-assistant cluster built/sequenced), and redirecting all equity into a currently-broken /blog weakens the bridge."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"app/layout.tsx's `<title>`... still said \\\"InboxZap — Clean Your Inbox in Minutes\\\"... while the actual homepage content is entirely about Lumina, an AI meeting assistant\" and \"gsc/ only has backward-looking (InboxZap-era) demand\"",
+          "rationale": "Explicitly names the pivot (live=Lumina meeting assistant, GSC=legacy InboxZap demand, repo=partially stale metadata) and frames the whole plan around it, including flagging that no Lumina cluster work exists yet. Falls just short of a 10 because the live site was never actually crawled, so the 'live product' inference rests on repo source rather than confirmed live evidence."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "migration-plan.md: per-post entries like \"/blog/post-1 — Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3... 301-redirect\" plus the homepage override \"600 impressions, 18 clicks, avg position 4.5... must stay put\"",
+          "rationale": "Genuinely walks all 13 assets citing real GSC impressions/positions and assigns an explicit disposition each, and the homepage false-positive override is sharp. Held below high marks because every legacy post gets the identical blanket disposition (0 harvest/0 sunset, all 301→/blog index — itself a broken page), so it is data-cited but not truly differentiated per asset."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "\"301 redirects for all 12 dead blog post URLs → /blog, preserving whatever crawl equity remains instead of leaving bare 404s\" and \"Keyword research + topic clusters for Lumina's actual space... no forward-looking cluster work was done this session\"",
+          "rationale": "Cleanly avoids both failure modes — doesn't chase inbox content, doesn't torch equity — and names the tension. Not a 10 because the growth engine (Lumina cluster) is entirely deferred and the bridge routes all equity into a currently-broken /blog shell, so the transition is preserved but not yet sequenced into an actual new-positioning build."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "InboxZap copy replaced... while the actual homepage content is entirely about Lumina, an AI meeting assistant. Your GSC export confirms this was live — the query `inboxzap` drives your best-performing result (18 clicks, position 4.1)",
+          "rationale": "Explicitly identifies the pivot across all three sources (live/repo = Lumina, GSC = legacy InboxZap demand), names the stale metadata, and frames every recommendation around that reality including flagging that no forward-looking Lumina cluster work exists yet."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "12 legacy blog posts (`/blog/post-1`…`post-12`, some with up to 3,900 historical impressions) now 301-redirect to `/blog`... migration-plan.md walks each asset citing real GSC impressions/position",
+          "rationale": "Walks the full inventory asset-by-asset with real impressions/positions and assigns a disposition to each, including correctly overriding the homepage false-positive; docks slightly because all 12 default to a blanket 301→/blog (itself broken) rather than differentiated successors, and none are chosen for harvest/repurpose into the meeting-assistant space."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "preserve/redirect what has salvageable equity... 'Do not draft new articles until this is decided'; 'Keyword research + topic clusters for Lumina's actual space... no forward-looking cluster work was done this session'",
+          "rationale": "Lands a defensible middle path — 301s preserve legacy equity while flagging the Lumina meeting-assistant cluster as the growth engine and correctly refusing to chase inbox queries; held back from 10 because the growth-engine half is only named as 'next up' with no actual keyword/cluster scaffolding started this session."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 7,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

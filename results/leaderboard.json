@@ -1,7 +1,7 @@
 {
   "fixture": "pivot-saas",
   "rubric": "v1.0.0",
-  "updated": "2026-07-04",
+  "updated": "2026-07-06",
   "rows": [
     {
       "skill": "lhitches-claude-seo-skills",
@@ -76,6 +76,24 @@
       "median_cost_usd": 1.8794446
     },
     {
+      "skill": "seoagent",
+      "name": "SEOAgent",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.5714285714285714,
+      "trap_avoidance": 0.7272727272727273,
+      "judgment": 0.8,
+      "execution": 0.5,
+      "composite": 68.53896103896103,
+      "composite_det": 47.943722943722946,
+      "spread_det": [
+        46.038961038961034,
+        55.95238095238095
+      ],
+      "median_wall_s": 1334.005,
+      "median_cost_usd": 4.0864035
+    },
+    {
       "skill": "marketingskills",
       "name": "Marketing Skills (Corey Haines)",
       "runs": 3,
@@ -92,24 +110,6 @@
       ],
       "median_wall_s": 817.22,
       "median_cost_usd": 2.0585349
-    },
-    {
-      "skill": "seoagent",
-      "name": "SEOAgent",
-      "runs": 3,
-      "model": "claude-sonnet-5",
-      "detection": 0.38095238095238093,
-      "trap_avoidance": 1,
-      "judgment": 0.9,
-      "execution": 0.5,
-      "composite": 67.73809523809524,
-      "composite_det": 45.23809523809524,
-      "spread_det": [
-        44.134199134199136,
-        50.23809523809524
-      ],
-      "median_wall_s": 1074.046,
-      "median_cost_usd": 3.544597799999999
     },
     {
       "skill": "mango-claude-seo-skill",

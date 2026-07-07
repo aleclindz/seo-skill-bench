@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 400" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="1100" height="400" rx="12" fill="#0f172a"/>
+  <text x="48" y="72" font-size="34" font-weight="800" fill="#f8fafc">seo-skill-bench</text>
+  <text x="48" y="104" font-size="16" fill="#94a3b8">An open benchmark for SEO skills in Claude Code — scored against answer keys, not vibes.</text>
+
+  <!-- pipeline -->
+  <g font-size="13">
+    <rect x="48" y="140" width="200" height="72" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text x="148" y="168" text-anchor="middle" fill="#e2e8f0" font-weight="700">Fixture site</text>
+    <text x="148" y="188" text-anchor="middle" fill="#94a3b8">10 planted defects · 5 traps</text>
+    <text x="148" y="202" text-anchor="middle" fill="#94a3b8">synthetic GSC · answer key</text>
+
+    <text x="266" y="182" fill="#475569" font-size="20">→</text>
+
+    <rect x="292" y="140" width="200" height="72" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text x="392" y="168" text-anchor="middle" fill="#e2e8f0" font-weight="700">Real headless runs</text>
+    <text x="392" y="188" text-anchor="middle" fill="#94a3b8">skill installed · one prompt</text>
+    <text x="392" y="202" text-anchor="middle" fill="#94a3b8">no coaching · 3× median</text>
+
+    <text x="510" y="182" fill="#475569" font-size="20">→</text>
+
+    <rect x="536" y="140" width="200" height="72" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text x="636" y="168" text-anchor="middle" fill="#e2e8f0" font-weight="700">Deterministic scoring</text>
+    <text x="636" y="188" text-anchor="middle" fill="#94a3b8">detection vs manifest</text>
+    <text x="636" y="202" text-anchor="middle" fill="#94a3b8">traps = scored hallucinations</text>
+
+    <text x="754" y="182" fill="#475569" font-size="20">→</text>
+
+    <rect x="780" y="140" width="200" height="72" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text x="880" y="168" text-anchor="middle" fill="#e2e8f0" font-weight="700">Blind judging</text>
+    <text x="880" y="188" text-anchor="middle" fill="#94a3b8">names stripped · panel of 3</text>
+    <text x="880" y="202" text-anchor="middle" fill="#94a3b8">anchored 0–10</text>
+  </g>
+
+  <!-- mini leaderboard -->
+  <g font-size="13">
+    <text x="48" y="256" fill="#e2e8f0" font-weight="700" font-size="14">Current top 5 (composite /100)</text>
+    <!-- bars scale: x=270 start, 6.5px per point -->
+    <text x="258" y="285" text-anchor="end" fill="#cbd5e1">lhitches</text>
+    <rect x="270" y="272" width="474" height="16" rx="3" fill="#22c55e"/>
+    <text x="752" y="285" fill="#86efac" font-weight="700">72.9</text>
+
+    <text x="258" y="309" text-anchor="end" fill="#cbd5e1">vanilla (no skill)</text>
+    <rect x="270" y="296" width="465" height="16" rx="3" fill="#f59e0b"/>
+    <text x="743" y="309" fill="#fcd34d" font-weight="700">71.5</text>
+
+    <text x="258" y="333" text-anchor="end" fill="#cbd5e1">Agentic SEO</text>
+    <rect x="270" y="320" width="463" height="16" rx="3" fill="#64748b"/>
+    <text x="741" y="333" fill="#cbd5e1" font-weight="700">71.2</text>
+
+    <text x="258" y="357" text-anchor="end" fill="#cbd5e1">claude-seo</text>
+    <rect x="270" y="344" width="449" height="16" rx="3" fill="#64748b"/>
+    <text x="727" y="357" fill="#cbd5e1" font-weight="700">69.0</text>
+
+    <text x="258" y="381" text-anchor="end" fill="#cbd5e1">SEOAgent</text>
+    <rect x="270" y="368" width="445" height="16" rx="3" fill="#6366f1"/>
+    <text x="723" y="381" fill="#a5b4fc" font-weight="700">68.5</text>
+  </g>
+
+  <!-- right-side facts -->
+  <g font-size="13" fill="#94a3b8">
+    <text x="800" y="272" fill="#e2e8f0" font-weight="700" font-size="14">Findings so far</text>
+    <text x="800" y="296">• Vanilla beats 7 of 9 skills</text>
+    <text x="800" y="318">• 36k★ repo lands mid-pack</text>
+    <text x="800" y="340">• A 1★ repo leads the board</text>
+    <text x="800" y="362">• Every run published — incl.</text>
+    <text x="810" y="380">the maintainer's failures</text>
+  </g>
+</svg>

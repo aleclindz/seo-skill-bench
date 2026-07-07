@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is a SaaS that pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the SEO surface never caught up... 12 legacy blog URLs... all for InboxZap-era queries with no Lumina equivalent",
+          "rationale": "Explicitly names the pivot, correctly frames the live site as the current meeting-assistant product and the GSC history as legacy inbox demand, and every recommendation flows from that reality (rebrand metadata, redirect legacy authority, build new cluster)."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "**Evidence (GSC):** 3900 impressions, 2 clicks, avg position 42.3... The 12 `/blog/post-N` rows are correctly `redirect`... corrected homepage misclassification to harvest",
+          "rationale": "Walks all 13 assets with real per-URL impressions/clicks/positions and assigns dispositions, plus catches and overrides the tool's homepage misclassification; docked slightly because all 12 posts get an identical blanket 301-to-/blog-index with no per-asset target or harvest/sunset differentiation."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "preserve/redirect what has salvageable equity... rebuilt /blog... seeded 2 real Lumina-relevant posts as the new foundation... Candidate cluster (informational, ICP = ops/team leads)",
+          "rationale": "Lands a defensible middle path — 301s legacy authority forward rather than torching it, stands up the meeting-assistant cluster as the growth engine, and sequences remaining work in the roadmap; falls short of full marks only because the transition sequencing stays high-level rather than explicitly reasoning about equity-decay timing."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is a SaaS that pivoted from InboxZap (email cleanup) to Lumina (AI meeting assistant), but the SEO surface never caught up... homepage `<head>` metadata still branded InboxZap while the actual page was 100% about Lumina; 12 legacy blog URLs... all for InboxZap-era queries with no Lumina equivalent",
+          "rationale": "Explicitly nails the pivot: live/repo = Lumina meeting assistant, GSC = legacy inbox demand, and frames every recommendation (rebrand, redirect legacy, build new cluster) around that reality. Even flags the repo as partially stale. Matches anchor_10 exactly."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "migration-plan.md walks all 13 assets citing real GSC (e.g. post-1: '3900 impressions, 2 clicks, avg position 42.3'... post-7: '80 impressions'), plus a correction reclassifying the homepage from redirect to harvest",
+          "rationale": "Genuine asset-by-asset dispositions grounded in the actual export, and it caught the tool's homepage misclassification — strong. Held back from anchor_10 because the 12 blog posts all receive an identical blanket '301 to /blog index' with no differentiation (no harvest/sunset tiers), and off-topic redirects to an unrelated index pass little real equity — a point the plan doesn't grapple with."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "preserve/redirect the legacy authority ('Don't throw the equity away'), rebuild the blog and seed Lumina-relevant posts, with a candidate meeting-assistant cluster (pillar + subs) queued in roadmap.md; explicit 'Do not write new content or strategy toward the InboxZap positioning'",
+          "rationale": "Cleanly avoids both traps: no doubling-down on retired inbox content, and legacy equity is bridged via 301s rather than torched, with the Lumina cluster as the growth engine and a sequenced transition. Slightly short of anchor_10 because the tension is handled implicitly through actions rather than argued as an explicit strategic trade-off, and the bridge (redirect all to index) is the weakest link."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is a SaaS that pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the SEO surface never caught up... GSC = legacy inbox demand... 'Do not write new content or strategy toward the InboxZap positioning — it is fully retired.'",
+          "rationale": "The pivot is identified explicitly with all three signal sources reconciled (live=Lumina, GSC=legacy inbox, repo=partially stale), and every fix — metadata rebrand, new Lumina pages, legacy redirects — is framed around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "migration-plan.md walks all 13 rows asset-by-asset citing real GSC ('post-1: 3900 impressions, 2 clicks, avg position 42.3' … each with a disposition), plus the correction reclassifying the homepage (600 impr, 18 clicks, pos 4.5) from redirect to harvest.",
+          "rationale": "Genuinely per-asset and data-grounded, with a smart catch on the homepage misclassification; docked because all 12 posts get an identical blanket 'redirect to /blog' disposition (no harvest/repurpose/sunset differentiation) and the redirect targets are left as placeholders in the proposed config."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "'preserve/redirect what has salvageable equity, build the meeting-assistant cluster as the growth engine, and sequence the transition' — 301s preserve the ~14,300 impressions of authority while the roadmap queues a Lumina content cluster (PILLAR/SUB/LONG) for next session.",
+          "rationale": "Avoids both failure modes: no doubling-down on dead inbox queries, and equity is bridged via redirects rather than torched; the middle path is stated and sequenced across sessions."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

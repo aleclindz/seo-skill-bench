@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Homepage `<head>` metadata described the old product (InboxZap email-cleanup), not the current one (Lumina AI meeting assistant)... `app/page.tsx`'s actual content is 100% about Lumina's meeting-notes product... Every query in `gsc/Queries.csv` is legacy InboxZap... none target Lumina's real category",
+          "rationale": "The entrant explicitly identifies the pivot across all three sources — live site serves Lumina branding, GSC is 100% legacy inbox demand, repo had drifted stale — and frames every recommendation (bridge, redirect, new cluster) around that reality. Falls just short of anchor_10 only because framing is spread across files rather than stated as one crisp thesis."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Redirect — all 12 legacy `/blog/post-N` URLs and the ~37 off-brand email-cleanup queries they rank for. No topical bridge exists... 301 the dead URLs to `/blog`... GSC (`gsc/Pages.csv`) shows real historical impressions on 12 `/blog/post-N` URLs (up to 3,900 impressions on `post-1`)",
+          "rationale": "The migration plan walks 40 legacy assets asset-by-asset with real impressions/positions and assigns harvest/redirect/sunset/bridge dispositions with reasoning — richly grounded. Docked because the 12 blog posts specifically get a single blanket 301-to-/blog rather than per-post disposition; the granular GSC walk is over queries, not the posts themselves."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "the tool classified 28 of 40 pure email-cleanup queries... as harvest... That recommendation is wrong: none of these queries have any product connection to an AI meeting assistant... Bridge (not harvest, not redirect) — inboxzap... Redirect — all 12 legacy URLs... Build out the meeting-assistant content cluster... 2 posts is a start, not a strategy",
+          "rationale": "Explicitly names both failure modes and lands a defensible middle path: overrides the mechanical 'harvest inbox queries' recommendation as dilutive, preserves branded equity via a bridge, 301s dead legacy URLs to avoid torching crawl equity, and builds the meeting-assistant cluster as the growth engine with sequencing. Near-textbook anchor_10."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Homepage `<head>` metadata described the old product (InboxZap email-cleanup), not the current one (Lumina AI meeting assistant)... Every query in `gsc/Queries.csv` is legacy InboxZap... none target Lumina's real category",
+          "rationale": "The pivot is explicitly identified across context, audit, and migration plan — live/repo/GSC are correctly triangulated (live already bridged, repo drifted behind, GSC is legacy demand), and every recommendation is framed around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "301 the dead URLs to `/blog` (done this session via `next.config.js`) rather than trying to 'retarget' the content — preserves whatever crawl equity remains; GSC (`gsc/Pages.csv`) shows real historical impressions on 12 `/blog/post-N` URLs (up to 3,900 impressions on `post-1`)",
+          "rationale": "Rich, data-grounded per-query dispositions with a sharp human override, but the 12 legacy posts themselves get a single blanket 301-to-/blog rather than per-post disposition citing each post's own Pages.csv impressions/positions — the granular data work is at the query level, not the asset level the question asks about."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "That recommendation is wrong: none of these queries have any product connection to an AI meeting assistant... [yet] 301 the dead URLs to `/blog`... preserves whatever crawl equity remains without publishing off-strategy pages",
+          "rationale": "Names the tension explicitly and lands a defensible middle path — refuses to chase inbox-cleanup content (rejecting the mechanical harvest classification) while preserving equity via redirects, bridging the branded `inboxzap` queries, and building the meeting-assistant cluster as the growth engine with a sequenced roadmap."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Homepage `<head>` metadata described the old product (InboxZap email-cleanup), not the current one (Lumina AI meeting assistant)... Every query in `gsc/Queries.csv` is legacy InboxZap ... none target Lumina's real category (AI meeting assistant, meeting notes, action items)",
+          "rationale": "The entrant explicitly identifies the pivot (live = Lumina meeting assistant, GSC = legacy InboxZap email demand, repo = regressed/stale) and frames every recommendation — metadata reconciliation, new keyword posts, migration plan — around that reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "40 legacy assets classified: 28 harvest · 12 redirect · 0 sunset ... Human override ... Redirect — all 12 legacy `/blog/post-N` URLs and the ~37 off-brand email-cleanup queries ... 301 the dead URLs to `/blog`",
+          "rationale": "Per-asset dispositions grounded in real GSC impressions/positions, and critically the entrant overrides the tool's flawed mechanical 'harvest' classification with reasoned per-tier decisions (bridge branded queries via homepage/FAQ, redirect the 12 dead post URLs, sunset none). Slight deduction: the 28 email-cleanup queries are redirected as a bucket rather than each individually re-mapped, and redirect targets stay generic ('closest new page')."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "the mechanical 'harvest' classification above is wrong for this site ... building content to chase them would dilute topical relevance ... Bridge (not harvest, not redirect) — `inboxzap`... preserve whatever crawl equity remains without publishing off-strategy pages",
+          "rationale": "The entrant names the tension explicitly and rejects both failure modes: refuses to build email-cleanup content for a defunct product, but also refuses to torch equity — bridging branded searches via the homepage/FAQ and 301-ing dead URLs while building the meeting-assistant cluster as the growth engine. Sequenced across this-session/next-up."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 7,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

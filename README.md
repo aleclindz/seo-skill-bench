@@ -1,5 +1,7 @@
 # seo-skill-bench
 
+![seo-skill-bench — planted-defect fixtures, real headless runs, answer-key scoring, blind judging](assets/banner.svg)
+
 An open benchmark for comparing **SEO skills for Claude Code** (and other coding agents).
 
 There is no good way to compare Claude Code skills today. GitHub stars measure marketing,

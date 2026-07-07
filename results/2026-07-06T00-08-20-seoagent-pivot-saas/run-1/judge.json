@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This looks like an unfinished rebrand... markets 'Lumina,' an AI meeting assistant — but app/layout.tsx's <title>/meta/OG are still 'InboxZap'... GSC export is 100% legacy 'InboxZap' email-cleanup demand... None of it is on-topic for the current 'Lumina — AI meeting assistant' positioning.",
+          "rationale": "Explicitly identifies the pivot, correctly separates live product (meeting assistant) from legacy GSC demand (inbox cleanup) and stale repo metadata, and frames the whole plan around that reality. Falls just short of 10 only because the live site never rendered, so the pivot rests on repo+GSC inference (which it honestly labels)."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "13 legacy assets classified... post-1: 3900 impr, 2 clicks, avg position 42.3 ... 301-redirect ... into the closest new page — plus the correction: 'don't redirect the homepage... just fix its stale <head> metadata' and 'inboxzap branded queries worth a short bridge page.'",
+          "rationale": "Walks the inventory asset-by-asset with real GSC impressions/positions and assigns dispositions, and manually overrides the tool's bad homepage-redirect call. Held below high marks because the per-asset dispositions are mechanically uniform (all 13 → redirect, 0 harvest/0 sunset) — a 3,900-impression post gets the same generic 'choose closest new page' treatment as an 80-impression one, with little differentiation."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "That's equity worth carrying forward, not losing... 301-redirect the 10 legacy blog posts... into the closest new Lumina content once it exists... build topic clusters for 'AI meeting assistant' (Phase 2)... a short 'Lumina was formerly InboxZap' bridge page so branded search equity isn't simply lost.",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — preserve/redirect salvageable equity, bridge branded queries, build the meeting-assistant cluster as the growth engine, sequenced across roadmap phases. Avoids both failure modes cleanly."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This looks like an unfinished rebrand... `app/page.tsx` and the nav/footer market **\"Lumina,\" an AI meeting assistant** — but `app/layout.tsx`'s `<title>`/meta/OG are still **\"InboxZap...\"** ... GSC export ... is 100% legacy \"InboxZap\" email-cleanup demand ... None of it is on-topic for the current \"Lumina — AI meeting assistant\" positioning.",
+          "rationale": "The entrant explicitly identifies the pivot from live/repo signals, labels the GSC history as legacy inbox demand not the current market, and frames recommendations around it; slightly capped because the live site never rendered, so the meeting-assistant read is anchored on repo source rather than confirmed live HTML."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "0 harvest, 13 URL-level redirects, 0 sunset ... post-1: 3900 impr … post-7: 80 impr ... it flagged the homepage itself as a redirect candidate ... don't redirect the homepage ... just fix its stale `<head>` metadata.",
+          "rationale": "Walks the legacy inventory asset-by-asset with real GSC impressions/positions and assigns dispositions, and adds genuine judgment by overriding the tool's homepage-redirect flag and proposing a branded bridge page; capped because nearly every asset gets the same blanket 'redirect to closest new page' with no per-asset target or harvest/sunset differentiation, and redirect targets don't yet exist."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "That's equity worth carrying forward, not losing ... 301-redirect the 10 legacy blog posts ... build topic clusters for \"AI meeting assistant\" ... likely worth a short \"Lumina was formerly InboxZap\" bridge page so that branded search equity isn't simply lost.",
+          "rationale": "Avoids both failure modes: explicitly preserves salvageable equity via redirects/bridge page while making the meeting-assistant cluster the growth engine and sequencing the transition, rather than chasing dead inbox intent or torching all legacy equity; slightly short of anchor_10 because the tension is stated more implicitly than as a sharp articulated trade-off."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This looks like an unfinished rebrand... `app/page.tsx` and the nav/footer market **\"Lumina,\" an AI meeting assistant** — but `app/layout.tsx`'s `<title>`/meta/OG are still **\"InboxZap...\"**... GSC export ... is 100% legacy \"InboxZap\" email-cleanup demand ... None of it is on-topic for the current \"Lumina — AI meeting assistant\" positioning",
+          "rationale": "Explicitly names the pivot from three sources (live/repo/GSC), labels the inbox-cleanup queries as legacy demand rather than the target market, and frames every recommendation around Lumina's actual positioning. Only shy of a 10 because live confirmation is caveated (server never responded), which is an honest constraint, not a miss."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "13 legacy assets classified ... per-asset rows each citing 'Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3' ... plus the correction: 'don't redirect the homepage ... just fix its stale <head> metadata' and the 'Lumina was formerly InboxZap' bridge page for branded queries",
+          "rationale": "Genuinely walks the inventory asset-by-asset with real GSC numbers and adds two sharp operator-grade corrections (spare the homepage, bridge the branded queries). Held below 8 because the tool's raw dispositions are uniform (0 harvest/13 redirect/0 sunset with every post rubber-stamped 'relevance 0% → redirect' to an unnamed target), so the differentiation is thin and each 301 still needs a human to pick its destination."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "That's equity worth carrying forward, not losing ... 301-redirect the 10 legacy blog posts ... into the closest new Lumina content once it exists ... build topic clusters for 'AI meeting assistant' ... (Phase 2)",
+          "rationale": "Explicitly names the tension and lands the defensible middle path: preserve/redirect salvageable equity, bridge branded queries, and build the meeting-assistant cluster as the growth engine, sequenced after the technical fixes. Short of 10 because the growth-engine half stays a deferred placeholder ('run keyword research ... produce a content plan') with no concrete clusters yet."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 7,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

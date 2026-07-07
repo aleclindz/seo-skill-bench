@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "The output is an API connection error with no content; nothing identifies or even mentions the product pivot."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No content exists; there is no migration thinking, no legacy inventory, and no reference to GSC numbers."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "The response failed mid-connection with no strategy delivered, so neither failure mode is avoided nor any middle path articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "The output is only an API connection error with no content, so nothing addresses the pivot from inbox-cleanup to meeting assistant."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No content exists; there is no migration thinking or per-asset disposition for the legacy posts."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "The response is empty, so it neither balances nor falls into either failure mode — absence scores at the floor."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "The output is an API error with no content; the pivot is never identified or addressed."
+        },
+        "J2": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No migration thinking present — the response is an empty connection-closed error with no legacy asset dispositions."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "absent",
+          "rationale": "No strategic reasoning of any kind is present; the output contains only an API error message."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 0,
+    "J2": 0,
+    "J3": 0
+  },
+  "judgment": 0
+}

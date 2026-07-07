@@ -159,3 +159,26 @@ Design disclosure: findings.md is machine-generated from crawl evidence but is a
 user-facing deliverable (readable findings with evidence citations), so it counts
 as reported output — unlike the raw evidence file, which stays excluded. Any
 entrant may ship equivalent tooling; that's product capability, not scorer bait.
+
+---
+
+# Cycle-6 addendum (2026-07-05/06, seoagent@1.76.1, invalid-run policy extended)
+
+Two compromised attempts and one clean rerun, all receipts committed:
+- 2026-07-04T21-51 attempt: run-2 skill INSTALL failed (npm registry ETIMEDOUT —
+  the skill never executed) and run-3 ran 6.9h through machine sleep. Policy
+  extended (RUBRIC): install-failure runs are invalid measurements, retried once;
+  reruns now execute under caffeinate.
+- 2026-07-06T00-08 clean rerun (1.76.1): one hung run auto-retried per policy.
+  Final: detection [52,57,62]→57%, traps [100,73,73]→73%, judgment 0.8 median,
+  execution 50%. Composite 68.5 → #5.
+
+KEY FINDING (open harness-fairness question for the next cycle): evidence
+frontmatter showed `pages_captured: 0` in ALL runs while the same CLI captures
+10/10 outside a session. The entrant's own subprocess fetches to the loopback
+fixture server fail inside headless sessions (the model's built-in WebFetch
+reaches it fine). This handicaps CLI-fetching entrants specifically — an
+execution-environment boundary, not a skill defect, since real customer sites
+are on the public internet. Candidate fixes under consideration: serve the
+fixture on a non-loopback interface, or document subprocess network access as
+a harness requirement. Scores stand mechanically as always.
