@@ -18,7 +18,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawnSync, execSync } from 'node:child_process';
+import { spawn, spawnSync, execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { startServer } from './serve.mjs';
 import { gatherRunText, scoreText } from './score.mjs';
@@ -155,6 +155,37 @@ function installSkill(workspace) {
   return record;
 }
 
+/**
+ * Run the headless session with an ASYNC spawn. run.mjs hosts the fixture's
+ * live-site server in THIS process; the previous spawnSync blocked the event
+ * loop for the entire session, so the server accepted TCP connections (kernel
+ * backlog) but never wrote a response — EVERY in-session fetch of the live
+ * site timed out, for every entrant (diagnosed 2026-07-07; previously
+ * misread as a sandbox/loopback boundary in the cycle-6 KEY FINDING).
+ * Same contract as the old spawnSync call: returns { stdout, stderr, status },
+ * kills the session at `timeout` ms (empty transcript -> invalid-run retry).
+ */
+function runClaude(cliArgs, { cwd, timeout }) {
+  return new Promise((resolve) => {
+    const child = spawn('claude', cliArgs, { cwd, stdio: ['ignore', 'pipe', 'pipe'] });
+    let stdout = '';
+    let stderr = '';
+    child.stdout.setEncoding('utf8');
+    child.stderr.setEncoding('utf8');
+    child.stdout.on('data', (d) => { stdout += d; });
+    child.stderr.on('data', (d) => { stderr += d; });
+    const timer = setTimeout(() => child.kill('SIGTERM'), timeout);
+    child.on('error', (err) => {
+      clearTimeout(timer);
+      resolve({ stdout, stderr: stderr || String(err), status: null });
+    });
+    child.on('close', (status) => {
+      clearTimeout(timer);
+      resolve({ stdout, stderr, status });
+    });
+  });
+}
+
 async function doRun(outBase, n) {
   const runDir = path.join(outBase, `run-${n}`);
   const workspace = path.join(runDir, 'workspace');
@@ -177,8 +208,7 @@ async function doRun(outBase, n) {
   // 4. Headless execution.
   const pre = snapshot(workspace);
   const started = Date.now();
-  const proc = spawnSync(
-    'claude',
+  const proc = await runClaude(
     [
       '-p', PROMPT(url),
       '--output-format', 'json',
@@ -187,7 +217,7 @@ async function doRun(outBase, n) {
       '--permission-mode', 'acceptEdits',
       '--allowedTools', ALLOWED_TOOLS,
     ],
-    { cwd: workspace, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, timeout: 45 * 60 * 1000 }
+    { cwd: workspace, timeout: 45 * 60 * 1000 }
   );
   const wallMs = Date.now() - started;
   server.close();
