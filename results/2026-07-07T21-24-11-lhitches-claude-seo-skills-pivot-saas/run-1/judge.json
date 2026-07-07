@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "GSC shows the 12 legacy posts pull thousands of impressions on email-cleanup queries but near-zero clicks (positions 42–58) — wrong audience for a meeting-assistant SaaS",
+          "rationale": "Explicitly identifies the InboxZap→Lumina pivot, treats the inbox-cleanup GSC history as legacy/wrong-audience demand, and frames the fixes (bridge notes, new meeting cluster) around the live meeting-assistant reality. Loses a point only because the pivot evidence is asserted rather than shown with the actual export rows."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Kept the URLs and content (don't torch existing equity/backlinks) but added a bridge note + internal link to /features on each",
+          "rationale": "One blanket disposition (keep-all + bridge) applied uniformly to all 12 posts, loosely grounded in an aggregate GSC figure ('thousands of impressions... positions 42–58') but never walked asset-by-asset with real per-page impressions or any harvest/redirect/sunset differentiation."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Kept the URLs and content... redirecting that traffic toward the actual product... added 4 new posts targeting Lumina's real keyword space",
+          "rationale": "Explicitly avoids both failure modes — preserves legacy equity via bridge/internal links rather than torching it, and builds the meeting-assistant cluster as the growth engine — though the transition is stated more as a one-time fix than a sequenced plan."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the SEO/technical foundation never caught up... GSC shows the 12 legacy posts pull thousands of impressions on email-cleanup queries but near-zero clicks (positions 42–58) — wrong audience for a meeting-assistant SaaS",
+          "rationale": "Explicitly names the pivot, treats GSC inbox impressions as legacy/wrong-audience demand, and frames both the technical fixes and the new meeting-assistant content cluster around the current product reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Kept the URLs and content (don't torch existing equity/backlinks) but added a bridge note + internal link to `/features` on each",
+          "rationale": "Applies one blanket disposition — keep-all-plus-bridge — to every legacy post rather than differentiating by asset; cites GSC only in aggregate (impressions, positions 42–58) with no per-post impressions/positions or harvest/redirect/sunset tiering, so it clears the 'no data at all' floor but stops short of asset-by-asset reasoning."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Kept the URLs and content (don't torch existing equity/backlinks) but added a bridge note... redirecting that traffic toward the actual product... added 4 new posts targeting Lumina's real keyword space... this is where new organic traffic has to come from",
+          "rationale": "Cleanly avoids both failure modes — preserves legacy equity while bridging it to the product, and builds the meeting-assistant cluster as the growth engine — explicitly acknowledging the legacy audience is wrong without torching its authority."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had rebranded from InboxZap (email cleanup tool) to Lumina (AI meeting assistant), but the SEO/technical foundation never caught up... GSC shows the 12 legacy posts pull thousands of impressions on email-cleanup queries but near-zero clicks... wrong audience for a meeting-assistant SaaS",
+          "rationale": "Explicitly names the pivot, tags legacy GSC demand as the wrong audience, and frames every fix around the meeting-assistant reality (new clusters, product internal links, rewritten metadata)."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Kept the URLs and content (don't torch existing equity/backlinks) but added a bridge note + internal link to /features on each",
+          "rationale": "Applies one blanket disposition — 'keep + bridge link' — uniformly to all 12 posts with only an aggregate stat ('positions 42–58'); no per-asset or data-tiered harvest/redirect/sunset decisions grounded in individual impressions, so it lands above 'ignore/blanket' but well short of an asset-by-asset walk."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Kept the URLs and content (don't torch existing equity/backlinks)... added 4 new posts targeting Lumina's real keyword space... GSC shows zero visibility for anything meeting/transcription-related — this is where new organic traffic has to come from",
+          "rationale": "Avoids both failure modes cleanly: preserves and redirects legacy equity via bridges while building the meeting-assistant cluster as the growth engine; the tension is named, though the transition sequencing/timeline stays implicit."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

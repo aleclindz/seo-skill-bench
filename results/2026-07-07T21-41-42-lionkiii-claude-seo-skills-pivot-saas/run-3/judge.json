@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "Lumina pivoted from an email-cleanup tool (\"InboxZap\") to an AI meeting assistant, and the codebase was left mid-migration... The 12 blog posts are 100% leftover email-management content with zero connection to the current meeting-assistant product — GSC shows real impressions but near-zero clicks",
+          "rationale": "Explicitly nails the pivot, sourcing it from the live site vs. GSC legacy demand and treating inbox content as legacy equity, not the current market. Docked slightly because the framing leans on qualitative 'real impressions' rather than citing specific GSC figures."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Rather than discard that ranking equity, added a contextual bridge/CTA on every post connecting the pain point (inbox overload) to Lumina's actual product, linking to /features.",
+          "rationale": "Applies a single blanket disposition (keep all 12 + uniform bridge CTA) rather than per-asset or data-tiered decisions, and cites no actual impressions/positions from the export — so the migration reasoning is generic, not grounded in the GSC numbers."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Rather than discard that ranking equity, added a contextual bridge/CTA... connecting the pain point (inbox overload) to Lumina's actual product",
+          "rationale": "Avoids both failure modes — it neither doubles down on inbox content nor torches the legacy equity, and it builds the meeting-assistant cluster (features/pricing/homepage) as the growth engine. Falls short of high marks because it doesn't explicitly articulate the tension or sequence the transition (no redirect-vs-keep-vs-sunset triage)."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an email-cleanup tool (\"InboxZap\") to an AI meeting assistant, and the codebase was left mid-migration... I audited the source against the live site and GSC data",
+          "rationale": "Explicitly names the pivot, correctly casts the live site as meeting assistant, the GSC blog posts as legacy inbox demand, and the repo as mid-migration/stale, then frames every fix around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "The 12 blog posts are 100% leftover email-management content... GSC shows real impressions but near-zero clicks/conversions. Rather than discard that ranking equity, added a contextual bridge/CTA on every post",
+          "rationale": "Applies one uniform disposition (rebuild + identical bridge CTA) to all 12 posts with no per-asset or tiered decisions and no citation of any specific impression/position figures from the export — the near-blanket instruction the anchors penalize."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Rather than discard that ranking equity, added a contextual bridge/CTA on every post connecting the pain point (inbox overload) to Lumina's actual product, linking to /features",
+          "rationale": "Names the tension and lands a defensible middle path (preserve legacy equity while pointing to the new product), but the meeting-assistant growth cluster is thin and there is no real sequencing of the transition beyond the code fix."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an email-cleanup tool (\"InboxZap\") to an AI meeting assistant, and the codebase was left mid-migration... The 12 blog posts are 100% leftover email-management content with zero connection to the current meeting-assistant product",
+          "rationale": "Explicitly identifies the pivot from live site vs. legacy GSC vs. stale repo, and frames every fix (metadata, features/pricing, blog bridge CTAs) around the meeting-assistant reality. Only shy of a 10 because it doesn't cleanly separate the three signal sources as such."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "GSC shows real impressions but near-zero clicks/conversions. Rather than discard that ranking equity, added a contextual bridge/CTA on every post",
+          "rationale": "Applies one blanket treatment (a bridge CTA on all 12) with only a vague aggregate data reference; no per-asset or tiered dispositions, no cited impressions/positions per post, no 301/sunset/harvest decisions for any individual URL."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Rather than discard that ranking equity, added a contextual bridge/CTA on every post connecting the pain point (inbox overload) to Lumina's actual product... Rebuilt [features/pricing/blog] as proper server-rendered pages",
+          "rationale": "Lands a defensible, executed middle path — preserves legacy equity via on-page bridges while building the meeting-assistant surface as the growth engine — but the transition isn't sequenced and equity-preservation is one-size-fits-all rather than triaged."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

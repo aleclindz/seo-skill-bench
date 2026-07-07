@@ -1,0 +1,4 @@
+[2026-07-07] Audit completed: 5 pages crawled (http://127.0.0.1:50902), 7 findings (1 critical, 1 high, 5 medium). All fixed same session — see audit/latest.md.
+[2026-07-07] Migration plan: 0 harvest · 12 redirect · 0 sunset across 12 legacy InboxZap-era blog posts. Applied as 301s to /blog in next.config.js. Corrected a false-positive "redirect" classification on the homepage itself (vocabulary-overlap heuristic artifact on a root path).
+[2026-07-07] Fixed: blog client-rendered shell (SSR conversion), /faq broken redirect target, missing /features and /pricing routes, stale InboxZap metadata in layout.tsx, missing canonical on /pricing, duplicate H1 on /features, missing structured data on /features /pricing /blog, sitemap missing blog posts.
+[2026-07-07] Published 3 new posts to the (now-working) blog: how-to-write-meeting-notes-that-people-actually-read, meeting-action-item-template, async-standups-without-a-daily-call.

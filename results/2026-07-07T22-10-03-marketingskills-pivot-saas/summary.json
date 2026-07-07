@@ -1,0 +1,17 @@
+{
+  "skill": "marketingskills",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.5238095238095238,
+  "detection_all": [
+    0.38095238095238093,
+    0.5238095238095238,
+    0.5238095238095238
+  ],
+  "trap_avoidance_median": 0.7272727272727273,
+  "trap_avoidance_all": [
+    0.7272727272727273,
+    0.7272727272727273,
+    1
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the SEO layer never caught up — which explains the GSC data: strong brand rankings for 'inboxzap' but the 12 blog posts ... stuck at position 40-60",
+          "rationale": "Explicitly identifies the pivot (live=meeting assistant, GSC=legacy inbox demand, repo=stale routes) and frames every recommendation around it, including protecting the branded 'What happened to InboxZap?' traffic. Just shy of a perfect 10 since the legacy-vs-current-market framing is stated more implicitly than as a crisp thesis."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "each now ends with a contextual bridge tying its email/inbox topic back to a genuine Lumina capability ... The FAQ also includes a direct 'What happened to InboxZap?' entry to protect the still-valuable branded search traffic (14 clicks/mo at position 4.1)",
+          "rationale": "There is real GSC grounding (branded 14 clicks/pos 4.1, aggregate 'thousands of impressions at position 40-60'), but the 12 posts get a single blanket disposition (keep-all + bridge CTA) rather than per-asset or data-justified-tier harvest/redirect/sunset decisions citing each post's own impressions/positions — no 301s or sunsets are assigned to any individual weak post."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "rather than discard the 12 legacy posts (real indexation/backlink equity) or leave them off-topic ... the bridge CTAs are a stopgap, not a substitute for a net-new content plan targeting actual Lumina keywords (meeting notes, transcription, action items)",
+          "rationale": "Explicitly names both failure modes and lands a defensible middle path — preserve legacy equity via topical bridges, protect branded search, and flag the net-new meeting cluster as the real growth engine while honestly labeling the bridges a stopgap. Loses points because the meeting-assistant content cluster is deferred/gestured at rather than actually sequenced."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the SEO layer never caught up — which explains the GSC data: strong brand rankings for \"inboxzap\" but the 12 blog posts... stuck at position 40-60 with near-zero clicks.",
+          "rationale": "Explicitly identifies the pivot, correctly reads GSC as legacy inbox demand vs. the live meeting-assistant product, and frames every fix around that reality; loses a point only because the 'repo is partially stale' framing is implicit rather than stated as a three-way reconciliation."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "rather than discard the 12 legacy posts (real indexation/backlink equity) or leave them off-topic, each now ends with a contextual bridge tying its email/inbox topic back to a genuine Lumina capability",
+          "rationale": "Applies one uniform 'keep + bridge' disposition to all 12 posts and cites only aggregate GSC figures; it never walks the inventory asset-by-asset with per-post impressions/positions or differentiates harvest vs. 301 vs. sunset, which is the core of the migration ask."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "rather than discard the 12 legacy posts (real indexation/backlink equity) or leave them off-topic... The FAQ also includes a direct \"What happened to InboxZap?\" entry to protect the still-valuable branded search traffic (14 clicks/mo at position 4.1)... the bridge CTAs are a stopgap, not a substitute for a net-new content plan targeting actual Lumina keywords.",
+          "rationale": "Names the tension explicitly and avoids both failure modes — preserves legacy equity via bridges/branded FAQ while acknowledging the need for a meeting-assistant cluster; docked because that growth engine is only flagged as future work rather than actually scoped or sequenced."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the SEO layer never caught up — which explains the GSC data: strong brand rankings for \"inboxzap\" but the 12 blog posts... stuck at position 40-60",
+          "rationale": "Explicitly names the pivot, reads the live product as the meeting assistant, correctly frames GSC inbox queries as legacy demand and the repo as stale, and threads that reality through every fix. Just shy of 10 only because the 'live vs GSC vs repo' three-way framing is implied rather than laid out as cleanly as the anchor."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "each now ends with a contextual bridge tying its email/inbox topic back to a genuine Lumina capability, plus a link to `/features` or `/pricing`",
+          "rationale": "Applies a single uniform disposition — keep-all-12-and-bridge — rather than per-asset harvest/redirect/keep/sunset tiers justified by each post's real impressions/positions; only one number (14 clicks/mo @ 4.1 for the brand term) is cited, so the individual GSC-grounded triage the question asks for is largely absent."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "rather than discard the 12 legacy posts (real indexation/backlink equity) or leave them off-topic... the bridge CTAs are a stopgap, not a substitute for a net-new content plan targeting actual Lumina keywords",
+          "rationale": "Names both failure modes explicitly and lands a defensible middle: preserve legacy equity via bridges, protect branded search, and flag the need for a net-new meeting-assistant cluster as the real growth engine. Held back from 10 because that growth cluster is only named as future work, not scoped or sequenced."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

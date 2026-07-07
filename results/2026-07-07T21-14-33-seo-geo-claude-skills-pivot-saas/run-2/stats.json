@@ -1,0 +1,49 @@
+{
+  "skill": "seo-geo-claude-skills",
+  "fixture": "pivot-saas",
+  "run": 2,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 518273,
+  "exit": 0,
+  "install": {
+    "method": "git-skill-md",
+    "ok": true,
+    "detail": "collection: 20 skill dirs -> .claude/skills/"
+  },
+  "files_changed": 9,
+  "usage": {
+    "usage": {
+      "input_tokens": 9818,
+      "cache_creation_input_tokens": 104785,
+      "cache_read_input_tokens": 3013159,
+      "output_tokens": 39822,
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 104785,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 977,
+          "cache_read_input_tokens": 130150,
+          "cache_creation_input_tokens": 827,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 827
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "total_cost_usd": 2.1600896999999994,
+    "num_turns": 39
+  }
+}

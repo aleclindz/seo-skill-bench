@@ -1,0 +1,17 @@
+{
+  "skill": "agentic-seo-skill",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.7142857142857143,
+  "detection_all": [
+    0.6190476190476191,
+    0.9047619047619048,
+    0.7142857142857143
+  ],
+  "trap_avoidance_median": 0.7272727272727273,
+  "trap_avoidance_all": [
+    0.7272727272727273,
+    1,
+    0.7272727272727273
+  ]
+}

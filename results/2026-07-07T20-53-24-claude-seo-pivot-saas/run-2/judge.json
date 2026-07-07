@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "Diagnosed the site as **mid-pivot**... GSC data, which showed zero ranking presence for anything meeting/Lumina-related and all traffic sitting on legacy email-cleanup terms buried at position 40–60",
+          "rationale": "Explicitly names the pivot (live = Lumina meeting assistant, GSC = legacy email-cleanup demand) and frames the fixes around it; docked slightly because the GSC grounding is a loose aggregate ('position 40–60') rather than cited per-query figures."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Legacy InboxZap-era content. Kept live (they still hold indexed positions and impressions in Search Console) but the blog index must actually link to them",
+          "rationale": "Makes a single blanket 'keep all 12 live' disposition justified only by aggregate impressions — no asset-by-asset walk, no per-post impressions/positions, and no harvest/redirect/sunset differentiation; better than ignoring them but far short of a data-justified inventory."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "The 12 blog posts themselves are 100% legacy InboxZap content... a content-strategy gap beyond this session's editable scope",
+          "rationale": "Avoids both failure modes — it neither torches legacy equity (fixes the orphaned links to preserve it) nor doubles down on inbox content — but it explicitly punts the meeting-assistant growth cluster and offers no sequenced transition, so the defensible middle path is only half-built."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Diagnosed the site as **mid-pivot**: content already reads \"Lumina\" (AI meeting assistant)... GSC data, which showed zero ranking presence for anything meeting/Lumina-related and all traffic sitting on legacy email-cleanup terms buried at position 40–60.",
+          "rationale": "Explicitly names the pivot, correctly reads live site = meeting assistant vs. GSC = legacy inbox demand vs. repo = partially stale, and frames every fix around that reality."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "// Legacy InboxZap-era content. Kept live (they still hold indexed positions and impressions in Search Console) but the blog index must actually link to them",
+          "rationale": "Treats all 12 posts as one undifferentiated 'keep live' block with only a coarse position 40–60 reference — no asset-by-asset harvest/redirect/sunset dispositions grounded in actual per-post GSC impressions, closer to the blanket 'keep everything' anti-pattern."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "The 12 blog posts themselves are 100% legacy InboxZap content... with no posts targeting meeting-assistant/transcription keywords — a content-strategy gap beyond this session's editable scope.",
+          "rationale": "Avoids both extremes — doesn't chase inbox content and doesn't torch legacy equity (restores crawlability instead) — but the growth side is only flagged as out-of-scope, with no sequenced transition or authority-bridging (e.g. redirecting salvageable posts toward the new cluster), so it lands a defensible but underdeveloped middle."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Diagnosed the site as **mid-pivot**... GSC data, which showed zero ranking presence for anything meeting/Lumina-related and all traffic sitting on legacy email-cleanup terms buried at position 40–60",
+          "rationale": "Explicitly names the pivot (live=Lumina meeting assistant, GSC=legacy email demand, repo partially stale) and frames the diagnosis around it; loses a point only because the framing serves a code-fix agenda rather than a market strategy."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Legacy InboxZap-era content. Kept live (they still hold indexed positions and impressions in Search Console) but the blog index must actually link to them",
+          "rationale": "Issues a single blanket 'keep all 12 live and link them' disposition with no per-asset harvest/301/sunset calls and no specific per-post impressions/positions cited; the one data reference is an aggregate ('position 40–60'), not the asset-by-asset grounding the question demands."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "no posts targeting meeting-assistant/transcription keywords — a content-strategy gap beyond this session's editable scope",
+          "rationale": "Cleanly avoids both failure modes — preserves legacy equity via crawlable links/sitemap while flagging the missing meeting-assistant cluster — but stops at naming the gap; it neither builds the growth engine nor sequences the transition, leaving the middle path asserted rather than executable."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 5
+  },
+  "judgment": 0.5
+}

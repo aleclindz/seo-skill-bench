@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The business pivoted from **InboxZap** (an email inbox-cleanup tool) to **Lumina** (an AI meeting assistant)... incomplete across the rest of the site and, critically, **incomplete in the source repo itself**... GSC exports confirm the pivot broke organic performance: virtually all historical impression volume is tied to the dead product's keywords",
+          "rationale": "Nails all three surfaces of anchor_10: live=meeting assistant, GSC=legacy inbox demand, repo=partially stale, and every recommendation is framed around that reality (e.g. 'no organic footprint in its actual category')."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "301-redirect the 12 legacy InboxZap post URLs (`/blog/post-1` … `/blog/post-12`) to `/blog`... A 301 to the blog hub preserves whatever residual link equity exists... Expect the ~13.8k impressions... to mostly disappear",
+          "rationale": "Treats the 12 as one data-justified tier (all off-topic → 301 to hub) with real aggregate GSC numbers and reasoning, but never walks them asset-by-asset or differentiates by per-post impressions, and redirects everything to the hub rather than to relevant successors."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "that traffic was never going to convert for the current product, and holding onto it was actively costly... A 301... preserves whatever residual link equity exists... target 1,500+ words... in a category the site has zero footprint in today... Monitor GSC after the legacy-post redirects go live",
+          "rationale": "Explicitly names the tension and lands a defensible middle: 301 to preserve residual equity rather than torch it, build the meeting-assistant cluster as the growth engine, and sequences/monitors the transition — avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The business pivoted from **InboxZap** (email inbox-cleanup tool) to **Lumina** (AI meeting assistant)... incomplete in the source repo itself... GSC exports confirm the pivot broke organic performance: virtually all historical impression volume is tied to the dead product's keywords",
+          "rationale": "Explicitly names live=meeting assistant, GSC=legacy inbox demand, repo=stale, and frames every recommendation around that reality (rebuild metadata, redirect legacy posts, build new category cluster)."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "301-redirect the 12 legacy InboxZap blog URLs (`/blog/post-1` … `/blog/post-12`) to `/blog`... none of the 12 posts... have a defensible connection to an AI meeting assistant... A 301 to the blog hub preserves whatever residual link equity exists",
+          "rationale": "Assigns a clear, well-reasoned disposition (301-to-hub) and cites aggregate GSC data, but treats all 12 as a single blanket bucket rather than walking them asset-by-asset or in data-justified tiers with individual impression/position figures — short of the per-asset harvest/keep/sunset discrimination anchor_10 asks for."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "that traffic was never going to convert for the current product, and holding onto it was actively costly... A 301... preserves whatever residual link equity exists and removes the mismatch... Build a real content calendar in Lumina's actual category... Monitor GSC after the legacy-post redirects go live",
+          "rationale": "Avoids both failure modes explicitly — neither doubling down on inbox content nor torching equity outright — landing a defensible middle path: 301 to preserve residual equity, build the meeting-AI cluster as growth engine, and sequence/monitor the transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The business pivoted from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the pivot was incomplete in ways actively hurting organic traffic... GSC data shows correlates with terrible rankings (~13.8k impressions, ~6 clicks, positions 42–58)",
+          "rationale": "Explicitly names the pivot, correctly labels the inbox-cleanup content/queries as dead-product legacy, flags the repo as stale vs. live, and frames every fix around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "301-redirected all 12 legacy InboxZap post URLs to `/blog` (documented reasoning...) Expect the ~13.8k impressions currently going to these URLs to mostly disappear",
+          "rationale": "Grounds the decision in the real GSC numbers (13.8k impressions, 6 clicks, pos 42–58) and assigns an explicit, justified disposition, but applies one blanket 301-to-hub to all 12 rather than a per-asset or tiered walk checking whether any individual post had salvageable equity worth a targeted redirect or harvest."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "A 301 to the blog hub preserves whatever residual link equity exists and removes the mismatch... build the meeting-assistant cluster as the growth engine, and sequence the transition",
+          "rationale": "Names the tension explicitly, rejects both failure modes (won't fake-repurpose off-brand content, won't just torch equity), preserves residual link equity via 301, and stands up the new meeting-AI cluster as the growth engine with a monitoring window — a defensible, sequenced middle path."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

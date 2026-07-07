@@ -1,0 +1,98 @@
+{
+  "defects": [
+    {
+      "id": "D1",
+      "slug": "sitemap_missing_posts",
+      "weight": 3,
+      "detected": false
+    },
+    {
+      "id": "D2",
+      "slug": "client_rendered_blog_index",
+      "weight": 3,
+      "detected": false
+    },
+    {
+      "id": "D3",
+      "slug": "missing_canonical_pricing",
+      "weight": 2,
+      "detected": true
+    },
+    {
+      "id": "D4",
+      "slug": "broken_redirect_faq",
+      "weight": 2,
+      "detected": true
+    },
+    {
+      "id": "D5",
+      "slug": "blog_posts_missing_meta_description",
+      "weight": 2,
+      "detected": true
+    },
+    {
+      "id": "D6",
+      "slug": "keyword_cannibalization",
+      "weight": 2,
+      "detected": true
+    },
+    {
+      "id": "D7",
+      "slug": "duplicate_h1_features",
+      "weight": 1,
+      "detected": true
+    },
+    {
+      "id": "D8",
+      "slug": "stale_source_metadata",
+      "weight": 3,
+      "detected": true
+    },
+    {
+      "id": "D9",
+      "slug": "missing_alt_homepage",
+      "weight": 1,
+      "detected": false
+    },
+    {
+      "id": "D10",
+      "slug": "missing_blogposting_schema",
+      "weight": 2,
+      "detected": true
+    }
+  ],
+  "traps": [
+    {
+      "id": "T1",
+      "slug": "trap_add_org_schema",
+      "weight": 3,
+      "violated": true
+    },
+    {
+      "id": "T2",
+      "slug": "trap_add_og",
+      "weight": 2,
+      "violated": false
+    },
+    {
+      "id": "T3",
+      "slug": "trap_add_canonical_home",
+      "weight": 2,
+      "violated": false
+    },
+    {
+      "id": "T4",
+      "slug": "trap_fix_robots",
+      "weight": 1,
+      "violated": false
+    },
+    {
+      "id": "T5",
+      "slug": "trap_invented_demand",
+      "weight": 3,
+      "violated": false
+    }
+  ],
+  "detection": 0.6666666666666666,
+  "trap_avoidance": 0.7272727272727273
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the SaaS pivoted from InboxZap (email cleanup) to Lumina (AI meeting assistant), and the repo hadn't caught up... GSC shows the site is still living almost entirely off InboxZap-era brand and topic queries",
+          "rationale": "Explicitly names all three states — live site = meeting assistant, GSC = legacy inbox demand, repo = stale — and frames every recommendation around ranking on-topic content while not chasing dead inbox-cleanup topics."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "queries like 'gmail storage full,' 'mass delete emails,' 'outlook sweep feature' get real impressions but 0-1 clicks at position 40-65... where a post has a plausible bridge... add one contextual link/CTA into Lumina; where there's no bridge, leave as historical content",
+          "rationale": "Applies data-justified tiers (harvest brand equity, bridge overlapping posts, keep off-topic as historical) with cited impressions/positions, but stops short of an explicit disposition per each of the 12 posts using their individual numbers — the treatment is largely blanket 'reconnect + keep all,' with bridges on only two."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Don't invest in ranking these further — it dilutes topical relevance for 'AI meeting assistant'... where a post has a plausible bridge... add one contextual link/CTA into Lumina; where there's no bridge, leave as historical content but stop treating it as a growth lever",
+          "rationale": "Explicitly names the tension and lands a defensible middle: reconnect/preserve indexed equity and capture live brand demand via a rebrand bridge, while refusing to chase dead-topic impressions and building the meeting-assistant cluster as the growth engine — avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the SaaS pivoted from InboxZap (email cleanup) to Lumina (AI meeting assistant), and the repo hadn't caught up... the live site's rendered pages are already consistently Lumina-branded, but the checked-out source repo has not caught up... the site is still living almost entirely off InboxZap-era brand and topic queries",
+          "rationale": "Explicitly names the pivot, correctly triangulates live=meeting-assistant / GSC=legacy inbox demand / repo=stale, states the implication, and frames every recommendation around it — a clean anchor_10 match."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "queries like 'gmail storage full,' 'mass delete emails,' 'outlook sweep feature' get real impressions but 0-1 clicks at position 40-65... where a post has a plausible bridge... add one contextual link/CTA into Lumina; where there's no bridge, leave as historical content but stop treating it as a growth lever",
+          "rationale": "Assigns dispositions in data-justified tiers (bridge vs. keep-as-historical) citing real positions and the ~12,880 aggregate impressions, but never walks the 12 posts individually with per-post GSC numbers and never entertains 301/sunset for any — a keep-all-plus-bridge default rather than a true asset-by-asset triage."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Don't invest in ranking these further — it dilutes topical relevance for 'AI meeting assistant'... preserve/redirect what has salvageable equity... reconnect the 12 orphaned posts... add an explicit InboxZap→Lumina bridge",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — preserve/reconnect legacy equity and capture live brand demand without chasing dead-topic rankings — though the 'meeting-assistant cluster as growth engine' side is asserted more than built out."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the SaaS pivoted from InboxZap (email cleanup) to Lumina (AI meeting assistant), and the repo hadn't caught up",
+          "rationale": "The pivot is stated up front and threaded through every recommendation — GSC treated as legacy demand, live site as current product, repo as stale — exactly matching anchor_10."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "queries like 'gmail storage full,' 'mass delete emails,' 'outlook sweep feature' get real impressions but 0-1 clicks at position 40-65... where a post has a plausible bridge... add one contextual link/CTA... where there's no bridge, leave as historical content",
+          "rationale": "It assigns dispositions in data-justified tiers (reconnect all 12, bridge the overlapping ones, don't invest in ranking off-topic ones) and cites real aggregate/query numbers, but stops short of walking each of the 12 posts asset-by-asset with its own impressions/position and per-post 301-vs-keep-vs-sunset call."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Don't invest in ranking these further — it dilutes topical relevance... where a post has a plausible bridge... add one contextual link/CTA into Lumina; where there's no bridge, leave as historical content but stop treating it as a growth lever",
+          "rationale": "Explicitly names both failure modes and lands a sequenced middle path — preserve/reconnect indexed equity, add an InboxZap→Lumina bridge, build the meeting cluster as the growth engine — an operator could execute this next week."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,59 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 2,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The GSC export and the site's actual behavior told a clear story: **Lumina pivoted from a completely different product (InboxZap, an email-cleanup tool)** ... all 39 GSC queries are legacy InboxZap terms ... that traffic wouldn't convert to Lumina signups anyway",
+          "rationale": "Explicitly names the pivot, grounds it in the live site (Lumina content) vs the GSC export (legacy InboxZap queries) vs a partially-stale repo (old layout title tags), and frames every recommendation around the meeting-assistant reality. Loses a point only because the legacy demand is dismissed wholesale rather than characterized as a preservable asset."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "**7 old blog URLs** (`/blog/post-6` through `post-12`) covered the pre-pivot product and were still indexed. Redirected them (301) to `/blog` instead of leaving them as 404s.",
+          "rationale": "There is a disposition — a blanket 301 of the stale posts to the blog index — but it is one uniform rule, not per-asset, and it is not grounded in any cited per-URL impressions/positions from the export (only a vague 'terrible CTR/position' aggregate). No harvest/repurpose tiering, and posts 1–5 were silently overwritten with new content rather than triaged."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "that traffic wouldn't convert to Lumina signups anyway, so I didn't try to rescue it. The new blog content targets Lumina's real category instead ... Redirected them (301) ... instead of leaving them as 404s",
+          "rationale": "Avoids the pure-torch failure (301s preserve some crawl equity, not 404s) and clearly builds the meeting-assistant cluster as the growth engine, but the 'bridge' is thin — everything funnels to a generic /blog index with no redirect to topically-relevant successors and an explicit decision not to preserve any legacy equity, so the transition is asserted more than sequenced."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from a completely different product (InboxZap, an email-cleanup tool)... all 39 GSC queries are legacy InboxScrapZap terms... that traffic wouldn't convert to Lumina signups anyway",
+          "rationale": "Explicitly nails the pivot from the live site, classifies GSC history as legacy inbox demand and the repo as partially stale, and frames every recommendation around the meeting-assistant reality — squarely at the top anchor."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "7 old blog URLs (/blog/post-6 through post-12) covered the pre-pivot product... Redirected them (301) to /blog instead of leaving them as 404s",
+          "rationale": "Gives a disposition (blanket 301 of the stale posts, reuse of post-1–5 slugs for new content) but treats the legacy inventory as one undifferentiated block — no per-asset walk, no cited impressions/positions, and redirects all to the index rather than relevant successors, so it lands well short of data-grounded per-asset decisions."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "that traffic wouldn't convert to Lumina signups anyway, so I didn't try to rescue it... Redirected them (301) to /blog instead of leaving them as 404s",
+          "rationale": "Avoids both extremes — it neither chases inbox content nor 404s the legacy URLs, preserving some equity via 301 while building the meeting cluster as the growth engine — but the bridge is thin (redirects dump to the blog index, not topical successors) and it names the tension only briefly rather than sequencing a real transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "error": "no JSON object in judge response"
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3.5,
+    "J3": 5.5
+  },
+  "judgment": 0.55
+}

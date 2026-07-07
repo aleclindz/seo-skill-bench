@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina, an AI meeting assistant that appears to have pivoted from an earlier product called **InboxZap** (email cleanup tool). That pivot is the root cause of nearly everything wrong here.",
+          "rationale": "Explicitly identifies the pivot, treats GSC as legacy inbox demand ('vanity impressions, not qualified traffic') and repo as partially stale, and frames every fix around it. Just short of full marks because the 'legacy vs. current market' framing, while clear, is asserted more than quantified per query."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "the only pages with real historical demand — ~13k combined monthly impressions per GSC ... add a bridge CTA to Lumina in each post, or 301 the ones with no plausible bridge",
+          "rationale": "Offers a real disposition menu (bridge-CTA vs. 301 vs. prioritize net-new) and cites a combined GSC impressions figure, but never walks the 12 posts asset-by-asset with individual impressions/positions — the dispositions are applied as a class, not grounded per-asset in the export."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "don't just delete the legacy posts (they carry real indexed history/backlink equity) — but they need a decision ... and prioritize net-new content against Lumina's actual keyword space",
+          "rationale": "Names both failure modes and lands a defensible middle path — preserve/redirect salvageable equity while building the meeting-assistant cluster as the growth engine — though the transition sequencing is stated at a high level rather than staged."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina, an AI meeting assistant that appears to have pivoted from an earlier product called **InboxZap**... That pivot is the root cause of nearly everything wrong here",
+          "rationale": "Explicitly names the pivot, correctly maps live-site=meeting assistant vs GSC/legacy=inbox demand, and frames every fix and recommendation around that reality — including flagging that legacy posts will pull 'vanity impressions, not qualified traffic.'"
+        },
+        "J2": {
+          "score": 4,
+          "basis": "add a bridge CTA to Lumina in each post, or 301 the ones with no plausible bridge... ~13k combined monthly impressions per GSC",
+          "rationale": "Names all 12 posts and offers real dispositions (bridge-CTA / 301 / net-new), but treats them as one undifferentiated block with only an aggregate impression figure — no asset-by-asset or tiered decisions grounded in per-post impressions/positions from the export."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "don't just delete the legacy posts (they carry real indexed history/backlink equity) — but they need a decision... and prioritize net-new content against Lumina's actual keyword space",
+          "rationale": "Explicitly articulates the tension and lands a defensible middle path — preserve/redirect salvageable equity, build the meeting-assistant cluster as the growth engine — cleanly avoiding both the double-down and torch-everything failure modes; falls just short of a fully sequenced transition timeline."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina, an AI meeting assistant that appears to have pivoted from an earlier product called **InboxZap** (email cleanup tool). That pivot is the root cause of nearly everything wrong here.",
+          "rationale": "Explicitly names the pivot from live site + repo evidence, treats the GSC inbox-cleanup queries as legacy ('vanity impressions, not qualified traffic'), and frames every recommendation around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "add a bridge CTA to Lumina in each post, or 301 the ones with no plausible bridge... I couldn't do this in-repo since post bodies live outside the files I have access to",
+          "rationale": "Offers a real disposition menu (bridge CTA vs. 301 vs. net-new) but applies it as a conditional rule rather than walking the 12 posts asset-by-asset; cites only a lumped ~13k impressions, no per-post positions/impressions to justify which post gets which fate."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "don't just delete the legacy posts (they carry real indexed history/backlink equity) — but they need a decision... and prioritize net-new content against Lumina's actual keyword space",
+          "rationale": "Explicitly names both failure modes (vanity impressions from keeping vs. torching equity) and lands a defensible middle path: preserve/redirect salvageable equity, bridge with CTAs, and build the meeting-assistant cluster as the growth engine."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 4,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "\"The site is mid-rebrand from 'Lumina' (an AI meeting-notes assistant) to 'InboxZap' (a Gmail cleanup tool)\" — and \"blog posts already targeting exactly the right high-demand queries ('gmail storage full,' 'bulk delete emails' ...)\"",
+          "rationale": "The entrant read the pivot exactly backwards: it treats the inbox-cleanup queries as the product's current, correct target market and rebuilds the entire site to serve them harder, rather than recognizing the live product as the meeting assistant and the inbox-cleanup GSC history as legacy demand. This is a near-perfect match to anchor_0."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "\"app/blog/posts.ts (new) — single source of truth for all 12 posts, preserving existing slugs/content/URLs so no indexing signal is lost, just de-staled\"",
+          "rationale": "There is one blanket disposition — keep and preserve all 12 posts — with no per-asset harvest/redirect/sunset reasoning; it earns a hair above anchor_0 only because it cites real impression ranges (300–1,200+) and positions (40s–60s), but those numbers justify keeping everything rather than differentiated dispositions."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "\"rewrote the homepage to actually be about InboxZap, with sections mapped to the real query themes from GSC\" and homepage H1 \"Reach inbox zero in minutes\"",
+          "rationale": "The entrant falls fully into the first failure mode — doubling down on inbox-cleanup content and converting the whole site to chase the legacy demand — with no articulation of the tension or any transition plan for the actual current (meeting-assistant) positioning."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "The site is mid-rebrand from \"Lumina\" (an AI meeting-notes assistant) to \"InboxZap\" (a Gmail cleanup tool)... rewrote the homepage to actually be about InboxZap, with sections mapped to the real query themes from GSC",
+          "rationale": "The entrant noticed a mismatch but read the pivot exactly backwards: it treats the legacy inbox-cleanup GSC demand as the current product's target market and rebuilds the entire site around ranking that content harder, discarding the live meeting-assistant positioning — squarely anchor_0."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "app/blog/posts.ts (new) — single source of truth for all 12 posts, preserving existing slugs/content/URLs so no indexing signal is lost, just de-staled",
+          "rationale": "It issues a blanket 'keep and promote all 12' with only aggregate impression ranges cited; there are no per-asset harvest/redirect/sunset dispositions, and the legacy posts are treated as the growth engine rather than inventory to triage."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "rewrote the homepage to actually be about InboxZap, with sections mapped to the real query themes from GSC",
+          "rationale": "It falls fully into one failure mode — doubling down on inbox-cleanup equity while torching the live meeting-assistant positioning — with no articulation of the tension or any transition/redirect bridge; the opposite of a defensible middle path."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "The site is mid-rebrand from \"Lumina\" (an AI meeting-notes assistant) to \"InboxZap\" (a Gmail cleanup tool)... the actual page body, hero H1, and JSON-LD schema still described Lumina's meeting-transcription product",
+          "rationale": "The entrant inferred the pivot in exactly the wrong direction — treating the meeting-assistant content as the stale legacy and inbox-cleanup as the current product, then rebuilt the entire homepage around ranking InboxZap queries harder. This is essentially anchor_0: inbox-cleanup queries taken as the live product's target market."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "app/blog/posts.ts (new) — single source of truth for all 12 posts, preserving existing slugs/content/URLs so no indexing signal is lost",
+          "rationale": "Effectively one blanket 'keep everything' disposition applied to all 12 posts; the GSC numbers are cited only in aggregate (300–1,200 impressions, positions 40s–60s) with no per-asset harvest/redirect/sunset decisions grounded in each post's data."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "blog posts already targeting exactly the right high-demand queries... an internal-links block into the blog... sections mapped to the real query themes from GSC",
+          "rationale": "Lands squarely in the failure mode of doubling down on inbox-cleanup content for the product the rubric says no longer exists; there is no tension articulated and no transition/bridge plan for the actual meeting-assistant positioning."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 2,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

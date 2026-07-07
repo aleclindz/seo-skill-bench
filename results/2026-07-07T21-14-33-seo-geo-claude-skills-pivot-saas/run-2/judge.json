@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant, and the pivot broke several things that were actively suppressing organic traffic",
+          "rationale": "Explicitly identifies the pivot, treats inbox-cleanup queries (gmail storage full, bulk delete) as legacy demand, and frames every fix — bridge phrases, FAQ, metadata — around the meeting-assistant reality. Loses a point only because it doesn't distinguish the repo's partial staleness."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "'gmail storage full': 790 impr, 'how to bulk delete emails in gmail': 400 impr) but stuck at position 40–60 ... Gave each legacy post a short 'bridge' paragraph",
+          "rationale": "Cites a few real GSC numbers, but applies one uniform disposition (keep-all + bridge + sitemap) to all 12 posts rather than per-asset harvest/redirect/keep/sunset tiers; no post is 301'd or sunset and most numbers are unstated."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "existing search equity funnels into the current product instead of dead-ending on an orphaned page about the old one",
+          "rationale": "Avoids both failure modes — preserves legacy equity via bridges rather than torching it, and stands up the meeting-assistant product surface — but the transition is implicit rather than explicitly sequenced, and no genuine new meeting-assistant content cluster is proposed as the growth engine."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant, and the pivot broke several things that were actively suppressing organic traffic",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup queries as legacy demand, and frames every fix (metadata, bridge phrasing, funneling equity) around the meeting-assistant reality. Loses a point for not distinguishing the repo's partial staleness as sharply."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Gave each legacy post a short \"bridge\" paragraph tying its topic back to Lumina's actual product ... funnels into the current product",
+          "rationale": "Cites a few real GSC figures (790/400 impr, branded 320 impr @4.1) but applies one uniform disposition — keep-all-and-bridge — to every post; no asset-by-asset or tiered harvest/redirect/sunset calls grounded in the export, so it lands closer to a blanket 'keep everything' than a data-justified inventory."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "so that existing search equity funnels into the current product instead of dead-ending on an orphaned page about the old one",
+          "rationale": "Avoids both failure modes — preserves legacy equity via bridges rather than torching it, and doesn't double down on dead inbox content — but the meeting-assistant 'growth engine' is thin (FAQ + schema only, no new cluster) and the transition sequencing is implicit rather than articulated."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant, and the pivot broke several things that were actively suppressing organic traffic",
+          "rationale": "Explicitly names the pivot, treats the inbox-cleanup posts as legacy equity to funnel forward rather than the current market, and frames every fix (bridge phrase, FAQ, per-post bridges) around the meeting-assistant reality. Loses a point only because it leans on repo evidence more than the GSC-vs-live distinction as such."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "\"gmail storage full\": 790 impr, \"how to bulk delete emails in gmail\": 400 impr ... Gave each legacy post a short \"bridge\" paragraph tying its topic back to Lumina's actual product",
+          "rationale": "Cites a couple of real GSC numbers and applies a concrete, executed treatment, but it's one blanket disposition — keep-all-plus-bridge — across all 12 posts with no per-asset tiering, no 301/sunset calls, and no data-justified reason why any given post deserves harvest vs redirect vs retire."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "so that existing search equity funnels into the current product instead of dead-ending on an orphaned page about the old one",
+          "rationale": "Cleanly avoids both failure modes — it neither doubles down on inbox content nor torches the legacy equity — and bridges authority toward the new positioning, but it never builds out a meeting-assistant keyword cluster as the growth engine or sequences the transition, leaving the 'growth' half of the balance largely unaddressed."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

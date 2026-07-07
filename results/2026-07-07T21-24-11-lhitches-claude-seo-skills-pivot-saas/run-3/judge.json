@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this site rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the migration was left half-finished... legacy search traffic converts instead of dead-ending",
+          "rationale": "Explicitly identifies the pivot, correctly frames the inbox-cleanup GSC history as legacy demand and the repo as partially stale, and frames every fix around the new positioning. Falls just short of a 10 because it's expressed operationally rather than as a stated market-implication."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "**All 12 blog posts** (bulk-delete-emails, Gmail storage, etc. — ~13k monthly impressions) had zero connection to the current product. Gave each one a real meta description... and added a contextual callout",
+          "rationale": "Applies one blanket disposition (keep-all + identical Lumina callout) to every post with only an aggregate ~13k impressions figure and no per-asset impressions/positions from the export; no harvest/redirect/sunset differentiation. Rescued above anchor_0 only by the branded 'inboxzap' position ~4-9 citation and non-zero data reference."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "so that legacy search traffic converts instead of dead-ending... added a real FAQ section, including a 'What happened to InboxZap?' entry to directly capture the residual branded search confusion",
+          "rationale": "Cleanly avoids both failure modes — it neither doubles down on inbox content nor torches legacy equity, instead bridging legacy traffic to the meeting-assistant offer. But the tension is never articulated and there's no sequenced transition plan, leaving it a defensible middle rather than a fully reasoned one."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this site rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the migration was left half-finished, actively hurting organic traffic",
+          "rationale": "Explicitly identifies the pivot, correctly frames GSC inbox-cleanup traffic as legacy/residual demand (branded 'inboxzap review' queries) and repo as partially stale (prod hotfixed but not committed), and frames every fix around the Lumina reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "All 12 blog posts ... had zero connection to the current product. Gave each one a real meta description ... and added a contextual callout linking to Lumina's features",
+          "rationale": "Applies one uniform disposition (keep-all + generic callout) to every post rather than per-asset harvest/redirect/sunset tiers, and cites only an aggregate ~13k impressions with no per-post impressions/positions from the export to justify differentiated treatment."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "so that legacy search traffic converts instead of dead-ending ... a **\"What happened to InboxZap?\"** entry to directly capture the residual branded search confusion",
+          "rationale": "Cleanly avoids both failure modes — preserves legacy equity as a conversion bridge while building the meeting-assistant cluster (features/pricing/blog/FAQ) as the growth engine; loses a couple points for not sequencing the transition or considering redirects/sunsetting for genuinely dead-weight posts."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this site rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant), but the migration was left half-finished... legacy search traffic converts instead of dead-ending",
+          "rationale": "The entrant explicitly identifies the pivot from the live product, treats the ~13k inbox-cleanup impressions as legacy demand, and frames every fix around the meeting-assistant reality — including capturing residual branded 'inboxzap' search."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "**All 12 blog posts** (bulk-delete-emails, Gmail storage, etc. — ~13k monthly impressions) had zero connection to the current product. Gave each one a real meta description... and added a contextual callout linking to Lumina's features",
+          "rationale": "Every legacy post gets an explicit disposition (keep-as-is + harvest via meta descriptions and a Lumina callout) grounded in a real ~13k aggregate figure, but the treatment is a single blanket policy applied uniformly — no per-asset or tiered differentiation by individual impressions/position, no harvest-vs-redirect-vs-sunset variation."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "so that legacy search traffic converts instead of dead-ending... a **\"What happened to InboxZap?\"** entry to directly capture the residual branded search confusion",
+          "rationale": "Lands a defensible middle path — preserves legacy posts and funnels their equity toward Lumina while building the meeting-assistant pages as the growth engine and bridging branded confusion — avoiding both failure modes, though the transition sequencing is implicit rather than explicitly staged."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 4,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site is mid-pivot: it rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant)... All historical GSC traffic is for the dead InboxZap keywords... worthless for the new product.",
+          "rationale": "Explicitly identifies the pivot across live site, GSC (legacy), and repo (partially stale), and frames every recommendation — retirement, redirects, new clusters — around the meeting-assistant reality. Matches anchor_10."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "GSC shows these 10 have real impression volume (300-1900/ea) at position 40-60 with near-zero clicks... retire_no_redirect: /blog/post-2 (10 Gmail Filters)... redirect_plan: post-1 → meeting-overload",
+          "rationale": "Every one of the 12 posts gets an explicit named disposition (2 redirected with reasoning, 10 retired) — strong asset-by-asset work — but the GSC figures are cited as an aggregate range rather than per-asset impressions/positions from the export, short of anchor_10's asset-level data grounding."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Only redirect where the new page is a genuine topical match; retire the rest... build the meeting-assistant cluster... 'meeting overload' inherits some topical/backlink residual from post-1 and post-9 via 301, cutting cold-start time",
+          "rationale": "Explicitly names the tension (Google's soft-404 warning against mass-redirecting) and lands a defensible middle path: preserve the 2 genuinely-bridgeable posts, sunset dead-equity ones, and build the new cluster as the growth engine with a sequenced transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site is mid-pivot: it rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant)... All historical GSC traffic is for the dead InboxZap keywords (inbox zero, bulk delete emails, gmail storage) at poor rankings — worthless for the new product.",
+          "rationale": "Explicitly names the pivot from live product, classifies GSC history as legacy/dead demand and the repo as stale, and frames every recommendation (cold-start topical authority, new clusters) around the meeting-assistant reality — even coding a config note against assuming inherited relevance."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "redirect_plan ... /blog/post-1 'How to Reach Inbox Zero' → /blog/meeting-overload ... retire_no_redirect [post-2 ... post-12] ... GSC shows these 10 have real impression volume (300-1900/ea) at position 40-60 with near-zero clicks.",
+          "rationale": "Walks all 12 posts individually with per-asset dispositions (301 the 2 with a genuine thematic bridge, sunset the other 10 with a Removals request), justified by cited impression/position data and even flagging a duplicate; loses a hair only because the GSC figures are given as an aggregate range rather than per-URL."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Retired the 10 with no relevant successor ... and 301'd the 2 with a genuine thematic bridge ... build the meeting-assistant cluster as the growth engine ... 'meeting overload' inherits some topical/backlink residual ... cutting cold-start time.",
+          "rationale": "Avoids both failure modes — neither chases dead inbox impressions nor torches all equity blindly — landing the defensible middle path of preserving salvageable equity via bridge redirects while making the new cluster the growth engine and sequencing the transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site is mid-pivot: it rebranded from **InboxZap** (email cleanup tool) to **Lumina** (AI meeting assistant)... All historical GSC traffic is for the dead InboxZap keywords... worthless for the new product",
+          "rationale": "Explicitly names the pivot, classifies GSC history as legacy/dead demand and repo as stale, and codifies it in config.json ('PIVOT client... do not assume any inherited relevance'). Every recommendation is framed around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "redirect_plan with 2 URLs + reasons; retire_no_redirect lists all 10 by title; 'GSC shows these 10 have real impression volume (300-1900/ea) at position 40-60 with near-zero clicks'",
+          "rationale": "Every one of the 12 posts gets an explicit disposition (301 the 2 with a thematic bridge, retire+404 the 10, GSC Removals request, exclude from sitemap) with reasoning. Docks one point because impressions/positions are cited as an aggregate range rather than per-URL figures."
+        },
+        "J3": {
+          "score": 10,
+          "basis": "Retired the 10 with no relevant successor... and 301'd the 2 with a genuine thematic bridge (inbox/email overload → meeting overload)... Authored 3 real cornerstone posts targeting the new keyword strategy",
+          "rationale": "Avoids both failure modes: doesn't chase dead inbox impressions, but bridges salvageable equity via the overload 301s while standing up the meeting-assistant cluster as the growth engine, with a sequenced roadmap of 13 backlog articles."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 9,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

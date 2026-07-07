@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The live site (lumina.example / http://127.0.0.1:52525) previously operated as **InboxZap**... GSC history... is almost entirely InboxZap-era demand... treat legacy content as harvest/redirect/sunset candidates, not a base to build the new strategy on",
+          "rationale": "Explicitly identifies the pivot from three angles (live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale), states the near-zero topical overlap implication, and frames every recommendation around it — including a 'Topics to Avoid' guard against reviving InboxZap framing."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "Per-asset migration plan... Every disposition is backed by real Google Search Console impressions/position... post-1: 3900 impressions, 2 clicks, avg position 42.3 ... 301-redirect ... into the most relevant new page",
+          "rationale": "Walks the legacy inventory asset-by-asset with real per-URL GSC impressions/positions and assigns each a disposition, plus a well-reasoned homepage-exclusion correction; docked slightly because all 12 posts collapse to a single uniform 'redirect to /blog hub' rather than differentiating harvest vs redirect vs sunset by their very different numbers (post-1's 3900 vs post-7's 80)."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "GSC... shows search demand that is almost entirely for the retired InboxZap product... while the live site is 100% repositioned around Lumina — a full pivot... redirect this cohort into the rebuilt /blog hub... build the meeting-assistant cluster as the growth engine... monitor-and-accept case (can't 'fix' a rebrand's query mismatch)",
+          "rationale": "Articulates the tension explicitly and lands a defensible middle path — preserve legacy equity via 301s and monitor the branded-query mismatch rather than torching it, while building the new cluster as the growth engine with a sequenced writing order; avoids both failure modes cleanly."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "context.md: 'The live site ... previously operated as InboxZap ... The homepage, /features, /pricing, and /blog are now fully rebranded to Lumina ... GSC history ... is almost entirely InboxZap-era demand ... treat legacy content as harvest/redirect/sunset candidates, not a base to build the new strategy on'",
+          "rationale": "The pivot is identified explicitly and correctly across every artifact — live site = meeting assistant, GSC = legacy inbox demand, repo = stale — and every recommendation is framed around it."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "migration-plan.md walks each of the 12 posts with real GSC numbers, e.g. 'post-1 ... 3900 impressions, 2 clicks, avg position 42.3 ... 301-redirect ... into the most relevant new page', plus the homepage correction to harvest/keep",
+          "rationale": "Genuinely per-asset and grounded in the actual export, with a smart correction rescuing the homepage from an auto-misclassification; docked because all 12 posts get the identical 'redirect to /blog' disposition with no harvest/repurpose or sunset differentiation despite varying equity."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "audit latest.md: 'preserve/redirect what has salvageable equity, build the meeting-assistant cluster as the growth engine' and the 'inboxzap' branded query treated as 'monitor-and-accept ... not a redirect target'",
+          "rationale": "Cleanly avoids both failure modes — it neither doubles down on inbox content nor torches the legacy equity — and sequences a defensible transition, though the middle path leans almost entirely on blanket 301s rather than harvesting any salvageable authority."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "context.md: 'The live site... previously operated as InboxZap... now fully rebranded to Lumina... This is a full product pivot with near-zero topical overlap between old and new positioning — treat legacy content as harvest/redirect/sunset candidates, not a base to build the new strategy on.'",
+          "rationale": "The pivot is identified explicitly and correctly (live = meeting assistant, GSC = legacy InboxZap demand, repo = stale), and every recommendation is framed around it — including the 'inboxzap' branded-query mismatch as a monitor-and-accept risk. Textbook anchor_10."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "migration-plan.md walks each post: 'lumina.example/blog/post-1 — Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3... 301-redirect... pass the authority forward' repeated per-asset for all 12 posts, plus the corrected homepage 'harvest/keep' row.",
+          "rationale": "Every one of the 12 legacy posts gets an explicit disposition grounded in real GSC impressions/position, and the homepage misclassification is caught and corrected — strong asset-by-asset work. Docked slightly because all 12 collapse to the same 'redirect into /blog hub' disposition with identical boilerplate reasoning rather than differentiating harvest/repurpose vs sunset by the actual numbers (e.g. post-1's 3900 impressions vs post-7's 80)."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "audit/latest.md: 'preserve/redirect what has salvageable equity... build the meeting-assistant cluster as the growth engine'; homepage 'monitor-and-accept case (can't fix a rebrand's query mismatch), not a redirect target'; discovery.md sequences the new cluster easy-wins-first.",
+          "rationale": "Cleanly avoids both failure modes — 301s the legacy equity into the rebuilt hub (not torched) while making the meeting-assistant cluster the growth engine with a sequenced writing order, and explicitly frames the branded-query decay as a managed transition risk. Just short of a 10 because the 'transition sequencing' between redirecting legacy and ramping the new cluster is implied rather than laid out as a single ordered timeline."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

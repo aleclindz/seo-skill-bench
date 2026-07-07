@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "InboxZap (email cleanup tool) pivoted to Lumina (AI meeting assistant), but the migration was left half-done in code. GSC data showed *all 18 homepage clicks* were brand searches for \"inboxzap\"... while 12 legacy email-cleanup blog posts (still pulling ~15k impressions) had become orphaned",
+          "rationale": "Explicitly names the pivot, distinguishes live product (Lumina meeting assistant) from legacy GSC demand (inbox-cleanup brand + blog impressions), and frames every recommendation around that reality; the only gap is treating legacy demand as fully disposable rather than a bridging asset."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Retired the 12 off-topic legacy posts: 301'd them to /blog in next.config.js instead of leaving them 404-bound or orphaned — preserves whatever link equity remains rather than losing it outright.",
+          "rationale": "One blanket disposition (all 12 → 301 to /blog) with an aggregate ~15k-impressions justification and equity reasoning, so above anchor_0, but no asset-by-asset or tiered treatment and no per-post impressions/positions from the export."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301'd them to /blog... preserves whatever link equity remains... Seeded 4 new posts genuinely on-topic for Lumina... to start building topical authority in the new niche",
+          "rationale": "Lands a defensible middle path — redirect to preserve equity, build the meeting-assistant cluster as the growth engine, and answer 'What happened to InboxZap?' as a bridge — but the redirect target is the blog index rather than relevant successors and the tension is implied rather than explicitly articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "InboxZap (email cleanup tool) pivoted to Lumina (AI meeting assistant), but the migration was left half-done in code. GSC data showed *all 18 homepage clicks* were brand searches for \"inboxzap\"... 12 legacy email-cleanup blog posts (still pulling ~15k impressions) had become orphaned",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant, GSC as legacy/brand demand, and frames every fix around that reality — near-textbook anchor_10; docks one point only because it doesn't distinguish which repo assets were stale vs current as sharply."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Retired the 12 off-topic legacy posts: 301'd them to /blog in next.config.js instead of leaving them 404-bound or orphaned — preserves whatever link equity remains",
+          "rationale": "It made a real disposition (blanket 301 to /blog) with equity reasoning and cited aggregate ~15k impressions, which beats anchor_0, but it treated all 12 identically with no per-asset or tiered decisions grounded in individual impressions/positions — no harvest/repurpose of any salvageable post."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "301'd them... preserves whatever link equity remains rather than losing it outright. Seeded 4 new posts genuinely on-topic for Lumina... to start building topical authority in the new niche",
+          "rationale": "Cleanly avoids both failure modes — doesn't chase inbox content, doesn't torch equity — and builds the meeting-assistant cluster as the growth engine; but the bridge is a crude blanket redirect of topically-mismatched pages (soft-404 risk) with no sequencing or selective harvest, so the middle path is asserted more than engineered."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "InboxZap (email cleanup tool) pivoted to Lumina (AI meeting assistant), but the migration was left half-done in code. GSC data showed *all 18 homepage clicks* were brand searches for \"inboxzap\"... while 12 legacy email-cleanup blog posts (still pulling ~15k impressions) had become orphaned",
+          "rationale": "Names the pivot explicitly, correctly reads the live site as the meeting assistant, the GSC history as legacy inbox demand, and the repo as half-migrated — and every fix (FAQ 'What happened to InboxZap?', Lumina cluster, retitled metadata) flows from that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Retired the 12 off-topic legacy posts: 301'd them to /blog in next.config.js instead of leaving them 404-bound or orphaned — preserves whatever link equity remains",
+          "rationale": "It references the aggregate ~15k impressions and gives a real disposition (blanket 301) with equity reasoning, clearing anchor_0, but it treats all 12 identically and redirects to the blog index rather than walking the inventory asset-by-asset with per-post impressions/positions or routing each to a relevant Lumina successor or harvest decision."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301'd them to /blog... preserves whatever link equity remains rather than losing it outright. Seeded 4 new posts genuinely on-topic for Lumina... to start building topical authority in the new niche",
+          "rationale": "Lands a defensible middle path — preserve legacy equity via redirect while building the meeting-assistant content cluster as the growth engine, and answers the still-converting brand query directly — though the transition is executed rather than sequenced as a staged plan, and redirecting to the index rather than topical successors leaks some of the equity it aims to preserve."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

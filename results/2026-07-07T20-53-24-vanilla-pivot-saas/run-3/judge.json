@@ -1,0 +1,59 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 2,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the page content was 100% \"Lumina\" (AI meeting assistant) but `layout.tsx` metadata still said \"InboxZap — Clean Your Inbox in Minutes.\" ... residual brand equity carries over",
+          "rationale": "Explicitly identifies the pivot (live=meeting assistant, GSC/repo=legacy InboxZap), states the implication for the low CTR, and frames the brand/FAQ/redirect fixes around it. Falls just short of anchor_10 only because it doesn't frame the growth strategy as fully as it frames the diagnosis."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "12 indexed blog URLs (`/blog/post-1`...`post-12`) now 404 per GSC — added 301s to `/blog` instead of leaving indexed URLs as soft-404s",
+          "rationale": "One blanket disposition (301 all twelve to the blog index) with only a generic 'still getting impressions per GSC' — no per-asset impressions/positions cited and no harvest/repurpose/keep/sunset differentiation, so it barely rises above the anchor_0 blanket instruction."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Send them to the live blog instead of soft-404ing indexed URLs ... added `alternateName: InboxZap` ... a bridge answer for \"is this the same as InboxZap?\"",
+          "rationale": "Avoids both failure modes — preserves legacy equity via 301s + brand bridge while building the meeting-assistant blog cluster as the growth engine — but never articulates the tension explicitly or sequences the transition, so it lands a defensible middle path without the deliberate reasoning of anchor_10."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "error": "no JSON object in judge response"
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the page content was 100% \"Lumina\" (AI meeting assistant) but `layout.tsx` metadata still said \"InboxZap\"... added `alternateName: InboxZap`... a bridge answer for \"is this the same as InboxZap?\"",
+          "rationale": "Explicitly identifies the pivot (live = meeting assistant, GSC = legacy inbox demand, repo = partially stale metadata), states the click-loss implication, and frames every fix around the Lumina reality with a deliberate brand bridge. Falls just short of a perfect 10 only because the framing is embedded in fix-notes rather than stated as a standalone strategic premise."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "added 301s to `/blog` instead of leaving indexed URLs as soft-404s... `source: '/blog/post-:id(\\d+)', destination: '/blog'`",
+          "rationale": "One blanket 301 sends all 12 legacy posts to the generic blog index with no per-asset walk, no cited impressions/positions, and no harvest/repurpose/keep/sunset distinction — the GSC reference is a hand-wave ('still getting impressions per GSC'), not data-grounded disposition. Better than ignoring or deleting, but far from asset-by-asset triage."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "so that residual brand equity carries over instead of confusing clickers... Send them to the live blog instead of soft-404ing indexed URLs... Replaced with 6 server-rendered posts on relevant keyword targets (meeting notes, action items...)",
+          "rationale": "Avoids both failure modes — doesn't chase inbox-cleanup content and doesn't torch equity (brand bridge + 301s + new meeting cluster as growth engine). But the tension is never articulated as a strategic choice, and redirecting inbox-era posts to a topically unrelated meeting blog is a weak equity bridge with no sequencing of the transition."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

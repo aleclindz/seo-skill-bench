@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "this SaaS mid-pivoted from \"Lumina\" (an AI meeting assistant) to **InboxZap** (an email-cleanup tool), but only the blog and metadata got updated — the homepage... still marketed the old meeting-assistant product",
+          "rationale": "The entrant noticed the meeting-assistant/inbox-cleanup mismatch but inverted its direction — concluding InboxZap email-cleanup is the CURRENT product and the live meeting-assistant homepage is stale, the opposite of the reality (live product = meeting assistant, GSC = legacy). It then built the entire plan around InboxZap-era content, landing squarely in the anchor_0 failure mode."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "12 blog posts pull ~14K impressions at position 40-60 with near-zero clicks... Merged into one comprehensive guide at /blog/post-3 with a 301 from /blog/post-7",
+          "rationale": "Only a single aggregate GSC figure is cited, never per-asset impressions/positions, and the posts are treated as current content to reconstruct wholesale rather than dispositioned as legacy; the lone explicit redirect is a cannibalization merge, not a data-grounded harvest/redirect/sunset walk of the inventory."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "rewrote the homepage, nav, footer, and structured data around InboxZap; built out /features and /pricing",
+          "rationale": "Rather than balancing the tension, it doubled down entirely on inbox-cleanup content while overwriting the meeting-assistant positioning — falling fully into a failure mode with no articulated tension, equity-preservation reasoning, or sequenced transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "this SaaS mid-pivoted from \"Lumina\" (an AI meeting assistant) to **InboxZap** (an email-cleanup tool), but only the blog and metadata got updated — the homepage... still marketed the old meeting-assistant product",
+          "rationale": "The entrant noticed the meeting-assistant/inbox-cleanup mismatch but inverted its direction — treating the live meeting-assistant product as stale leftover and the legacy inbox-cleanup demand as the current market, then rebuilt everything around InboxZap. That is precisely the anchor_0 misread: legacy demand mistaken for the product's target market."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "post-3 and post-7 both targeted \"bulk delete emails\" near-identically. Merged into one comprehensive guide at /blog/post-3 with a 301 from /blog/post-7",
+          "rationale": "The only per-asset disposition is a single cannibalization-driven merge/301; the other 11 posts are blanket-reconstructed as current content with no asset-by-asset walk and no citation of real per-post impressions/positions from the export (only a generic ~14K aggregate)."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "reconstructed all 12 posts as a proper app/blog/[slug] route... built out /features and /pricing... around InboxZap",
+          "rationale": "Falls fully into anchor_0's first failure mode: doubles down on the inbox-cleanup cluster as the growth engine while treating the actual live meeting-assistant product as the thing to overwrite — no tension articulated, no meeting-assistant cluster, no bridging of equity toward the current positioning."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "this SaaS mid-pivoted from \"Lumina\" (an AI meeting assistant) to InboxZap (an email-cleanup tool), but only the blog and metadata got updated — the homepage... still marketed the old meeting-assistant product",
+          "rationale": "The entrant inverted the pivot: it treats the meeting-assistant live site as the stale legacy and the inbox-cleanup GSC/blog as the current product, then rebuilds the entire site around InboxZap — the exact anchor_0 behavior of doubling down on inbox-cleanup content."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "Keyword cannibalization: post-3 and post-7 both targeted \"bulk delete emails\"... Merged into one comprehensive guide at /blog/post-3 with a 301 from /blog/post-7",
+          "rationale": "There is exactly one redirect, and it is a cannibalization merge rather than a migration disposition; the other 11 posts are simply reconstructed wholesale with no per-asset harvest/sunset calls and zero citation of actual impressions or positions from the GSC export."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "rewrote the homepage, nav, footer, and structured data around InboxZap; built out /features and /pricing",
+          "rationale": "The entrant falls squarely into a failure mode — it abandons the real current positioning (meeting assistant) and pours all effort into ranking legacy inbox-cleanup content harder, with no articulation of the tension and no bridge; there is no defensible middle path, just a full commitment to the wrong side."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 2,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

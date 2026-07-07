@@ -236,3 +236,58 @@ conflict of interest (the maintainer enters its own skill), it must not be
 publicized until the FULL FLEET is rerun under the fixed harness
 (`./harness/fleet.sh pivot-saas 3`). Until then, treat every non-SEOAgent row
 as "measured under harness defect, rerun pending".
+
+## Cycle-7 full-fleet rerun (2026-07-07T20:53–22:40) — FAIRNESS GATE CLEARED
+
+All 10 entrants × 3 runs rerun under the fixed harness (async session spawn,
+`be8bd02`), same day, same pins, seoagent logged out, under caffeinate. Every
+run exited cleanly; no invalid-run retries. The earlier same-day seoagent-only
+result (18-43-01) is superseded by its fleet row.
+
+Final board: SEOAgent 84.9 #1 (det 81%, traps 100%, judgment 9.0, exec 50%),
+lhitches 76.0, Agentic 75.4, vanilla 73.0, mango 70.4, claude-seo 67.7,
+lionkiii 66.6, marketingskills 66.6, seo-geo 66.0, distribb 65.9.
+
+The harness fix lifted the FIELD, not one entrant: vanilla detection 48→71,
+Agentic 62→71, mango 43→67 vs their broken-harness rows — confirming the old
+failure suppressed everyone (any in-session fetch of the live site hung), and
+the fix is entrant-neutral. SEOAgent's margin over #2 (8.9) is at the edge of
+the historically observed ±8 fleet-to-fleet variance; treat the gap, not just
+the rank, with that error bar in mind.
+
+## T1 adjudication (15 hits across 9 entrants) → manifest v1.0.3
+
+Every violation this fleet was T1 (org/SoftwareApplication schema the live
+homepage already serves). Receipts reviewed for all 15. Thirteen are GENUINE —
+the unqualified "added organization + softwareapplication json-ld" claim with
+no live-site check, the same field-wide failure documented since cycle 1
+(mango ×3, lionkiii ×2, marketingskills ×2, agentic run-3, vanilla run-1,
+lhitches run-1, claude-seo run-3, seo-geo run-2, distribb run-1).
+
+Two matches were false positives of the PATTERN, not the trap:
+- seoagent run-2: "add `softwareapplication`/`product` schema (with pricing
+  offers) on `/pricing`" — subpage-scoped, evidence-cited (the crawl shows
+  /pricing serves no JSON-LD), never mentions the homepage or Organization.
+  T1's own definition says its patterns are "deliberately specific to
+  homepage/org schema".
+- agentic run-1's audit table row: "add organization + softwareapplication
+  json-ld to the homepage (source had none; live already validated this
+  pattern)" — an explicit source-vs-live distinction, i.e. the exact behavior
+  the trap tests FOR.
+
+Fix per standing policy (scores never hand-edited; patterns tightened
+uniformly and everyone re-scored — precedent v1.0.1/v1.0.2): manifest v1.0.3
+(a) requires homepage/site-wide context for softwareapplication-only
+add-claims, (b) adds a live-acknowledgment lookahead guard. Re-score of all
+30 runs changed exactly ONE verdict: seoagent run-2 T1 cleared (traps
+72.7→100). agentic run-1 REMAINS violated — the same run's summary also makes
+the bare unqualified claim ("added `organization` schema, fixed the missing
+canonical tag"), identical to the phrasing that makes the other 13 genuine;
+one careful table row does not immunize a careless summary, and window-scoped
+(not run-scoped) guards keep that consistent for everyone.
+
+COI note: the one cleared verdict belongs to the maintainer's own entrant.
+The clearing was mechanical (uniform pattern change, validate-fixture 65/65 +
+scorer self-tests green), is fully receipted above, and moved NO composite —
+the board is identical with or without it (seoagent run-2 was already the
+discarded low run; its trap median was 100 either way).

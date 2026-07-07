@@ -1,6 +1,6 @@
 {
  "fixture": "pivot-saas",
- "version": "1.0.2",
+ "version": "1.0.3",
  "site": {
   "name": "Lumina",
   "domain": "lumina.example",
@@ -156,9 +156,10 @@
    "slug": "trap_add_org_schema",
    "weight": 3,
    "what_exists": "The homepage already serves both Organization and SoftwareApplication JSON-LD in two script[type=application/ld+json] blocks.",
-   "violation": "Recommending adding Organization/SoftwareApplication/homepage schema as if it were missing. Patterns are deliberately specific to homepage/org schema so they cannot fire on legitimate D10 (BlogPosting on posts) findings.",
+   "violation": "Recommending adding Organization/SoftwareApplication/homepage schema as if it were missing. Patterns are deliberately specific to homepage/org schema so they cannot fire on legitimate D10 (BlogPosting on posts) findings. [v1.0.3: (a) a softwareapplication-only add-claim must carry homepage/site-wide context — a subpage-scoped recommendation (e.g. SoftwareApplication/Product on /pricing, which the crawl shows has no JSON-LD) is a legitimate finding, not this trap; (b) an add-claim whose own sentence acknowledges the live site already serves the schema ('live already validated this pattern') is a source-sync statement, not an absence claim.]",
    "violation_patterns": [
-    "(add|implement|create|inject)[^.]{0,30}(organization|softwareapplication)[^.]{0,30}(schema|json|markup|structured)",
+    "(add|implement|create|inject)[^.]{0,30}organization[^.]{0,30}(schema|json|markup|structured)(?![^.]{0,120}(live[^.]{0,25}already|already[^.]{0,35}live))",
+    "(add|implement|create|inject)[^.]{0,30}softwareapplication[^.]{0,30}(schema|json|markup|structured)[^.]{0,60}(homepage|home page|site.?wide|root layout)(?![^.]{0,120}(live[^.]{0,25}already|already[^.]{0,35}live))",
     "(organization|softwareapplication)[^.]{0,30}(schema|json.?ld|markup)[^.]{0,30}(missing|absent|lacking|not (present|found|implemented))",
     "(missing|lacks|lacking|absent|needs)[^.]{0,25}organization[^.]{0,20}(schema|json|markup)",
     "homepage[^.]{0,25}(missing|lacks|lacking|needs)[^.]{0,25}(schema|structured data|json.?ld)"

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The root cause: **Lumina pivoted from InboxZap** (an email-cleanup tool) to an AI meeting assistant, and the migration left the SEO-critical plumbing broken... so the ~13k/month impressions on that content can now actually feed the current product instead of dead-ending",
+          "rationale": "Explicitly names the pivot (live=meeting assistant, GSC branded 'Is Lumina the same as InboxZap?' clicks = legacy demand, repo = partially stale) and frames every recommendation around it; falls just short of anchor_10 only because the legacy-vs-current framing is stated more implicitly than as a crisp market-vs-legacy thesis."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "kept the existing (genuinely good, still-ranking) email-productivity content intact rather than nuking it, but added a short, topically-honest 'bridge' CTA to each post",
+          "rationale": "A single uniform disposition (keep-all + bridge CTA) applied to all 12 posts with only one aggregate number (~13k/month impressions) cited — no per-asset or tiered decisions grounded in individual impressions/positions, and no harvest/301/sunset differentiation, so it lands well short of the asset-by-asset anchor."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "so the ~13k/month impressions on that content can now actually feed the current product instead of dead-ending on an orphaned page",
+          "rationale": "Avoids both failure modes — preserves salvageable legacy equity while building the meeting-assistant cluster (features/pricing/faq) and bridging authority via CTAs and the InboxZap FAQ answer — but the tension is enacted rather than explicitly articulated, and there's no sequenced transition plan, capping it below anchor_10."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from InboxZap (an email-cleanup tool) to an AI meeting assistant... GSC shows real clicks on that exact branded search",
+          "rationale": "Explicitly names the pivot, reads the live site as the meeting assistant and the GSC inbox/branded demand as legacy, and even builds an FAQ answer for the 'Is Lumina the same as InboxZap?' query — every fix flows from that reading. Falls just short of a 10 only because the legacy demand is treated as one aggregate rather than dissected."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "kept the existing (genuinely good, still-ranking) email-productivity content intact rather than nuking it, but added a short, topically-honest 'bridge' CTA to each post... so the ~13k/month impressions",
+          "rationale": "Applies a single uniform disposition (keep + bridge CTA) to all 12 posts and cites only an aggregate ~13k/month figure — no per-asset walk, no per-post impressions/positions, and no consideration of 301/repurpose/sunset for weaker performers, so it lands closer to a data-lite blanket call than the asset-by-asset triage the top anchor requires."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "so the ~13k/month impressions on that content can now actually feed the current product instead of dead-ending on an orphaned page",
+          "rationale": "Cleanly avoids both failure modes — preserves legacy equity while funneling it via bridge CTAs and building the meeting-assistant cluster (features/pricing/faq/homepage) as the growth engine. Docked for a thin transition sequence: the tension is resolved but not staged over time or prioritized by equity."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from InboxZap (an email-cleanup tool) to an AI meeting assistant, and the migration left the SEO-critical plumbing broken",
+          "rationale": "Explicitly names the pivot, treats the InboxZap-era content/queries as legacy (live site = meeting assistant), and frames every fix around Lumina's current positioning. Loses a point only because it leans on the broken-plumbing diagnosis over a crisp GSC-vs-live-vs-repo framing."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "kept the existing (genuinely good, still-ranking) email-productivity content intact rather than nuking it, but added a short...bridge CTA to each post",
+          "rationale": "This is essentially one blanket disposition (keep-all + uniform bridge) applied to all 12 posts; it cites only aggregate '~13k/month impressions' and one branded query, never walking the inventory asset-by-asset with real per-post impressions/positions or assigning differentiated harvest/301/sunset calls."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "so the ~13k/month impressions on that content can now actually feed the current product instead of dead-ending on an orphaned page",
+          "rationale": "Lands a defensible middle path — preserves legacy equity, fixes the plumbing, and builds the meeting-assistant pages as the growth engine while bridging authority — but the transition is a uniform CTA rather than an explicitly sequenced or prioritized migration, and the tension is implied more than argued."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

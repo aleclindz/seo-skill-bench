@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted products (from an email-cleanup tool called \"InboxZap\" to an AI meeting assistant called \"Lumina\") ... GSC showed all 12 existing blog posts are 100% about the old email-cleanup product (~13k impressions, position 40–60, ~0% CTR) — topically orphaned from the rest of the now-pivoted site",
+          "rationale": "The pivot is explicitly identified, with the live site as meeting assistant and GSC as legacy inbox demand, and every recommendation is framed around it; falls just short of anchor_10 only because the legacy demand is treated purely as dead weight rather than being examined for any transferable equity."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301-redirected them to /blog to consolidate equity rather than leave 404s or off-brand content diluting the domain's topical relevance",
+          "rationale": "It makes an explicit, single disposition (blanket 301 of all 12 to /blog) grounded in real aggregate GSC numbers (~13k impressions, position 40–60, ~0% CTR), but treats the 12 posts as one undifferentiated bucket with no asset-by-asset or tiered breakdown and no harvest/repurpose of individual salvageable posts."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301-redirected them ... to consolidate equity rather than leave 404s or off-brand content diluting the domain's topical relevance ... Published 4 new posts targeting real buyer/informational intent",
+          "rationale": "It avoids both failure modes — preserves legacy equity via 301s instead of 404ing, and builds the meeting-assistant cluster as the growth engine — but the ~0% CTR / position 40–60 framing means the 'salvageable equity' judgment is weak, and the transition isn't explicitly sequenced, so it lands a defensible middle path without fully articulating the tension."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted products (from an email-cleanup tool called \"InboxZap\" to an AI meeting assistant called \"Lumina\")... GSC showed all 12 existing blog posts are 100% about the old email-cleanup product... topically orphaned from the rest of the now-pivoted site",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant and the GSC inbox history as legacy/orphaned demand, and frames every recommendation around that reality. Falls just short of a 10 only because it treats the repo staleness implicitly rather than spelling out the three-source (live/GSC/repo) divergence."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301-redirected them to /blog to consolidate equity rather than leave 404s or off-brand content diluting the domain's topical relevance",
+          "rationale": "It does cite the real GSC numbers (~13k impressions, position 40-60, ~0% CTR) and assigns an explicit disposition, but treats all 12 posts as a single undifferentiated blanket 301 to the hub rather than walking them asset-by-asset or in data-justified tiers, and considers no harvest/repurpose path for any potentially salvageable post."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "301-redirected them to /blog to consolidate equity rather than leave 404s... Published 4 new posts targeting real buyer/informational intent... build the meeting-assistant cluster",
+          "rationale": "Avoids both failure modes — it neither doubles down on inbox content nor 404s everything — preserving some equity via redirects while building the new cluster as the growth engine. But blanket-redirecting off-topic posts to a topically-unrelated meeting hub is a weak equity bridge, and the transition isn't really sequenced, so it lands a defensible-but-crude middle rather than the well-reasoned one."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted products (from an email-cleanup tool called \"InboxZap\" to an AI meeting assistant called \"Lumina\") but the pivot was never finished... GSC showed all 12 existing blog posts are 100% about the old email-cleanup product... topically orphaned from the rest of the now-pivoted site",
+          "rationale": "Explicitly names the pivot, correctly reads live site as the current meeting-assistant product and treats the inbox-cleanup GSC history as legacy demand, and frames every fix around that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC showed all 12 existing blog posts are 100% about the old email-cleanup product (~13k impressions, position 40–60, ~0% CTR)... 301-redirected them to /blog to consolidate equity",
+          "rationale": "Cites real aggregate GSC numbers and assigns a disposition, but treats all 12 posts as a single undifferentiated blanket 301 to /blog with no per-asset or tiered analysis and no harvest/keep decisions — the aggregate justifies the action but stops short of walking the inventory."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "301-redirected them to /blog to consolidate equity rather than leave 404s or off-brand content diluting the domain's topical relevance... Published 4 new posts targeting real buyer/informational intent",
+          "rationale": "Cleanly avoids both failure modes — neither doubles down on inbox content nor torches equity into 404s — and pairs preservation with a new meeting-assistant cluster, but the bridge is a blunt redirect-all-to-hub rather than mapping salvageable posts to relevant successors, and the transition sequencing is only implicit."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 5,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

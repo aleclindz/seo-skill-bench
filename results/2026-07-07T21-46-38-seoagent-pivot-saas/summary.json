@@ -1,0 +1,17 @@
+{
+  "skill": "seoagent",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.8095238095238095,
+  "detection_all": [
+    0.8095238095238095,
+    0.7142857142857143,
+    0.8095238095238095
+  ],
+  "trap_avoidance_median": 1,
+  "trap_avoidance_all": [
+    1,
+    0.7272727272727273,
+    1
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the site mid-pivoted from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the rebrand never finished technically",
+          "rationale": "Explicitly identifies the pivot (live site = meeting assistant, GSC = legacy inbox demand) and frames every fix around the Lumina reality, including tying the aggregate GSC 13k-impression/position-40-60 signal to the legacy posts. Falls just short of anchor_10 only by not explicitly flagging the repo as partially stale beyond the unfinished rebrand."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "the 12 posts (which still represent real demand per GSC) drive product traffic once they're actually indexable, instead of being thrown away",
+          "rationale": "Cites only aggregate GSC numbers (13,000+ impressions, position 40-60) and applies one blanket disposition — make all 12 indexable + add an identical bridging CTA — rather than walking the inventory asset-by-asset with per-post impressions/positions and distinct harvest/301/keep/sunset calls. Above anchor_0 (it doesn't ignore or blanket-delete) but well short of a data-justified per-asset plan."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "so the 12 posts ... drive product traffic once they're actually indexable, instead of being thrown away",
+          "rationale": "Avoids both failure modes — preserves legacy equity by making posts indexable and bridging inbox→meeting demand while establishing the Lumina positioning — but the transition is handled as a uniform CTA graft rather than an explicitly sequenced strategy with a meeting-assistant growth cluster, so the tension is resolved implicitly rather than articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the site mid-pivoted from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the rebrand never finished technically",
+          "rationale": "Explicitly names the pivot, correctly maps live site = meeting assistant vs. legacy inbox content, and frames the whole fix around the Lumina reality including per-page metadata and a new meeting-assistant page cluster. Falls just short of anchor_10 by not distinguishing repo staleness as a third layer."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "added all 12 posts to sitemap.ts ... a contextual CTA on each legacy blog post ... which still represent real demand per GSC",
+          "rationale": "Cites GSC only in aggregate ('13,000+ impressions ... position 40–60') and applies one blanket disposition — keep all 12, index them, bolt on the same CTA — with no asset-by-asset harvest/redirect/sunset reasoning or per-post numbers. Better than ignoring them, but essentially a uniform 'keep everything' with a bridge."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "so the 12 posts (which still represent real demand per GSC) drive product traffic once they're actually indexable, instead of being thrown away",
+          "rationale": "Avoids both failure modes — it doesn't chase new inbox content and doesn't torch legacy equity, instead bridging inbox→meeting overload while building the Lumina cluster. But the middle path is shallow: no redirect/harvest sequencing and it preserves all legacy equity indiscriminately rather than triaging salvageable vs. dead."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the site mid-pivoted from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), and the rebrand never finished technically",
+          "rationale": "Explicitly names the pivot, correctly maps live site = meeting assistant vs. legacy inbox demand, and frames every fix around the Lumina reality. Falls just short of a 10 only because it treats GSC as validation of 'real demand' rather than explicitly labeling it legacy-audience demand."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "the 12 posts (which still represent real demand per GSC) drive product traffic once they're actually indexable, instead of being thrown away",
+          "rationale": "Effectively a single blanket disposition — keep all 12 as-is and bolt a bridging CTA on each — with only aggregate '13,000+ impressions, position 40–60' cited, not a per-asset or tiered harvest/301/keep/sunset walk grounded in individual post numbers. No differentiation between high- and low-value legacy URLs."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "a contextual CTA on each legacy blog post bridging \"inbox overload\" → \"meeting overload\" → Lumina",
+          "rationale": "Genuinely avoids both failure modes: it neither torches the legacy equity nor doubles down on inbox content, and it names the inbox→meeting bridge as the transition mechanism. But it stops short of a defensible full middle path — no meeting-assistant content cluster as the growth engine and no sequenced transition timeline."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

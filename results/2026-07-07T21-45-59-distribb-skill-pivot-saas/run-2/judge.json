@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS rebranded from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), and left SEO debris from the old product actively hurting organic traffic",
+          "rationale": "Explicitly identifies the pivot from live site vs. GSC evidence, labels inbox-cleanup as legacy demand, and frames every fix (metadata, redirects, new cluster, FAQ) around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "12 legacy blog posts... ~13,900 combined GSC impressions but 0–0.1% CTR and position 40–58... 301-redirected them to /blog via a single regex rule",
+          "rationale": "Cites real aggregate GSC numbers and gives a defensible disposition, but treats all 12 as one undifferentiated blanket redirect to /blog with no per-asset or tiered analysis and no harvest/repurpose of any salvageable post."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "301-redirected them to /blog... rather than let mismatched legacy content keep confusing Google... a question addressing the still-ranking \"inboxzap\" brand query (position ~4 in GSC)",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content nor hard-delete equity — and bridges the brand query via FAQ, but the equity 'preservation' is a generic redirect to a topically-mismatched index (weak transfer, soft-404 risk) with little explicit sequencing of the transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS rebranded from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), and left SEO debris from the old product actively hurting organic traffic",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the current product and the legacy posts as stale InboxZap-era demand, and frames every fix around that reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "12 legacy blog posts ... ~13,900 combined GSC impressions but 0–0.1% CTR and position 40–58 ... 301-redirected them to `/blog` via a single regex rule",
+          "rationale": "Cites real (aggregate) GSC numbers and gives an explicit disposition with reasoning, but treats all 12 as one undifferentiated block via a blanket 301 to a generic index — no asset-by-asset or data-justified tiering, and no harvest/repurpose of any salvageable post."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301-redirected them ... rather than let mismatched legacy content keep confusing Google ... added ... a question addressing the still-ranking \"inboxzap\" brand query ... Seeded 5 new ... meeting-assistant topics",
+          "rationale": "Avoids both traps — doesn't chase inbox content, doesn't torch equity outright (301s preserve link equity, brand query gets an FAQ landing) while building the meeting-assistant cluster; loses points because the transition is a blunt redirect-all-to-/blog rather than sequenced redirects to relevant successors."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS rebranded from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), and left SEO debris from the old product actively hurting organic traffic",
+          "rationale": "Explicitly names the pivot, classifies inbox-cleanup queries as legacy debris, and reframes every fix (metadata, blog, FAQ, redirects) around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "12 legacy blog posts ... ~13,900 combined GSC impressions but 0–0.1% CTR and position 40–58 ... 301-redirected them to `/blog` via a single regex rule",
+          "rationale": "Grounds the decision in real aggregate GSC numbers and gives an executable disposition, but treats all 12 identically with one blanket regex rather than walking them asset-by-asset or checking any for salvageable/harvestable equity before consolidating."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "301-redirected them ... rather than let mismatched legacy content keep confusing Google ... added a real FAQ section ... addressing the still-ranking \"inboxzap\" brand query (position ~4) ... Seeded 5 new, genuinely on-brand blog posts",
+          "rationale": "Avoids both failure modes: preserves salvageable equity via 301s and a brand-query FAQ landing spot while building the meeting-assistant cluster as the growth engine, though the transition is treated as immediate rather than explicitly sequenced over time."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 5,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

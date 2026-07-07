@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "\"InboxZap (email cleanup) is a pivot from an earlier product, 'Lumina' (AI meeting assistant), but the pivot was only half-done in the source.\"",
+          "rationale": "The entrant inverts the pivot direction: it treats the live meeting-assistant copy as stale leftover and inbox-cleanup as the current product, then builds the entire plan around ranking that legacy demand harder — the anchor_0 outcome, despite grounding it in real evidence."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "\"post-3 and post-7 were near-duplicate 'bulk delete emails' guides splitting the same query. Merged into one stronger canonical post with a 301 redirect.\"",
+          "rationale": "One data-justified consolidation/redirect exists, and impression ranges (1,000–4,000, pos 40–60) are cited in aggregate, but there is no asset-by-asset harvest/redirect/keep/sunset disposition across the 12 posts — all are treated as keep-and-improve rather than migrated."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "\"replaced the leftover 'Never take meeting notes again' copy with InboxZap messaging mapped to the actual high-impression query clusters\"",
+          "rationale": "Rather than balancing the tension, it doubles down entirely on inbox-cleanup content and strips out the meeting-assistant positioning as 'leftover' — falling into the failure mode of investing everything in the legacy market with no meeting-assistant growth cluster."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "InboxZap (email cleanup) is a pivot from an earlier product, \"Lumina\" (AI meeting assistant)... The homepage, nav, structured data... all still described the meeting assistant",
+          "rationale": "The entrant noticed a pivot and reasoned richly from stale-vs-live signals, but inverted its direction: it concluded the meeting-assistant copy was the leftover and inbox-cleanup is the current market — then built the whole plan around ranking the InboxZap-era blog harder, which is essentially anchor_0's failure."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "post-3 and post-7 were near-duplicate 'bulk delete emails' guides splitting the same query. Merged into one stronger canonical post with a 301 redirect... blog posts pull real impressions (1,000–4,000 each)... rank position 40–60",
+          "rationale": "There is genuine per-asset disposition (a data-justified merge + 301 for the cannibalizing pair, citing real impression/position ranges), but the other posts are treated in aggregate as content to amplify rather than walked asset-by-asset with harvest/redirect/sunset calls toward a successor positioning."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "replaced the leftover 'Never take meeting notes again' copy with InboxZap messaging mapped to the actual high-impression query clusters",
+          "rationale": "The entrant lands squarely in one failure mode — doubling down on inbox-cleanup for the product the rubric treats as no longer live — with no transition/bridge to the meeting-assistant positioning; the lone 301 preserves some equity but the tension is never articulated."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "\"The homepage, nav, structured data... all still described the meeting assistant, while the actually-relevant blog content (Gmail/Outlook cleanup guides) existed but was orphaned\"",
+          "rationale": "The entrant noticed a pivot but inverted it — it treated the live meeting-assistant material as the stale leftover and inbox-cleanup as the real product, then rebuilt the entire site around ranking InboxZap content harder, which is precisely anchor_0's failure mode."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "\"blog posts pull real impressions (1,000–4,000 each) on inbox-cleanup queries but rank position 40–60\" ; merged post-3/post-7 with a 301",
+          "rationale": "There is a single 301 merge and one generic impression range, but no per-asset harvest/redirect/sunset disposition grounded in the individual GSC numbers; the 12 posts are treated as current assets to rebuild rather than a legacy inventory to triage."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "\"replaced the leftover 'Never take meeting notes again' copy with InboxZap messaging mapped to the actual high-impression query clusters\"",
+          "rationale": "The plan lands squarely in one failure mode — doubling down entirely on inbox-cleanup content and abandoning the meeting-assistant positioning — with no tension articulated and no bridge for the current product's demand."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 2,
+    "J2": 3,
+    "J3": 2
+  },
+  "judgment": 0.2
+}

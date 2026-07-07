@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the homepage is 100% \"Lumina\" (AI meeting assistant), but the site had a pile of leftover bugs from its pivot off \"InboxZap\" (email cleanup tool)",
+          "rationale": "The entrant explicitly identifies the pivot from the live product, names both the current product (meeting assistant) and legacy product (email cleanup), and frames every fix around the Lumina reality — including rewriting legacy content to match the new audience. Slightly short of a full 10 because it doesn't explicitly frame the GSC impressions as *legacy demand* distinct from the new product's target market; it treats the old slugs as reusable equity rather than analyzing the demand mismatch."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "GSC shows `/blog/post-1` through `/blog/post-12` already indexed with real impressions (up to 3,900) ... kept the same slugs to preserve existing index equity, and rewrote the content to match Lumina's actual audience",
+          "rationale": "The entrant makes a uniform disposition for all 12 posts — keep the slug, repurpose the content — and grounds it in real GSC data (indexed, up to 3,900 impressions), but applies one blanket decision rather than walking the inventory asset-by-asset with per-post impressions/positions to justify differentiated harvest/redirect/keep/sunset calls. Data-referenced but not data-tiered."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Keep the URLs stable and reuse them for on-topic content instead of letting them 404 or redirecting them away — that throws out existing crawl/index equity",
+          "rationale": "The entrant lands a defensible middle path — preserve the URL equity of the legacy slugs while replacing the content with the meeting-assistant cluster as the growth engine — avoiding both blindly chasing inbox-cleanup topics and torching all legacy equity. It falls short of 10 because the tension is stated implicitly through the fix rather than articulated as a strategic transition with sequencing, and it doesn't weigh whether repurposing versus redirecting is right per-asset given the topical distance between email-cleanup and meeting queries."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The GSC data and source code told two different stories: the homepage is 100% \"Lumina\" (AI meeting assistant), but the site had a pile of leftover bugs from its pivot off \"InboxZap\" (email cleanup tool)",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the current product and the InboxZap-era GSC history as legacy, and frames the fixes around the Lumina reality. Loses a point only because it treats the legacy queries purely as index equity to reuse rather than reflecting on whether any residual inbox-cleanup demand is worth addressing at all."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC shows `/blog/post-1` through `/blog/post-12` already indexed with real impressions (up to 3,900)... Rebuilt all 12 as real per-post pages, kept the same slugs to preserve existing index equity, and rewrote the content",
+          "rationale": "Applies a single blanket disposition — keep all 12 slugs, repurpose every one to meeting content — rather than walking the inventory asset-by-asset or in data-justified tiers; only cites an aggregate 'up to 3,900' figure with no per-post impressions/positions to justify differing treatment (some posts might warrant 301 or sunset, not uniform reuse)."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Keep the URLs stable and reuse them for on-topic content instead of letting them 404 or redirecting them away — that throws out existing crawl/index equity",
+          "rationale": "Cleanly avoids both failure modes: it neither doubles down on dead inbox-cleanup content nor torches the legacy equity, instead preserving indexed URLs while repurposing them as the meeting-assistant cluster. The middle path is defensible but the transition sequencing and the tension itself are implied through implementation rather than explicitly articulated."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the homepage is 100% \"Lumina\" (AI meeting assistant), but the site had a pile of leftover bugs from its pivot off \"InboxZap\" (email cleanup tool)... rewrote the content to match Lumina's actual audience (meeting notes, action items, async standups, etc.) instead of the old email-cleanup topics",
+          "rationale": "Explicitly names the pivot, correctly reads live site as current product and InboxZap as legacy, and reframes every rebuilt asset around the meeting-assistant reality. Only shy of full marks because it treats the pivot as a bug-fix framing rather than a market-strategy framing."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "GSC shows /blog/post-1 through /blog/post-12 already indexed with real impressions (up to 3,900)... kept the same slugs to preserve existing index equity, and rewrote the content",
+          "rationale": "References real GSC impressions and gives a clear disposition (keep slug, repurpose content), which beats a blanket ignore — but applies one uniform 'repurpose all 12' decision with no per-asset or data-justified tiering by individual impressions/position, so no post is separately assessed for 301 vs harvest vs sunset."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "kept the same slugs to preserve existing index equity, and rewrote the content to match Lumina's actual audience... instead of the old email-cleanup topics",
+          "rationale": "Cleanly avoids both failure modes — preserves crawl/index equity via stable URLs while pivoting content to the growth cluster — but the transition is executed in one pass rather than articulated as a sequenced plan, and the legacy inbox demand is abandoned topically without an explicit bridge rationale."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 5,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

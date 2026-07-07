@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "**This is a rebrand pivot.** Your GSC export is 100% legacy demand for the site's old identity, **\"InboxZap\"**... but the live site at `127.0.0.1:51777` is 100% **Lumina**, an AI meeting assistant. Zero keyword overlap... I ran the full audit + migration-planning flow rather than seeding strategy from GSC, since that data belongs to a different product.",
+          "rationale": "Leads with the pivot, correctly assigns live=meeting-assistant / GSC=legacy inbox / repo=partially stale, and explicitly frames every recommendation (forward clusters, GSC-as-migration-only) around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "the 3 branded queries — `inboxzap` (320 impr/14 clicks/pos 4.1), `inboxzap app`, `inboxzap review` — these still convert; redirect to a \"Lumina, formerly InboxZap\" landing note... **Everything else** (36 rows, 0–1 clicks, position 38–65)... bundle into one legacy-catchall 301",
+          "rationale": "Assigns dispositions in data-justified tiers citing real impressions/clicks/positions, but classifies all 40 as redirect (0 harvest/0 sunset) and works from GSC queries rather than a true per-post walk, leaving the harvest/repurpose option unexplored."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "**Protect equity** — ship the branded-query redirects above... then build the `ai-meeting-notes` cluster depth-first... preserve/redirect what has salvageable equity while excluding legacy GSC from the forward keyword set",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — redirect salvageable branded equity, exclude legacy demand from forward strategy, build the meeting-assistant cluster as growth engine, with a clear sequenced transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "**This is a rebrand pivot.** Your GSC export is 100% legacy demand for the site's old identity, **\"InboxZap\"**... but the live site... is 100% **Lumina**, an AI meeting assistant... I ran the full audit + migration-planning flow rather than seeding strategy from GSC, since that data belongs to a different product.",
+          "rationale": "Nails the anchor_10: names the live site as the current product, GSC as legacy demand, and the repo as partially stale ('Repo is behind production'), then explicitly frames every downstream recommendation around that reality — forward clusters built from the live product, GSC quarantined to migration only."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "40 GSC query-assets classified: **0 harvest · 40 redirect · 0 sunset**... the 3 branded queries — `inboxzap` (320 impr/14 clicks/pos 4.1), `inboxzap app`, `inboxzap review`... Everything else (36 rows, 0–1 clicks, position 38–65)... bundle into one legacy-catchall 301.",
+          "rationale": "Assigns explicit dispositions in data-justified tiers citing real impressions/clicks/positions from the export, exactly the anchor_10 'data-justified tiers' path; falls just short of 10 because the 36-row tail is bundled rather than individually reasoned and every asset lands on 'redirect' with no harvest candidates seriously weighed (defensible, but not the fullest per-asset treatment)."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "**Protect equity** — ship the branded-query redirects... build the `ai-meeting-notes` cluster as the growth engine... preserve/redirect what has salvageable equity... sequence the transition. GSC seed data is legacy 'InboxZap' demand and is intentionally excluded [from forward strategy].",
+          "rationale": "Avoids both failure modes cleanly: it neither doubles down on inbox-cleanup content (topics-to-avoid explicitly bars it) nor torches equity blindly (branded redirects bridge authority), and it sequences the transition — protect equity → build cluster → measure. Just shy of a perfect articulation of the tension as a named trade-off."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is a rebrand pivot. Your GSC export is 100% legacy demand for the site's old identity, \"InboxZap\"... but the live site at 127.0.0.1:51777 is 100% Lumina, an AI meeting assistant. Zero keyword overlap... I ran the full audit + migration-planning flow rather than seeding strategy from GSC, since that data belongs to a different product.",
+          "rationale": "Explicitly names the pivot, correctly assigns GSC to legacy demand and the live site to the current product, flags the repo as partially stale, and frames every downstream recommendation (migration vs. forward clusters) around that reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "40 GSC query-assets classified: 0 harvest · 40 redirect · 0 sunset... the 3 branded queries — inboxzap (320 impr/14 clicks/pos 4.1)... redirect to a 'Lumina, formerly InboxZap' landing note... Everything else (36 rows, 0–1 clicks, position 38–65)... bundle into one legacy-catchall 301.",
+          "rationale": "Assigns explicit, data-justified dispositions in two tiers grounded in real impressions/clicks/positions, which is executable; but it works the query export rather than walking the actual legacy blog posts asset-by-asset, and defaults all 40 to redirect with zero harvest/repurpose of any salvageable content, leaving a slightly blunt disposition."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Protect equity — ship the branded-query redirects... build the ai-meeting-notes cluster as the growth engine... preserve/redirect what has salvageable equity... sequence the transition. Everything else... treat as low-priority 301s rather than doubling down.",
+          "rationale": "Explicitly holds the tension and lands a defensible middle: redirect the converting branded equity, decline to chase dead inbox-cleanup impressions, and make the meeting-assistant clusters the growth engine — with a clear preserve-then-build-then-measure sequence rather than either failure mode."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

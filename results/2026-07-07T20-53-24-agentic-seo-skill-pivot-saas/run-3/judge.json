@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an old product (\"InboxZap,\" an email-cleanup tool) to an AI meeting assistant, but the technical migration was never finished ... GSC showing 12 already-indexed post URLs pulling thousands of impressions ... every single existing post targets the *old* email-cleanup audience; zero content targets Lumina's actual buyers",
+          "rationale": "Explicitly names the pivot, treats the inbox-cleanup GSC history as legacy demand, and frames every fix around the meeting-assistant reality; falls just short of anchor_10 only because it doesn't separately flag the repo itself as partially stale."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "kept because they still carry real search impressions and evergreen utility ... post-7 (a near-duplicate of post-3) now 301s here ... GSC showing 12 already-indexed post URLs pulling thousands of impressions",
+          "rationale": "Makes a couple of real per-asset decisions (301 post-7→post-3, cross-link two adjacent legacy posts) but treats the other ten as an undifferentiated 'keep' with only an aggregate impressions figure — no asset-by-asset dispositions grounded in individual impressions/positions from the export."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "301'd post-7 into post-3 ... Added two cornerstone posts (AI meeting notes, meeting action items) and lightly cross-linked from the two most thematically adjacent legacy posts",
+          "rationale": "Cleanly avoids both failure modes — preserves salvageable legacy equity via redirect/keep/cross-link while building the meeting-assistant cluster as the growth engine — but the tension and transition sequencing are implied through actions rather than explicitly articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an old product (\"InboxZap,\" an email-cleanup tool) to an AI meeting assistant, but the technical migration was never finished... every single existing post targets the *old* email-cleanup audience; zero content targets Lumina's actual buyers",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant and the legacy blog as pre-pivot demand, and frames the content strategy (new cornerstone posts for the real ICP) around that reality. Falls just short of 10 only because it doesn't distinctly characterize GSC-as-legacy-demand vs repo-as-stale as separate signals."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC showing 12 already-indexed post URLs pulling thousands of impressions... post-3 and post-7 were both 'bulk delete emails'... 301'd post-7 into post-3... lightly cross-linked from the two most thematically adjacent legacy posts",
+          "rationale": "Makes a couple of real dispositions (301 the duplicate, keep+cross-link two adjacents, keep the rest) but treats impressions only in aggregate ('thousands') with no per-asset or tiered read of the actual export numbers; the other ~9 posts get a blanket 'keep as-is' with no data justification."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "They're kept because they still carry real search impressions and evergreen utility... Added two cornerstone posts... and lightly cross-linked from the two most thematically adjacent legacy posts",
+          "rationale": "Cleanly avoids both traps — doesn't torch legacy equity and doesn't double down on inbox content — preserving/redirecting salvageable posts while building the meeting-assistant cluster as the growth engine; loses points for only implicitly stating the tension and providing little explicit sequencing of the transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an old product (\"InboxZap,\" an email-cleanup tool) to an AI meeting assistant, but the technical migration was never finished... every single existing post targets the *old* email-cleanup audience; zero content targets Lumina's actual buyers",
+          "rationale": "Explicitly names the pivot, identifies the live product as the meeting assistant and the blog as legacy inbox demand, and frames every fix around that reality; loses a point only because it treats the pivot as a technical-migration fact rather than dwelling on the GSC-as-legacy-demand distinction in words."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC showing 12 already-indexed post URLs pulling thousands of impressions... post-3 and post-7 were both 'bulk delete emails'... 301'd post-7 into post-3... lightly cross-linked from the two most thematically adjacent legacy posts",
+          "rationale": "Makes real dispositions (301 the duplicate, keep-as-is the rest, cross-link two adjacents) and cites the 12 URLs, but there is no asset-by-asset or tiered walk grounded in actual per-post impressions/positions — the default 'keep everything else' is applied without invoking each post's numbers."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "They're kept because they still carry real search impressions and evergreen utility... Added two cornerstone posts (AI meeting notes, meeting action items) and lightly cross-linked from the two most thematically adjacent legacy posts",
+          "rationale": "Cleanly avoids both traps — preserves legacy equity rather than torching it, builds the meeting-assistant cluster as the growth engine, and bridges authority via cross-links; falls short of a fully sequenced transition plan with an explicit tension articulation, keeping it just below the top anchor."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}
