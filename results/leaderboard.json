@@ -1,8 +1,26 @@
 {
   "fixture": "pivot-saas",
   "rubric": "v1.0.0",
-  "updated": "2026-07-06",
+  "updated": "2026-07-07",
   "rows": [
+    {
+      "skill": "seoagent",
+      "name": "SEOAgent",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.8095238095238095,
+      "trap_avoidance": 1,
+      "judgment": 0.8,
+      "execution": 0.5,
+      "composite": 82.38095238095238,
+      "composite_det": 62.38095238095238,
+      "spread_det": [
+        53.290043290043286,
+        62.38095238095238
+      ],
+      "median_wall_s": 1035.456,
+      "median_cost_usd": 4.8483374999999995
+    },
     {
       "skill": "lhitches-claude-seo-skills",
       "name": "claude-seo-skills (lhitches)",
@@ -74,24 +92,6 @@
       ],
       "median_wall_s": 602.683,
       "median_cost_usd": 1.8794446
-    },
-    {
-      "skill": "seoagent",
-      "name": "SEOAgent",
-      "runs": 3,
-      "model": "claude-sonnet-5",
-      "detection": 0.5714285714285714,
-      "trap_avoidance": 0.7272727272727273,
-      "judgment": 0.8,
-      "execution": 0.5,
-      "composite": 68.53896103896103,
-      "composite_det": 47.943722943722946,
-      "spread_det": [
-        46.038961038961034,
-        55.95238095238095
-      ],
-      "median_wall_s": 1334.005,
-      "median_cost_usd": 4.0864035
     },
     {
       "skill": "marketingskills",

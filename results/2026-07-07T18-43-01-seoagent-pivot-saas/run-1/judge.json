@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site pivoted from **InboxZap** (email-cleanup tool) to **Lumina** (AI meeting assistant), but the codebase hadn't caught up — and the historical Search Console authority (13 assets, 100% impressions) is entirely for the old product.",
+          "rationale": "Explicitly names the pivot across all three sources (live site = meeting assistant, GSC = legacy InboxZap demand, repo = stale/drifted) and frames every recommendation around it, including that Lumina has zero on-brand GSC history. Just shy of 10 only because the framing is stated up front rather than re-woven through each individual recommendation."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`https://lumina.example/blog/post-1` → `/` — **Evidence (GSC):** 3900 impressions, 2 clicks, avg position 42.3 [...through all 12 posts with real numbers]",
+          "rationale": "Walks the legacy inventory asset-by-asset citing real per-post impressions/clicks/positions from the export, assigns each an explicit disposition, and even catches/corrects a homepage false-positive from the URL-text scorer. Held back from 10 because all 12 collapse to the same '301 to /' with no data-driven tiering (e.g. the 3900-impression post treated identically to the 80-impression one) and 0 harvest/repurpose despite salvageable equity."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "instead of just letting the authority dead-end at `/`... Decide whether the 12 redirected InboxZap posts should eventually be replaced with equivalent Lumina-audience content... to recapture some of that search demand",
+          "rationale": "Avoids both failure modes: preserves legacy equity via 301s rather than torching it, builds the meeting-assistant cluster as the growth engine (roadmap), and flags the open question of recapturing demand under the new brand. Docks slightly because redirecting all equity to the homepage risks stranding it, and the harvest/bridge path is only queued as a future 'needs a human decision' rather than sequenced now."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site pivoted from **InboxZap** (email-cleanup tool) to **Lumina** (AI meeting assistant), but the codebase hadn't caught up — and the historical Search Console authority (13 assets, 100% impressions) is entirely for the old product.",
+          "rationale": "Explicitly names the pivot, correctly triangulates live site (meeting assistant) vs GSC (legacy inbox demand) vs stale repo, and frames every recommendation — redirects, forward clusters, metadata fixes — around the new positioning."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`https://lumina.example/blog/post-1` → `/` **Evidence (GSC):** 3900 impressions, 2 clicks, avg position 42.3 ... [all 12 posts listed with real impressions/positions]",
+          "rationale": "Walks all 12 legacy posts individually with real GSC impressions/positions and assigns a disposition with reasoning, plus catches the homepage false-positive; docked slightly because every asset gets the identical redirect-to-homepage with no tiered harvest decision even for the 3900-impression post (deferred to an open item rather than decided)."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "redirect to the homepage (`/`) to consolidate the stray authority onto the current, on-strategy page rather than stranding it on a 404 or leaving off-brand content live ... forward keyword clusters for the actual Lumina positioning",
+          "rationale": "Lands a defensible middle path — preserves salvageable equity via 301s while building the meeting-assistant cluster as the growth engine and flagging eventual repurposing — avoiding both chasing inbox queries and torching equity; not a perfect 10 because the 'bridge' is pure consolidation-to-homepage rather than a content-level transition harvesting the strongest legacy pages."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site pivoted from **InboxZap** (email-cleanup tool) to **Lumina** (AI meeting assistant), but the codebase hadn't caught up — and the historical Search Console authority (13 assets, 100% impressions) is entirely for the old product.",
+          "rationale": "Explicitly names the pivot, correctly triages live=meeting-assistant / GSC=legacy inbox demand / repo=stale, and frames every fix and the forward content plan around the new positioning."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`- [x] `https://lumina.example/blog/post-1` → `/` — **Evidence (GSC):** 3900 impressions, 2 clicks, avg position 42.3` ... walks all 12 posts with real numbers; also corrects a 13th false-positive (homepage).",
+          "rationale": "Genuine per-asset dispositions grounded in actual GSC impressions/positions, with a defensible rationale for the blanket 301-to-/ (no topical overlap); loses points because every post gets the identical disposition and 0 harvest, so it stops short of tiered repurpose decisions and only queues that question as a future 'needs a human' item."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "301 the 12 off-topic legacy posts to `/` to consolidate stray authority instead of stranding it ... **Next up:** forward keyword clusters for the actual Lumina positioning ... [open item] Decide whether the 12 redirected InboxZap posts should eventually be replaced with equivalent Lumina-audience content ... to recapture some of that search demand.",
+          "rationale": "Lands the defensible middle path — preserves salvageable equity via redirects rather than torching or chasing it, sequences the meeting-assistant cluster as the growth engine, and even flags recapturing demand under the new brand as a next step."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

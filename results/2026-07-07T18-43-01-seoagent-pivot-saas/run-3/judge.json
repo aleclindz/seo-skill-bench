@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"live product is 'Lumina,' an AI meeting assistant for teams. Google Search Console history still ranks almost entirely for the old brand, 'InboxZap'... 12 legacy 'InboxZap' blog posts hold real GSC authority... but are 0% topically relevant to Lumina now\"",
+          "rationale": "The entrant explicitly nails the three-way state (live=meeting assistant, GSC=legacy inbox demand, repo=partially stale InboxZap source) and frames the layout.tsx regression risk and every recommendation around that reality. Falls just short of a perfect 10 only because the 'legacy demand' framing is stated rather than analyzed for any residual salvage value."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "\"Migration plan: 0 harvest · 13 redirect · 0 sunset... it classified the homepage as 'redirect,' which is wrong... That row should read harvest... The 12 legacy blog posts are the real redirect candidates\" with impressions cited only as an aggregate range (80–3,900 each)",
+          "rationale": "There is a real disposition per tier — homepage harvested (600 imp, 18 clicks, pos 4.5), 12 posts redirected, 0 sunset — grounded in GSC, and the entrant sensibly corrected the auto-classifier. But the 12 posts get one blanket 'redirect all to homepage' with only a range-level impression citation, not asset-by-asset numbers or differentiated targets, so it lands mid-scale."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "\"redirect them... rather than leaving them to decay uncontrolled or rebuilding the old InboxZap story\" and \"1. Protect & harvest existing equity first... 2. Build the new-direction cluster depth-first... 3. Measure and iterate\"",
+          "rationale": "The entrant explicitly names both failure modes and lands a defensible middle path — harvest the one performing asset, 301 the dead-equity posts to bridge authority, build the meeting-assistant cluster as the growth engine, sequenced. Held back from higher only because redirecting all 12 to the generic homepage is a coarse bridge with no per-post successor mapping yet."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "live product is \"Lumina,\" an AI meeting assistant for teams. Google Search Console history still ranks almost entirely for the old brand, \"InboxZap\" ... See the migration plan for the full disposition of that legacy authority",
+          "rationale": "Explicitly nails the three-way divergence — live=Lumina meeting assistant, GSC=legacy InboxZap demand, repo=partially stale (still ships InboxZap branding) — and frames every recommendation around retargeting to the new product, even catching that a redeploy would regress branding."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Migration plan: 0 harvest · 13 redirect · 0 sunset ... one correction: it classified https://lumina.example/ itself as 'redirect,' which is wrong ... That row should read harvest ... The 12 legacy blog posts are the real redirect candidates",
+          "rationale": "Splits the inventory into a data-justified tier (homepage harvest with real 18-click/pos-4.5 numbers vs 12 posts) and cites the 80–3,900 impression range, but the 12 posts are dispatched with one blanket 'redirect all to homepage' rather than per-asset dispositions grounded in each post's individual GSC numbers/successor mapping."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "redirect them rather than leaving them to decay uncontrolled or rebuilding the old InboxZap story ... 1. Protect & harvest existing equity first ... 2. Build the new-direction cluster depth-first ... 3. Measure and iterate",
+          "rationale": "Names both failure modes explicitly (don't rebuild the dead InboxZap story, don't let equity decay) and lands a sequenced middle path — preserve/redirect salvageable equity, build the meeting-assistant cluster as the growth engine, then measure the redirected URLs after GSC connects."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "**12 legacy \"InboxZap\" blog posts hold real GSC authority** (80–3,900 impressions each) but are 0% topically relevant to Lumina now... `app/layout.tsx` still shipped the old **\"InboxZap\"** brand... a redeploy from this repo would regress the live site back to the dead email-cleanup brand",
+          "rationale": "Explicitly nails the pivot: live = AI meeting assistant, GSC = legacy InboxZap demand, repo = partially stale — and every recommendation (rebrand, cluster build, redirects) is framed around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "13 legacy URLs carry real impressions (80–3,900 each)... Migration plan: **0 harvest · 13 redirect · 0 sunset**... it classified `https://lumina.example/` itself as 'redirect,' which is wrong... That row should read **harvest**",
+          "rationale": "Corrects the homepage row to harvest with specific GSC numbers (18 clicks, pos 4.5) and tiers harvest vs redirect, but the 12 blog posts are handled as one undifferentiated block (all 301→/) without per-post impressions/positions or varied dispositions, so it stops short of a true asset-by-asset walk."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "redirect them rather than leaving them to decay uncontrolled or rebuilding the old InboxZap story... 1. Protect & harvest existing equity first... 2. Build the new-direction cluster depth-first... 3. Measure and iterate",
+          "rationale": "Avoids both failure modes explicitly — preserves salvageable equity via redirects, builds the meeting-assistant cluster as the growth engine, and sequences the transition with a plan to retarget individual redirects to closer content as it's written."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

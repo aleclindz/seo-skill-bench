@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site is mid-pivot: **Lumina** (AI meeting assistant) used to be **InboxZap** (email cleanup tool)... 12 legacy InboxZap posts (inbox zero, Gmail storage, unsubscribing)... totally off-topic for a meeting assistant",
+          "rationale": "Explicitly identifies the pivot from live evidence (title 'Lumina — The AI Meeting Assistant'), treats inbox-cleanup GSC history as legacy demand, and frames every recommendation around the new positioning; falls just short of anchor_10 only because the 'legacy branded queries still convert' nuance from context isn't engaged."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "those 12 posts pull ~13,900 impressions but only **7 total clicks** (0.05% CTR) at position 42–58 — dead weight, not equity... homepage stays as-is, all 12 legacy posts are sunset",
+          "rationale": "Grounds dispositions in real per-post GSC numbers (the plan file lists impressions/clicks/position for each of the 12) and correctly overrides the homepage-redirect misclassification, but collapses all 12 into a single blanket 'sunset' tier rather than differentiating per-asset, leaving no harvest/redirect gradient."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Redirecting them into meeting-assistant pages would also mismatch searcher intent... leave the URLs resolving (avoid fresh 404s) but keep them out of the sitemap... write NEW on-strategy content instead",
+          "rationale": "Articulates the tension explicitly and lands a defensible middle path — neither chases dead inbox impressions nor torches equity blindly (keeps URLs resolving, seeds the meeting cluster, sequences new content); slightly limited by concluding there is essentially zero equity worth redirecting, so the 'bridge authority' half is argued away rather than partially preserved."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site is mid-pivot: **Lumina** (AI meeting assistant) used to be **InboxZap** (email cleanup tool), and the rebrand never fully landed in the repo... those 12 posts... are dead weight, not equity, and totally off-topic for a meeting assistant",
+          "rationale": "Explicitly names the pivot, distinguishes live product (meeting assistant) from legacy GSC demand (inbox cleanup) from stale repo, and frames every recommendation — override the auto-plan, sunset legacy posts, seed on-strategy content — around that reality. Textbook match to anchor_10."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "those 12 posts pull ~13,900 impressions but only **7 total clicks** (0.05% CTR) at position 42–58 — dead weight, not equity... homepage stays as-is, all 12 legacy posts are sunset; the migration-plan.md lists per-post GSC (e.g. post-1: 3900 impressions, 2 clicks, avg position 42.3)",
+          "rationale": "Cites real per-asset GSC numbers and overrides a flawed auto-classification that mislabeled homepage as 'redirect' and the 12 posts as 'harvest', giving the homepage its own disposition (no action). Falls just short of anchor_10 because all 12 posts collapse into a single sunset tier rather than differentiated per-asset dispositions — though defensibly, since they're homogeneously off-topic and page-5+."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Redirecting them into meeting-assistant pages would also mismatch searcher intent... leave the URLs resolving (avoid fresh 404s for any residual inbound links) but keep them out of the sitemap, nav, and blog index... write NEW on-strategy posts under new slugs instead",
+          "rationale": "Explicitly weighs both failure modes — rejects harvesting off-topic impressions AND rejects a naive torch by keeping URLs resolving and reasoning about redirect intent-mismatch, while building the meeting-assistant cluster as the growth engine. Lands a defensible middle path; slightly below anchor_10 because the 'transition' is mostly 'leave resolving + write new content' rather than a sequenced authority-bridging plan, defensible given the near-zero salvageable equity."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site is mid-pivot: **Lumina** (AI meeting assistant) used to be **InboxZap** (email cleanup tool)... those 12 posts... totally off-topic for a meeting assistant",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the current product, the GSC posts as legacy inbox demand, and the repo as stale, and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "those 12 posts pull ~13,900 impressions but only **7 total clicks** (0.05% CTR) at position 42–58 — dead weight, not equity... homepage stays as-is, all 12 legacy posts are sunset",
+          "rationale": "The migration-plan.md lists every post with its real impressions/clicks/position and assigns explicit dispositions (homepage no-action, 12 posts sunset) with data-grounded reasoning; it stops short of full per-asset differentiation — all 12 get one blanket sunset — but the tiering is genuinely data-justified and executable."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Redirecting them into meeting-assistant pages would also mismatch searcher intent... leave the URLs resolving (avoid fresh 404s for any residual inbound links) but keep them out of the sitemap, nav, and blog index... write NEW on-strategy posts under new slugs",
+          "rationale": "Names the tension directly, rejects both blindly-chasing and blindly-torching by arguing the equity is near-zero (7 clicks) and intent-mismatched, keeps URLs resolving as a bridge, and sequences the meeting-assistant cluster as the growth engine — a defensible, operator-executable middle path."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

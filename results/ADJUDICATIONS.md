@@ -182,3 +182,57 @@ execution-environment boundary, not a skill defect, since real customer sites
 are on the public internet. Candidate fixes under consideration: serve the
 fixture on a non-loopback interface, or document subprocess network access as
 a harness requirement. Scores stand mechanically as always.
+
+---
+
+# Cycle-7 addendum (2026-07-07, HARNESS FIX + seoagent rerun) — READ THE FAIRNESS NOTE
+
+## Root-cause correction of the cycle-6 KEY FINDING
+
+The cycle-6 hypothesis ("subprocess fetches to the loopback fixture server fail
+inside headless sessions; the model's built-in WebFetch reaches it fine") was
+WRONG. The real cause was in the harness itself: `run.mjs` hosts the fixture's
+live-site HTTP server in its own Node process, then ran the 45-minute headless
+session via `spawnSync` — which blocks the event loop for the entire run. The
+server accepted TCP connections (kernel backlog) but never wrote a response, so
+EVERY in-session fetch of the live site timed out, from every tool, for every
+entrant. Nothing about sandboxing or the loopback interface was ever involved.
+
+Evidence:
+- Receipt signature: `network error: Request timed out after 15000ms` —
+  connection accepted, zero bytes served (a block would refuse, not hang).
+- The ONLY healthy crawl on record (2026-07-03 run-1: 11 pages, port 4530)
+  went through a manually-started, separate-process `serve.mjs`. Every
+  in-process ephemeral-port run captured 0–2 pages.
+- 20-second repro: `startServer()` + `spawnSync('sleep 8')` → concurrent curl
+  times out; the same fetch succeeds instantly once the loop is free.
+- Post-fix verification: mid-session curl of the live rerun answered 200 in
+  4 ms where the identical request previously hit the 15 s timeout.
+
+Fix (`be8bd02`): the session is spawned asynchronously (same contract —
+stdout/stderr capture, 45-min SIGTERM, empty-transcript invalid-run retry),
+leaving the event loop free to serve. Applies to every future run of every
+entrant via run.mjs/fleet.sh.
+
+## seoagent@1.76.1 rerun under the fixed harness (2026-07-07T18-43-01)
+
+Detection 81.0 / 81.0 / 81.0 → median 81% (was 57%); traps 100 / 63.6 / 100 →
+median 100%; judgment 0.8 / 0.8 / 0.9 → median 0.8; execution 50%.
+Composite 82.4 → #1. No invalid runs; no retries needed.
+- The crawl now captures 4 of 5 discovered pages in every run; the single
+  "uncaptured" page is `/faq — HTTP 404`, which is the fixture's PLANTED
+  defect (sitemap lists a 404 page) being observed, not a capture failure.
+- Run-2 trap hits (T4 robots-fix w1, T5 invented-demand w3 → 63.6%) stand
+  mechanically and are unadjudicated; the median is unaffected.
+
+## FAIRNESS NOTE (blocking issue for any public claim about this cycle)
+
+SEOAgent is currently the ONLY entrant measured under the fixed harness. All
+nine other leaderboard rows were measured while the live site was unreachable
+in-session — i.e., under conditions that suppressed any entrant's live-fetch
+capability, and plausibly detection scores generally. The current #1 ranking
+is therefore NOT an apples-to-apples comparison, and given the disclosed
+conflict of interest (the maintainer enters its own skill), it must not be
+publicized until the FULL FLEET is rerun under the fixed harness
+(`./harness/fleet.sh pivot-saas 3`). Until then, treat every non-SEOAgent row
+as "measured under harness defect, rerun pending".
