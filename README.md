@@ -4,6 +4,24 @@
 
 An open benchmark for comparing **SEO skills for Claude Code** (and other coding agents).
 
+## Current leaderboard
+
+Full board with per-component scores in [`LEADERBOARD.md`](LEADERBOARD.md) · live version at
+[seoagent.com/seo-skill-benchmark](https://seoagent.com/seo-skill-benchmark) · fixture `pivot-saas`, updated 2026-07-07.
+
+| # | Skill | Composite | Detection | Trap avoidance | Judgment |
+|--:|-------|:---------:|:---------:|:--------------:|:--------:|
+| 1 | SEOAgent | **84.9** | 81% | 100% | 9.0/10 |
+| 2 | claude-seo-skills (lhitches) | 76.0 | 52% | 100% | 8.0/10 |
+| 3 | Agentic SEO Skill | 75.4 | 71% | 73% | 9.0/10 |
+| 4 | *Vanilla baseline (no skill)* | 73.0 | 71% | 100% | 6.0/10 |
+| 5 | claude-seo-skill (mangollc) | 70.4 | 67% | 73% | 7.0/10 |
+
+Medians of 3 runs; observed fleet-to-fleet variance is roughly ±8, so treat gaps inside
+that band as ties. The maintainer's own skill is an entrant — see [Disclosure](#disclosure),
+and note it once finished dead last on this same benchmark
+([adjudication history](results/ADJUDICATIONS.md)).
+
 There is no good way to compare Claude Code skills today. GitHub stars measure marketing,
 not correctness. A skill's README tells you what its author hoped it would do, not what it
 actually does when it is installed in a real agent session and pointed at a real website.
@@ -51,7 +69,7 @@ See [`RUBRIC.md`](RUBRIC.md) (v1.0.0, pre-registered) for exact weights. In shor
 | ---------------- | ------ | ------ |
 | Defect detection | 40%    | Deterministic: weighted recall against the fixture manifest's planted defects |
 | Trap avoidance   | 25%    | Deterministic: 1 − weighted share of trap violations (hallucinated recommendations) |
-| Judgment         | 25%    | Blind LLM judge panel on pre-registered questions (stub in v1 — see `harness/judge.mjs`) |
+| Judgment         | 25%    | Blind LLM judge panel (3 lenses, anonymized entrants, anchored 0–10) on pre-registered questions — `harness/judge.mjs` |
 | Execution        | 10%    | Did the run produce artifacts, and finish within the turn budget |
 
 **Scorer honesty note:** the deterministic matcher in `harness/score.mjs` is v1 — it is a
@@ -100,13 +118,35 @@ node harness/run.mjs --skill seoagent --fixture pivot-saas --runs 3
 # 5. Score the results directory produced by step 4
 node harness/score.mjs --run results/<timestamp>-seoagent
 
-# 6. (Roadmap) blind-judge the subjective questions
-node harness/judge.mjs --run results/<timestamp>-seoagent
+# 6. Blind-judge the subjective questions (anonymized, 3 lenses)
+node harness/judge.mjs --run results/<timestamp>-seoagent/run-1 --fixture pivot-saas
+
+# 7. Rebuild the leaderboard from all scored results
+node harness/leaderboard.mjs --fixture pivot-saas --write
+
+# Or run the ENTIRE fleet (every entrant × 3 runs → judge → leaderboard):
+./harness/fleet.sh pivot-saas 3
 ```
 
 Entrants are registered in [`skills.json`](skills.json). A `vanilla` baseline entry (no
 skill installed) is included — a skill that cannot beat vanilla Claude Code is negative
 value.
+
+## Submit your skill
+
+Open a PR (or [an issue](../../issues/new)) adding your skill to [`skills.json`](skills.json):
+a GitHub repo containing one or more `SKILL.md`s, or an npm package. Versions are pinned at
+test time and recorded. The next fleet run picks it up and publishes your scores — good or
+bad — with full receipts (transcripts, per-run scores, judge output).
+
+Every entrant gets a **live badge** that re-renders from the current leaderboard:
+
+```markdown
+[![seo-skill-bench](https://seoagent.com/seo-skill-benchmark/badge/<your-skill-id>.svg)](https://seoagent.com/seo-skill-benchmark)
+```
+
+If you ship improvements, say so in an issue — re-runs are cheap and we'd rather benchmark
+your best release. The results history keeps every prior fleet, so progress is visible.
 
 ## Repository layout
 
@@ -120,13 +160,18 @@ fixtures/<fixture>/
   repo/                   # the "source repo" a skill can read (partially stale)
   live/                   # the "live site" served by the harness (diverges from repo/)
   gsc/                    # synthetic Search Console export (Queries.csv, Pages.csv)
+LEADERBOARD.md            # generated board (leaderboard.mjs --write)
 harness/
   run.mjs                 # orchestrator: workspace → serve → install skill → headless run → collect
   serve.mjs               # zero-dep static server for fixtures/<f>/live
   score.mjs               # deterministic scorer (manifest patterns → score.json + report.md)
-  judge.mjs               # blind judgment scorer (stub)
+  judge.mjs               # blind judgment panel (anonymized, 3 lenses, anchored 0–10)
+  leaderboard.mjs         # composite + LEADERBOARD.md/leaderboard.json generator
+  fleet.sh                # every entrant × N runs → judge → leaderboard
   validate-fixture.mjs    # asserts fixture files actually contain every defect and trap
-results/                  # run outputs (gitignored)
+results/                  # committed receipts: per-run transcripts/scores/judge output,
+                          # leaderboard.json, and ADJUDICATIONS.md (trap-hit reviews,
+                          # scoring corrections, harness postmortems)
 ```
 
 ## Disclosure
