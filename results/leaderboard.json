@@ -21,9 +21,9 @@
       "median_wall_s": 779.363,
       "median_cost_usd": 4.464850949999999,
       "skill_count": 1,
-      "resident_tokens": 257,
-      "activation_tokens_max": 26886,
-      "bundle_tokens": 56396,
+      "resident_tokens": 255,
+      "activation_tokens_max": 8977,
+      "bundle_tokens": 59125,
       "footprint_band": "light"
     },
     {
