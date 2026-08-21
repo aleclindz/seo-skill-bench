@@ -85,6 +85,47 @@ Every pattern is published in the fixture manifest so anyone can audit exactly w
 as a detection or a trap hit. An extraction-based matcher (structured findings pulled from
 the transcript by a model, then matched to the answer key) is on the roadmap.
 
+## Context footprint (measured, not scored)
+
+Alongside quality, the leaderboard publishes what each entrant **costs** the
+agent that installs it — a dimension deliberately kept out of the composite,
+because cost and correctness are different questions.
+
+Background: an installed skill's frontmatter `description` is resident in the
+system prompt of **every message**, whether or not the skill ever fires, and
+the SKILL.md body loads on every activation. "@skills: Attention Is All You
+Have" (Yin et al., 2026) measured published skill descriptions at 50–280
+tokens each and showed that heavy descriptions dilute the trigger reliability
+of everything else installed alongside them. A skill collection pays the
+standing tax once **per skill**.
+
+`harness/footprint.mjs` installs each entrant exactly the way a benchmark run
+does (same install methods as `harness/run.mjs`), then measures the installed
+`.claude/skills/**` tree:
+
+| Metric | What it is |
+|---|---|
+| `skill_count` | SKILL.md files installed |
+| `resident_tokens` | Σ tokens(name + description) across installed skills — the per-message standing tax |
+| `activation_tokens_max` | tokens of the largest single SKILL.md body — the cost when that skill triggers |
+| `bundle_tokens` | all installed .md text (bodies + references; references are fetched on demand, so this is the cheapest tier) |
+| `footprint_band` | **light** ≤ 280 resident tokens (within the paper's observed per-skill range) · **medium** ≤ 1000 · **heavy** > 1000 |
+
+Tokens are approximated as `ceil(chars / 4)` — published so the numbers are
+comparable across entrants, not absolute. Results land in
+`results/footprint.json` and are merged into `results/leaderboard.json` and
+LEADERBOARD.md by `harness/leaderboard.mjs`. Regenerate with:
+
+```bash
+node harness/footprint.mjs        # re-measure all entrants (fresh installs)
+node harness/leaderboard.mjs --write
+```
+
+Entrants are measured at the same pin/SHA the benchmark installs (recorded in
+each entry's `source`), so a skill that slims down shows its new footprint at
+the next cycle. This applies to the maintainer's own entrant too — SEOAgent's
+footprint is whatever the pinned npm version ships, not the development tree.
+
 ## The fixtures
 
 ### `pivot-saas`
