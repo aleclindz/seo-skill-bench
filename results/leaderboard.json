@@ -1,7 +1,7 @@
 {
   "fixture": "pivot-saas",
   "rubric": "v1.0.0",
-  "updated": "2026-07-07",
+  "updated": "2026-08-21",
   "rows": [
     {
       "skill": "seoagent",
@@ -19,7 +19,12 @@
         63.57142857142857
       ],
       "median_wall_s": 779.363,
-      "median_cost_usd": 4.464850949999999
+      "median_cost_usd": 4.464850949999999,
+      "skill_count": 1,
+      "resident_tokens": 257,
+      "activation_tokens_max": 26886,
+      "bundle_tokens": 56396,
+      "footprint_band": "light"
     },
     {
       "skill": "lhitches-claude-seo-skills",
@@ -37,7 +42,12 @@
         62.467532467532465
       ],
       "median_wall_s": 427.999,
-      "median_cost_usd": 2.2031463
+      "median_cost_usd": 2.2031463,
+      "skill_count": 1,
+      "resident_tokens": 131,
+      "activation_tokens_max": 1063,
+      "bundle_tokens": 17759,
+      "footprint_band": "light"
     },
     {
       "skill": "agentic-seo-skill",
@@ -55,7 +65,12 @@
         71.19047619047619
       ],
       "median_wall_s": 590.047,
-      "median_cost_usd": 2.8080648999999993
+      "median_cost_usd": 2.8080648999999993,
+      "skill_count": 1,
+      "resident_tokens": 106,
+      "activation_tokens_max": 4826,
+      "bundle_tokens": 88288,
+      "footprint_band": "light"
     },
     {
       "skill": "vanilla",
@@ -91,7 +106,12 @@
         54.848484848484844
       ],
       "median_wall_s": 553.084,
-      "median_cost_usd": 3.077676700000001
+      "median_cost_usd": 3.077676700000001,
+      "skill_count": 6,
+      "resident_tokens": 1315,
+      "activation_tokens_max": 3885,
+      "bundle_tokens": 19433,
+      "footprint_band": "heavy"
     },
     {
       "skill": "claude-seo",
@@ -109,7 +129,12 @@
         54.848484848484844
       ],
       "median_wall_s": 415.374,
-      "median_cost_usd": 1.6976181
+      "median_cost_usd": 1.6976181,
+      "skill_count": 31,
+      "resident_tokens": 2687,
+      "activation_tokens_max": 4148,
+      "bundle_tokens": 180245,
+      "footprint_band": "heavy"
     },
     {
       "skill": "lionkiii-claude-seo-skills",
@@ -127,7 +152,12 @@
         52.943722943722946
       ],
       "median_wall_s": 726.999,
-      "median_cost_usd": 2.9613612
+      "median_cost_usd": 2.9613612,
+      "skill_count": 53,
+      "resident_tokens": 4848,
+      "activation_tokens_max": 4852,
+      "bundle_tokens": 113529,
+      "footprint_band": "heavy"
     },
     {
       "skill": "marketingskills",
@@ -145,7 +175,12 @@
         55.95238095238095
       ],
       "median_wall_s": 470.824,
-      "median_cost_usd": 1.8730575000000003
+      "median_cost_usd": 1.8730575000000003,
+      "skill_count": 49,
+      "resident_tokens": 8770,
+      "activation_tokens_max": 6622,
+      "bundle_tokens": 486234,
+      "footprint_band": "heavy"
     },
     {
       "skill": "seo-geo-claude-skills",
@@ -163,7 +198,12 @@
         69.28571428571428
       ],
       "median_wall_s": 543.879,
-      "median_cost_usd": 2.1600896999999994
+      "median_cost_usd": 2.1600896999999994,
+      "skill_count": 20,
+      "resident_tokens": 20,
+      "activation_tokens_max": 278,
+      "bundle_tokens": 4903,
+      "footprint_band": "light"
     },
     {
       "skill": "distribb-skill",
@@ -181,7 +221,12 @@
         56.753246753246756
       ],
       "median_wall_s": 467.663,
-      "median_cost_usd": 2.3341974
+      "median_cost_usd": 2.3341974,
+      "skill_count": 2,
+      "resident_tokens": 347,
+      "activation_tokens_max": 30846,
+      "bundle_tokens": 84272,
+      "footprint_band": "medium"
     }
   ]
 }

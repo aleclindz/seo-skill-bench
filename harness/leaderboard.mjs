@@ -108,6 +108,24 @@ for (const [skillId, { dir }] of bySkill) {
   });
 }
 
+// ---- merge context-footprint measurements (harness/footprint.mjs) ----
+// Footprint is published alongside quality but kept OUT of the composite:
+// it measures what a skill costs the agent (resident description tokens on
+// every message; body tokens on every activation), not how well it performs.
+const footprintPath = path.join(resultsDir, 'footprint.json');
+const footprint = fs.existsSync(footprintPath) ? readJson(footprintPath) : null;
+if (footprint) {
+  for (const r of rows) {
+    const f = footprint.entrants?.[r.skill];
+    if (!f || f.error) continue;
+    r.skill_count = f.skill_count;
+    r.resident_tokens = f.resident_tokens;
+    r.activation_tokens_max = f.activation_tokens_max;
+    r.bundle_tokens = f.bundle_tokens;
+    r.footprint_band = f.footprint_band;
+  }
+}
+
 const anyPending = rows.some((r) => r.composite == null);
 rows.sort((a, b) => (b.composite ?? b.composite_det) - (a.composite ?? a.composite_det));
 
@@ -125,11 +143,11 @@ const lines = [
     ? '> Some entrants have judgment pending — their score is the **75-point deterministic composite** (detection + traps + execution). Full 100-point composites appear once the blind judge panel has run.'
     : '> Full 100-point composite (detection 40 / trap avoidance 25 / judgment 25 / execution 10), median of all runs.',
   '',
-  '| # | Skill | Composite | Detection | Trap avoidance | Judgment | Execution | Runs | Median time | Median cost |',
-  '|--:|-------|:--------:|:---------:|:--------------:|:--------:|:---------:|:----:|:-----------:|:-----------:|',
+  '| # | Skill | Composite | Detection | Trap avoidance | Judgment | Execution | Footprint | Resident | Runs | Median time | Median cost |',
+  '|--:|-------|:--------:|:---------:|:--------------:|:--------:|:---------:|:---------:|:--------:|:----:|:-----------:|:-----------:|',
   ...rows.map(
     (r, i) =>
-      `| ${i + 1} | ${r.name} | **${fmt(r.composite ?? r.composite_det)}${r.composite == null ? ' /75*' : ''}** | ${pct(r.detection)} | ${pct(r.trap_avoidance)} | ${r.judgment == null ? 'pending' : fmt(r.judgment * 10, 1) + '/10'} | ${pct(r.execution)} | ${r.runs} | ${fmt(r.median_wall_s, 0)}s | ${r.median_cost_usd == null ? '—' : '$' + r.median_cost_usd.toFixed(2)} |`
+      `| ${i + 1} | ${r.name} | **${fmt(r.composite ?? r.composite_det)}${r.composite == null ? ' /75*' : ''}** | ${pct(r.detection)} | ${pct(r.trap_avoidance)} | ${r.judgment == null ? 'pending' : fmt(r.judgment * 10, 1) + '/10'} | ${pct(r.execution)} | ${r.footprint_band ?? '—'} | ${r.resident_tokens != null ? r.resident_tokens + 't' : '—'} | ${r.runs} | ${fmt(r.median_wall_s, 0)}s | ${r.median_cost_usd == null ? '—' : '$' + r.median_cost_usd.toFixed(2)} |`
   ),
   '',
   anyPending ? '\\* deterministic composite out of 75 (judgment pending)' : '',
@@ -139,6 +157,7 @@ const lines = [
   '- **Detection** — weighted share of the fixture\'s planted defects the skill actually found.',
   '- **Trap avoidance** — 100% means zero hallucination events (never recommended "fixing" something that is demonstrably already fine).',
   '- **Judgment** — blind panel median on the fixture\'s pre-registered judgment questions.',
+  '- **Footprint / Resident** — context cost, deliberately OUTSIDE the composite: Resident is the tokens the entrant\'s installed skill descriptions occupy in the system prompt of EVERY message (whether or not a skill fires; a collection pays per skill), banded light ≤280t / medium ≤1000t / heavy >1000t against the 50–280t per-skill range measured in "@skills: Attention Is All You Have" (Yin et al., 2026). Heavy resident footprints dilute the trigger reliability of everything else installed. Full numbers (activation + bundle tokens) in results/footprint.json; method + regeneration: `node harness/footprint.mjs`.',
   '- Scores are medians across runs; a skill that only performs sometimes is an unreliable skill.',
   '- Reproduce any row: `node harness/run.mjs --skill <id> --fixture ' + fixture + ' --runs 3`.',
   '',
