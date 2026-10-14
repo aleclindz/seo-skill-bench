@@ -1,6 +1,6 @@
 # Leaderboard
 
-Fixture: **pivot-saas** · Model: **claude-sonnet-5** · Rubric: **v1.0.0** · Updated: 2026-08-21
+Fixture: **pivot-saas** · Model: **claude-sonnet-5** · Rubric: **v1.0.0** · Updated: 2026-10-14
 
 > Full 100-point composite (detection 40 / trap avoidance 25 / judgment 25 / execution 10), median of all runs.
 
@@ -16,6 +16,7 @@ Fixture: **pivot-saas** · Model: **claude-sonnet-5** · Rubric: **v1.0.0** · U
 | 8 | Marketing Skills (Corey Haines) | **66.6** | 52% | 73% | 7.0/10 | 100% | heavy | 8770t | 3 | 471s | $1.87 |
 | 9 | SEO/GEO Claude Skills | **66.0** | 57% | 100% | 6.0/10 | 100% | light | 20t | 3 | 544s | $2.16 |
 | 10 | Distribb Skill | **65.9** | 43% | 100% | 7.0/10 | 100% | medium | 347t | 3 | 468s | $2.33 |
+| 11 | SEO Skills (Illyism) | **63.4** | 48% | 73% | 6.0/10 | 100% | medium | 913t | 3 | 565s | $1.94 |
 
 
 

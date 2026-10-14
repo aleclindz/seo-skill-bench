@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "InboxZap pivoted from an old product (\"Lumina,\" an AI meeting assistant)... the blog's 12 posts, which are already well-targeted to real queries from the GSC export",
+          "rationale": "The entrant inverts the pivot: it treats the AI meeting assistant as the dead legacy product and inbox-cleanup as the current product, then builds the entire plan around ranking the InboxZap/inbox-cleanup content harder — precisely the anchor_0 failure, despite noticing 'a pivot.'"
+        },
+        "J2": {
+          "score": 2,
+          "basis": "already well-targeted to real queries from the GSC export (`gmail storage full` · 790 impressions, `how to reach inbox zero` · 1,180, `unsubscribe from newsletters` · 560)",
+          "rationale": "Real GSC impressions are cited, which is genuine grounding, but there are no harvest/redirect/sunset dispositions — every legacy post is simply rebuilt and kept as core content, the effective equivalent of a blanket 'keep everything.'"
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Rebuilt `/blog` and all 12 posts... Split two posts that had been competing for the same \"bulk delete emails\" query... three queries (`clean up inbox`, `inbox cleaner free`, `declutter email inbox`) have no dedicated page yet",
+          "rationale": "The output falls fully into one failure mode — doubling down on inbox-cleanup content (and even proposing new pages for it) for the product the ground truth says no longer exists — with no transition plan toward the meeting-assistant positioning."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "InboxZap pivoted from an old product ('Lumina,' an AI meeting assistant), but the pivot was only half-finished... the homepage, nav, footer, and structured data still described Lumina",
+          "rationale": "The entrant noticed a brand inconsistency but inverted the pivot direction entirely — it concluded the CURRENT product is InboxZap inbox-cleanup and the meeting-assistant is the stale legacy, the exact opposite of the live-site reality, then built the whole plan around ranking inbox-cleanup content (anchor_0)."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "Rebuilt /blog and all 12 posts as server-rendered pages with titles, meta descriptions, canonicals, and Article JSON-LD — all now in app/sitemap.ts",
+          "rationale": "It cites some real GSC figures (gmail storage full 790, inbox zero 1,180, unsubscribe 560) but applies no disposition framework — every legacy post is uniformly rebuilt and amplified, effectively a blanket 'keep and double down' with no harvest/redirect/sunset triage."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "the blog's 12 posts, which are already well-targeted to real queries... Finished the brand pivot across homepage, nav, footer, and site-wide JSON-LD",
+          "rationale": "It falls fully into one failure mode: it doubles down on inbox-cleanup content as the growth engine while deleting the meeting-assistant positioning as 'stale' — simultaneously chasing legacy demand and torching the current product's equity, with no articulated tension or transition path."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "InboxZap pivoted from an old product (\"Lumina,\" an AI meeting assistant)... Finished the brand pivot across homepage, nav, footer, and site-wide JSON-LD",
+          "rationale": "The entrant detected the title/homepage inconsistency but inverted the pivot direction — concluding the live product is the inbox cleaner and the meeting assistant is legacy, the exact opposite of reality, then built the entire plan around ranking inbox-cleanup content harder (anchor_0)."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "the blog's 12 posts... already well-targeted to real queries from the GSC export (gmail storage full · 790 impressions, how to reach inbox zero · 1,180, unsubscribe from newsletters · 560)... Split two posts that had been competing for the same \"bulk delete emails\" query",
+          "rationale": "Cites a few real GSC impression figures and makes one split decision, but applies a blanket 'revive and keep all 12' disposition with no per-asset harvest/redirect/sunset reasoning grounded in the data."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Rebuilt /blog and all 12 posts... Built real /features, /pricing, /faq pages... InboxZap handles the inbox backlog",
+          "rationale": "Falls fully into one failure mode: doubles down on the inbox-cleanup cluster as the entire growth engine with no meeting-assistant positioning and no articulated transition tension."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 2,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

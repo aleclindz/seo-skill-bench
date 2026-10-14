@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\")... The 12 ranking blog posts are 100% about Gmail/Outlook inbox cleanup — completely irrelevant to a meeting assistant, which is why they get impressions but ~0% CTR",
+          "rationale": "Explicitly names the pivot, identifies the live site as the meeting assistant and the legacy posts as inbox demand, and ties the ~0% CTR directly to the intent mismatch, framing every fix around the new reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "the 12 existing posts (pulling ~9,500 impressions/month combined)... Added meta descriptions to all 12 legacy posts, and appended a short contextual \"bridge\" + internal link to the ones where it made sense",
+          "rationale": "Applies a blanket keep-and-bridge disposition rather than per-asset harvest/301/sunset calls, and grounds it only in a single combined impressions figure with no per-post positions or impressions to justify differentiated treatment."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "appended a short contextual \"bridge\" + internal link to the ones where it made sense, connecting old inbox-overload search traffic to Lumina's actual value prop instead of letting it dead-end... Added 3 new posts targeting real product-relevant keyword gaps",
+          "rationale": "Avoids both failure modes — preserves legacy equity via bridges rather than torching it, and builds the meeting-assistant cluster as the growth engine — though it stops short of an explicitly sequenced transition and leans on uniform bridging."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This SaaS pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\") on the same domain... the 12 ranking blog posts are 100% about Gmail/Outlook inbox cleanup — completely irrelevant to a meeting assistant, which is why they get impressions but ~0% CTR",
+          "rationale": "Explicitly names the pivot across live site/GSC/repo and correctly frames legacy inbox content as stale demand rather than target market, driving the recommendations. Just short of a perfect, fully-threaded framing."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Added meta descriptions to all 12 legacy posts, and appended a short contextual \"bridge\" + internal link to the ones where it made sense... We keep them live (they still carry search impressions)",
+          "rationale": "Makes a global keep-and-bridge decision and cites only an aggregate ~9,500 impressions, but never walks the inventory asset-by-asset with per-post impressions/positions and never considers redirect or sunset for any individual post."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "appended a short contextual \"bridge\" + internal link... connecting old inbox-overload search traffic to Lumina's actual value prop instead of letting it dead-end... Added 3 new posts targeting real product-relevant keyword gaps",
+          "rationale": "Clearly avoids both failure modes — preserves and bridges legacy equity while building the meeting-assistant cluster as the growth engine — though the transition is stated more as simultaneous action than an explicitly sequenced plan."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\") on the same domain... The 12 ranking blog posts are 100% about Gmail/Outlook inbox cleanup — completely irrelevant to a meeting assistant, which is why they get impressions but ~0% CTR.",
+          "rationale": "Explicitly identifies the pivot across live site, GSC, and repo (stale metadata), and frames every recommendation around the meeting-assistant reality while labeling the inbox queries as legacy demand."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Added meta descriptions to all 12 legacy posts, and appended a short contextual \"bridge\" + internal link to the ones where it made sense... We keep them live (they still carry search impressions) but bridge each one to the current product.",
+          "rationale": "Chose a clear uniform disposition (keep + bridge) with per-post judgment about where bridges fit, but gave no asset-by-asset or tiered breakdown citing each post's specific impressions/positions — only a blanket ~9,500/month figure, so the data grounding is thin."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "connecting old inbox-overload search traffic to Lumina's actual value prop instead of letting it dead-end... Added 3 new posts targeting real product-relevant keyword gaps (meeting notes, AI meeting notes comparison, meeting-driven email overload).",
+          "rationale": "Lands the defensible middle path explicitly — preserves/bridges legacy equity rather than torching it, while building the meeting-assistant cluster as the growth engine, avoiding both failure modes."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 4,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

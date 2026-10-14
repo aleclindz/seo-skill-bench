@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The business pivoted. The site used to be \"InboxZap\" (email cleanup / inbox-zero tool). It's now \"Lumina\" (AI meeting assistant) — totally different product, ICP, and keywords.",
+          "rationale": "Explicitly identifies the pivot from the live site vs. GSC history, flags stale repo metadata, and frames every recommendation (branded leakage, legacy posts, new cluster) around the new positioning. Falls just short of anchor_10 only because it doesn't label the inbox impressions as 'legacy demand' in those exact terms, though the implication is fully clear."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "The 12 individual posts ... still get real impressions (3900, 1650, 1380…) ... Old InboxZap posts — redirect them (301) to relevant Lumina content/homepage ... or leave them live as-is? I'd lean toward redirecting",
+          "rationale": "Cites a few real impression figures and recognizes the posts can't convert, but applies one blanket disposition (301 all or keep all) rather than walking the inventory asset-by-asset or in data-justified tiers; the decision is also deferred to the user rather than reasoned per asset."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "redirect them (301) to relevant Lumina content/homepage to recover some link equity ... add a short \"Lumina was formerly InboxZap\" note ... capture that branded query intent ... draft 2-3 new blog posts targeting actual Lumina keywords",
+          "rationale": "Lands a defensible middle path — preserve/redirect legacy equity via 301s and a brand-bridge note while building a meeting-assistant cluster — avoiding both the double-down and the scorched-earth modes; loses points because the transition is presented as open questions with no explicit sequencing of the tension."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site used to be \"InboxZap\" (email cleanup / inbox-zero tool). It's now \"Lumina\" (AI meeting assistant) — totally different product, ICP, and keywords. But the SEO surface never caught up",
+          "rationale": "Explicitly nails the pivot, identifies live site as meeting assistant vs legacy inbox demand, flags stale metadata in the repo, and frames every recommendation around that reality including branded-traffic leakage."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "The 12 individual posts (`/blog/post-1`…`post-12`) still exist and still get real impressions (3900, 1650, 1380…)... **Old InboxZap posts** — redirect them (301) to relevant Lumina content/homepage to recover some link equity... or leave them live as-is? I'd lean toward redirecting",
+          "rationale": "Cites real impression numbers and recognizes all 12 target the old product, and proposes a disposition (301 vs keep) with reasoning — but treats all 12 as one undifferentiated block rather than walking them asset-by-asset or in data-justified tiers with per-asset successor mapping."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "redirect them (301) to relevant Lumina content/homepage to recover some link equity and stop confusing visitors... add a short \"Lumina was formerly InboxZap\" note... capture that branded query intent instead of losing it to confusion... draft 2-3 new blog posts targeting actual Lumina keywords",
+          "rationale": "Lands a defensible middle path — recover salvageable equity via 301s and a brand bridge, build the meeting-assistant cluster as the growth engine — avoiding both failure modes, though it stops short of an explicit sequencing/transition plan tying the moves together over time."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The business pivoted. The site used to be \"InboxZap\" (email cleanup / inbox-zero tool). It's now \"Lumina\" (AI meeting assistant) — totally different product, ICP, and keywords. But the SEO surface never caught up",
+          "rationale": "Explicitly names the live-site-vs-GSC pivot, flags stale source (layout.tsx, sitemap TODO) as partially legacy, and frames every recommendation around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Old InboxZap posts — redirect them (301) to relevant Lumina content/homepage... or leave them live as-is? I'd lean toward redirecting",
+          "rationale": "Cites real impressions (3900, 1650, 1380) and proposes a disposition with reasoning, but treats all 12 posts as one undifferentiated block rather than walking them asset-by-asset or in data-justified tiers, and defers the decision rather than making it."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "redirect them (301) to relevant Lumina content... add a short \"Lumina was formerly InboxZap\" note... to capture that branded query intent instead of losing it to confusion... draft 2-3 new blog posts targeting actual Lumina keywords",
+          "rationale": "Lands a defensible middle path — bridge branded equity, redirect salvageable legacy, build the meeting cluster — avoiding both failure modes, though the transition is posed as open questions with only light sequencing rather than a committed, staged plan."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

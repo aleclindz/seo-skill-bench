@@ -291,3 +291,76 @@ The clearing was mechanical (uniform pattern change, validate-fixture 65/65 +
 scorer self-tests green), is fully receipted above, and moved NO composite —
 the board is identical with or without it (seoagent run-2 was already the
 discarded low run; its trap median was 100 either way).
+
+---
+
+# Entrant addition (2026-10-14): Illyism/seo-skills
+
+11-skill collection by Ilias Ism (seo-autopilot, blitz-seo, seo-title-optimization,
+blog-refresher, linkdr, intro, scribiz, customer-journey, diff-marketing, blitz-copy,
+understand-customers), installed with the `git-skill-md` collection method at
+default-branch HEAD `af48ce5`. Same model (`claude-sonnet-5`), prompt, tool allowlist,
+turn budget and judge (`claude-opus-4-8`, 3 lenses, not cross-model) as every entrant.
+
+Result: **63.4** composite (#11 of 11). Runs: 49.7 / 63.4 / 67.9 — detection
+48 / 38 / 62%, traps 73 / 73 / 73%, judgment 0.1 / 0.8 / 0.6. Footprint: 11 skills,
+913 resident tokens (medium).
+
+## Environment calibration (vanilla re-run, receipts in `results/calibration/`)
+
+These runs were made on a different machine from the July fleets: a cloud container on
+Claude Code 2.1.300, where the in-session `WebFetch` cannot reach the fixture's
+plain-HTTP loopback server (it attempts TLS) and entrants reach the live site with
+`curl`. The headless sessions ran with the host session's user skills, plugins, MCP
+servers and effort override stripped, so each run saw only the entrant's skills plus
+Claude Code's built-ins. To make the comparison honest, vanilla was re-run 3× in the
+same environment the same hour: **74.8** median composite (82.5 / 74.8 / 72.3;
+detection 86 / 67 / 62%, traps 73 / 73 / 100%, judgment 0.8 / 0.8 / 0.7; run 3 stopped
+after 18 turns without writing files, execution 0.5). That is within the ±8 fleet band
+of vanilla's published 73.0, so the published row is kept and the calibration runs sit
+in `results/calibration/`, outside the leaderboard's latest-run selection. Against
+same-environment vanilla the entrant scores 11.4 points lower, and its best run is below
+vanilla's worst.
+
+## Trap adjudications
+
+| Entrant | Run | Trap | Verdict | Evidence |
+|---|---|---|---|---|
+| illyism-seo-skills | 1 | T1 | **GENUINE** | "added organization + softwareapplication json-ld" as new work in the same breath as rewriting the live brand; no acknowledgement the live homepage already serves both. |
+| illyism-seo-skills | 2 | T1 | **GENUINE** | "`app/layout.tsx` — … added organization + softwareapplication json-ld." Bare "added X" after reading the live site, same standard as fleet 2. |
+| illyism-seo-skills | 3 | T1 | **FP** | "added the organization + softwareapplication json-ld **the live site has but the repo was missing**" — framed as reconciling the stale repo with live, which the fleet-1 note says is not flagged. Mechanical score stands. |
+| vanilla (calibration) | 1 | T5 | **FP** | "the 12 ranking blog posts … irrelevant to a meeting assistant, which is why they get impressions but ~0% ctr" — attributes impressions to the blog posts, as the GSC export does; no invented meeting-query demand. |
+| vanilla (calibration) | 2 | T1 | **GENUINE** | "added `organization`/`softwareapplication` json-ld to the homepage" with no acknowledgement it is already live. |
+
+## Detection under-counts (matcher, field-wide — scores stand)
+
+Two v1-matcher misses on this entrant, both phrasing/punctuation, recorded for the
+next field-wide pattern review rather than corrected here:
+
+- **D1 / D2, run 1.** "the blog index fetched from a `/api/posts` route that never
+  existed — every post was an orphan, unlinked and missing from the sitemap" describes
+  both defects; no D1 pattern has `sitemap` before `missing` in that order, and D2's
+  patterns want "fetches posts" / "client-rendered", not "fetched from".
+- **D1, run 3.** "`sitemap.ts` promised 2 pages that didn't exist and omitted `/faq` and
+  all 12 posts" — every D1 pattern spans `[^.]`, and the dot in `sitemap.ts` breaks the
+  span.
+
+Either fix would change other entrants' numbers too, so it needs a manifest bump and a
+re-score of every run (precedent: v1.0.1–v1.0.3).
+
+## What the receipts show
+
+Run 1 read the pivot backwards: it took the stale repo's InboxZap metadata as the
+current product and the live Lumina homepage as the leftover, then "finished the brand
+pivot" by rewriting the homepage, nav, footer and JSON-LD back to InboxZap to chase the
+legacy GSC demand. The judges scored J1 (intent inference) 1/10. Runs 2 and 3 read the
+pivot correctly (J1 10 and 9). Runs 1 and 3 followed the installed `seo-autopilot`
+skill's first-run setup (`seo/context.md`, `keyword-map.csv`, `backlog.md`, `log.md`, a
+report); run 2 did not create that state. The skill's posture — ship changes, "advice in
+a document is not work" — means that when the read of the business is wrong, it becomes
+large code changes rather than a recommendation. Detection is the main gap (48% median
+vs vanilla's 67% here). `seo-autopilot` does list a health check (status codes,
+canonicals, noindex, titles and descriptions, server-rendered content), but its first
+run is told to ship the three highest-value fixes and keep the report under 300 words,
+and the runs reported mostly what they fixed: missing meta descriptions (D5) and alt
+text (D9) were never matched in any run, and the pricing canonical (D3) only in run 3.
