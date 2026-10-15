@@ -1,7 +1,7 @@
 {
   "fixture": "pivot-saas",
   "rubric": "v1.0.0",
-  "updated": "2026-08-21",
+  "updated": "2026-10-14",
   "rows": [
     {
       "skill": "seoagent",
@@ -226,6 +226,29 @@
       "resident_tokens": 347,
       "activation_tokens_max": 30846,
       "bundle_tokens": 84272,
+      "footprint_band": "medium"
+    },
+    {
+      "skill": "illyism-seo-skills",
+      "name": "SEO Skills (Illyism)",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.47619047619047616,
+      "trap_avoidance": 0.7272727272727273,
+      "judgment": 0.6,
+      "execution": 1,
+      "composite": 63.41991341991342,
+      "composite_det": 47.22943722943723,
+      "spread_det": [
+        43.41991341991342,
+        52.943722943722946
+      ],
+      "median_wall_s": 564.998,
+      "median_cost_usd": 1.9416097000000003,
+      "skill_count": 11,
+      "resident_tokens": 913,
+      "activation_tokens_max": 2815,
+      "bundle_tokens": 17083,
       "footprint_band": "medium"
     }
   ]

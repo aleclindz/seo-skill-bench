@@ -1,0 +1,53 @@
+{
+  "skill": "vanilla",
+  "fixture": "pivot-saas",
+  "run": 3,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 163016,
+  "exit": 0,
+  "install": {
+    "method": "none",
+    "ok": true,
+    "detail": "baseline — nothing installed"
+  },
+  "files_changed": 0,
+  "usage": {
+    "usage": {
+      "input_tokens": 16,
+      "cache_creation_input_tokens": 26031,
+      "cache_read_input_tokens": 372077,
+      "output_tokens": 12583,
+      "output_tokens_details": {
+        "thinking_tokens": 9375
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 26031,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 3236,
+          "cache_read_input_tokens": 54792,
+          "cache_creation_input_tokens": 6812,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6812
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "total_cost_usd": 0.30453529999999995,
+    "num_turns": 18
+  }
+}

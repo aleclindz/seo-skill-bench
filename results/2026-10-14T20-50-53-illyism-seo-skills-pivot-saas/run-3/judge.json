@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "it pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant) — a full product change — but the SEO/technical surface never finished migrating",
+          "rationale": "Explicitly names the pivot, identifies the live product as a meeting assistant and the InboxZap queries as legacy demand ('that brand still gets real searches landing on a now-unrelated homepage'), and frames every fix around the new positioning."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "the 12 existing blog posts are 100% about email cleanup... They pull ~17,000 impressions/month combined but almost no clicks and rank page 4-6... I left this for you to decide (retire vs. rewrite)",
+          "rationale": "Cites real aggregate GSC numbers and frames a retire-vs-rewrite choice, but treats all 12 as one undifferentiated block with no per-asset (or tiered) harvest/redirect/sunset dispositions, and explicitly defers the decision rather than making it."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "actively diluting the site's relevance for 'AI meeting assistant'... I left this for you to decide (retire vs. rewrite)... Next highest-value work... comparison pages against Otter.ai/Fireflies.ai/Fathom",
+          "rationale": "Avoids both failure modes — doesn't double down on inbox content and doesn't immediately torch equity (preserves/renders posts, adds an FAQ bridging the brand confusion) while building the meeting-assistant surface — but the transition is mostly deferred to the owner rather than a sequenced middle path."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "it pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant) — a full product change — but the SEO/technical surface never finished migrating",
+          "rationale": "Explicitly names the pivot, identifies live site as meeting assistant and legacy inbox content as the old product, and frames every fix (metadata, FAQ bridge, flagged posts) around that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "the 12 existing blog posts are 100% about email cleanup ... They pull ~17,000 impressions/month combined but almost no clicks and rank page 4-6 ... I left this for you to decide (retire vs. rewrite)",
+          "rationale": "Cites only aggregate GSC numbers and treats all 12 as one undifferentiated bundle with no per-asset or tiered disposition; explicitly defers the harvest/redirect/sunset decision rather than making it."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "used it to honestly address 'what happened to InboxZap,' since that brand still gets real searches landing on a now-unrelated homepage ... actively diluting the site's relevance ... I left this for you to decide",
+          "rationale": "Avoids both extremes — doesn't double down on inbox content, doesn't torch legacy (kept posts, built FAQ bridge for lingering brand searches) — but stops short of landing a sequenced transition, punting the core retire/rewrite call instead of resolving the tension."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "it pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant) — a full product change — but the SEO/technical surface never finished migrating... the 12 existing blog posts are 100% about email cleanup — the old product... actively diluting the site's relevance for \"AI meeting assistant.\"",
+          "rationale": "The pivot is identified explicitly and correctly, with the live product as meeting assistant and legacy blog/GSC demand framed as the old product; every fix (metadata, FAQ, OG tags) is oriented to the new positioning. Falls just short of 10 because it narrates the repo-vs-live-vs-GSC three-way split a bit loosely rather than as a clean stated implication."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Per the no-silent-redirect rule, I left this for you to decide (retire vs. rewrite) — see `seo/backlog.md`... They pull ~17,000 impressions/month combined but almost no clicks and rank page 4-6",
+          "rationale": "No per-asset disposition at all: the only data cited is a single aggregate (~17k impressions, page 4-6) across all twelve posts, and the actual harvest/redirect/sunset decision is explicitly punted to the operator rather than made. An operator still has all the migration judgment left to do."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "Flagged, not touched: the 12 existing blog posts... I left this for you to decide (retire vs. rewrite)... Next highest-value work, once you weigh in: comparison pages against Otter.ai/Fireflies.ai/Fathom",
+          "rationale": "It avoids both failure modes — doesn't chase inbox content, doesn't torch equity (posts kept live and rendered) — and names the tension and the growth engine. But it stops at preserve-and-flag: the transition is deferred and unsequenced, so the defensible middle path is gestured at rather than landed."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

@@ -70,6 +70,13 @@
    "repo": "coreyhaines31/marketingskills",
    "install": "git-skill-md",
    "notes": "46-skill marketing collection (CRO, copywriting, SEO, analytics). Most-starred entrant to date (~36k). Core skills are keyless instruction files. Installed at default-branch HEAD; SHA recorded in install detail."
+  },
+  {
+   "id": "illyism-seo-skills",
+   "name": "SEO Skills (Illyism)",
+   "repo": "Illyism/seo-skills",
+   "install": "git-skill-md",
+   "notes": "11-skill collection by Ilias Ism (SEO autopilot, blitz-seo, title optimization, blog refresher, LinkDR backlinks, intros, Scribiz, customer journey, diff marketing, copywriting). Keyless instruction files, no scripts. Added 2026-10-14; tested at default-branch HEAD af48ce5 (~91 stars)."
   }
  ]
 }
