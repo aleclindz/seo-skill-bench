@@ -364,3 +364,71 @@ canonicals, noindex, titles and descriptions, server-rendered content), but its 
 run is told to ship the three highest-value fixes and keep the report under 300 words,
 and the runs reported mostly what they fixed: missing meta descriptions (D5) and alt
 text (D9) were never matched in any run, and the pricing canonical (D3) only in run 3.
+
+---
+
+# SEOAgent re-pin (2026-10-19): seoagent@1.124.0
+
+The pin moves from 1.76.1 (July) to 1.124.0, the current release. This
+supersedes the never-merged `claude/seoagent-pin-1.87.0` branch (2026-08-21),
+which bumped the pin and re-measured the footprint but never re-ran the
+benchmark. Same model (`claude-sonnet-5`), prompt, tool allowlist, turn budget
+and judge (`claude-opus-4-8`, 3 lenses, not cross-model) as every entrant.
+The CLI ran logged out: no `auth.json` in the session home, and
+`SEOAGENT_AUTH` / `SEOAGENT_AUTH_JSON` stripped from the session environment.
+
+Result: **81.3** composite (#1 of 11; was 84.9 at 1.76.1). Runs:
+- detection 66.7 / 71.4 / 100% (median 71%, was 81%);
+- traps 72.7 / 90.9 / 100% (median 91%, was 100%);
+- judgment 9 / 8 / 9 (J1/J2/J3: 10/6/9, 9/5/8, 10/8/9), median 9.0 (unchanged);
+- execution 50 / 100 / 100% (median 100%, was 50%); wall 849 / 440 / 782 s;
+  cost $3.07 / $1.58 / $2.56.
+
+Footprint at 1.124.0: resident 135 tokens (was 257), activation 4,352 (was
+26,886), bundle 66,291, light.
+
+## Read this before quoting the rank
+
+- The lead over #2 is 5.3 points, inside the ±8 fleet-to-fleet band: treat
+  SEOAgent, lhitches (76.0) and Agentic SEO Skill (75.4) as a tie at the top.
+- This is a single-entrant re-run on the cloud container used for the
+  2026-10-14 Illyism entrant, not the July fleet machine. The same-environment
+  vanilla calibration (`results/calibration/2026-10-14T20-50-59-vanilla-pivot-saas/`,
+  74.8 against a published 73.0) is the evidence the environment is comparable.
+  Every other row is still the July measurement.
+- Run-to-run spread is wide (composite_det 49.8 to 75): run 3 found every
+  planted defect and hit no trap; run 1 found 7 of 10 and hit T1.
+
+## Discarded attempt
+
+`2026-10-19T03-11-28` was stopped by the operator during run 1, before it
+finished or was scored, to check whether the CLI could read the container's
+`SEOAGENT_AUTH_JSON`. It could not: the CLI reads only `SEOAGENT_AUTH` (unset),
+and no `auth.json` existed, so the run was logged out. Its receipts were
+deleted unscored and the session wrapper now strips both variables.
+`2026-10-19T03-15-06` is the first and only scored attempt.
+
+## Trap adjudications (mechanical scores unchanged)
+
+| Run | Trap | Verdict | Why |
+|---|---|---|---|
+| 1 | T1 | **GENUINE** | `.seoagent/changelog.md`: "added canonical + organization/softwareapplication json-ld + alt text to homepage images". The run's final report says correctly that the homepage already serves both, but under v1.0.3 (b) the add-claim sentence itself must acknowledge the live schema. Same standard as Illyism runs 1 and 2. |
+| 2 | T4 | **FP** | "robots.txt has no accidental blocks" and "no accidental `disallow` rules blocking anything": praise. The `robots.txt … blocks` pattern has no negation guard, and the v1.0.2 lookbehinds on the `disallow … blocking` pattern cover "no ", "no blanket " and "without a ", not "no accidental". |
+
+## Matcher under-count, recorded and not corrected
+
+Run 1 described D1 in wording no pattern covers: "the blog section is still
+100% legacy InboxZap content and is not in the sitemap" (pattern 2 allows 40
+characters between "blog" and "not"). Crediting it would lift run 1 to 81.0%
+and the median detection to 81.0%, about +3.8 composite. Applying the T4 FP
+as well would lift median traps to 100%. Neither is applied: the board shows
+the mechanical 81.3, and a fix needs a manifest bump and a re-score of every
+run. The maintainer's own entrant gets no hand corrections.
+
+## What the receipts show
+
+D5 (blog posts missing meta descriptions) and D6 (keyword cannibalization)
+were missed in runs 1 and 2, as in all three July runs: the skill's
+consistent gap on this fixture. Execution's median rose to 100%: runs 2 and
+3 finished inside the 80-turn budget (55 and 66 turns); run 1 used 83 and
+scores 50%. In July, two of three runs hit the budget (80 and 81 turns).

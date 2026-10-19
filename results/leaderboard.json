@@ -1,29 +1,29 @@
 {
   "fixture": "pivot-saas",
   "rubric": "v1.0.0",
-  "updated": "2026-10-14",
+  "updated": "2026-10-19",
   "rows": [
     {
       "skill": "seoagent",
       "name": "SEOAgent",
       "runs": 3,
       "model": "claude-sonnet-5",
-      "detection": 0.8095238095238095,
-      "trap_avoidance": 1,
+      "detection": 0.7142857142857143,
+      "trap_avoidance": 0.9090909090909091,
       "judgment": 0.9,
-      "execution": 0.5,
-      "composite": 84.88095238095238,
-      "composite_det": 62.38095238095238,
+      "execution": 1,
+      "composite": 81.2987012987013,
+      "composite_det": 61.2987012987013,
       "spread_det": [
-        62.38095238095238,
-        63.57142857142857
+        49.848484848484844,
+        75
       ],
-      "median_wall_s": 779.363,
-      "median_cost_usd": 4.464850949999999,
+      "median_wall_s": 782.371,
+      "median_cost_usd": 2.5626360000000004,
       "skill_count": 1,
-      "resident_tokens": 257,
-      "activation_tokens_max": 26886,
-      "bundle_tokens": 56396,
+      "resident_tokens": 135,
+      "activation_tokens_max": 4352,
+      "bundle_tokens": 66291,
       "footprint_band": "light"
     },
     {

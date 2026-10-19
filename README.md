@@ -13,11 +13,11 @@ An open benchmark for comparing **SEO skills for Claude Code** (and other coding
 ## Current leaderboard
 
 Full board with per-component scores in [`LEADERBOARD.md`](LEADERBOARD.md) · live version at
-[seoagent.com/seo-skill-benchmark](https://seoagent.com/seo-skill-benchmark) · fixture `pivot-saas`, updated 2026-07-07.
+[seoagent.com/seo-skill-benchmark](https://seoagent.com/seo-skill-benchmark) · fixture `pivot-saas`, updated 2026-10-19.
 
 | # | Skill | Composite | Detection | Trap avoidance | Judgment |
 |--:|-------|:---------:|:---------:|:--------------:|:--------:|
-| 1 | SEOAgent | **84.9** | 81% | 100% | 9.0/10 |
+| 1 | SEOAgent | **81.3** | 71% | 91% | 9.0/10 |
 | 2 | claude-seo-skills (lhitches) | 76.0 | 52% | 100% | 8.0/10 |
 | 3 | Agentic SEO Skill | 75.4 | 71% | 73% | 9.0/10 |
 | 4 | *Vanilla baseline (no skill)* | 73.0 | 71% | 100% | 6.0/10 |
