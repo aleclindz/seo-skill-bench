@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products — **InboxZap** (email cleanup) → **Lumina** (AI meeting assistant) — but the pivot was never finished in the code... the site's best-performing query (`inboxzap`, 4.38% CTR)",
+          "rationale": "Explicitly identifies the pivot across live site/code and frames every recommendation around it, and the one GSC datum it cites (inboxzap 4.38% CTR) is grounded in the export. Loses a point because it leans on a single real number rather than characterizing the broader legacy-demand picture from the data."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "The 12 existing blog posts are 100% old-product content (Gmail filters, bulk-delete emails) still pulling impressions but converting nobody — 301-redirected to `/blog` instead of left orphaned or 404ing",
+          "rationale": "Gestures at the GSC Pages export ('still pulling impressions (see gsc/Pages.csv)') and makes a defensible blanket 301 disposition, but it is one uniform redirect to a generic /blog with no per-asset or tiered treatment and no specific impressions/positions cited, so it falls well short of the data-justified asset-by-asset handling the anchor rewards."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Redirect instead of 404 to keep whatever link equity they have... Published 6 new posts targeting actual Lumina keywords",
+          "rationale": "Avoids both failure modes — preserves legacy equity via 301 while building the meeting-assistant cluster as the growth engine — and names the tension, but the bridge is crude (all equity funneled to a generic /blog rather than topically relevant successors) and the transition isn't explicitly sequenced."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products — **InboxZap** (email cleanup) → **Lumina** (AI meeting assistant) — but the pivot was never finished in the code ... 12 ... posts are 100% old-product content (Gmail filters, bulk-delete emails) still pulling impressions but converting nobody",
+          "rationale": "Explicitly names the pivot, treats the InboxZap-era blog/GSC demand as legacy, and frames every recommendation (metadata, new cluster, redirects) around Lumina being the current product. Only shy of 10 because it doesn't cite specific GSC query data beyond the `inboxzap` CTR to anchor the legacy-vs-current framing."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "The 12 existing blog posts are 100% old-product content ... 301-redirected to `/blog` instead of left orphaned or 404ing ... still indexed and pulling impressions (see gsc/Pages.csv)",
+          "rationale": "Applies a single blanket 301 of all 12 posts to the generic `/blog` index with equity reasoning, but gives no per-asset dispositions, no harvest/repurpose-vs-sunset tiers, and cites no actual impression/position numbers from the export — far short of the asset-by-asset, data-grounded treatment anchor_10 requires."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Redirect instead of 404 to keep whatever link equity they have, rather than losing it or leaving them live and unlinked under the new brand ... Published 6 new posts targeting actual Lumina keywords",
+          "rationale": "Clearly avoids both failure modes — it neither doubles down on inbox content nor torches legacy equity — by preserving link equity via 301 while building the meeting-assistant cluster as the growth engine. Held back from 10 because the 'bridge' is a blunt redirect-to-index with no sequenced transition or topically-matched successors."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products — InboxZap (email cleanup) → Lumina (AI meeting assistant) ... the homepage still told Google it sold inbox cleanup ... The 12 existing blog posts are 100% old-product content ... still pulling impressions but converting nobody",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup as legacy demand, and frames the homepage metadata, blog, and new content cluster entirely around the meeting-assistant reality. Falls just short of a 10 only because it leans on describing the pivot rather than quantifying the legacy-vs-current demand split."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "The 12 existing blog posts are 100% old-product content (Gmail filters, bulk-delete emails) ... 301-redirected to /blog ... The InboxZap -> Lumina pivot orphaned these 12 posts: still indexed and pulling impressions (see gsc/Pages.csv)",
+          "rationale": "It makes a real, reasoned disposition (blanket 301 to /blog to preserve equity rather than 404), which beats anchor_0, but it is a single blanket decision — no asset-by-asset harvest/repurpose/sunset tiers and no cited per-post impressions/positions from the export; redirecting off-topic posts to a generic index also risks soft-404 treatment."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Redirect instead of 404 to keep whatever link equity they have, rather than losing it or leaving them live and unlinked ... Published 6 new posts targeting actual Lumina keywords ... the inboxzap query ... now gets an alternateName in schema + a footer line instead of being dead-ended",
+          "rationale": "Lands a defensible middle path: preserves salvageable equity (301s + inboxzap alternateName bridge) while building the meeting-assistant cluster as the growth engine, avoiding both the double-down and the scorched-earth failure modes. Short of 10 because the transition isn't sequenced in stages and it doesn't weigh harvesting any legacy traffic before redirecting."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

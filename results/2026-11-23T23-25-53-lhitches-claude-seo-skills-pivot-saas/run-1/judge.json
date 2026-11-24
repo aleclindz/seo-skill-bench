@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This SaaS pivoted from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant)... The GSC export confirmed it: all query/impression data is for email/Gmail terms totally unrelated to a meeting assistant, and the only real traffic is ~17 clicks/month on the old brand name \"inboxzap\"",
+          "rationale": "Explicitly names the pivot, treats GSC email data as legacy, ties it to live-site reality, and frames every fix around the meeting-assistant positioning. Falls just short of a 10 only because the repo-staleness framing is implicit."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "301-redirected the 12 off-topic posts to `/blog` instead of letting them 404 or keep ranking for irrelevant queries",
+          "rationale": "Applies a single blanket disposition (all 12 → /blog) justified only by aggregate 'thousands of impressions, near-zero clicks' rather than per-asset or tiered decisions citing individual impressions/positions; no harvest/repurpose or successor-specific redirects."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Added a quiet \"(formerly InboxZap)\" footer note to bridge brand equity for the residual branded searches... build the meeting-assistant cluster as the growth engine",
+          "rationale": "Avoids both failure modes: doesn't chase inbox content, doesn't torch equity (redirects rather than 404s, preserves branded search via footer, builds new cluster). Weakened by redirecting to a generic /blog rather than sequencing a transition into topically relevant successors."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This SaaS pivoted from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), but the SEO layer never caught up. The GSC export confirmed it: all query/impression data is for email/Gmail terms totally unrelated to a meeting assistant",
+          "rationale": "Explicitly names the pivot, reads the live product as the meeting assistant, treats GSC inbox data as legacy/irrelevant demand, and frames every fix around the new positioning. Just shy of 10 only because it doesn't flag repo staleness as a distinct dimension, though it effectively treats the source as stale."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301-redirected the 12 off-topic posts to `/blog` instead of letting them 404 or keep ranking for irrelevant queries ... thousands of impressions, near-zero clicks",
+          "rationale": "There is real migration thinking grounded in the data (impressions-with-no-conversions, ~17 branded clicks) and a deliberate 301 consolidation rather than 404, but it applies one blanket disposition to all 12 posts rather than per-asset or tiered decisions, and redirects to a generic /blog rather than relevant successors — no harvest/repurpose of any salvageable post."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Added a quiet \"(formerly InboxZap)\" footer note to bridge brand equity for the residual branded searches ... build the new blog ... keep publishing on-topic posts",
+          "rationale": "Clearly avoids both failure modes: it neither doubles down on inbox content nor torches equity, instead redirecting legacy posts, preserving branded equity via the footer bridge, and building the meeting-assistant cluster as the growth engine. Loses points because the 'bridge' is thin (a footer line) and the transition isn't explicitly sequenced."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from \"InboxZap\" (email cleanup tool) to \"Lumina\" (AI meeting assistant), but the SEO layer never caught up. The GSC export confirmed it: all query/impression data is for email/Gmail terms totally unrelated to a meeting assistant",
+          "rationale": "Explicitly names the pivot, cites the live product vs. GSC legacy demand split, and frames every single recommendation around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "301-redirected the 12 off-topic posts to /blog instead of letting them 404 or keep ranking for irrelevant queries",
+          "rationale": "Applies one blanket disposition (301 everything to the blog index) with only an aggregate data reference ('thousands of impressions, near-zero clicks'); no per-asset or data-tiered walk citing specific impressions/positions, and no harvest/repurpose of any salvageable post."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Added a quiet \"(formerly InboxZap)\" footer note to bridge brand equity for the residual branded searches... build the meeting-assistant cluster as the growth engine",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content, doesn't hard-404 the legacy equity — and sequences a transition with a branded bridge, but the redirect lands on a generic /blog index rather than relevant successors, weakening the equity transfer and risking soft-404 treatment."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

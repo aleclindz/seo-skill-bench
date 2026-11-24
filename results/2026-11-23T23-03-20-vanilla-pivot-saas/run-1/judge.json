@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS rebranded from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant)... directly explaining why GSC's top query is still the old brand name and all remaining demand is email-cleanup terms... with zero impressions for anything meeting/AI-assistant related",
+          "rationale": "Explicitly names the pivot, ties the GSC legacy inbox demand to the stale metadata, and frames every fix around repositioning to the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "301-redirected all 12 legacy /blog/post-N URLs to a new on-topic post (meeting-overload) instead of letting that link equity 404... matching the abysmal GSC positions (40–60) despite real impressions on those URLs",
+          "rationale": "Gives a single blanket 301 for all 12 posts rather than per-asset harvest/redirect/keep/sunset dispositions, and cites only aggregate positions (40–60) rather than each post's actual impressions/positions, so the grounding is thin and undifferentiated."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "send their link equity to the closest on-topic replacement instead of 404ing... wrote 4 new posts targeting the AI-meeting-assistant keywords GSC shows zero visibility for... resubmit the sitemap in GSC and use URL Inspection",
+          "rationale": "Lands a defensible middle path — preserves legacy equity via redirects while building the meeting-assistant cluster as the growth engine and sequencing the recrawl — but doesn't explicitly articulate the tension or weigh whether any legacy equity was worth harvesting rather than funneling into one post."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS rebranded from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), but the repo was stuck in a half-migrated state ... directly explaining why GSC's top query is still the old brand name and all remaining demand is email-cleanup terms ... with zero impressions for anything meeting/AI-assistant related",
+          "rationale": "Explicitly names the pivot, identifies the live product as the meeting assistant, treats GSC inbox-cleanup queries as legacy demand, and frames every fix around that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "301-redirected all 12 legacy /blog/post-N URLs to a new on-topic post (meeting-overload) instead of letting that link equity 404",
+          "rationale": "Makes a real disposition (blanket 301 to one successor) rather than ignoring or deleting, but it's a single uniform rule for all 12, not an asset-by-asset or tiered judgment citing each post's actual impressions/positions."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "send their link equity to the closest on-topic replacement instead of 404ing ... and wrote 4 new posts targeting the AI-meeting-assistant keywords GSC shows zero visibility for",
+          "rationale": "Lands a defensible middle path — preserves legacy equity via redirects while building the meeting-assistant content cluster as the growth engine — avoiding both doubling down on inbox content and torching all equity; the explicit sequencing of the transition is only lightly developed."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS rebranded from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), but the repo was stuck in a half-migrated state... directly explaining why GSC's top query is still the old brand name and all remaining demand is email-cleanup terms... with zero impressions for anything meeting/AI-assistant related",
+          "rationale": "Explicitly names the pivot, maps live-site vs GSC-legacy-demand vs stale-repo, and frames every fix around the meeting-assistant reality while treating inbox-cleanup queries as legacy."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "301-redirected all 12 legacy `/blog/post-N` URLs to a new on-topic post (`meeting-overload`) instead of letting that link equity 404",
+          "rationale": "A single blanket disposition (all 12 → one post) with a reasonable rationale, but no asset-by-asset or tiered treatment and no per-post impressions/positions cited from the export; the 40–60 positions are referenced only in aggregate, so no harvest-vs-sunset differentiation."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Old InboxZap-era posts... have no equivalent under the Lumina... content, so send their link equity to the closest on-topic replacement instead of 404ing + wrote 4 new posts targeting the AI-meeting-assistant keywords",
+          "rationale": "Lands a defensible middle path — preserves legacy equity via 301s rather than torching it, builds the meeting-assistant cluster as the growth engine, and sequences deploy→resubmit sitemap→recrawl; falls short of 10 only because the tension is handled implicitly rather than argued, and bridging content is thin (one target post)."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 4,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

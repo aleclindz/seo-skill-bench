@@ -1,0 +1,66 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getPostBySlug, posts } from '../posts';
+
+export function generateStaticParams() {
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const post = getPostBySlug(params.slug);
+  if (!post) {
+    return {};
+  }
+
+  const url = `https://lumina.example/blog/${post.slug}`;
+  return {
+    title: `${post.title} — Lumina`,
+    description: post.description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url,
+      type: 'article',
+      images: ['/img/og-lumina.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+    },
+  };
+}
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = getPostBySlug(params.slug);
+  if (!post) {
+    notFound();
+  }
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.publishedAt,
+    author: { '@type': 'Organization', name: 'Lumina' },
+  };
+
+  return (
+    <main>
+      <article>
+        <h1>{post.title}</h1>
+        {post.content.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+    </main>
+  );
+}

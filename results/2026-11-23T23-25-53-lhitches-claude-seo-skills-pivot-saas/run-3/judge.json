@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from an earlier email-cleanup product (\"InboxZap\") to an AI meeting assistant, but the SEO layer never caught up... The blog's 12 posts are all leftover InboxZap content... getting thousands of impressions but 0–0.1% CTR, because they're totally irrelevant to meeting assistants.",
+          "rationale": "Explicitly identifies the pivot, distinguishes live product (meeting assistant) from legacy InboxZap demand, and frames every fix around that reality; grounds the diagnosis in the CTR data, though impressions are stated roughly rather than exactly."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "added a 301 redirect for every old `/blog/post-N` URL → `/blog`. These were retired rather than rewritten in place, since repointing an \"inbox zero\" ranking at meeting-assistant content would be a bait-and-switch",
+          "rationale": "Makes one reasoned blanket disposition (301 all legacy posts to /blog) with a defensible rationale, but does not walk the 12 posts asset-by-asset or cite per-post impressions/positions from the export, so it falls well short of a data-justified tiered inventory."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "repointing an \"inbox zero\" ranking at meeting-assistant content would be a bait-and-switch that gets pogo-sticked... 6 new posts targeting real Lumina-relevant search intent",
+          "rationale": "Avoids both extremes — doesn't chase inbox content, doesn't hard-delete (uses 301s to preserve crawl equity) while building the meeting cluster as the growth engine — but redirecting everything to a generic /blog rather than topic-relevant successors is a crude bridge that sacrifices most salvageable equity."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina pivoted from an earlier email-cleanup product (\"InboxZap\") to an AI meeting assistant, but the SEO layer never caught up... The blog's 12 posts are all leftover InboxZap content... getting thousands of impressions but 0–0.1% CTR, because they're totally irrelevant to meeting assistants.",
+          "rationale": "Explicitly names the pivot, identifies live product as the meeting assistant and the legacy blog/GSC impressions as stale InboxZap demand, and frames every fix around that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "added a 301 redirect for every old `/blog/post-N` URL → `/blog`. These were retired rather than rewritten in place, since repointing an \"inbox zero\" ranking at meeting-assistant content would be a bait-and-switch",
+          "rationale": "Gives one blanket disposition (301 all 12 to the blog index) with genuine reasoning and a general nod to the CTR data, but never walks the inventory asset-by-asset or cites per-post impressions/positions, and redirects to a generic index rather than relevant successors."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "repointing an \"inbox zero\" ranking at meeting-assistant content would be a bait-and-switch that gets pogo-sticked and hurts rankings further... 6 new posts targeting real Lumina-relevant search intent",
+          "rationale": "Clearly avoids both failure modes — doesn't chase inbox content, doesn't dead-end the equity — and articulates the tension, but the bridge is a blanket 301 to the index that preserves only generic domain equity rather than mapping salvageable topics to successors, so the middle path is defensible but coarse."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina pivoted from an earlier email-cleanup product (\"InboxZap\") to an AI meeting assistant, but the SEO layer never caught up... The blog's 12 posts are all leftover InboxZap content... getting thousands of impressions but 0–0.1% CTR, because they're totally irrelevant to meeting assistants.",
+          "rationale": "Explicitly names the pivot, identifies live product as meeting assistant and the blog content as stale legacy, and frames every fix around that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "added a 301 redirect for every old /blog/post-N URL → /blog. These were retired rather than rewritten in place, since repointing an \"inbox zero\" ranking at meeting-assistant content would be a bait-and-switch",
+          "rationale": "Applies one blanket disposition (301 all to /blog) with defensible reasoning, but never walks the 12 posts asset-by-asset or tiers by their actual impressions/positions; cites only aggregate CTR, not per-asset GSC numbers or any harvest/keep decisions."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "retired rather than rewritten in place, since repointing an \"inbox zero\" ranking at meeting-assistant content would be a bait-and-switch that gets pogo-sticked... 6 new posts targeting real Lumina-relevant search intent",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content, doesn't hard-delete equity — and articulates the tension, landing a redirect-plus-new-cluster middle path; but the blanket redirect to a generic index salvages little real equity and no transition sequencing is given."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 4,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

@@ -1,0 +1,18 @@
+# Lumina
+
+> Lumina is an AI meeting assistant for teams. It joins calls on Zoom, Google
+> Meet, and Microsoft Teams, transcribes them, and produces a summary with
+> decisions and action items. Lumina was formerly known as InboxZap, an email
+> cleanup tool; the company pivoted to meetings in 2026.
+
+## Product
+
+- [Features](https://lumina.example/features): recording, transcription, AI summaries, action items, integrations
+- [Pricing](https://lumina.example/pricing): Free, Pro, and Enterprise plans
+
+## Blog
+
+Guides on email cleanup and inbox management from Lumina's time as InboxZap,
+plus current writing on meetings and team productivity.
+
+- [Blog index](https://lumina.example/blog)

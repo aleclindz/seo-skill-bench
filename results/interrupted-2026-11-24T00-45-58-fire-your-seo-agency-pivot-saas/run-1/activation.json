@@ -1,0 +1,10 @@
+{
+  "session_log_found": true,
+  "skill_calls": [
+    "fire-your-seo-agency"
+  ],
+  "skill_file_touches": 0,
+  "tool_calls": 71,
+  "permission_denials": [],
+  "fired": true
+}

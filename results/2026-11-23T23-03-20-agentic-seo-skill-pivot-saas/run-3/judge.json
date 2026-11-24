@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "GSC showed a classic brand-pivot mismatch: the product moved from \"Lumina\" (AI meeting assistant) to \"InboxZap\" (inbox cleanup tool)... app/layout.tsx, app/page.tsx — rebranded to InboxZap throughout",
+          "rationale": "The entrant noticed the brand incoherence and cited GSC data, but inverted the pivot direction — it treats the inbox-cleanup demand as the current product and the live meeting-assistant site as the stale leftover, then rebrands everything to InboxZap. This is essentially anchor_0's outcome (builds the whole plan around the inbox-cleanup era), earning only slight credit for registering a mismatch at all."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "despite the 12 blog posts already having genuinely good, correctly-targeted content... extracted all 12 posts into real content data... now links to every post",
+          "rationale": "No per-asset harvest/redirect/sunset dispositions; the entrant keeps and promotes all 12 posts wholesale as 'correctly-targeted,' citing only aggregate GSC figures (300–1900 impressions, position 38–65) rather than walking the inventory asset-by-asset — effectively a 'keep everything' blanket decision."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "the 12 blog posts already having genuinely good, correctly-targeted content... server-rendered index, actually links to every post",
+          "rationale": "The entrant falls fully into one failure mode — doubling down on inbox-cleanup content and equity for a product the premise says no longer exists — with no articulated tension, no preservation-vs-growth sequencing, and no bridge to the actual live positioning."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "the product moved from \"Lumina\" (AI meeting assistant) to \"InboxZap\" (inbox cleanup tool)",
+          "rationale": "The entrant inverted the pivot — it concluded the live product is the inbox-cleanup tool and that the meeting-assistant branding is the stale leftover to be purged, then built the entire plan around ranking the inbox-cleanup content harder. This is precisely the anchor_0 misread of the business situation."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "the 12 blog posts already having genuinely good, correctly-targeted content ... now includes all 12 posts",
+          "rationale": "No per-asset disposition at all: it blanket-keeps and wires up every one of the 12 legacy posts with only an aggregate impressions/position range cited, and issues zero harvest/redirect/sunset decisions grounded in individual GSC numbers."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "app/layout.tsx, app/page.tsx — rebranded to InboxZap throughout; homepage copy now matches the actual product",
+          "rationale": "It falls fully into one failure mode — doubling down on inbox-cleanup content while torching the meeting-assistant positioning entirely, with no articulated tension, no preservation of the live product's equity, and no sequenced transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "\"the product moved from 'Lumina' (AI meeting assistant) to 'InboxZap' (inbox cleanup tool)\"",
+          "rationale": "The entrant noticed a brand/product mismatch but inferred the pivot backwards relative to the live product: it concluded inbox-cleanup is the *current* product and the meeting assistant is legacy, then built the entire plan around ranking the InboxZap-era inbox content harder — the exact anchor_0 failure."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "\"app/blog/posts.ts — extracted all 12 posts into real content data\" and \"all 12 posts statically generate\"",
+          "rationale": "No per-asset disposition at all — all 12 legacy posts were blanket-kept and promoted as the growth engine; aggregate GSC figures (300–1900 impressions, position 38–65) are cited but never used to harvest/redirect/sunset individual assets."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "\"rebranded to InboxZap throughout; homepage copy now matches the actual product\"",
+          "rationale": "Falls fully into both failure modes at once: doubles down on inbox-cleanup content while torching the live meeting-assistant branding (nav/footer/JSON-LD/homepage) entirely, with no tension articulated and no bridging transition."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 2,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

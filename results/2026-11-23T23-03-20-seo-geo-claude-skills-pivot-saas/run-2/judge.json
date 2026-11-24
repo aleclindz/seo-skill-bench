@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Your GSC data shows almost all historical organic traffic is tied to the old InboxZap/email-cleanup topic, ranking position 40-60 with near-zero clicks — i.e. not worth chasing, since it's irrelevant to Lumina",
+          "rationale": "Explicitly identifies the pivot, treats inbox history as legacy/irrelevant demand, fixes leftover InboxZap branding, and frames all new content around the meeting assistant — grounded in cited GSC positions/clicks."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "ranking position 40-60 with near-zero clicks ... The one exception is the branded query `inboxzap` itself, which still gets real clicks at position ~4",
+          "rationale": "References real GSC numbers in aggregate and singles out one harvestable branded query, but never walks the 12 legacy posts asset-by-asset or assigns per-post 301/keep/sunset dispositions — it's a single blanket 'not worth chasing' judgment with one exception."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "instead of writing more inbox-cleanup content, I added 4 posts ... \"InboxZap is now Lumina\" — directly captures that residual branded search demand instead of losing it",
+          "rationale": "Avoids both failure modes — doesn't double down on inbox content, doesn't torch all equity (bridges via the branded-query post) — but the transition is thin: no redirect/sequencing plan for the remaining legacy equity beyond the one branded term."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your GSC data shows almost all historical organic traffic is tied to the old InboxZap/email-cleanup topic... i.e. not worth chasing, since it's irrelevant to Lumina... I added 4 posts aligned with what Lumina actually is",
+          "rationale": "Explicitly names the pivot (live site = AI meeting assistant, GSC = legacy inbox demand) and frames every content decision around that reality, including fixing stale InboxZap branding in the repo."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "ranking position 40-60 with near-zero clicks — i.e. not worth chasing... The one exception is the branded query `inboxzap` itself, which still gets real clicks at position ~4",
+          "rationale": "Makes a clear data-justified tiered disposition — sunset the bulk inbox-cleanup equity, harvest the branded 'inboxzap' demand via a redirect/transition post — but doesn't walk the 12 legacy posts asset-by-asset or cite per-URL impressions, so it's a two-tier call rather than a full inventory."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "instead of writing more inbox-cleanup content... 'InboxZap is now Lumina' — directly captures that residual branded search demand instead of losing it",
+          "rationale": "Lands a defensible middle path: declines to chase dead inbox-cleanup rankings, preserves the one salvageable branded-equity asset via a bridge post, and builds the meeting-assistant cluster as the growth engine; stops short of an explicit sequencing/transition plan or 301 mechanics."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Your GSC data shows almost all historical organic traffic is tied to the old InboxZap/email-cleanup topic, ranking position 40-60 with near-zero clicks — i.e. not worth chasing, since it's irrelevant to Lumina... instead of writing more inbox-cleanup content, I added 4 posts aligned with what Lumina actually is",
+          "rationale": "Explicitly identifies the pivot (live = meeting assistant, GSC = legacy inbox demand) and frames every recommendation around it, even fixing leftover InboxZap branding in layout.tsx; loses a point only because the stale-repo framing is implicit rather than stated as the third pillar."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "almost all historical organic traffic is tied to the old InboxZap/email-cleanup topic, ranking position 40-60 with near-zero clicks... The one exception is the branded query `inboxzap` itself, which still gets real clicks at position ~4",
+          "rationale": "Makes a data-grounded disposition in two tiers (abandon the position-40-60 cleanup queries, harvest the branded 'inboxzap' demand via a redirect-capture post) but never walks the 12 legacy posts asset-by-asset, assigns no explicit 301/keep/sunset per URL, and does nothing about the 11 non-branded legacy pages' existing equity."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "instead of writing more inbox-cleanup content, I added 4 posts... 1. \"InboxZap is now Lumina\" — directly captures that residual branded search demand instead of losing it",
+          "rationale": "Lands a defensible middle path — harvests salvageable branded equity with a bridge post while building the meeting-assistant cluster as the growth engine and refusing to chase dead cleanup queries — but the tension is stated only briefly and no redirect/sequencing mechanics back the 'capture instead of losing it' claim."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

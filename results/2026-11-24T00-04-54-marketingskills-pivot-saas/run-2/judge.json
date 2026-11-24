@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "this SaaS pivoted from **Lumina** (an AI meeting assistant) to **InboxZap** (an inbox-cleanup tool)",
+          "rationale": "The entrant inverts the actual pivot — the live product is the meeting assistant and inbox-cleanup is the legacy GSC demand, but the output treats inbox-cleanup as the current product and rebrands everything to 'InboxZap,' building the whole plan around ranking the legacy-era content harder. This is anchor_0 behavior."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "preserving all original article text verbatim (so existing rankings aren't disrupted)... matching exactly the high-impression/near-zero-click queries in your GSC export (e.g. \"bulk delete emails\" 210 impressions/0 clicks, \"clean up inbox\" 370/0, \"gmail storage full\" 790/1)",
+          "rationale": "A few real GSC figures are cited, but the disposition is a single blanket 'keep and enhance all 12' with no per-asset harvest/redirect/sunset decisions and no data-justified tiers — essentially the 'keep everything' failure mode of anchor_0 with a thin data garnish."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Converted the blog to server-rendered static pages... preserving all original article text verbatim... adding meta descriptions, canonical tags, Article schema... and a \"related guides\" block for internal linking",
+          "rationale": "The output falls fully into one failure mode: it doubles down on inbox-cleanup content and even rebuilds the homepage/features/pricing around it, with no recognition of the tension or any transition toward the actual live meeting-assistant positioning."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "this SaaS pivoted from **Lumina** (an AI meeting assistant) to **InboxZap** (an inbox-cleanup tool)",
+          "rationale": "The entrant inverts the actual pivot — the live site is the meeting assistant and inbox-cleanup is legacy GSC demand, but it concludes the opposite and rebrands the entire site as the inbox tool, building the whole plan around legacy queries."
+        },
+        "J2": {
+          "score": 1,
+          "basis": "preserving all original article text verbatim (so existing rankings aren't disrupted)",
+          "rationale": "It issues a blanket 'keep everything' for all 12 posts with no per-asset harvest/redirect/sunset dispositions; the GSC numbers it cites are used only to justify doubling down, not to assign differentiated fates."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "all now consistently branded as InboxZap ... Rebuilt sitemap.ts to include all 12 posts",
+          "rationale": "It falls fully into the first failure mode — doubling down on inbox-cleanup content and rebranding the live meeting-assistant product away — with no recognition of the tension and no transition plan toward the actual current positioning."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "this SaaS pivoted from **Lumina** (an AI meeting assistant) to **InboxZap** (an inbox-cleanup tool)... matching exactly the high-impression/near-zero-click queries in your GSC export",
+          "rationale": "The entrant inverts the actual pivot: the live product is the meeting assistant and inbox-cleanup is legacy GSC demand, but it treats inbox-cleanup as the current product and rebrands the entire site to 'InboxZap,' landing squarely in the anchor_0 failure of building everything around the legacy queries."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "preserving all original article text verbatim (so existing rankings aren't disrupted)... Rebuilt sitemap.ts to include all 12 posts",
+          "rationale": "It issues a blanket keep-and-optimize-everything decision for all 12 posts with no per-asset harvest/redirect/sunset dispositions; it name-drops three GSC figures but never uses them to differentiate assets."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Converted the blog to server-rendered static pages... adding meta descriptions, canonical tags, Article schema... a 'related guides' block for internal linking",
+          "rationale": "It falls entirely into one failure mode — doubling down on inbox-cleanup content and even rebranding the homepage/features/pricing to match it — with no recognition of a tension or any transition to the actual current positioning."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 2,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from \"InboxZap\" (inbox cleanup) to an AI meeting assistant, but the migration was half-finished... 12 blog posts (all legacy inbox-cleanup content, confirmed against gsc/Queries.csv)",
+          "rationale": "Explicitly identifies the pivot across live site/repo, labels the GSC inbox queries as legacy, and frames every recommendation around the meeting-assistant reality; falls just short of 10 only because the legacy-demand framing is stated rather than deeply quantified."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Fixed sitemap.ts to include all 11 remaining post URLs... Merged post-3/post-7 into one stronger guide, 301-redirected the duplicate",
+          "rationale": "Only the post-3/post-7 pair gets a real data-grounded disposition (301); the other 10 posts are handled as a blanket 'keep and server-render' with aggregate impressions ('nearly all GSC impressions, position 40–60') rather than per-asset harvest/redirect/sunset decisions citing individual numbers."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "I'd treat the technical fixes as hygiene, not a growth plan — the real traffic lever is a new content cluster around meeting-assistant queries... those 11 legacy posts target an audience with no overlap with Lumina's actual buyer",
+          "rationale": "Clearly avoids both failure modes — preserves/redirects legacy equity instead of torching it, and names the meeting-assistant cluster as the growth engine — but the transition is only sketched and deferred ('happy to scope that next'), with no explicit sequencing or decision on sunsetting the mismatched legacy posts."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina pivoted from \"InboxZap\" (inbox cleanup) to an AI meeting assistant, but the migration was half-finished... 12 blog posts (all legacy inbox-cleanup content, confirmed against gsc/Queries.csv)... those 11 legacy posts target an audience (Gmail/Outlook declutterers) with no overlap with Lumina's actual buyer",
+          "rationale": "Explicitly names the pivot, maps live site = meeting assistant, GSC = legacy inbox demand, repo = half-migrated, and frames every fix and the growth recommendation around that reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "Fixed sitemap.ts to include all 11 remaining post URLs... Merged post-3/post-7 into one stronger guide, 301-redirected the duplicate... I'd treat the technical fixes as hygiene, not a growth plan",
+          "rationale": "Makes one genuine per-asset decision (merge+301 the post-3/post-7 duplicate) and a blanket 'keep all 11 and fix technically' disposition, but never walks the inventory asset-by-asset or in data-justified tiers citing real impressions/positions, and sunsets/harvests nothing by the numbers."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "even fixed, those 11 legacy posts target an audience... with no overlap with Lumina's actual buyer... I'd treat the technical fixes as hygiene, not a growth plan — the real traffic lever is a new content cluster around meeting-assistant queries",
+          "rationale": "Explicitly names the tension and lands a defensible middle path: preserve/redirect salvageable equity (branded InboxZap note, 301s), treats legacy as recovered-not-chased, and sequences the meeting-assistant cluster as the growth engine; docks slightly for leaving the cluster unscoped."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from \"InboxZap\" (inbox cleanup) to an AI meeting assistant, but the migration was half-finished... those 11 legacy posts target an audience (Gmail/Outlook declutterers) with no overlap with Lumina's actual buyer",
+          "rationale": "Explicitly identifies the pivot across live site, GSC, and repo, names the legacy demand as legacy, and frames fixes vs. growth around that reality. Falls just short of anchor_10 only because the GSC/repo/live triangulation is stated rather than enumerated as such."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Fixed sitemap.ts to include all 11 remaining post URLs... Merged post-3/post-7 into one stronger guide, 301-redirected the duplicate; posts ranked position 40–60... carried nearly all GSC impressions",
+          "rationale": "Makes real dispositions for two assets (merge + 301) and a blanket 'keep + add metadata' for the other 11, but does not walk the inventory asset-by-asset with per-post impressions/positions or assign harvest/redirect/sunset per item — the data cited is aggregate."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "I'd treat the technical fixes as hygiene, not a growth plan — the real traffic lever is a new content cluster around meeting-assistant queries... the brand term \"inboxzap\" still ranks position ~4... a one-line 'formerly InboxZap' note to catch confused branded searchers",
+          "rationale": "Avoids both traps: preserves legacy equity (server-render, redirects, branded-search bridge) while naming the meeting-assistant cluster as the real growth engine. Loses points because the transition is largely deferred ('scope that next') rather than sequenced."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

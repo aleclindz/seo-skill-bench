@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site mid-pivot from **\"InboxZap\"** (email-cleanup tool) to **\"Lumina\"** (AI meeting assistant)... That's exactly why GSC showed them stuck at position 42–58 with near-zero clicks despite thousands of impressions: wrong topic for the current domain",
+          "rationale": "Explicitly identifies the pivot across live site vs. legacy GSC demand and ties the poor rankings directly to the topic mismatch, framing every change around the meeting-assistant reality. Falls just short of a 10 because it leans on the live-site/GSC signals but doesn't name the 'repo partially stale' dimension as cleanly."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "added a 301 from old numeric `/blog/post-:id` URLs to `/blog`, consolidating the irrelevant old content... All 12 existing blog posts were about the old product... stuck at position 42–58 with near-zero clicks despite thousands of impressions",
+          "rationale": "Cites real aggregate GSC figures but issues a single blanket 301 of all legacy posts to the generic /blog index — no asset-by-asset or tiered disposition, no harvest/repurpose of any individual high-impression post toward a relevant successor."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "consolidating the irrelevant old content instead of leaving it live or 404ing... 6 server-rendered blog posts on topics that actually match Lumina's audience",
+          "rationale": "Avoids both failure modes — doesn't chase inbox queries and doesn't 404 the legacy equity — and builds the meeting cluster as the growth engine, but the bridge is a blanket redirect to a generic index rather than topic-matched successors, so salvageable equity is only partially preserved and the tension is only lightly articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site mid-pivot from **\"InboxZap\"** (email-cleanup tool) to **\"Lumina\"** (AI meeting assistant)... All 12 existing blog posts were about the old product... That's exactly why GSC showed them stuck at position 42–58 with near-zero clicks despite thousands of impressions: wrong topic for the current domain",
+          "rationale": "Explicitly names the pivot, treats the legacy posts/GSC impressions as stale off-topic demand, and frames every change (metadata, blog, redirects) around the meeting-assistant reality. Falls just short of a 10 only because the GSC history is characterized loosely rather than quantified per-query."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "added a 301 from old numeric `/blog/post-:id` URLs to `/blog`, consolidating the irrelevant old content instead of leaving it live or 404ing",
+          "rationale": "Issues a single blanket disposition for all 12 posts (redirect everything to /blog) citing only aggregate numbers (position 42–58, thousands of impressions); no asset-by-asset or tiered harvest/redirect/keep/sunset decisions grounded in per-post GSC figures, and no attempt to redirect to a topically relevant successor."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "consolidating the irrelevant old content instead of leaving it live or 404ing... 6 server-rendered blog posts on topics that actually match Lumina's audience",
+          "rationale": "Avoids both pure failure modes — it neither doubles down on inbox content nor silently torches the URLs — by 301'ing old posts and building the meeting-assistant cluster as the growth engine. But the bridge is weak: redirecting off-topic pages to a generic /blog passes little equity and risks soft-404 treatment, and the tension is only implicitly resolved rather than argued."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site mid-pivot from **\"InboxZap\"** (email-cleanup tool) to **\"Lumina\"** (AI meeting assistant)... All 12 existing blog posts were about the old product... That's exactly why GSC showed them stuck at position 42–58 with near-zero clicks despite thousands of impressions: wrong topic for the current domain",
+          "rationale": "Explicitly identifies the pivot, treats GSC inbox data as legacy demand for a dead product, and frames every recommendation (metadata, new cluster, redirects) around the meeting-assistant reality. Falls just short of 10 only because it reads the repo/GSC as 'fix the bugs' rather than naming the repo as partially stale."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "added a 301 from old numeric `/blog/post-:id` URLs to `/blog`, consolidating the irrelevant old content instead of leaving it live or 404ing",
+          "rationale": "Issues a single blanket 301 for all 12 posts to the blog index with a one-line rationale, and references GSC only in aggregate (pos 42–58) — no asset-by-asset or tiered dispositions, no per-post impressions, and no harvest/keep option, so it reads as a defensible-but-blanket call rather than a data-driven inventory walk."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "consolidate into the new blog... build the new meeting-assistant cluster... 301... instead of leaving it live or 404ing",
+          "rationale": "Avoids both failure modes — doesn't chase inbox content and doesn't torch equity to 404s — and builds the growth cluster while bridging via redirects; but redirecting everything to the blog index rather than topically-relevant successors recovers little link equity and the tension is only implicitly resolved, not sequenced as a transition."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

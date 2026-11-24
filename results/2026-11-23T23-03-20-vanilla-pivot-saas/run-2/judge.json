@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "replaced the stale \"InboxZap — Clean Your Inbox in Minutes\" default title... with correct Lumina branding; blog post 'Lumina Was Formerly InboxZap — Here's Why We Rebuilt Around Meetings'; FAQ 'Is Lumina the same company as InboxZap?'",
+          "rationale": "Explicitly recognizes the pivot (live site = meeting assistant, legacy = InboxZap email cleanup) and frames every recommendation around the meeting-assistant reality; only loses a point because it leans on the live-product/repo signal rather than naming the GSC export as the evidence for legacy demand."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "added 301s from the 12 orphaned legacy `/blog/post-N` URLs (all old email-cleanup content, irrelevant to the current product) to `/blog`... burning crawl budget for zero clicks",
+          "rationale": "Applies a single blanket 301 of all 12 posts to the blog hub rather than per-asset harvest/redirect/keep/sunset dispositions, and the 'zero clicks' claim is asserted without citing any actual impressions/positions from the GSC export."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "a blog post explaining the InboxZap→Lumina rebrand (to capture that branded-search traffic)... four targeting real meeting-productivity keywords; plus the 301 redirects retiring thin/off-topic pages",
+          "rationale": "Lands a defensible middle path — preserves branded 'InboxZap' equity via a rebrand post/FAQ while building the meeting cluster as the growth engine and redirecting rather than deleting — but never articulates the tension against actual GSC numbers, and redirects to a generic hub rather than relevant successors."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"one explaining the InboxZap→Lumina rebrand (to capture that branded-search traffic), and four targeting real meeting-productivity keywords\" and \"Legacy InboxZap-era blog posts (email cleanup topics) are unrelated to Lumina's meeting-assistant product\"",
+          "rationale": "Explicitly identifies the pivot, treats the old email-cleanup content as legacy InboxZap-era demand, flags the repo's stale branding, and frames every recommendation around the current meeting-assistant reality. Falls just short of 10 only because it never cites the GSC export by name."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "\"added 301s from the 12 orphaned legacy /blog/post-N URLs (all old email-cleanup content, irrelevant to the current product) to /blog, retiring thin/off-topic pages that were burning crawl budget for zero clicks\"",
+          "rationale": "Issues a single blanket rule redirecting all 12 posts to the blog hub with no per-asset disposition and no reference to actual impressions/positions from the export; 'zero clicks' is asserted, not shown, so it reads as a blanket instruction rather than a data-grounded, asset-by-asset migration."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "\"one explaining the InboxZap→Lumina rebrand (to capture that branded-search traffic)\" plus the \"Is Lumina the same company as InboxZap?\" FAQ and 301s instead of deletion",
+          "rationale": "Avoids both failure modes: it neither doubles down on dead inbox-cleanup content nor torches equity cold — it bridges branded InboxZap demand via a rebrand post and FAQ while building the meeting cluster as the growth engine. Held below higher because the bridge redirects to a generic /blog hub rather than topic-relevant successors, and the tension is only lightly articulated."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "'Legacy InboxZap-era blog posts (email cleanup topics) are unrelated to Lumina's meeting-assistant product' and the 'Lumina Was Formerly InboxZap' rebrand post",
+          "rationale": "The entrant explicitly recognizes the pivot (live site = meeting assistant, legacy content = InboxZap email cleanup) and frames every change — metadata, new cluster, redirects, FAQ — around the current product. Loses a point only because it treats the legacy demand as flatly worthless rather than quantifying the residual inbox-cleanup interest."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "'added 301s from the 12 orphaned legacy /blog/post-N URLs (all old email-cleanup content, irrelevant to the current product) to /blog, retiring thin/off-topic pages that were burning crawl budget for zero clicks'",
+          "rationale": "It handles all 12 posts, but as one blanket 301-to-/blog-hub with no per-asset dispositions and no GSC impressions/positions cited — the 'zero clicks' claim is asserted, not grounded in the export, and redirecting to the hub rather than relevant successors forfeits equity."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "'one explaining the InboxZap→Lumina rebrand (to capture that branded-search traffic)' plus the four meeting-productivity posts and the 301s",
+          "rationale": "Avoids both failure modes: it doesn't chase inbox content and doesn't silently torch equity — it bridges branded demand via a rebrand post/FAQ and builds the meeting cluster as the growth engine. But it never articulates the tension explicitly, declares legacy equity worthless, and blanket-redirects to the hub instead of salvaging any post with a data-defensible successor."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

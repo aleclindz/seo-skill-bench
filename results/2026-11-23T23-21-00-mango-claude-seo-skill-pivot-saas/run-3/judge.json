@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the repo never caught up. The GSC export explains itself once you see this",
+          "rationale": "Explicitly names the pivot, identifies live site vs. legacy GSC demand vs. stale repo, and frames every recommendation around the meeting-assistant reality. Falls just short of a 10 only because the legacy demand is characterized in aggregate rather than quantified."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Retired the 12 off-topic legacy posts via 301 redirects... The one with a genuine topical bridge ('Email Overload') redirects to a new, on-topic replacement; the rest go to `/blog`",
+          "rationale": "Assigns real dispositions (301-bridge vs. 301-to-hub) and even isolates post-9 as a harvestable exception, but grounds it in a blanket 'position 40-60 with ~0% CTR' aggregate rather than citing per-asset impressions/positions from the export."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "301 redirects rather than leaving them live or deleting them outright (preserves equity, avoids orphaned content)... Added 3 new posts targeting keywords an AI meeting assistant can realistically rank and convert on",
+          "rationale": "Avoids both failure modes: preserves/redirects salvageable equity, handles the converting 'inboxzap' query via an FAQ bridge, and builds the meeting cluster as the growth engine. Names the tension but sequencing is implicit rather than explicitly staged."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the repo never caught up. The GSC export explains itself once you see this — 12 blog posts rank at position 40-60 with ~0% CTR because they're entirely about Gmail filters",
+          "rationale": "Names the pivot explicitly, treats inbox queries as legacy demand (live=meeting assistant, GSC=stale inbox history, repo lagging), and frames every fix around that reality including the converting 'inboxzap' brand query."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Retired the 12 off-topic legacy posts via 301 redirects... The one with a genuine topical bridge (\"Email Overload\") redirects to a new, on-topic replacement; the rest go to `/blog`",
+          "rationale": "Makes explicit dispositions in data-justified tiers (bridge post → successor, rest → hub) grounded in the pos 40-60/~0% CTR signal, but doesn't walk the inventory asset-by-asset with each post's real impressions/positions, keeping it short of anchor_10."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "via 301 redirects rather than leaving them live or deleting them outright (preserves equity, avoids orphaned content)... Added 3 new posts targeting keywords an AI meeting assistant can realistically rank and convert on... bridges the old overload-themed search intent to the new product",
+          "rationale": "Avoids both failure modes: preserves/redirects salvageable equity, builds the meeting-assistant cluster as the growth engine, and bridges intent via the overload post and 'What happened to InboxZap?' FAQ rather than torching equity."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the repo never caught up. The GSC export explains itself once you see this — 12 blog posts rank at position 40-60 with ~0% CTR because they're entirely about Gmail filters and bulk-deleting emails, topically irrelevant to a meeting-notes product",
+          "rationale": "Explicitly names the pivot (live product = meeting assistant, GSC = legacy inbox demand, repo = stale) and frames every fix around that reality, including the converting 'inboxzap' brand query."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Retired the 12 off-topic legacy posts via 301 redirects... The one with a genuine topical bridge ('Email Overload') redirects to a new, on-topic replacement; the rest go to `/blog`",
+          "rationale": "Makes real, executable dispositions (redirect.js implemented) and distinguishes the one bridgeable asset from the rest, but treats the other 11 as one undifferentiated tier blanket-redirected to /blog rather than walking them asset-by-asset against specific per-URL impressions/positions from the export."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Retired... via 301 redirects rather than leaving them live or deleting them outright (preserves equity, avoids orphaned content indexed under the wrong product)... Added 3 new posts targeting keywords an AI meeting assistant can realistically rank and convert on... bridges the old overload-themed search intent to the new product",
+          "rationale": "Lands a defensible middle path: redirects preserve salvageable equity instead of torching it, the meeting-assistant cluster is the new growth engine, and the overload/brand FAQ bridges old intent — avoiding both failure modes."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 7,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

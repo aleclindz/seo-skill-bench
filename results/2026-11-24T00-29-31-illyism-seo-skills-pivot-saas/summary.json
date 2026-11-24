@@ -1,0 +1,17 @@
+{
+  "skill": "illyism-seo-skills",
+  "fixture": "pivot-saas",
+  "runs": 3,
+  "detection_median": 0.7142857142857143,
+  "detection_all": [
+    0.42857142857142855,
+    0.7619047619047619,
+    0.7142857142857143
+  ],
+  "trap_avoidance_median": 1,
+  "trap_avoidance_all": [
+    1,
+    1,
+    0.7272727272727273
+  ]
+}

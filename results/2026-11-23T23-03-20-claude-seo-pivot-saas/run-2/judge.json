@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "the product rebranded from \"InboxZap\" (email-cleanup tool) to \"Lumina\" (AI meeting assistant), but the checked-in source never caught up ... these accounted for ~95% of total GSC impressions but ~0 clicks (ranking position 40–60), and have zero relevance to a meeting-assistant SaaS",
+          "rationale": "Explicitly identifies the pivot, distinguishes the live meeting-assistant product from legacy InboxZap GSC demand and partially-stale repo, and frames every recommendation around that reality. Falls just short of 10 only because the legacy demand is characterized in aggregate rather than as a named standing market."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "Replaced all 12 blog posts ... Added 301 redirects from the old `/blog/post-N` URLs to the new descriptive slugs (preserves whatever indexing/link equity they have)",
+          "rationale": "A real disposition (replace-in-place + 301) is assigned and grounded in aggregate GSC data (~95% impressions, ~0 clicks, position 40–60), but it is a single blanket treatment applied uniformly to all 12 — no asset-by-asset or tiered walk citing per-post impressions/positions to justify differing fates."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Added 301 redirects ... preserves whatever indexing/link equity they have ... including an entry explaining the InboxZap→Lumina rename, to capture the ~18 clicks/month still searching the old brand name",
+          "rationale": "Lands a defensible middle path: salvages crawl/link equity via redirects and captures live old-brand clicks via FAQ while building the meeting-assistant cluster as the growth engine, avoiding both doubling down on dead inbox content and torching equity. The tension is acted on more than it is explicitly articulated, and the ~0-click legacy posts arguably had little equity worth the redirect effort."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the product rebranded from \"InboxZap\" (email-cleanup tool) to \"Lumina\" (AI meeting assistant), but the checked-in source never caught up ... All 12 blog posts were 100% dead InboxZap content ... accounted for ~95% of total GSC impressions but ~0 clicks ... zero relevance to a meeting-assistant SaaS even if they ranked",
+          "rationale": "Explicitly names the pivot across all three surfaces (live site = meeting assistant, GSC = legacy inbox demand, repo = stale), states the implication, and frames every fix around the new positioning. Textbook anchor_10."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Added 301 redirects from the old /blog/post-N URLs to the new descriptive slugs (preserves whatever indexing/link equity they have); ... capture the ~18 clicks/month still searching the old brand name",
+          "rationale": "Makes a coherent disposition — replace all 12 with on-topic content, 301 old URLs to successors, harvest brand-name demand via FAQ — but treats the 12 as one block using only aggregate GSC figures (95% impressions, pos 40–60) rather than walking them asset-by-asset with per-post numbers and distinct harvest/redirect/sunset calls."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Added 301 redirects from the old ... URLs ... (preserves whatever indexing/link equity they have) ... including an entry explaining the InboxZap→Lumina rename, to capture the ~18 clicks/month still searching the old brand name",
+          "rationale": "Lands a defensible middle path: abandons the irrelevant inbox-cleanup content but bridges equity via redirects and a brand-rename FAQ while building the meeting-assistant cluster as the growth engine. Falls short of anchor_10 by not explicitly weighing the tension (redirecting high-impression but topically-mismatched pages yields little real equity, which goes unexamined)."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the product rebranded from \"InboxZap\" (email-cleanup tool) to \"Lumina\" (AI meeting assistant), but the checked-in source never caught up",
+          "rationale": "Explicitly names the pivot, identifies the live product as the meeting assistant, treats legacy blog/GSC as stale InboxZap demand, and frames every fix around the new positioning."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "All 12 blog posts were 100% dead InboxZap content ... accounted for ~95% of total GSC impressions but ~0 clicks (ranking position 40–60) ... Added 301 redirects from the old /blog/post-N URLs to the new descriptive slugs (preserves whatever indexing/link equity they have)",
+          "rationale": "Applies a coherent, data-referenced disposition (replace all + 301 to new slugs, plus a brand-name FAQ for the ~18 clicks/mo), but uses aggregate GSC figures and one uniform treatment rather than an asset-by-asset or tiered walk with per-post impressions/positions."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Added 301 redirects ... (preserves whatever indexing/link equity they have) ... Added a real #faq section ... including an entry explaining the InboxZap→Lumina rename, to capture the ~18 clicks/month still searching the old brand name",
+          "rationale": "Avoids both failure modes — doesn't chase dead inbox content, doesn't torch equity — bridging via redirects and a brand-rename FAQ while building the meeting cluster as the growth engine; the tension is handled more implicitly than argued out, and redirecting irrelevant posts to unrelated slugs is a debatable equity bridge."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 5,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

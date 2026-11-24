@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\")... The GSC export is entirely legacy data... These are from the dead product and would be a trap to chase; none of it is relevant to Lumina's actual market.",
+          "rationale": "Explicitly identifies the pivot (live site = meeting assistant, GSC = legacy/dead inbox demand, repo = half-finished migration) and frames every recommendation around the new product reality."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "The 12 old blog posts (/blog/post-1..12) are about email cleanup, get impressions but ~0% CTR, and have no path forward — not worth salvaging.",
+          "rationale": "Issues a single blanket 'sunset all 12' disposition with only a generic '~0% CTR' reference; no asset-by-asset or tiered treatment, no per-post impressions/positions cited, and no 301/redirect option weighed."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "none of it is relevant to Lumina's actual market... not worth salvaging... Wrote 4 new posts targeting Lumina's actual audience",
+          "rationale": "Avoids chasing legacy demand and builds the meeting-assistant cluster, but leans into the opposite failure mode by declaring all legacy equity worthless with no redirect/bridge plan; it names the trap but doesn't attempt to preserve or 301 any salvageable authority."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This SaaS pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\")... The GSC export is **entirely legacy data**... These are from the dead product and would be a trap to chase; none of it is relevant to Lumina's actual market.",
+          "rationale": "Explicitly identifies the pivot, labels GSC as dead-product legacy demand, flags the repo as half-finished, and frames every fix around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "The 12 old blog posts (`/blog/post-1..12`) are about email cleanup, get impressions but ~0% CTR, and have no path forward — not worth salvaging.",
+          "rationale": "Reaches a single blanket 'sunset all' disposition without walking the inventory asset-by-asset, citing no per-post impressions/positions and never weighing 301 redirects to successor pages."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "would be a trap to chase... not worth salvaging... Wrote 4 new posts targeting Lumina's actual audience... re-verifying/resubmitting the new sitemap in GSC... once this ships",
+          "rationale": "Correctly avoids chasing inbox queries and builds the meeting-assistant cluster, but lands near the abandon failure mode — declares all legacy equity worthless with no redirect/bridge plan to transfer authority."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from an email-cleanup product ('InboxZap') to an AI meeting assistant ('Lumina')... The GSC export is **entirely legacy data**... from the dead product and would be a trap to chase; none of it is relevant to Lumina's actual market.",
+          "rationale": "Explicitly names the pivot, identifies GSC as dead-product demand and the repo as half-migrated, and frames every recommendation (new cluster, metadata fix, sitemap) around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "The 12 old blog posts (`/blog/post-1..12`) are about email cleanup, get impressions but ~0% CTR, and have no path forward — not worth salvaging.",
+          "rationale": "Reaches a single blanket 'sunset all 12' disposition with only a hand-waved '~0% CTR' reference; no asset-by-asset or tiered walk, no cited per-post impressions/positions, and no consideration of 301-ing salvageable URLs to successors."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "would be a trap to chase; none of it is relevant... instead of reviving irrelevant content... re-verifying/resubmitting the new sitemap in GSC under the current brand once this ships",
+          "rationale": "Clearly avoids chasing legacy queries and stands up the meeting-assistant cluster as the growth engine, but leans toward abandonment — no 301 redirects to bridge any residual equity and the equity-vs-growth tension is asserted (via ~0% CTR) rather than worked into a sequenced transition."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 3,
+    "J3": 5
+  },
+  "judgment": 0.5
+}

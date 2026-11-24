@@ -1,0 +1,19 @@
+# InboxZap
+
+> InboxZap is an email cleanup app that bulk-deletes old email, mass-unsubscribes
+> from newsletters, and automatically sorts incoming mail for Gmail and Outlook.
+> Free for personal inboxes.
+
+## Product
+
+- [Features](https://lumina.example/features): Bulk delete, mass unsubscribe, automatic sorting.
+- [Pricing](https://lumina.example/pricing): Free personal tier, Pro, and Team plans.
+
+## Guides
+
+- [How to Reach Inbox Zero](https://lumina.example/blog/inbox-zero-method)
+- [How to Bulk Delete Emails](https://lumina.example/blog/bulk-delete-emails)
+- [Gmail Storage Full? Here's How to Free Up Space](https://lumina.example/blog/gmail-storage-full)
+- [Unsubscribe From Newsletters the Fast Way](https://lumina.example/blog/unsubscribe-from-newsletters)
+- [10 Gmail Filters That Save You an Hour a Day](https://lumina.example/blog/gmail-filters-guide)
+- [The Best Email Cleanup Apps Compared](https://lumina.example/blog/best-email-cleanup-apps)

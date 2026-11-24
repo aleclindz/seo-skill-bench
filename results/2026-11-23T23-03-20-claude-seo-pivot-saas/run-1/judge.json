@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant). The rebrand covered the homepage/features/pricing, but left real damage behind",
+          "rationale": "Explicitly names the pivot, identifies the live site as the meeting assistant and the 12 legacy posts as leftover email-cleanup content 'irrelevant to a meeting-assistant buyer,' and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "4 with a genuine topical bridge ... got rewritten into Lumina-relevant posts at new, descriptive URLs with 301s from the old slugs; the remaining 8 with no plausible bridge ... 301 to `/blog`",
+          "rationale": "Assigns a clear disposition to every legacy post in data-justified tiers (harvest vs. sunset-redirect), but grounds them only in an aggregate 'thousands of impressions, position 42–58, near-zero clicks' rather than citing per-asset GSC numbers to justify each decision."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "4 with a genuine topical bridge ... got 301s from the old slugs; the remaining 8 ... 301 to `/blog`. Added 2 new posts targeting real Lumina demand",
+          "rationale": "Lands a defensible middle path — preserves salvageable equity via 301s, retires dead content to the index rather than torching it, and builds the meeting-assistant cluster as the growth engine — avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant). The rebrand covered the homepage/features/pricing, but left real damage behind... All 12 existing blog posts were 100% leftover email-cleanup content... even if they ranked well, irrelevant to a meeting-assistant buyer.",
+          "rationale": "Explicitly names the pivot, treats the inbox-cleanup posts as legacy/irrelevant to the new buyer, and frames the whole plan around the live product being a meeting assistant. Loses a point only because it doesn't crisply separate the three sources (live/GSC/repo) as distinct signals."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "4 with a genuine topical bridge (overload, comparisons, automation) got rewritten into Lumina-relevant posts at new, descriptive URLs with 301s from the old slugs; the remaining 8 with no plausible bridge (Gmail storage, Outlook cleanup...) 301 to /blog.",
+          "rationale": "Clear per-asset dispositions in two reasoned tiers (harvest+301 vs sunset-redirect), but grounded only in a blanket 'thousands of impressions at position 42–58' rather than per-post GSC numbers, and redirecting the dead 8 to a generic /blog index wastes residual equity vs topic-matched targets."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "4 with a genuine topical bridge... got rewritten into Lumina-relevant posts... with 301s... the remaining 8... 301 to /blog. Added 2 new posts targeting real Lumina demand (meeting notes template, action-item tracking).",
+          "rationale": "Lands a defensible middle path — salvage bridgeable equity via 301s, build the meeting-assistant cluster as the growth engine, retire the rest — avoiding both failure modes, but the tension is handled implicitly rather than articulated, and there's no real sequencing of the transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant)... All 12 existing blog posts were 100% leftover email-cleanup content... even if they ranked well, irrelevant to a meeting-assistant buyer.",
+          "rationale": "Explicitly names the pivot, identifies the legacy posts as stale InboxZap-era content, and frames the entire rework around the meeting-assistant reality. Falls just short of 10 because it doesn't frame the GSC impressions as a distinct 'legacy demand' market worth any targeted consideration."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "4 with a genuine topical bridge (overload, comparisons, automation) got rewritten into Lumina-relevant posts at new, descriptive URLs with 301s from the old slugs; the remaining 8 with no plausible bridge... 301 to `/blog`.",
+          "rationale": "Makes explicit per-asset dispositions (harvest/301 vs. sunset-to-index) and even wires the specific slug mappings, but justifies them by topical bridge rather than citing real per-post impressions/positions — only an aggregate 'position 42–58' is referenced, so it misses the data-grounded tiering of anchor_10."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "4 with a genuine topical bridge... got rewritten... with 301s... the remaining 8... 301 to `/blog`. Added 2 new posts targeting real Lumina demand (meeting notes template, action-item tracking).",
+          "rationale": "Cleanly avoids both failure modes: salvageable equity is harvested/redirected while the meeting-assistant cluster becomes the growth engine. Loses points on practicality because it ships an executed snapshot rather than an explicitly sequenced transition plan (ordering, timing, monitoring of preserved equity)."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 6,
+    "J3": 8
+  },
+  "judgment": 0.8
+}
