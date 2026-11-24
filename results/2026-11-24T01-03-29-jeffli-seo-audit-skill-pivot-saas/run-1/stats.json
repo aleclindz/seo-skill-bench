@@ -1,0 +1,53 @@
+{
+  "skill": "jeffli-seo-audit-skill",
+  "fixture": "pivot-saas",
+  "run": 1,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 405223,
+  "exit": 0,
+  "install": {
+    "method": "git-skill-md",
+    "ok": true,
+    "detail": "collection: 2 skill dirs -> .claude/skills/"
+  },
+  "files_changed": 12,
+  "usage": {
+    "usage": {
+      "input_tokens": 60,
+      "cache_creation_input_tokens": 53505,
+      "cache_read_input_tokens": 1796959,
+      "output_tokens": 31050,
+      "output_tokens_details": {
+        "thinking_tokens": 13279
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 53505,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1145,
+          "cache_read_input_tokens": 78776,
+          "cache_creation_input_tokens": 2170,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2170
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "total_cost_usd": 0.8840317999999998,
+    "num_turns": 35
+  }
+}

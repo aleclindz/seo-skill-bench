@@ -1,0 +1,53 @@
+{
+  "skill": "distribb-skill",
+  "fixture": "pivot-saas",
+  "run": 1,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 582739,
+  "exit": 0,
+  "install": {
+    "method": "git-skill-md",
+    "ok": false,
+    "detail": "Command failed: git clone --depth 1 https://github.com/Bomx/distribb-skill.git \"/tmp/claude-0/-home-user-seometrics-nextjs/5204a048-24c4-5fe1-999b-834325272e74/scratchpad/bench/repo/results/2026-11-23T23-50-18-distribb-skill-pivot-saas/run-1/workspace/.skill-clone-Wx8PP0/repo\"\nCloning into '/tmp/claude-0/-home-user-seometrics-nextjs/5204a048-24c4-5fe1-999b-834325272e74/scratchpad/bench/repo/results/2026-11-23T23-50-18-distribb-skill-pivot-saas/run-1/workspace/.skill-clone-Wx8PP0/repo'...\nfatal: "
+  },
+  "files_changed": 14,
+  "usage": {
+    "usage": {
+      "input_tokens": 80,
+      "cache_creation_input_tokens": 96939,
+      "cache_read_input_tokens": 3203185,
+      "output_tokens": 51777,
+      "output_tokens_details": {
+        "thinking_tokens": 22853
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 96939,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 997,
+          "cache_read_input_tokens": 123726,
+          "cache_creation_input_tokens": 654,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 654
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "total_cost_usd": 1.546323,
+    "num_turns": 55
+  }
+}

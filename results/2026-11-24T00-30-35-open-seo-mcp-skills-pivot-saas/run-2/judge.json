@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted from an old product (\"InboxZap\" — email cleanup) to Lumina (AI meeting assistant)... All historical GSC traffic was for the old email-cleanup topic — zero content existed for what the product actually is now",
+          "rationale": "Explicitly identifies the pivot across live site vs. GSC history, labels inbox-cleanup traffic as legacy, and frames every build decision around the meeting-assistant reality. Falls just short of 10 only because it never cites specific GSC figures to anchor the 'legacy demand' claim."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "The old InboxZap blog URLs are left to 404 naturally — they're off-brand for the current product... happy to set up redirects instead if you want to preserve that link equity.",
+          "rationale": "Issues a single blanket disposition (let all legacy posts 404) with no asset-by-asset walk and no reference to actual impressions/positions from the export; the redirect alternative is deferred to the user rather than decided per asset."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "reviving them would work against the pivot rather than for it; happy to set up redirects instead if you want to preserve that link equity",
+          "rationale": "Builds the meeting-assistant cluster as the growth engine and avoids chasing inbox-cleanup demand, but defaults to letting all legacy equity 404 with no sequenced transition, offloading the preserve/redirect decision to the user rather than landing a defensible middle path."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted from an old product (\"InboxZap\" — email cleanup) to **Lumina** (AI meeting assistant)... All historical GSC traffic was for the old email-cleanup topic — zero content existed for what the product actually is now",
+          "rationale": "Explicitly names the pivot, identifies GSC history as legacy email-cleanup demand and the repo as half-stale, and frames every build decision (content, metadata, blog) around the meeting-assistant reality. Falls just short of 10 only because it doesn't cite specific GSC figures to characterize the legacy demand."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "The old InboxZap blog URLs are left to 404 naturally — they're off-brand for the current product, so reviving them would work against the pivot rather than for it; happy to set up redirects instead if you want to preserve that link equity.",
+          "rationale": "Issues a single blanket disposition (let all legacy posts 404) with no per-asset walkthrough and no reference to actual impressions/positions from the export; redirects are offered only as an afterthought contingent on the user asking."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "they're off-brand for the current product, so reviving them would work against the pivot... happy to set up redirects instead if you want to preserve that link equity",
+          "rationale": "It does build the meeting-assistant cluster as the growth engine and avoids doubling down on inbox content, but it defaults to torching legacy equity (404) with the transition/bridge demoted to an optional offer, so it leans into the abandonment failure mode rather than landing a sequenced middle path."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "The site had pivoted from an old product (\"InboxZap\" — email cleanup) to **Lumina** (AI meeting assistant)... All historical GSC traffic was for the old email-cleanup topic — zero content existed for what the product actually is now",
+          "rationale": "Explicitly names the pivot, treats GSC history as the legacy email-cleanup topic, and frames every content recommendation around the meeting-assistant reality; loses points only for not characterizing the legacy demand as something to deliberately engage with rather than just note."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "The old InboxZap blog URLs are left to 404 naturally — they're off-brand for the current product... happy to set up redirects instead if you want to preserve that link equity.",
+          "rationale": "No per-asset disposition for the 12 legacy posts and zero reference to actual impressions/positions from the export; a single blanket '404 them all' with redirects only offered contingently on the user asking."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "reviving them would work against the pivot rather than for it; happy to set up redirects instead if you want to preserve that link equity",
+          "rationale": "Builds the meeting-assistant cluster as a genuine growth engine but defaults to torching legacy equity (letting URLs 404), offering a redirect bridge only as an optional afterthought rather than committing to a sequenced transition that preserves salvageable equity."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 2,
+    "J3": 4
+  },
+  "judgment": 0.4
+}

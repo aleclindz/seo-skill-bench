@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "metadata was stale from the old \"InboxZap\" brand while the page content was already \"Lumina\"... so the ~14 monthly clicks still landing on \"inboxzap\" brand searches (pos. 4.1 in Queries.csv) resolve to the right entity",
+          "rationale": "Explicitly identifies the InboxZap→Lumina pivot: live/repo content is the meeting assistant, GSC shows legacy inbox/brand demand, and every fix is framed around that reality (rewriting content to 'what Lumina actually sells', branded-search FAQ)."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "kept the same 12 slugs (preserving whatever indexing/impression equity they already have) but rewrote all of it from the old email-cleanup topics to genuinely useful, keyword-relevant posts",
+          "rationale": "Grounds a disposition in real GSC data (thousands of impressions, ~0% CTR, position 42–58) but applies one blanket treatment — rewrite-in-place for all 12 — rather than per-asset or tiered decisions citing each post's own impressions/position."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "these URLs already carry search impressions... so content is rewritten in place rather than issuing new URLs and losing that equity",
+          "rationale": "Lands a defensible middle path — preserve URL equity while repurposing content to the meeting-assistant cluster and capturing residual brand intent via an entity link and FAQ — but doesn't explicitly articulate the tension or sequence the transition over time."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "\"rewrote all of it from the old email-cleanup topics to genuinely useful, keyword-relevant posts about meetings/productivity, matching what Lumina actually sells\" and \"metadata was stale from the old 'InboxZap' brand while the page content was already 'Lumina'\"",
+          "rationale": "Clearly identifies the InboxZap→Lumina pivot, treats the old inbox-cleanup content/queries as legacy, and frames fixes around what Lumina now sells (meeting assistant). Falls just short of a crisp three-way live/GSC/repo synthesis statement."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "\"kept the same 12 slugs (preserving whatever indexing/impression equity they already have) but rewrote all of it\" / \"posts 1–12 pull thousands of impressions each but ~0% CTR and position 42–58\"",
+          "rationale": "Cites real aggregate GSC signals but applies one blanket disposition (keep-slug + rewrite) to all 12 posts with no asset-by-asset or tiered harvest/redirect/sunset reasoning — the equity-preservation rationale is asserted uniformly rather than justified per post."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "alternateName \"InboxZap\" entity link + FAQ \"Is Lumina the same as InboxZap?\" to \"capture residual branded search intent\" while rewriting content to the meeting-assistant cluster",
+          "rationale": "Lands a defensible middle path — preserves branded/URL equity and bridges the rebrand rather than torching it, while building the new positioning as the growth engine — but the tension between legacy demand and new market is handled implicitly rather than explicitly sequenced."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "metadata was stale from the old \"InboxZap\" brand while the page content was already \"Lumina\"; ... rewrote all of it from the old email-cleanup topics to genuinely useful, keyword-relevant posts about meetings/productivity, matching what Lumina actually sells",
+          "rationale": "Explicitly recognizes the InboxZap→Lumina pivot, treats inbox-cleanup brand searches as residual/legacy intent, and reframes every asset around the meeting-assistant product. Loses a point only because the GSC-as-legacy-demand framing is implied through actions rather than stated as a thesis up front."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "kept the same 12 slugs (preserving whatever indexing/impression equity they already have) but rewrote all of it ... posts 1–12 pull thousands of impressions each but ~0% CTR and position 42–58",
+          "rationale": "Makes a real, data-grounded disposition — harvest-the-URL-equity, rewrite-in-place, keep slugs — and cites the aggregate GSC pattern. But it applies one blanket disposition to all 12 rather than walking them asset-by-asset with per-post impressions or deciding any individually for 301/sunset."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "preserving whatever indexing/impression equity they already have ... content is rewritten in place rather than issuing new URLs and losing that equity; alternateName: \"InboxZap\" so residual \"inboxzap\" brand searches resolve to the current product",
+          "rationale": "Lands a defensible middle path: salvages URL and brand equity (slug retention, alternateName, FAQ bridging the rename) while rebuilding the content as the meeting-assistant growth engine. Falls short of fully articulating the tension as a strategic choice and sequencing the transition explicitly."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 5,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

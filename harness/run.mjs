@@ -22,6 +22,7 @@ import { spawn, spawnSync, execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { startServer } from './serve.mjs';
 import { gatherRunText, scoreText } from './score.mjs';
+import { traceRun } from './activation.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -40,7 +41,15 @@ const MODEL = process.env.SSB_MODEL || 'claude-sonnet-5';
 // allowlist is part of the published methodology. NOTE: "Bash" grants shell
 // execution to third-party skill code — run the fleet on a machine you accept
 // that risk on.
-const ALLOWED_TOOLS = 'WebFetch WebSearch Bash Read Write Edit Glob Grep';
+//
+// `Skill` was added 2026-11-23. Without it, Claude Code 2.1.331 refuses to load
+// any skill whose frontmatter declares `allowed-tools` (the session answers
+// "running the skill needs your permission" and stops), while skills without
+// that field load freely. That is the harness picking winners by frontmatter,
+// not a property of the skill. Receipts: results/ADJUDICATIONS.md, fleet
+// 2026-11-23. Runs made before this change with zero permission denials are
+// unaffected by it (the tool was never refused), and are kept.
+const ALLOWED_TOOLS = 'WebFetch WebSearch Bash Read Write Edit Glob Grep Skill';
 
 const args = process.argv.slice(2);
 const get = (flag, dflt) => {
@@ -256,6 +265,11 @@ async function doRun(outBase, n) {
       2
     )
   );
+
+  // Did the skill fire? Reporting only, outside the composite (activation.mjs).
+  const activation = traceRun(runDir);
+  fs.writeFileSync(path.join(runDir, 'activation.json'), JSON.stringify(activation, null, 2));
+  console.log(`[run ${n}] activation: fired=${activation.fired} skill_calls=[${activation.skill_calls.join(',')}] denials=${activation.permission_denials.length}`);
 
   // Score immediately.
   const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'fixtures', fixture, 'manifest.json'), 'utf8'));

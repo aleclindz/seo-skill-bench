@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the company rebranded/pivoted its product from **InboxZap** (a Gmail/Outlook inbox-cleanup tool) to **Lumina** (an AI meeting-notes assistant). The GSC data is a snapshot of residual InboxZap-era performance; the live site is the post-pivot Lumina site.",
+          "rationale": "Explicitly identifies the pivot from the live product, frames GSC as legacy/residual demand, and threads that reality through every recommendation (bridge post, repurposing decision)."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "The 12 existing posts are 100% about Gmail/Outlook inbox cleanup — zero topical overlap with Lumina... They still get real impressions (80–3,900/mo each) but near-zero clicks and rank 38–64th... Three options, in order of recommendation: 1. Repurpose + bridge (recommended)... 2. Redirect to a hub... 3. Retire entirely",
+          "rationale": "Lays out harvest/redirect/sunset dispositions grounded in real GSC impressions, positions and CTR, but treats the 12 posts as one block with tiered options rather than asset-by-asset per-post decisions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Minimizes risk of losing the existing impression volume while nudging qualified traffic toward the current product... keep the posts live (they're free, already-indexed assets)... build the meeting-assistant cluster... without committing to a full rewrite",
+          "rationale": "Explicitly names the tension and lands a defensible middle path—preserve equity via bridge, capture branded demand, sequence the rewrite as a later decision—avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the company rebranded/pivoted its product from InboxZap... to Lumina... The GSC data is a snapshot of residual InboxZap-era performance; the live site is the post-pivot Lumina site",
+          "rationale": "Explicitly names the pivot, correctly assigns GSC as legacy/residual demand and the live site as the current Lumina product, and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "They still get real impressions (80–3,900/mo each) but near-zero clicks and rank 38–64th... e.g. /blog/post-1 at 3,900 impressions / position 42.3",
+          "rationale": "Grounds the disposition in real GSC impressions/positions and lays out harvest/redirect/sunset options with reasoning, but decides at the group level rather than walking each of the 12 posts asset-by-asset or in distinct data-justified tiers."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "keep the posts live... while nudging qualified traffic toward the current product... Redirect to a hub... Retire entirely... Not recommended — throws away indexed URLs with real demand",
+          "rationale": "Explicitly articulates the tension and lands a defensible middle path (preserve equity via bridge, reject torching, sequence the transition), though the meeting-assistant growth cluster is only lightly sketched rather than built out as the growth engine."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the company rebranded/pivoted its product from **InboxZap** ... to **Lumina** ... The GSC data is a snapshot of residual InboxZap-era performance; the live site is the post-pivot Lumina site.",
+          "rationale": "Explicitly names the pivot from the live site, treats GSC as residual legacy demand, flags the repo as partially stale (old layout metadata, missing routes), and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "The 12 existing posts are 100% about Gmail/Outlook inbox cleanup ... They still get real impressions (80–3,900/mo each) ... rank 38–64th ... Three options, in order of recommendation: Repurpose + bridge (recommended) / Redirect to a hub / Retire entirely",
+          "rationale": "Grounds disposition in real GSC figures and assigns a clear recommended disposition (keep+bridge) with reasoned alternatives, but handles all 12 as one data-justified tier rather than walking them asset-by-asset or splitting into impression-based tiers with differing fates."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Minimizes risk of losing the existing impression volume while nudging qualified traffic toward the current product ... This is brand equity being discarded ... add a short 'InboxZap is now Lumina' bridge post ... to capture residual branded demand",
+          "rationale": "Explicitly rejects both torching legacy equity and doubling down on inbox content, landing a sequenced middle path: preserve/bridge existing indexed assets, capture branded demand, and treat the Lumina cluster as the growth engine."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 7,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,53 @@
+{
+  "skill": "distribb-skill",
+  "fixture": "pivot-saas",
+  "run": 1,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 517391,
+  "exit": 0,
+  "install": {
+    "method": "git-skill-md",
+    "ok": true,
+    "detail": "root SKILL.md -> .claude/skills/distribb-skill/"
+  },
+  "files_changed": 12,
+  "usage": {
+    "usage": {
+      "input_tokens": 58,
+      "cache_creation_input_tokens": 120742,
+      "cache_read_input_tokens": 3418539,
+      "output_tokens": 43877,
+      "output_tokens_details": {
+        "thinking_tokens": 28244
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 120742,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1036,
+          "cache_read_input_tokens": 147627,
+          "cache_creation_input_tokens": 556,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 556
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "total_cost_usd": 1.6055618000000003,
+    "num_turns": 39
+  }
+}

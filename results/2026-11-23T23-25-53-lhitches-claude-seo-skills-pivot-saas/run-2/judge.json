@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted products — it used to be **InboxZap** (an email-cleanup / inbox-zero tool) and is now **Lumina** (an AI meeting assistant)... GSC's Queries.csv shows post-1 through post-12 are about inbox zero... the *old* product",
+          "rationale": "Explicitly names the pivot from the live site, classifies the GSC inbox queries as legacy/old-product demand and the repo as partially stale, and frames every recommendation around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "post-1 through post-12 ... getting real impressions (300–1900 each) but near-zero clicks and average positions in the 40s–60s ... Better to 301 them into the new Lumina topic cluster",
+          "rationale": "Treats the 12 legacy posts as a data-justified tier with real impression/position figures and assigns a clear disposition (301 to the new cluster), but stops short of per-asset harvest/redirect/sunset decisions distinguishing among the 12."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "the old blog posts aren't worth trying to rank higher — wrong intent... Better to 301 them into the new Lumina topic cluster... and add a short 'InboxZap is now Lumina' note to capture the brand-confusion searches instead of losing them",
+          "rationale": "Articulates the tension and lands a defensible middle path: redirect salvageable equity, preserve the residual 'inboxzap' brand demand, and build the meeting-assistant cluster as the growth engine — avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted products — it used to be InboxZap ... and is now Lumina (an AI meeting assistant) ... post-1 through post-12 are about inbox zero ... the old product. They're irrelevant to what Lumina sells today",
+          "rationale": "Explicitly names the pivot, identifies live site as meeting assistant, GSC as legacy inbox demand, and repo metadata as stale, then frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "GSC's Queries.csv shows post-1 through post-12 ... getting real impressions (300–1900 each) but near-zero clicks and average positions in the 40s–60s ... 301 them into the new Lumina topic cluster",
+          "rationale": "Grounds the decision in real impression/position numbers and assigns a clear disposition (301 to successor cluster) plus salvaging the inboxzap brand query, but handles all 12 posts as one blanket redirect rather than per-asset or data-justified tiers with harvest/keep/sunset distinctions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "the old blog posts aren't worth trying to rank higher ... Better to 301 them into the new Lumina topic cluster ... and add a short 'InboxZap is now Lumina' note to capture the brand-confusion searches instead of losing them",
+          "rationale": "Explicitly rejects both chasing legacy impressions and torching equity, landing a sequenced middle path: redirect salvageable equity, capture brand intent, and build the meeting-assistant cluster as the growth engine."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted products — it used to be **InboxZap**... and is now **Lumina** (an AI meeting assistant)... They're irrelevant to what Lumina sells today, and they dilute the site's topical focus",
+          "rationale": "Explicitly names the pivot, identifies live site as meeting assistant and GSC/blog as legacy inbox demand, and frames every recommendation (metadata, redirects, new cluster) around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "GSC's Queries.csv shows `post-1` through `post-12` are about inbox zero... getting real impressions (300–1900 each) but near-zero clicks and average positions in the 40s–60s... Better to 301 them into the new Lumina topic cluster",
+          "rationale": "Cites real aggregate GSC numbers and assigns a clear disposition (301 to successor cluster), but treats all 12 as one blanket tier rather than walking them asset-by-asset or splitting by salvageable value."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "the old blog posts aren't worth trying to rank higher — wrong intent... Better to 301 them into the new Lumina topic cluster... and add a short 'InboxZap is now Lumina' note to capture the brand-confusion searches instead of losing them",
+          "rationale": "Explicitly rejects both failure modes — won't chase inbox rankings, but preserves equity via 301s and a rebrand note while building the meeting-assistant cluster; sequencing is implied rather than fully laid out."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,10 @@
+{
+  "session_log_found": true,
+  "skill_calls": [
+    "seoagent"
+  ],
+  "skill_file_touches": 3,
+  "tool_calls": 67,
+  "permission_denials": [],
+  "fired": true
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this is a **pivot in progress**: the product has rebranded from **InboxZap** (email-inbox cleanup) to **Lumina** (AI meeting assistant)... both in code and in Google Search Console history",
+          "rationale": "Explicitly names the pivot, correctly maps live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale, and grades every finding against Lumina's current positioning with a 'Topics to Avoid' guardrail against reviving InboxZap keywords."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "`/blog/post-1` ... 3900 impressions, 2 clicks, avg position 42.3 ... Off-topic for the new direction (relevance 0%) but holds authority ... 301-redirect ... pass the authority forward",
+          "rationale": "Walks all 13 assets with real GSC impressions/positions and a per-asset disposition (1 harvest, 12 redirect, 0 sunset), including the cannibalization pair handling; slight ding because every post gets the same blanket /blog target and sunset is never seriously weighed per-asset for the near-zero-click, deep-position posts."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "redirect every one of these into `/blog` ... to consolidate rather than orphan the authority; re-point each 301 at its closest Lumina article as soon as one exists ... A forward content plan (`ai-meeting-assistant` cluster...)",
+          "rationale": "Lands the defensible middle path explicitly — preserve equity via 301s now, build the meeting-assistant cluster as the growth engine, and sequence the transition (re-point redirects as Lumina content ships) — avoiding both chasing legacy impressions and torching equity."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "the product has rebranded from **InboxZap** (email-inbox cleanup) to **Lumina** (AI meeting assistant)... All historical organic equity (gsc/Queries.csv, gsc/Pages.csv) is for the old InboxZap/email-cleanup product... Do not treat this data as validated demand for Lumina keywords",
+          "rationale": "Explicitly names the pivot from the live site, classifies GSC as legacy inbox demand and repo metadata as stale, and frames every recommendation (migration, topics-to-avoid, forward cluster) around Lumina's current positioning."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "13 assets classified: 1 harvest · 12 redirect · 0 sunset... post-1 (3900 impressions, 2 clicks, avg position 42.3)... 301-redirect into the most relevant new page",
+          "rationale": "Walks each legacy asset with real GSC impressions/position and assigns a disposition plus the cannibalization merge for post-3/post-7; weaker only in that all 12 default-redirect into /blog with no genuine sunset/harvest differentiation among posts (e.g. post-7 at 80 impressions, 0 clicks), though it flags this as a revisit-per-post interim step."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "The 12 legacy blog posts, despite being off-brand, still carry real organic equity (GSC impressions) worth preserving via migration rather than losing outright... redirect every one of these into /blog to consolidate rather than orphan the authority... A forward content plan (ai-meeting-assistant cluster...)",
+          "rationale": "Lands the defensible middle path: avoids chasing inbox-cleanup content (explicit topics-to-avoid) while refusing to torch equity (301s preserve it), and sequences the transition by building the meeting-assistant cluster as the growth engine with re-pointing once Lumina content ships."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this is a **pivot in progress**: the product has rebranded from **InboxZap** (email-inbox cleanup) to **Lumina** (AI meeting assistant) ... All historical organic equity (gsc/Queries.csv, gsc/Pages.csv) is for the old InboxZap/email-cleanup product ... Do not treat this data as validated demand for Lumina keywords",
+          "rationale": "Explicitly names the pivot, correctly reads live=meeting assistant / GSC=legacy inbox demand / repo=stale, and threads that framing through context.md, the audit, and the topics-to-avoid list. Every downstream recommendation is grounded in that reality."
+        },
+        "J2": {
+          "score": 8,
+          "basis": "`/blog/post-1` ... 3900 impressions, 2 clicks, avg position 42.3 ... 301-redirect ... post-3 (130) ... 'Also cannibalizes /blog/post-7' ... redirect the weaker of the pair",
+          "rationale": "Walks all 13 assets with real GSC impressions/positions and assigns an explicit disposition (1 harvest, 12 redirect), including a merge decision for the post-3/post-7 cannibalization pair; docked because all 12 collapse to the same placeholder target (/blog) with near-identical boilerplate reasoning and no sunset tier even for 0-click, 80-impression pages."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "The 12 legacy blog posts, despite being off-brand, still carry real organic equity (GSC impressions) worth preserving via migration rather than losing outright ... redirect every one of these into /blog ... until a Lumina article exists ... build the meeting-assistant cluster as the growth engine",
+          "rationale": "Explicitly names the tension and lands a defensible middle path: 301 to consolidate equity now, re-point to topical Lumina articles as the ai-meeting-assistant cluster ships, with no new content chasing dead inbox keywords. Clear sequencing from bridge to growth engine."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 8,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\"), but the marketing site's source never fully caught up... all 12 indexed blog posts were about email cleanup/inbox zero — zero relevance to meeting-assistant buyers",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup GSC queries as stale legacy brand demand landing on an unrelated product, and frames every fix around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "Retired them with 301s to /blog (not a blanket homepage redirect, which risks looking like a soft-404 pattern)... despite posts carrying the site's largest impression counts (600–3,900 each)",
+          "rationale": "Cites real impression ranges and reasons about the redirect target (blog index vs homepage, soft-404 risk), but applies one uniform 301 disposition to all 12 posts rather than per-asset or data-tiered harvest/redirect/sunset decisions."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Added /from-inboxzap — a short bridge page so legacy branded search traffic gets oriented... replaced with 5 new posts targeting topics an AI meeting assistant's actual audience searches for... Retired them with 301s to /blog",
+          "rationale": "Lands a defensible middle path — preserves branded equity via redirects and a bridge page while building the meeting-assistant content cluster as the growth engine — avoiding both chasing dead inbox impressions and torching all legacy equity, though the transition sequencing is only lightly articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\"), but the marketing site's source never fully caught up... GSC shows \"inboxzap\"... queries pulling ~18 clicks... brand-loyal searchers were clicking through on that old promise and landing on an unrelated product",
+          "rationale": "Explicitly names the pivot, maps live site = meeting assistant, GSC = legacy inbox demand, repo = stale, and frames every fix (title, bridge page, content cluster) around that reality."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "all 12 indexed blog posts were about email cleanup/inbox zero — zero relevance to meeting-assistant buyers... Retired them with 301s to /blog (not a blanket homepage redirect...)",
+          "rationale": "Applies one blanket disposition (301 all 12 to /blog) rather than per-asset harvest/redirect/keep tiers; cites impressions only as an aggregate range (600–3,900) without walking individual assets or distinguishing salvageable equity by their actual numbers."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Retired them with 301s to /blog (not a blanket homepage redirect, which risks looking like a soft-404 pattern)... Added /from-inboxzap — a short bridge page so legacy branded search traffic gets oriented... replaced with 5 new posts targeting [meeting-assistant topics]",
+          "rationale": "Avoids both failure modes: preserves branded equity via bridge page + considered redirects while building the meeting-assistant cluster as the growth engine; loses a point for torching legacy blog equity to a generic index rather than redirecting to topical successors."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The site pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\")... GSC shows \"inboxzap\"/\"inboxzap app\"/\"inboxzap review\" queries... landing on an unrelated product",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup GSC queries as legacy branded demand, and frames every fix (title, bridge page, retired cluster) around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "all 12 indexed blog posts were about email cleanup/inbox zero... Retired them with 301s to /blog (not a blanket homepage redirect)... posts carrying the site's largest impression counts (600–3,900 each)",
+          "rationale": "Reaches a data-grounded disposition (sunset all 12 via 301 to /blog) and cites aggregate impression ranges, but applies one blanket decision rather than walking each post with its own impressions/position or sorting into harvest/keep/redirect tiers."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Retired them with 301s to /blog (not a blanket homepage redirect...) and replaced with 5 new posts... Added /from-inboxzap — a short bridge page so legacy branded search traffic gets oriented",
+          "rationale": "Lands a defensible middle path: redirects rather than torches legacy equity, bridges branded InboxZap traffic, and builds the meeting-assistant cluster as the growth engine, avoiding both failure modes."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 5,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

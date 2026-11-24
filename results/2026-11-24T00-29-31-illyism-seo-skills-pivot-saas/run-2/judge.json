@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 8,
+          "basis": "This SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the migration was never finished... The one query still ranking decently (\"inboxzap\", pos. 4.1)",
+          "rationale": "Explicitly identifies the pivot (live = Lumina, legacy = InboxZap) and frames every fix around the meeting-assistant reality, citing the residual inboxzap ranking as legacy demand. Falls just short of a full anchor_10 because it doesn't dwell on the inbox-cleanup GSC queries as a distinct abandoned market segment."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "GSC shows 12 of these URLs already indexed with up to 3,900 impressions/month and ~0% CTR, because there was no page behind the URL. ... Reused the already-indexed slugs (`post-1`…`post-12`) with new content on-topic for Lumina",
+          "rationale": "Grounds a real decision in GSC data (indexed URLs, impressions, 0% CTR) and chooses reuse-with-new-content to preserve crawl equity, but applies one blanket disposition to all 12 rather than walking the inventory asset-by-asset or in data-justified tiers with per-post impressions/positions."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Reused the already-indexed slugs ... so the existing crawl history/impressions carry over instead of starting from a 301 chain ... plus two longer-term items (keyword strategy for the new product, backlink audit)",
+          "rationale": "Lands a defensible middle path — preserve indexed-URL equity while rebuilding the whole cluster for the new positioning — avoiding both torching and blindly chasing inbox content, but it doesn't explicitly articulate the equity-vs-pivot tension or sequence the transition in depth."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the migration was never finished — a classic self-inflicted SEO disaster... GSC shows 12 of these URLs already indexed with up to 3,900 impressions/month and ~0% CTR",
+          "rationale": "Explicitly names the pivot, identifies the live product as the meeting assistant, treats the InboxZap history/brand as stale legacy, and frames every fix around the new reality; just short of a full transition-of-demand narrative."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Reused the already-indexed slugs (`post-1`…`post-12`) with new content on-topic for Lumina, so the existing crawl history/impressions carry over instead of starting from a 301 chain.",
+          "rationale": "Makes one coherent batch disposition (reuse slugs, repurpose content) tied to the fact the URLs were indexed-but-empty, but never walks the 12 posts asset-by-asset or tiers them by their individual GSC impressions/positions."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Reused the already-indexed slugs... so the existing crawl history/impressions carry over... plus two longer-term items (keyword strategy for the new product, backlink audit)",
+          "rationale": "Lands a defensible middle path — preserve crawl equity via slug reuse while rebuilding the entire cluster around the meeting assistant — avoiding both failure modes, but the sequencing and explicit articulation of the legacy-vs-new tension is thin."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the migration was never finished",
+          "rationale": "Explicitly identifies the pivot from the live product, flags the lingering 'inboxzap' query (pos 4.1) and stale repo/sitemap, and frames every fix around the Lumina reality. Slightly short of a crisp 'legacy demand vs current market' statement but clearly operates on that understanding."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Reused the already-indexed slugs (`post-1`…`post-12`) with new content on-topic for Lumina, so the existing crawl history/impressions carry over instead of starting from a 301 chain",
+          "rationale": "Makes one blanket harvest decision for all 12 posts (repurpose slug, swap content) citing aggregate numbers (3,900 impressions, ~0% CTR) but never walks the inventory asset-by-asset or in data-justified tiers with per-URL impressions/positions and distinct dispositions."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "Reused the already-indexed slugs...so the existing crawl history/impressions carry over instead of starting from a 301 chain",
+          "rationale": "Avoids both traps — rewrites content to the meeting-assistant topic rather than chasing inbox queries, yet preserves indexed-URL equity rather than torching it. The middle path is defensible but the transition sequencing is thin, deferring keyword strategy and backlink audit to an unspecified follow-up."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 6
+  },
+  "judgment": 0.6
+}

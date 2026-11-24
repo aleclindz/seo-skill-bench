@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the codebase never caught up... All 12 existing blog posts and 100% of GSC query data were about email/Gmail/Outlook cleanup — completely irrelevant to a meeting-assistant product",
+          "rationale": "Explicitly identifies the pivot (live site = meeting assistant, GSC = legacy inbox demand) and frames every recommendation around that reality; falls just short of a 10 only because the 'repo partially stale' framing is implicit."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301-redirected them to `/blog` rather than let already-indexed URLs 404... One deliberate bridge post... legitimately connects the old high-impression 'email overload' query demand",
+          "rationale": "Makes real redirect decisions (notably post-9 → a specific bridge successor vs. the rest to /blog), but the other 11 get a single blanket 301 and dispositions are not walked asset-by-asset against cited per-post impressions/positions from the export — grounding is coarse ('near-0% CTR', '~18 clicks/month', 'high-impression')."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "301-redirected them to `/blog` rather than let already-indexed URLs 404 or keep diluting topical relevance... One deliberate bridge post... connects the old high-impression 'email overload' query demand to the new product",
+          "rationale": "Avoids both failure modes: preserves/redirects legacy equity and brand search (~18 inboxzap clicks → rebrand note + FAQ), builds the meeting-assistant cluster as the growth engine, and bridges authority — lands a defensible middle path rather than torching or doubling down."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the codebase never caught up... All 12 existing blog posts and 100% of GSC query data were about email/Gmail/Outlook cleanup — completely irrelevant to a meeting-assistant product",
+          "rationale": "Explicitly identifies the live product as the meeting assistant, labels the GSC/blog history as legacy inbox demand, and frames every recommendation around that pivot reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301-redirected them to `/blog` rather than let already-indexed URLs 404... One deliberate bridge post... post-9 → /blog/meeting-overload-email-problem",
+          "rationale": "Assigns dispositions (blanket 301 for 11 posts, one targeted redirect to a bridge successor) but does not walk the inventory asset-by-asset or cite per-post impressions/positions; only aggregate 'near-0% CTR' and '~18 clicks/month' figures appear, so the data grounding is thin."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "301-redirected them... rather than let already-indexed URLs 404 or keep diluting topical relevance... One deliberate bridge post... legitimately connects the old high-impression 'email overload' query demand to the new product... Replaced them with 5 new posts actually targeting Lumina's ICP",
+          "rationale": "Avoids both failure modes: preserves/redirects salvageable equity and brand traffic, builds the meeting-assistant cluster as the growth engine, and bridges old demand to the new positioning rather than torching or doubling down."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), but the codebase never caught up",
+          "rationale": "Explicitly names the pivot, treats 100% of GSC query data and all 12 posts as legacy inbox-cleanup demand irrelevant to the current product, and frames every fix around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301-redirected them to `/blog` ... One deliberate bridge post ... 301-redirects ... post-9 → /blog/meeting-overload-email-problem",
+          "rationale": "Makes explicit dispositions per URL (blanket 301 to /blog, one post redirected to a bridge successor) but the decisions aren't individually grounded in per-asset GSC impressions/positions — it cites only aggregate 'near-0% CTR' and '~18 clicks/month' rather than walking each post's real numbers."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "301-redirected them ... rather than let already-indexed URLs 404 or keep diluting topical relevance ... One deliberate bridge post ... legitimately connects the old high-impression 'email overload' query demand to the new product",
+          "rationale": "Avoids both failure modes: preserves/redirects legacy equity and brand-search traffic rather than torching it, builds the meeting-assistant cluster as the growth engine, and bridges the old demand to the new positioning with a sequenced transition."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 5,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

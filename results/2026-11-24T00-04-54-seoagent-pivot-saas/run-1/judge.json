@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "latest.md: 'Positioning/legacy-authority mismatch — GSC history ranks for InboxZap (email cleanup), the live site is Lumina (AI meeting assistant)' and context.md: 'the live site and homepage are fully rebranded to Lumina... but gsc/Pages.csv and gsc/Queries.csv still show the old InboxZap positioning... earning real impressions. The repo's app/layout.tsx still carries stale InboxZap'",
+          "rationale": "Explicitly names all three layers — live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale — and frames every recommendation (migration, cluster, reframing) around the pivot."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Migration section: 'Harvest (brand equity, not content): branded \"inboxzap\" searches (566 combined impressions, position 4.1-8.9)... Redirect (12 posts) to /blog, not the homepage and not a fabricated \"closest topical match\" — none exists... Sunset (2 queries): negligible impressions'",
+          "rationale": "Assigns a clear data-justified-tier disposition (harvest/redirect/sunset) with reasoning for each, and cites real brand-query impressions/positions; falls short of anchor_10 because the 12 posts are redirected as one block without individual per-post impression/position figures."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "'Redirect (12 posts) to /blog, not the homepage... mass-redirecting unrelated content to the homepage is itself a soft-404-adjacent anti-pattern' plus harvesting branded equity while building the ai-meeting-notes cluster as the growth engine",
+          "rationale": "Explicitly articulates the tension and lands a defensible middle path — preserve brand equity, 301 decaying posts rather than torch or chase them, and build the new cluster — rather than falling into either failure mode."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Positioning/legacy-authority mismatch — GSC history ranks for InboxZap (email cleanup), the live site is Lumina (AI meeting assistant). (Confirmed — both from GSC CSVs and from fetching each legacy post's live title)",
+          "rationale": "Explicitly names the pivot, treats the live meeting-assistant site as current product, GSC InboxZap queries as legacy demand, and repo as partially stale — and frames every recommendation (migration, cluster, reframing) around that reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Harvest (brand equity)... branded 'inboxzap' searches (566 combined impressions, position 4.1-8.9); Redirect (12 posts) to /blog, not the homepage...; Sunset (2 queries): negligible impressions",
+          "rationale": "Assigns data-justified dispositions in tiers (harvest/redirect/sunset) with real GSC figures and sound reasoning against homepage-redirect anti-patterns, but treats all 12 posts as one blanket 301 group rather than walking them asset-by-asset or sub-tiering by individual impressions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Redirect (12 posts) to /blog... consolidating decaying InboxZap-era post authority; The three new cluster articles... fully server-rendered... build the meeting-assistant cluster as the growth engine",
+          "rationale": "Articulates the tension explicitly and lands a defensible middle path — preserve/redirect salvageable equity, harvest brand searches, build the new cluster as the growth engine, avoiding both doubling down on inbox content and torching all legacy equity."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Positioning/legacy-authority mismatch — GSC history ranks for InboxZap (email cleanup), the live site is Lumina (AI meeting assistant). (Confirmed — both from GSC CSVs and from fetching each legacy post's live title.)",
+          "rationale": "Explicitly identifies the pivot (live = meeting assistant, GSC = legacy InboxZap demand, repo partially stale), states the implication, and frames the entire plan — content cluster, redirects, reframing — around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Redirect (12 posts) to `/blog`, not the homepage and not a fabricated 'closest topical match' — none exists... Harvest (brand equity): branded 'inboxzap' searches (566 combined impressions, position 4.1-8.9)",
+          "rationale": "Assigns clear dispositions in data-justified tiers (harvest branded equity, 301 the 12 posts, sunset 2 queries) with reasoning, but treats the 12 posts as one undifferentiated bucket rather than walking each asset against its own impressions/position — a defensible shortcut, yet short of per-asset grounding."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "redirected to /blog, consolidating decaying InboxZap-era post authority... build the meeting-assistant cluster as the growth engine; '(formerly InboxZap)' footer credit so that traffic isn't confused on arrival",
+          "rationale": "Names the tension explicitly and lands a defensible middle path: preserves salvageable brand equity, 301s legacy posts to bridge authority rather than torching it, and builds the meeting-assistant cluster as the growth engine with sequencing."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 7,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

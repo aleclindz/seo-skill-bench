@@ -1,0 +1,53 @@
+{
+  "skill": "fire-your-seo-agency",
+  "fixture": "pivot-saas",
+  "run": 1,
+  "model": "claude-sonnet-5",
+  "max_turns": 80,
+  "wall_ms": 483090,
+  "exit": 0,
+  "install": {
+    "method": "git-skill-md",
+    "ok": true,
+    "detail": "root SKILL.md -> .claude/skills/fire-your-seo-agency/"
+  },
+  "files_changed": 13,
+  "usage": {
+    "usage": {
+      "input_tokens": 70,
+      "cache_creation_input_tokens": 65546,
+      "cache_read_input_tokens": 2487519,
+      "output_tokens": 38499,
+      "output_tokens_details": {
+        "thinking_tokens": 18245
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 65546,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1864,
+          "cache_read_input_tokens": 92609,
+          "cache_creation_input_tokens": 378,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 378
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "total_cost_usd": 1.1448178000000004,
+    "num_turns": 45
+  }
+}

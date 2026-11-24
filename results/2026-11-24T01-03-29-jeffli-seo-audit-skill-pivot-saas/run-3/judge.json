@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The product pivoted from **InboxZap** (an email-cleanup tool) to **Lumina** (an AI meeting assistant), but the migration was never finished... 'inboxzap' is still the site's best-converting query (#4 position, 4.38% CTR)",
+          "rationale": "Explicitly identifies the pivot across live site, GSC, and repo, labels inbox-cleanup demand as legacy, and frames every fix (pivot note, meeting cluster) around the new positioning. Loses a point only because the pivot is framed mainly as a cleanup task rather than a full strategic reframing of demand."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "Three posts (`post-3`, `post-7`, `post-12`) all targeted 'bulk delete emails,' splitting ranking signal across pages stuck at position 47–58 (confirmed in `gsc/Pages.csv`/`Queries.csv`)... 301s consolidating `post-3` and `post-12` into `post-7`",
+          "rationale": "Makes a real data-grounded disposition for the three cannibalizing posts (301 consolidation, citing position 47–58), but the other nine legacy posts get a blanket 'keep as-is' with no per-asset impressions/positions or individual harvest/sunset reasoning."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "a pivot note bridging legacy email-cleanup readers into Lumina instead of orphaning them... 'we're keeping guides like this one up for anyone still fighting email overload... these days we're focused on a different kind of overload: meetings'",
+          "rationale": "Lands a defensible middle path — preserves/redirects legacy equity, bridges readers via pivot notes, and builds the meeting-assistant cluster (features/pricing/homepage) as the growth engine — but states the tension implicitly through fixes rather than articulating and sequencing the transition explicitly."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The product pivoted from **InboxZap** (an email-cleanup tool) to **Lumina** (an AI meeting assistant), but the migration was never finished... 'inboxzap' is still the site's best-converting query (#4 position, 4.38% CTR)",
+          "rationale": "Explicitly names the pivot, treats the inbox-cleanup GSC history as legacy demand while building the Lumina cluster as the forward product, and frames every fix around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Three posts (`post-3`, `post-7`, `post-12`) all targeting 'bulk delete emails,' splitting ranking signal across pages stuck at position 47–58 (confirmed in `gsc/Pages.csv`/`Queries.csv`)... Consolidated into post-7",
+          "rationale": "Makes a real, data-grounded disposition for the cannibalizing cluster (301 consolidation) and preserves the inboxzap brand query, but the other legacy posts are only implicitly 'kept as-is + pivot note' without an asset-by-asset walk citing each one's impressions/positions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "a pivot note bridging legacy email-cleanup readers into Lumina instead of orphaning them... 301s consolidating... build the meeting-assistant cluster",
+          "rationale": "Lands a defensible middle path: redirects/keeps salvageable legacy equity (including the still-converting InboxZap brand query via FAQ), bridges old readers forward, and builds the meeting-assistant pages as the growth engine rather than torching or doubling down on legacy."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The product pivoted from **InboxZap** (an email-cleanup tool) to **Lumina** (an AI meeting assistant), but the migration was never finished... No content acknowledged the rebrand, even though \"inboxzap\" is still the site's best-converting query (#4 position, 4.38% CTR).",
+          "rationale": "Explicitly names the pivot, treats inbox queries as legacy demand, flags the stale repo state, and reframes all metadata/content around the meeting-assistant reality. Falls just short of a 10 only because the implication is shown through fixes rather than stated as an overarching strategic thesis."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "post-3, post-7, and post-12 all targeted \"bulk delete emails\" intent and were splitting ranking signal three ways. Consolidated into post-7.",
+          "rationale": "Makes real data-grounded dispositions for the cannibalizing trio (301 merge, citing positions 47–58) and adds a pivot-bridge disposition for the rest, but keeps the other ~11 posts wholesale without an asset-by-asset or tiered harvest/sunset pass citing each one's impressions/positions."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "a pivot note bridging legacy email-cleanup readers into Lumina instead of orphaning them... 301s consolidating post-3 and post-12 into post-7 to stop the keyword cannibalization... a \"What happened to InboxZap?\" answer for brand-confused visitors.",
+          "rationale": "Clearly avoids both failure modes — preserves salvageable legacy equity via redirects/pivot notes while repositioning metadata and pages to the new product — but the meeting-assistant growth engine is thin (features/pricing pages and FAQ, no actual new meeting-topic content cluster), so the transition is bridged more than it is built out."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 5,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

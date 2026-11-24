@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from InboxZap (email cleanup) to Lumina (AI meeting assistant)... Legacy GSC authority (InboxZap) is 100% off-topic for the pivoted product; live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale",
+          "rationale": "Explicitly identifies the pivot across all three data sources (live site, GSC, repo), states the implication, and frames every recommendation—redirect legacy equity, build the Lumina cluster—around it."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "12 legacy InboxZap blog posts hold real GSC authority... 80 to 3,900 impressions each, positions 38–58... 301-redirected all 12 to /blog... 13 assets classified, 0 harvest / 13 redirect / 0 sunset",
+          "rationale": "Cites real impression ranges and positions from the export and reasons about the redirect target, plus thoughtfully disregards the homepage artifact, but applies one blanket disposition (redirect-all-to-/blog) rather than walking the inventory asset-by-asset or in data-justified tiers with differentiated harvest/keep/sunset calls."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "301-redirected all 12 to /blog... to pass the authority forward instead of 404ing them or pretending they match Lumina content... build new Lumina-first content depth-first... protect/harvest what little relevant equity exists, fix the technical regressions, and build new Lumina-first content",
+          "rationale": "Explicitly names both failure modes and lands a defensible middle path: preserve/redirect legacy equity without faking topical matches, build the meeting-assistant cluster as the growth engine, and sequence the transition."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from InboxZap (email cleanup) to Lumina (AI meeting assistant)... GSC data reflects the OLD product (InboxZap) almost entirely... The live site has already repositioned most pages around Lumina",
+          "rationale": "Explicitly nails the three-way reality — live site = Lumina meeting assistant, GSC = legacy InboxZap demand, repo = partially stale — and frames every recommendation around it, including catching the layout.tsx regression risk."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "301-redirected all 12 to /blog in next.config.js to pass the authority forward... 80 to 3,900 impressions each, positions 38–58... no single Lumina article is a topical match for inbox-zero content, so the redirect target is the blog hub",
+          "rationale": "Ran a per-asset migration classification (13 assets, 0 harvest/13 redirect/0 sunset) grounded in real impression/position ranges and even caught a tool-artifact false positive, but defaulted to a uniform 301-to-hub rather than genuinely per-asset dispositions or harvesting any salvageable top-impression post."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "protect/harvest what little relevant equity exists, fix the technical regressions, and build new Lumina-first content depth-first... preserving the accumulated link equity without misleading Google with a false content match",
+          "rationale": "Avoids both failure modes cleanly — redirects legacy equity forward instead of 404ing or chasing inbox-cleanup content, builds the ai-meeting-notes cluster as the growth engine, and sequences the transition (deploy, then depth-first cluster)."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This SaaS pivoted from InboxZap (email cleanup) to Lumina (AI meeting assistant)... Treat the InboxZap→Lumina transition as the central SEO narrative",
+          "rationale": "Explicitly names the pivot, identifies live=Lumina / GSC=legacy InboxZap / repo=partially stale, and frames every recommendation (metadata fix, blog rebuild, migration, new cluster) around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "12 legacy InboxZap blog posts hold real GSC authority for completely off-topic queries... 80 to 3,900 impressions each, positions 38–58... 301-redirected all 12 to /blog... 0 harvest / 13 redirect / 0 sunset",
+          "rationale": "Cites real impression/position ranges and gives a data-justified disposition (blanket 301 to /blog because no single Lumina article topically matches inbox-zero content), but it's a single tier across all 12 rather than per-asset harvest/sunset reasoning, leaving the highest-impression posts un-individuated."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "protect/harvest what little relevant equity exists, fix the technical regressions, and build new Lumina-first content depth-first... pass the authority forward instead of 404ing them or pretending they match Lumina content",
+          "rationale": "Explicitly names the tension and lands a defensible middle path—preserve equity via 301s rather than torching or faking topical matches, while building the meeting-assistant cluster as the growth engine with a sequenced roadmap."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 2,
+          "basis": "the SaaS pivoted from Lumina (AI meeting assistant) to InboxZap (email cleanup app), but the pivot was never finished: Nav, homepage copy, footer, and JSON-LD still said 'Lumina' / AI meeting assistant, while the blog content was already 100% about email cleanup",
+          "rationale": "The entrant noticed the entity mismatch and engaged with the data, but inverted the pivot direction — the live site's meeting-assistant copy is the current product, yet the entrant concluded email-cleanup was current and finished the rebrand toward the legacy demand. Not anchor_0 (a pivot is identified) but the core inference is backwards."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "gave all 12 old post-N slugs descriptive, keyword-rich names with 301 redirects so the GSC-tracked URLs don't just disappear... Merged the three cannibalizing 'bulk delete' posts into one",
+          "rationale": "Mechanically does per-asset redirect/merge decisions and is evidence-aware about preserving GSC-tracked URLs, but cites only two real figures (3,900 impressions, 'gmail storage full') rather than tiering each asset by export data, and the whole disposition preserves legacy content as the target rather than migrating it."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Finished the rebrand: homepage, nav, footer, and schema now consistently say InboxZap... Merged the three cannibalizing 'bulk delete' posts into one authoritative guide",
+          "rationale": "Falls squarely into one failure mode — doubles down on inbox-cleanup positioning and torches the meeting-assistant branding (the actual current product), with no articulation of the tension or transition path toward a growth engine."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "the SaaS pivoted from **Lumina** (AI meeting assistant) to **InboxZap** (email cleanup app)... Nav, homepage copy, footer, and JSON-LD still said 'Lumina' / AI meeting assistant, while the blog content was already 100% about email cleanup",
+          "rationale": "The entrant noticed the entity mismatch but inverted it — it treated the live meeting-assistant site (the actual current product) as the stale leftover and the legacy inbox-cleanup blog demand as the go-forward reality, then 'finished' a rebrand to email cleanup. This is the exact anchor_0 failure: building the whole plan around ranking InboxZap-era content harder."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "gave all 12 old `post-N` slugs descriptive, keyword-rich names with 301 redirects so the GSC-tracked URLs don't just disappear... Merged the three cannibalizing 'bulk delete' posts into one authoritative guide",
+          "rationale": "There is real per-asset migration mechanics (merge + 301 redirects for all 12 slugs, sitemap inclusion), but the dispositions are a blanket 'keep/polish everything as the core product' rather than data-justified tiers, and only two GSC figures are cited rather than walking the inventory asset-by-asset — and the disposition itself preserves legacy equity as the product's future, which is strategically backwards."
+        },
+        "J3": {
+          "score": 1,
+          "basis": "Converted the blog to real server-rendered pages... Built the missing /features and /pricing pages... a public/llms.txt for AI-answer-engine visibility",
+          "rationale": "Falls fully into the first failure mode: it doubles down on inbox-cleanup content and even rebrands the entire site to the email-cleanup positioning, torching the actual live meeting-assistant product. No transition tension is articulated — the legacy demand is treated as the growth engine."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 1,
+          "basis": "the SaaS pivoted from **Lumina** (AI meeting assistant) to **InboxZap** (email cleanup app) ... Nav, homepage copy, footer, and JSON-LD still said 'Lumina' / AI meeting assistant, while the blog content was already 100% about email cleanup",
+          "rationale": "The entrant noticed the entity mismatch but inferred the pivot direction backwards: it treated the live meeting-assistant branding as the stale leftover to purge and inbox-cleanup as the real/current product, then rebuilt everything as InboxZap — the opposite of recognizing inbox-cleanup as legacy demand."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "gave all 12 old `post-N` slugs descriptive, keyword-rich names with 301 redirects so the GSC-tracked URLs don't just disappear ... Merged the three cannibalizing 'bulk delete' posts into one",
+          "rationale": "Concrete, executable dispositions (every old slug mapped to a 301, three cannibalizing posts merged) but grounded in only two cited GSC figures with no asset-by-asset data tiering, and it blanket-redirects all as keepers rather than evaluating harvest/sunset per the actual numbers."
+        },
+        "J3": {
+          "score": 2,
+          "basis": "Finished the rebrand: homepage, nav, footer, and schema now consistently say InboxZap ... Read more inbox-cleanup guides",
+          "rationale": "Falls into the first failure mode — it doubles down entirely on inbox-cleanup content (per the scenario, for the product that no longer exists) and builds no meeting-assistant growth cluster; equity is 'preserved' only by making the whole site about the legacy topic, with no articulated transition tension."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 1,
+    "J2": 4,
+    "J3": 1
+  },
+  "judgment": 0.1
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Context: this is a pivot, not a normal audit ... Lumina's live homepage, /features, and /pricing already describe an AI meeting assistant. The repo's own app/layout.tsx still had the old product's (InboxZap) ... and the GSC export is almost entirely legacy InboxZap queries",
+          "rationale": "Explicitly identifies the pivot across three evidence sources (live site = meeting assistant, GSC = legacy inbox demand, repo = partially stale) and frames every recommendation around treating legacy GSC as harvest-or-sunset, never the new direction."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Final: 0 harvest · 40 query-level redirect · 12 legacy blog posts redirected via next.config.js ... every unbranded legacy query sits at position ~38–62 with near-zero CTR; Only the branded query 'inboxzap' converts",
+          "rationale": "Reaches an explicit disposition (redirect all 12 legacy posts to home) and cites real position/CTR bands and the branded-vs-unbranded split, but the actual asset-by-asset walk with per-post impressions lives in an unshown migration-plan.md, and the 12 posts get one blanket redirect-to-home rather than individually data-justified dispositions."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Treat all GSC legacy queries/pages as harvest-or-sunset candidates, never as the new content direction ... 40 legacy GSC assets dispositioned ... build the meeting-assistant cluster ... Confirm the 12 legacy /blog/post-* redirects before deploy ... if those URLs should instead be preserved as-is",
+          "rationale": "Avoids both failure modes: redirects legacy equity rather than torching it, builds the meeting-assistant cluster as the growth engine, and flags an open owner decision to review preservation before deploy — a defensible sequenced middle path."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This product **pivoted from \"InboxZap\"** ... The live homepage, `/features`, and `/pricing` already render the new Lumina positioning ... Treat all GSC legacy queries/pages as **harvest-or-sunset candidates**, never as the new content direction.",
+          "rationale": "Explicitly identifies the pivot (live site = meeting assistant, GSC = legacy InboxZap demand, repo = stale), states the implication, and frames every recommendation around the new positioning — textbook anchor_10."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Final: 0 harvest · 40 query-level redirect · 12 legacy blog posts redirected via `next.config.js` ... every unbranded legacy query sits at position ~38–62 with near-zero CTR ... Only the branded query \"inboxzap\" converts.",
+          "rationale": "Ran an explicit migration pass, corrected false-positive harvest rows, and cited real GSC position/CTR data, but the disposition collapses to a near-blanket '12 posts → 301 to /' rather than per-asset routing to relevant successors, so it reads data-informed but tier-uniform rather than truly asset-by-asset."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "hand-corrected 7 false-positive \"harvest\" rows ... to `redirect`/brand-bridge ... Confirm the 12 legacy `/blog/post-*` redirects ... before deploy ... Review before shipping if those URLs should instead be preserved as-is.",
+          "rationale": "Articulates the tension and lands a defensible middle — redirect/brand-bridge to preserve salvageable equity while building the meeting-assistant cluster as the growth engine and flagging the sequencing decision; falls short of a cleaner successor-mapping, and redirecting all legacy posts to the homepage leaks topical equity."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This product **pivoted from \"InboxZap\"**... Treat all GSC legacy queries/pages as **harvest-or-sunset candidates**, never as the new content direction.",
+          "rationale": "Explicitly identifies the pivot across three evidence sources (live site = meeting assistant, GSC = legacy InboxZap demand, repo = stale) and frames every recommendation around Lumina's actual positioning. Slightly short of a perfect 10 only because the implication is stated well but the framing lives mostly in context docs rather than threading through every single deliverable."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Final: 0 harvest · 40 query-level redirect · 12 legacy blog posts redirected via next.config.js... redirect-to-home disposition in the migration plan, since none are topically relevant to rewrite.",
+          "rationale": "It does run a migration pass, hand-corrects false-positive harvest rows, and assigns an explicit disposition to all 12 posts — but the actual per-asset impressions/positions aren't surfaced in the visible output and all 12 get the same blanket 301-to-home rather than data-justified tiers or redirects to relevant successors, falling short of the asset-by-asset anchor."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "preserve/redirect what has salvageable equity... New content must target Lumina's actual positioning... hold until the pillar + sub-pillars are live",
+          "rationale": "Avoids both failure modes — it neither chases inbox-cleanup content nor torches equity (301s bridge the legacy URLs), while building the meeting-assistant cluster as the growth engine with a sequenced roadmap. Loses points because redirecting every legacy post to the homepage is a crude equity bridge rather than topic-matched, and the transition sequencing is lighter than the explicit tension-articulation the top anchor wants."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "The SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant), and the pivot left the site badly broken for SEO... 12 old post URLs sitting in Google's index with real demand (one at 3,900 impressions) stuck at position 40–60 earning almost no clicks",
+          "rationale": "Explicitly names the pivot, treats the live product as the meeting assistant and the GSC inbox queries as legacy demand, and frames the FAQ ('What happened to InboxZap?') and post-12 around that reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Consolidated the two weakest posts (post-3, post-7 — lowest impressions, no clear query match) into stronger related posts via 301s... each targeting the specific high-impression query clusters from the GSC data (bulk-delete, Gmail storage, unsubscribe, filters, Outlook cleanup, etc.)",
+          "rationale": "Makes genuine per-asset dispositions — 301s for two thin posts, keep/repurpose for the rest tied to query clusters — but grounds it in relative tiers ('lowest impressions') and one cited number (3,900) rather than citing real per-asset impressions/positions across the inventory."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "Added a real FAQ section... including 'What happened to InboxZap?' — so the branded search traffic that already ranks well isn't lost to confusion... post-12 bridges 'You Cleaned Your Inbox. Now What?' to the meeting assistant",
+          "rationale": "Lands a defensible middle path — preserves/redirects legacy equity, bridges authority via FAQ and a transition post, keeps email guides live while repositioning — though it doesn't deeply build out a new meeting-assistant content cluster as an explicit growth engine."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The SaaS pivoted from **InboxZap** (email cleanup) to **Lumina** (AI meeting assistant)... Lumina is not an email cleanup tool. We build the meeting assistant",
+          "rationale": "Explicitly names the pivot, treats the homepage/metadata as the current meeting-assistant product and the GSC inbox queries as legacy demand to be harvested rather than the product's market, and frames fixes accordingly. Not a perfect 10 only because the legacy-vs-current framing is stated through actions more than a single crisp thesis sentence."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Consolidated the two weakest posts (post-3, post-7 — lowest impressions, no clear query match)... via 301s; one at 3,900 impressions... stuck at position 40–60",
+          "rationale": "Makes genuine per-asset dispositions — keep-and-refresh the high-impression query clusters, 301 the two thinnest, bridge via post-12 — grounded in the export, but reasoning cites only a couple of real numbers rather than walking all 12 in a data-justified tier table."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "so the branded search traffic that already ranks well isn't lost to confusion... each targeting the specific high-impression query clusters from the GSC data... Lumina joins your calls [features/pricing cluster]... post-12 bridges inbox audience to meetings",
+          "rationale": "Lands a defensible middle path: preserves/redirects salvageable legacy equity, builds the meeting-assistant cluster as the growth engine, and sequences the transition with explicit bridge content and a 'What happened to InboxZap?' FAQ — avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The SaaS pivoted from InboxZap (email cleanup) to Lumina (AI meeting assistant), and the pivot left the site badly broken for SEO... Fixed metadata site-wide... per-page titles/descriptions matching real content",
+          "rationale": "Explicitly names the pivot, treats the InboxZap content as legacy, and reorients every page (homepage, metadata, features, pricing) to the live meeting-assistant product. Falls just short of an explicit 'repo is partially stale' framing but clearly treats GSC as legacy demand."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Consolidated the two weakest posts (post-3, post-7 — lowest impressions, no clear query match) into stronger related posts via 301s... each targeting the specific high-impression query clusters from the GSC data (bulk-delete, Gmail storage, unsubscribe, filters, Outlook cleanup)",
+          "rationale": "Assigns real dispositions — harvest/repurpose 10 posts, 301 the two weakest, with next.config redirects — grounded in query clusters, but cites only one concrete GSC number (3,900 impressions) rather than walking each asset's actual impressions/positions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "so the branded search traffic that already ranks well isn't lost to confusion... post-12 'Where Teams Actually Lose Time' bridging inbox cleanup to meetings; FAQ 'What happened to InboxZap?'",
+          "rationale": "Lands a defensible middle path: preserves/redirects salvageable legacy equity, builds the meeting-assistant pages as the growth engine, and explicitly sequences the bridge via transition content and branded-query handling—avoiding both failure modes."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 7,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

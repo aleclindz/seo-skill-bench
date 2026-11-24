@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\"), and the migration was left half-finished — which explains the GSC data perfectly: branded \"inboxzap\" queries still rank at ~position 4 (an old title tag), while every high-volume, on-brand query ranked at position 40-65",
+          "rationale": "Explicitly names the pivot, maps live site = meeting assistant vs GSC = legacy inbox demand, and ties it directly to the Search Console position/click numbers. Falls just short of 10 only because every GSC figure is asserted in aggregate rather than cited line-by-line, but the framing drives every recommendation."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "12 blog posts entirely off-topic — every existing post was old InboxZap content ... with ~14,000 impressions but almost no clicks ... Replaced all 12 with genuinely substantive posts",
+          "rationale": "This is effectively a single blanket 'replace all 12' decision justified by one aggregate impressions/clicks figure, not an asset-by-asset disposition; no per-post impressions/positions, no 301s to successors, no harvest-vs-sunset tiering, and the old slugs appear to be dropped with no redirect handling."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "including an entry explicitly addressing \"What happened to InboxZap?\" to capture and convert the lingering branded search traffic instead of losing it to confusion",
+          "rationale": "Avoids doubling down on dead inbox content and builds the meeting-assistant cluster as the growth engine, and it does bridge branded equity via the fixed title tag + FAQ; but it torches all 12 legacy posts' ~14k impressions with no per-URL redirect to preserve salvageable topical equity, so the transition is only half-sequenced."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\"), and the migration was left half-finished — which explains the GSC data perfectly: branded \"inboxzap\" queries still rank at ~position 4 (an old title tag), while every high-volume, on-brand query ranked at position 40-65",
+          "rationale": "Explicitly names the pivot, maps live=meeting assistant / GSC=legacy inbox demand / repo=stale, and frames the metadata, FAQ, and content work around that reality. Just short of 10 because the legacy-demand framing is asserted more than quantitatively walked."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "12 blog posts entirely off-topic ... with ~14,000 impressions but almost no clicks ... Replaced all 12 with genuinely substantive posts",
+          "rationale": "References aggregate GSC data but issues one blanket disposition (replace all 12) with no per-asset or tiered harvest/redirect/keep/sunset decisions, and notably no 301s to bridge equity from the dead legacy URLs."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "an entry explicitly addressing \"What happened to InboxZap?\" to capture and convert the lingering branded search traffic instead of losing it to confusion",
+          "rationale": "Avoids both extremes — doesn't chase inbox-cleanup content and does salvage branded equity via the FAQ while building the meeting-assistant cluster as the growth engine, but the transition is incomplete: the 12 legacy URLs are abandoned without redirects to bridge their authority."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS pivoted from an email-cleanup product (\"InboxZap\") to an AI meeting assistant (\"Lumina\")... branded \"inboxzap\" queries still rank at ~position 4 (an old title tag), while every high-volume, on-brand query ranked at position 40-65",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup queries as legacy demand and the meeting-assistant terms as the current market, and frames every fix around that reality."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "12 blog posts entirely off-topic — every existing post was old InboxZap content... with ~14,000 impressions but almost no clicks... Replaced all 12 with genuinely substantive posts",
+          "rationale": "Cites only aggregate impressions/clicks and issues one blanket 'replace all 12' decision with no per-asset disposition, no redirects for any salvageable equity, and no per-post GSC numbers or tiering."
+        },
+        "J3": {
+          "score": 5,
+          "basis": "added a FAQ section... including an entry explicitly addressing \"What happened to InboxZap?\" to capture and convert the lingering branded search traffic instead of losing it",
+          "rationale": "Builds the meeting-assistant cluster as growth engine and bridges the branded InboxZap query via FAQ, but wholesale-replaces all 12 legacy posts with no 301s or harvesting, so most legacy equity is torched rather than transitioned."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 3,
+    "J3": 5
+  },
+  "judgment": 0.5
+}

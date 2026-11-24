@@ -364,3 +364,308 @@ canonicals, noindex, titles and descriptions, server-rendered content), but its 
 run is told to ship the three highest-value fixes and keep the report under 300 words,
 and the runs reported mostly what they fixed: missing meta descriptions (D5) and alt
 text (D9) were never matched in any run, and the pricing canonical (D3) only in run 3.
+
+---
+
+# SEOAgent re-pin (2026-10-19): seoagent@1.124.0
+
+The pin moves from 1.76.1 (July) to 1.124.0, the current release. This
+supersedes the never-merged `claude/seoagent-pin-1.87.0` branch (2026-08-21),
+which bumped the pin and re-measured the footprint but never re-ran the
+benchmark. Same model (`claude-sonnet-5`), prompt, tool allowlist, turn budget
+and judge (`claude-opus-4-8`, 3 lenses, not cross-model) as every entrant.
+The CLI ran logged out: no `auth.json` in the session home, and
+`SEOAGENT_AUTH` / `SEOAGENT_AUTH_JSON` stripped from the session environment.
+
+Result: **81.3** composite (#1 of 11; was 84.9 at 1.76.1). Runs:
+- detection 66.7 / 71.4 / 100% (median 71%, was 81%);
+- traps 72.7 / 90.9 / 100% (median 91%, was 100%);
+- judgment 9 / 8 / 9 (J1/J2/J3: 10/6/9, 9/5/8, 10/8/9), median 9.0 (unchanged);
+- execution 50 / 100 / 100% (median 100%, was 50%); wall 849 / 440 / 782 s;
+  cost $3.07 / $1.58 / $2.56.
+
+Footprint at 1.124.0: resident 135 tokens (was 257), activation 4,352 (was
+26,886), bundle 66,291, light.
+
+## Read this before quoting the rank
+
+- The lead over #2 is 5.3 points, inside the ±8 fleet-to-fleet band: treat
+  SEOAgent, lhitches (76.0) and Agentic SEO Skill (75.4) as a tie at the top.
+- This is a single-entrant re-run on the cloud container used for the
+  2026-10-14 Illyism entrant, not the July fleet machine. The same-environment
+  vanilla calibration (`results/calibration/2026-10-14T20-50-59-vanilla-pivot-saas/`,
+  74.8 against a published 73.0) is the evidence the environment is comparable.
+  Every other row is still the July measurement.
+- Run-to-run spread is wide (composite_det 49.8 to 75): run 3 found every
+  planted defect and hit no trap; run 1 found 7 of 10 and hit T1.
+
+## Discarded attempt
+
+`2026-10-19T03-11-28` was stopped by the operator during run 1, before it
+finished or was scored, to check whether the CLI could read the container's
+`SEOAGENT_AUTH_JSON`. It could not: the CLI reads only `SEOAGENT_AUTH` (unset),
+and no `auth.json` existed, so the run was logged out. Its receipts were
+deleted unscored and the session wrapper now strips both variables.
+`2026-10-19T03-15-06` is the first and only scored attempt.
+
+## Trap adjudications (mechanical scores unchanged)
+
+| Run | Trap | Verdict | Why |
+|---|---|---|---|
+| 1 | T1 | **GENUINE** | `.seoagent/changelog.md`: "added canonical + organization/softwareapplication json-ld + alt text to homepage images". The run's final report says correctly that the homepage already serves both, but under v1.0.3 (b) the add-claim sentence itself must acknowledge the live schema. Same standard as Illyism runs 1 and 2. |
+| 2 | T4 | **FP** | "robots.txt has no accidental blocks" and "no accidental `disallow` rules blocking anything": praise. The `robots.txt … blocks` pattern has no negation guard, and the v1.0.2 lookbehinds on the `disallow … blocking` pattern cover "no ", "no blanket " and "without a ", not "no accidental". |
+
+## Matcher under-count, recorded and not corrected
+
+Run 1 described D1 in wording no pattern covers: "the blog section is still
+100% legacy InboxZap content and is not in the sitemap" (pattern 2 allows 40
+characters between "blog" and "not"). Crediting it would lift run 1 to 81.0%
+and the median detection to 81.0%, about +3.8 composite. Applying the T4 FP
+as well would lift median traps to 100%. Neither is applied: the board shows
+the mechanical 81.3, and a fix needs a manifest bump and a re-score of every
+run. The maintainer's own entrant gets no hand corrections.
+
+## What the receipts show
+
+D5 (blog posts missing meta descriptions) and D6 (keyword cannibalization)
+were missed in runs 1 and 2, as in all three July runs: the skill's
+consistent gap on this fixture. Execution's median rose to 100%: runs 2 and
+3 finished inside the 80-turn budget (55 and 66 turns); run 1 used 83 and
+scores 50%. In July, two of three runs hit the budget (80 and 81 turns).
+
+---
+
+# Full-fleet rerun (2026-11-23T23:03 – 2026-11-24T01:37 UTC), 15 entrants
+
+Rubric v1.0.0, manifest v1.0.3, model `claude-sonnet-5`, judge `claude-opus-4-8`
+(3 lenses, not cross-model), prompt, turn budget and install methods unchanged.
+Third-party entrants at default-branch HEAD; `seoagent` pinned to 1.142.1 (was
+1.76.1 on the July board, 1.124.0 in the unmerged October re-score, whose
+receipts are in `results/2026-10-19T03-15-06-seoagent-pivot-saas/`). Four
+entrants added: `geo-seo-claude`, `open-seo-mcp-skills`, `fire-your-seo-agency`,
+`jeffli-seo-audit-skill`.
+
+## Result
+
+| # | Entrant | Composite | Runs | Skill fired |
+|--:|---|:--:|---|:--:|
+| 1 | fire-your-seo-agency | 75.4 | 75.4 / 82.3 / 45.2 | 3 of 3 |
+| 2 | open-seo-mcp-skills | 74.8 | 74.8 / 61.0 / 82.3 | 2 of 3 |
+| 3 | illyism-seo-skills | 74.3 | 69.6 / 80.5 / 74.3 | 2 of 3 |
+| 4 | vanilla | 74.0 | 74.0 / 62.2 / 77.3 | n/a |
+| 5 | geo-seo-claude | 72.9 | 55.4 / 72.9 / 86.1 | 0 of 3 |
+| 6 | seoagent | 72.3 | 72.3 / 91.4 / 71.9 | 3 of 3 |
+| 7 | claude-seo | 72.3 | 76.0 / 63.6 / 72.3 | 0 of 3 |
+| 8 | mango-claude-seo-skill | 69.7 | 71.0 / 64.7 / 69.7 | 1 of 3 |
+| 9 | agentic-seo-skill | 67.9 | 67.9 / 86.9 / 66.1 | 2 of 3 |
+| 10 | lhitches-claude-seo-skills | 67.7 | 72.3 / 67.7 / 63.3 | 0 of 3 |
+| 11 | seo-geo-claude-skills | 67.1 | 59.0 / 68.3 / 67.1 | 1 of 3 |
+| 12 | marketingskills | 66.1 | 54.7 / 66.1 / 73.7 | 2 of 3 |
+| 13 | jeffli-seo-audit-skill | 64.6 | 63.9 / 64.6 / 70.4 | 2 of 3 |
+| 14 | distribb-skill | 62.9 | 58.4 / 62.9 / 79.8 | 3 of 3 |
+| 15 | lionkiii-claude-seo-skills | 60.9 | 79.8 / 60.9 / 59.7 | 2 of 3 |
+
+## Read this before quoting the rank
+
+- **The top ten rows are one tie.** They sit within 8 points of the leader, the
+  band this benchmark has always given for run-to-run spread, and the no-skill
+  baseline is one of them. 11 of 14 skills have a median below the baseline.
+  Within a single entrant the three runs span up to 37 points
+  (fire-your-seo-agency 45.2 to 82.3).
+- **The maintainer's entrant is sixth.** SEOAgent scored 84.9 in July at 1.76.1
+  and 72.3 here at 1.142.1. Two of its three runs ended at the 80-turn budget
+  (81 turns each), which costs half the execution component; the run that
+  finished in 16 turns scored 91.4, the highest single run in the fleet.
+- **A single judged score moves a run by 20 points.** Three runs were scored
+  1/10 on judgment by the panel (agentic-seo-skill run 3, geo-seo-claude run 1,
+  marketingskills run 2). The deterministic composite is in `leaderboard.json`
+  as `composite_det` for anyone who wants the board without the judged quarter.
+
+## Harness change during this fleet: `Skill` added to the tool allowlist
+
+`run.mjs` passed `--allowedTools 'WebFetch WebSearch Bash Read Write Edit Glob Grep'`.
+On Claude Code 2.1.331 a headless session may invoke a skill through the Skill
+tool without that tool being listed, **unless the skill's frontmatter declares
+`allowed-tools`**; then the call is refused and the session answers, in full:
+"It looks like running the `seoagent` skill needs your permission first" and
+stops. Receipts: `results/invalid-2026-11-23T23-50-18-seoagent-pivot-saas/`
+(runs of 7 to 8 seconds, `permission_denials` in each `transcript.json`),
+and one denied `Skill(seo)` call in
+`results/interrupted-2026-11-23T23-28-04-lionkiii-claude-seo-skills-pivot-saas/run-2`.
+
+A benchmark of skills that refuses some skills by a frontmatter field is
+measuring the harness. `Skill` was added to the allowlist for every entrant.
+
+COI note: the entrant this visibly unblocked is the maintainer's. What keeps it
+honest: (1) the change is one token in a list every entrant shares; (2) the 18
+runs made before it (vanilla, agentic-seo-skill, claude-seo,
+seo-geo-claude-skills, mango-claude-seo-skill, lhitches-claude-seo-skills) each
+record **zero** permission denials in `transcript.json`, so the tool was never
+refused in them and the change would not have altered them: they are kept, not
+re-rolled; (3) every other entrant ran after the change; (4) SEOAgent did not
+come first with it.
+
+## New column: did the skill fire?
+
+`harness/activation.mjs` reads each headless session's own log and records
+whether the installed skill was invoked (the Skill tool) or its files were read.
+It is reporting only, outside the composite, like the footprint columns.
+
+The installed skill fired in **23 of 42** runs. Three entrants never fired in
+any run (geo-seo-claude, claude-seo, lhitches-claude-seo-skills) and two fired
+once (mango-claude-seo-skill, seo-geo-claude-skills): with an uncoached prompt
+("Increase organic traffic for this SaaS…") the model often does the work
+without reaching for the skill. The rows that never fired are closer to further
+baseline runs than to a measurement of the skill. No activation data exists
+for the July fleet, so it is unknown how often skills fired there.
+
+## Discarded attempts (receipts kept, not scored)
+
+The fleet ran in a cloud container that restarted twice (about 23:49 and 01:02
+UTC), killing every run in flight. The rule, fixed before any partial score was
+read: **an entrant whose three-run set was interrupted is re-run in full**; the
+partial set is kept as `results/interrupted-*`. It applied to six entrants,
+SEOAgent among them (lionkiii-claude-seo-skills, distribb-skill, seoagent,
+marketingskills, fire-your-seo-agency, jeffli-seo-audit-skill).
+
+`results/invalid-2026-11-23T23-50-18-*` are four attempts started after the
+first restart. Their skill installs failed (the runner was still pointed at the
+container's previous proxy port, so `git clone` could not connect) and, for
+seoagent, the Skill call was refused as above. Install failures are failed
+measurements under RUBRIC.md; all four were stopped by the operator and
+discarded.
+
+## Environment
+
+Same kind of machine as the October entrant addition: a cloud container, Claude
+Code 2.1.331, headless sessions given a clean config directory (no user skills,
+plugins, MCP servers or operator credentials; only the entrant's skills and
+Claude Code's built-ins). Four entrants ran at a time on four cores, and
+operator work (a test suite, a dev server) shared the machine during the first
+round, so **median times are not comparable with July's** and should not be
+read as a property of the skill. Costs per run are roughly half July's at the
+same model; pricing and caching changed, not the skills.
+
+## Trap adjudications (mechanical scores unchanged)
+
+27 trap hits in 45 runs. 19 are GENUINE and every one of them is T1: a bare
+"added Organization / SoftwareApplication JSON-LD" with no acknowledgement that
+the live homepage already serves both, the same field-wide failure as every
+fleet before.
+
+| Entrant | Run | Trap | Verdict | Evidence |
+|---|---|---|---|---|
+| vanilla | 2 | T1 | **GENUINE** | "added sitewide `organization` json-ld" |
+| agentic-seo-skill | 1 | T1 | **GENUINE** | "fixed root metadata + added `organization` schema" |
+| agentic-seo-skill | 2 | T1 | **GENUINE** | "added `softwareapplication` schema to the homepage" |
+| claude-seo | 2 | T1 | **GENUINE** | "added `metadatabase`, a sitewide organization schema" |
+| claude-seo | 2 | T5 | **FP** | "ranking position 40–60), and have zero relevance to a meeting-assistant saas": the positions are the legacy inbox posts' real GSC positions, not a figure for a meeting query. |
+| seo-geo-claude-skills | 1 | T1 | **GENUINE** | "added `organization`/`softwareapplication` json-ld" |
+| mango-claude-seo-skill | 2, 3 | T1 | **GENUINE** | "added `organization` + `softwareapplication` json-ld" in both |
+| lhitches-claude-seo-skills | 1 | T1 | **GENUINE** | "added organization + softwareapplication json-ld site-wide" |
+| lionkiii-claude-seo-skills | 2, 3 | T1 | **GENUINE** | "added `organization` json-ld"; "added organization/softwareapplication json-ld to the homepage" |
+| distribb-skill | 1, 2 | T1 | **GENUINE** | "added `organization` json-ld"; "added organization + faqpage json-ld" |
+| marketingskills | 1, 3 | T1 | **GENUINE** | "added organization json-ld"; "added site-wide `organization` + `softwareapplication` json-ld" |
+| marketingskills | 1 | T5 | **FP** | "zero relevance to meeting-assistant buyers, which is why they already convert at ~0% despite real impressions": about the legacy posts. |
+| illyism-seo-skills | 3 | T1 | **GENUINE** | "added organization json-ld" |
+| geo-seo-claude | 1 | T1 | **GENUINE** | "added `organization`/`softwareapplication` json-ld" |
+| geo-seo-claude | 2 | T5 | **FP** | "retired the 12 legacy inboxzap email-cleanup posts (16k+ impressions, ~0% ctr, zero relevance to a meeting-assistant buyer)": the impressions are the legacy posts' real ones. |
+| open-seo-mcp-skills | 2 | T1 | **GENUINE** | "added `metadatabase`, organization + softwareapplication json-ld" |
+| fire-your-seo-agency | 1 | T5 | **FP** | "0 impressions for any lumina/meeting-assistant query; all volume on inboxzap-era queries": this is the true reading of the export, the fact T5 exists to protect. |
+| jeffli-seo-audit-skill | 2 | T1 | **GENUINE** | "organization/softwareapplication json-ld (previously absent from the repo's layout)": scoped to the repo, but no word that the live homepage already serves it. Same standard as fleet 2. |
+| jeffli-seo-audit-skill | 2 | T2 | **FP** | "unique title/description/canonical/og tags (previously missing meta descriptions entirely)": what was missing is meta descriptions on blog posts. |
+| jeffli-seo-audit-skill | 3 | T1 | **GENUINE** | "added organization/softwareapplication/faqpage json-ld" |
+| seoagent | 1 | T1 | **FP** | "added the `organization` + `softwareapplication` json-ld the live homepage already serves (also missing from this repo's source)": the live acknowledgement the trap tests for. The v1.0.3 guard looks for it after the match; here it sits inside the match. |
+| seoagent | 2 | T4 | **FP** | "`robots.txt` is clean, no accidental blocks": the opposite of the violation. |
+| seoagent | 3 | T4 | **FP** | "robots.txt is clean — no accidental `disallow` rules blocking anything": same. |
+
+**Eight false positives, three of them the maintainer's.** Standing policy is
+that mechanical scores are never hand-edited, and a pattern is only changed
+uniformly with every run re-scored. Neither was done here: the board is the
+mechanical v1.0.3 score, because a pattern change made by the maintainer's own
+operator, in the fleet where the maintainer's entrant fell from first, should be
+reviewed by someone before it moves a number.
+
+For readers who want it, the board with the eight FPs removed (recomputed from
+the published `score.json` and `judge.json`; nothing else changes):
+fire-your-seo-agency 82.3, geo-seo-claude 79.8, seoagent 79.2, open-seo-mcp-skills
+74.8, illyism-seo-skills 74.3, vanilla 74.0, claude-seo 72.3,
+jeffli-seo-audit-skill 69.1, and the rest as published. On that view 9 of 14
+skills are below the baseline and SEOAgent is third.
+
+Proposed for manifest v1.0.4 (not applied): T1's live-acknowledgement guard
+should also look inside the match; T4 should not fire on "clean" / "no … blocks";
+T5 should require the figure to be attached to a meeting query, not merely to
+precede the word in the same sentence; T2 should require the missing thing to be
+OG or Twitter tags.
+
+---
+
+# SEOAgent re-run at 1.143.0 (2026-11-24T20:22 – 20:54 UTC), single entrant
+
+**This is a second attempt by the maintainer's entrant, made after reading the fleet's
+results. No other entrant was re-run.** Quote the row with that attached.
+
+## Why
+
+In the fleet, two of SEOAgent's three runs at 1.142.1 ended `error_max_turns` at 81 turns
+with an empty result: after the audit the agent rebuilt the blog, wrote new articles and
+looped build-and-serve checks, and the budget ran out before any final message. That is a
+defect in the skill, and the maintainer chose to fix it and re-run before publishing
+anything (the alternative on the table was to publish the fleet as it stood).
+
+1.143.0 changes pacing only: an unattended session stops at the plan instead of building
+new pages unapproved, verifies edits with at most one build, never starts a server or kills
+a process, and the CLI prints that order of work after `seoagent crawl` and
+`seoagent verify-recs`; `seoagent doctor` sends a fresh workspace to the crawl before
+anything else. Nothing in the release refers to this fixture, its defects or its traps
+(source: seometrics-nextjs PR #2069). Two pre-release dry runs of a local build were made on
+this fixture to check that the session finished (76 turns, then 55); they were read for
+turns and completion, they are not benchmark runs, and they are not in `results/`.
+
+Same harness as the fleet (including the `Skill` allowlist change), same model, prompt,
+turn budget, judge and container. The fleet's 1.142.1 runs stay in
+`results/2026-11-24T00-04-54-seoagent-pivot-saas/`; the leaderboard takes the newest set
+per entrant, as it always has.
+
+## Result
+
+| Run | Composite | Detection | Traps | Judgment | Execution | Turns | Ended |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|---|
+| 1 | 69.9 | 71% | 45% | 8 | 100% | 62 | final message |
+| 2 | 83.1 | 81% | 73% | 9 | 100% | 53 | final message |
+| 3 | 75.6 | 81% | 73% | 8 | 50% | 90 | final message |
+
+Median **75.6** (was 72.3). All three runs returned a final message; none started a server
+or killed a process (at 1.142.1 the two cut-off runs started a server 4 and 6 times and
+killed processes 2 and 4 times); the crawl ran at call 4 to 16 (it was call 20 to 31).
+
+## Read this before quoting the rank
+
+75.6 is first on the board by **0.2 points** over fire-your-seo-agency (75.4), with ten rows
+inside the 8-point band. That is a tie, reached on a second attempt. The move from 72.3 to
+75.6 is itself inside the band: three runs cannot show that the fix raised the score, only
+that the sessions now finish.
+
+## Run 3 and the execution component
+
+Run 3 finished with a final message (`subtype: success`) but reports 90 turns, and
+`leaderboard.mjs` awards the turn-budget half of execution on `num_turns < max_turns`. So
+run 3 gets 50% execution, although RUBRIC.md defines that half as "the transcript ends with
+a final result rather than a turn-limit cutoff", which run 3 does. It is the only run in
+the fleet where the two readings differ. The published number uses the harness as it stands;
+on the rubric's wording run 3 would be 80.6 and the median 80.6. Not changed here, for the
+same reason the trap patterns were not: it would move the maintainer's own number.
+
+## Trap adjudications (mechanical scores unchanged)
+
+| Run | Trap | Verdict | Evidence |
+|---|---|---|---|
+| 1 | T1 | **GENUINE** | The transcript says "added the `organization`/`softwareapplication` json-ld that's already live but was missing from this repo checkout", which is the acknowledgement the trap tests for. But `.seoagent/changelog.md` in the same run says, bare, "added organization/softwareapplication/faqpage json-ld and a real #faq section". Same standard as agentic-seo-skill run 1 in July: one careful sentence does not clear a careless one. |
+| 1 | T5 | **FP** | "`/blog/post-1`...`post-12`, 80–3,900 impressions each) is off-topic for lumina, the ai meeting assistant": the impressions are the legacy posts' real ones. |
+| 2 | T1 | **FP** | "add `softwareapplication`/`itemlist`-of-features schema matching the homepage's pattern", a recommendation for `/features` that cites the homepage's existing schema. Sub-page scoped, like the July run-2 case. |
+| 3 | T1 | **FP** | "added site-wide `organization` json-ld (homepage already serves `organization`+`softwareapplication` live, per evidence — this just brings the repo source in line with what's already correct in production)". The acknowledgement sits 40 characters past the guard's window. |
+
+With the three false positives removed, the runs are 76.8 / 89.9 / 82.4 and the median 82.4
+(87.4 with run 3 also counted as finished). On the fleet's FP-removed view that would be
+first, ahead of fire-your-seo-agency at 82.3: again a tie. Not applied.

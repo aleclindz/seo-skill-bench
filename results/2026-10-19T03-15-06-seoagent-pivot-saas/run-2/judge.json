@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from a product called **InboxZap** (email cleanup/inbox-zero) but the rebrand is only half-done. All 12 published blog posts are still InboxZap content ... and they're the only thing getting real organic traffic — gsc/Pages.csv shows them pulling 80–3,900 impressions each ... for queries totally unrelated to meeting transcription",
+          "rationale": "Explicitly identifies the pivot (live site = meeting assistant per crawled title, GSC = legacy InboxZap demand, repo = partially stale layout.tsx) and frames every recommendation around that reality; only shy of full marks because the framing is stated rather than tied to the specific legacy queries it names."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "`https://lumina.example/blog/post-1` — Evidence (GSC): 3900 impressions, 2 clicks, avg position 42.3 ... Action: 301-redirect ... (0 harvest / 13 redirect / 0 sunset)",
+          "rationale": "Walks the inventory asset-by-asset citing real impressions/clicks/positions from the export, but assigns a single uniform disposition (301 everything to the /blog index) with no tiering, no harvest/repurpose, no sunset of the near-zero posts, and redirects into a broken blog shell rather than a relevant successor — grounding is strong but the dispositions are undifferentiated."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "301-redirect all 12 legacy posts into /blog to preserve the equity instead of losing it ... I also drafted a forward content plan: one pillar cluster ('AI Meeting Assistant') ... Content plan blocked on /blog crawlability fix",
+          "rationale": "Articulates the tension and lands a defensible middle path — preserve/redirect salvageable equity rather than torch it, build the meeting-assistant cluster as the growth engine, and sequence it behind the crawlability fix; weakened only by funneling all equity to a broken /blog index instead of topically-matched successors."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from a product called **InboxZap** (email cleanup/inbox-zero) but the rebrand is only half-done. All 12 published blog posts are still InboxZap content... they're the only thing getting real organic traffic... for queries totally unrelated to meeting transcription. That traffic is currently being wasted.",
+          "rationale": "Explicitly names the pivot, identifies live site as meeting assistant vs. GSC as legacy InboxZap demand, flags the repo metadata as stale, and frames the whole plan around that reality. Just short of 10 because the implication is stated operationally rather than as a crisp 'legacy demand is not your market' thesis."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "13 legacy assets classified: 0 harvest · 13 redirect · 0 sunset... /blog/post-7: 80 impressions, 0 clicks, avg position 55.8 ... 301-redirect ... into the most relevant new page",
+          "rationale": "It does walk the inventory asset-by-asset citing real GSC impressions/positions and overrides the homepage misclassification, but every asset gets the identical blanket disposition (301 to a generic /blog) with boilerplate reasoning — no harvest/repurpose, no sunset of zero-value posts like post-7, and redirecting inbox-cleanup URLs into an irrelevant /blog passes little equity and risks soft-404 treatment."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "301-redirect all 12 legacy posts into /blog to preserve the equity instead of losing it ... I also drafted a forward content plan: one pillar cluster ('AI Meeting Assistant')",
+          "rationale": "Avoids both traps — it neither doubles down on inbox content (explicitly bars reusing InboxZap topics) nor torches equity (redirects to preserve it) — and sequences the transition (blog crawlability gates new content). Held below 9-10 because the preservation mechanism (redirect to generic /blog) is weak and the tension is implied more than argued."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Lumina pivoted from a product called **InboxZap** (email cleanup/inbox-zero)... All 12 published blog posts are still InboxZap content... they're the only thing getting real organic traffic... for queries totally unrelated to meeting transcription",
+          "rationale": "Explicitly names the pivot, identifies live site as meeting assistant vs. legacy InboxZap GSC demand, flags repo metadata as stale, and frames every recommendation around that reality. Falls just short of a perfect because the framing is spread across files rather than one crisp implication statement."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "**13 legacy assets** classified: 0 harvest · 13 redirect · 0 sunset... 301-redirect https://lumina.example/blog/post-1 into the most relevant new page",
+          "rationale": "Walks the inventory asset-by-asset with real GSC impressions/positions and correctly overrode the homepage misclassification, but every disposition is an identical blanket '301 into /blog' — no harvest/repurpose, no post-specific successor target, no sunset — so the per-asset reasoning collapses into one undifferentiated action pointing at a page that is itself broken."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "**301-redirect all 12 legacy posts** to preserve the equity instead of losing it... plus a forward content plan: one pillar cluster ('AI Meeting Assistant')... Content plan blocked on /blog crawlability fix",
+          "rationale": "Explicitly names the tension and lands a defensible middle path — preserve legacy equity via redirects, build the meeting-assistant cluster as the growth engine, sequence the transition behind the /blog fix. Docked slightly because the 'preserve' half funnels everything into a generic, currently-broken /blog rather than relevant successors."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 5,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

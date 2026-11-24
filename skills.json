@@ -60,7 +60,7 @@
   {
    "id": "seoagent",
    "name": "SEOAgent",
-   "repo": "@seoagent-official/seoagent@1.76.1",
+   "repo": "@seoagent-official/seoagent@1.143.0",
    "install": "npm",
    "notes": "Maintained by the benchmark maintainer (SEOAgent). Conflict of interest disclosed in README.md and RUBRIC.md. Version PINNED per benchmark cycle for reproducibility (an unpinned npx latest resolved to a stale version mid-cycle once)."
   },
@@ -77,6 +77,34 @@
    "repo": "Illyism/seo-skills",
    "install": "git-skill-md",
    "notes": "11-skill collection by Ilias Ism (SEO autopilot, blitz-seo, title optimization, blog refresher, LinkDR backlinks, intros, Scribiz, customer journey, diff marketing, copywriting). Keyless instruction files, no scripts. Added 2026-10-14; tested at default-branch HEAD af48ce5 (~91 stars)."
+  },
+  {
+   "id": "geo-seo-claude",
+   "name": "GEO-SEO Claude (zubair-trabzada)",
+   "repo": "zubair-trabzada/geo-seo-claude",
+   "install": "git-skill-md",
+   "notes": "16-skill GEO/AI-search audit collection with Python helper scripts. Added 2026-11-23 (~11.7k stars); tested at default-branch HEAD 989cae0."
+  },
+  {
+   "id": "open-seo-mcp-skills",
+   "name": "Open SEO MCP Skills (Ryze AI)",
+   "repo": "ryze-ai-adgent/open-seo-mcp-skills",
+   "install": "git-skill-md",
+   "notes": "8 SEO skills written around an MCP data server. Installed keyless like every entrant: the SKILL.md files only, no MCP server or API key configured. Added 2026-11-23 (~10.6k stars); tested at default-branch HEAD f587b0a."
+  },
+  {
+   "id": "fire-your-seo-agency",
+   "name": "Fire Your SEO Agency (leopard627)",
+   "repo": "leopard627/fire-your-seo-agency",
+   "install": "git-skill-md",
+   "notes": "Single root SKILL.md with helper scripts. Added 2026-11-23 (~1.0k stars); tested at default-branch HEAD 4b996ea."
+  },
+  {
+   "id": "jeffli-seo-audit-skill",
+   "name": "seo-audit-skill (jeffli1993)",
+   "repo": "jeffli1993/seo-audit-skill",
+   "install": "git-skill-md",
+   "notes": "Two audit skills (seo-audit, seo-audit-full) with Python check scripts. Added 2026-11-23 (~790 stars); tested at default-branch HEAD 523bdfb."
   }
  ]
 }

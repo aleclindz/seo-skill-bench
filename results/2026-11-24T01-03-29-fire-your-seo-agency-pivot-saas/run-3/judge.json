@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "InboxZap bulk-deletes old emails, unsubscribes you from newsletters, and gets you to inbox zero in minutes",
+          "rationale": "The entire output treats inbox cleanup as the live product and builds everything around ranking InboxZap-era content; the meeting-assistant pivot is never noticed (the only hint, 'Lumina Labs, Inc.' in the footer, is unremarked)."
+        },
+        "J2": {
+          "score": 1,
+          "basis": "Source: GSC Queries.csv export, 2026-11-24. Priority = has impressions + no dedicated page yet.",
+          "rationale": "GSC data is used to justify writing MORE inbox-cleanup posts, not to make harvest/redirect/sunset dispositions for legacy assets; there is no migration thinking because the legacy demand is mistaken for the current market."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "Direct answers to the inbox-cleanup questions people actually search for.",
+          "rationale": "Falls fully into the first failure mode — doubles down on inbox-cleanup content and even publishes nine new inbox posts for a product that has pivoted away, with no meeting-assistant cluster or transition plan at all."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "'InboxZap bulk-deletes old emails, unsubscribes you from newsletters, and gets you to inbox zero in minutes.' / 'Priority = has impressions + no dedicated page yet.'",
+          "rationale": "The entrant never notices the pivot — the only trace of Lumina is a boilerplate footer 'Lumina Labs, Inc.' The entire site, product copy, and content plan treat inbox-cleanup as the live product and build everything around ranking InboxZap-era queries harder."
+        },
+        "J2": {
+          "score": 1,
+          "basis": "content/backlog.md: publishes nine NEW inbox-cleanup posts from the GSC export as the growth plan; no disposition decisions.",
+          "rationale": "There is no migration thinking at all. The GSC numbers are cited only to justify creating more legacy-aligned content, not to assign harvest/redirect/sunset dispositions; the single data reference point is reused to double down."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "'Direct answers to the inbox-cleanup questions people actually search for.' plus 9 published inbox posts and an 'inboxzap review' backlog item.",
+          "rationale": "Falls fully into the first failure mode — doubles down on inbox-cleanup content for a product that has pivoted away, with zero bridge to any new positioning and no awareness of the tension."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 0,
+          "basis": "metadata description: 'InboxZap's answers to the most common questions about cleaning up Gmail, Outlook, and your inbox' / 'InboxZap bulk-deletes old emails, unsubscribes you from newsletters'",
+          "rationale": "The entrant never notices the pivot to an AI meeting assistant — every page, feature, and blog post is built entirely around InboxZap inbox cleanup, treating the legacy inbox-cleanup queries as the live product's target market."
+        },
+        "J2": {
+          "score": 1,
+          "basis": "content/backlog.md: 'Source: GSC Queries.csv export... Priority = has impressions + no dedicated page yet.' — treats legacy queries as net-new content targets",
+          "rationale": "No disposition thinking for legacy assets as legacy; it cites GSC numbers only to justify writing fresh inbox-cleanup posts, not to harvest/redirect/sunset anything relative to a new product. The single sliver of credit is granular per-query data grounding, but it's aimed entirely the wrong way."
+        },
+        "J3": {
+          "score": 0,
+          "basis": "app/features/page.tsx: 'See every feature InboxZap uses to clean your inbox: bulk delete, mass unsubscribe...'",
+          "rationale": "Falls fully into the first failure mode — doubles down on inbox-cleanup content for a product that has pivoted away, with zero transition plan or acknowledgement of a tension to resolve."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 0,
+    "J2": 1,
+    "J3": 0
+  },
+  "judgment": 0
+}

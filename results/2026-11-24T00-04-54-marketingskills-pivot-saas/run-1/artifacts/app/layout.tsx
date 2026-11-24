@@ -1,0 +1,60 @@
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://lumina.example'),
+  title: 'Lumina — The AI Meeting Assistant for Teams',
+  description:
+    "Lumina joins your calls, records and transcribes them, and delivers a summary with decisions and action items before you're back at your desk. Free for teams up to 5.",
+  openGraph: {
+    title: 'Lumina — The AI Meeting Assistant for Teams',
+    description:
+      'Records, transcribes, and summarizes your meetings. Action items, decisions, and recaps — automatically.',
+    url: 'https://lumina.example/',
+    images: ['/img/og-lumina.png'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lumina — The AI Meeting Assistant for Teams',
+    description: 'Records, transcribes, and summarizes your meetings automatically.',
+  },
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Lumina',
+  url: 'https://lumina.example/',
+  logo: 'https://lumina.example/img/og-lumina.png',
+  sameAs: ['https://twitter.com/luminahq'],
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        <header>
+          <nav>
+            <a href="/">Lumina</a>
+            <a href="/features">Features</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/blog">Blog</a>
+            <a href="/#faq">FAQ</a>
+          </nav>
+        </header>
+        {children}
+        <footer>
+          <p>
+            &copy; 2026 Lumina Labs, Inc. &middot;{' '}
+            <a href="/from-inboxzap">Formerly InboxZap?</a>
+          </p>
+        </footer>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </body>
+    </html>
+  );
+}

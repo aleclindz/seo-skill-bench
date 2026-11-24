@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products — from **InboxZap** (email inbox cleanup) to **Lumina** (AI meeting assistant)... The old GSC data was a dead end: 'inboxzap' branded terms still rank ~#4, but that brand no longer exists... irrelevant to what Lumina sells now anyway. There was zero organic footprint for Lumina's actual niche",
+          "rationale": "Explicitly identifies the pivot, correctly classifies the GSC inbox history as legacy/dead-end demand versus the current meeting-assistant market, and frames every recommendation around the new positioning."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "'inboxzap' branded terms still rank ~#4... The real informational queries (bulk delete emails, gmail storage, etc.) rank position 40-60",
+          "rationale": "Cites a couple of real position figures and broadly declares the legacy content a dead end, but makes no per-asset harvest/redirect/keep/sunset disposition for the legacy posts — it only rebuilds a nonexistent blog rather than walking the legacy inventory with dispositions."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "The old GSC data was a dead end... and are irrelevant to what Lumina sells now anyway... built the meeting-assistant cluster",
+          "rationale": "Correctly avoids chasing inbox-cleanup content and builds the new cluster, but leans toward abandoning legacy equity (declaring it a dead end) without any 301/redirect bridge or sequenced transition plan to preserve salvageable authority, so the tension is only half-resolved."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The site had pivoted products — from **InboxZap** (email inbox cleanup) to **Lumina** (AI meeting assistant) — but the pivot was only half-finished in code... The old GSC data was a dead end: 'inboxzap' branded terms still rank ~#4, but that brand no longer exists... irrelevant to what Lumina sells now anyway. There was zero organic footprint for Lumina's actual niche",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant, treats GSC inbox demand as legacy/irrelevant, and flags the repo as half-migrated — then frames every fix around the Lumina reality. Falls just short of a 10 only because it leans toward writing off legacy equity rather than fully reasoning about bridging it."
+        },
+        "J2": {
+          "score": 2,
+          "basis": "Rewrote the blog as server-rendered Next.js pages... and shipped 4 real articles targeting Lumina's actual niche. The real informational queries (bulk delete emails, gmail storage, etc.) rank position 40-60",
+          "rationale": "Only cites coarse aggregate positions (~#4, 40-60) and never walks the 12 legacy posts asset-by-asset or assigns per-post dispositions (harvest/301/keep/sunset); it effectively replaces the blog wholesale rather than making data-grounded migration decisions."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "The old GSC data was a dead end... and are irrelevant to what Lumina sells now anyway... Built the meeting-assistant cluster as the growth engine",
+          "rationale": "It correctly avoids doubling down on inbox content and builds the new cluster, but leans into the opposite failure — writing legacy equity off as a 'dead end' with no 301s, redirects, or bridging plan — and never articulates or sequences the transition."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "The old GSC data was a dead end: 'inboxzap' branded terms still rank ~#4, but that brand no longer exists... irrelevant to what Lumina sells now anyway. There was zero organic footprint for Lumina's actual niche",
+          "rationale": "Explicitly identifies the pivot (live=Lumina meeting assistant, GSC=legacy InboxZap demand, repo half-finished) and frames the whole plan around the new positioning. Only loses a point because it leans on the fix narrative rather than restating the implication as an ongoing strategic frame."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "'inboxzap' branded terms still rank ~#4... The real informational queries (bulk delete emails, gmail storage, etc.) rank position 40-60 — and are irrelevant to what Lumina sells now anyway",
+          "rationale": "Cites two coarse GSC tiers but makes no per-asset disposition for the 12 legacy posts — no harvest/301/keep/sunset calls, and the old blog was simply rebuilt rather than inventoried. An operator still has to decide the fate of each post."
+        },
+        "J3": {
+          "score": 4,
+          "basis": "Rewrote the blog as server-rendered... shipped 4 real articles targeting Lumina's actual niche, interlinked",
+          "rationale": "Correctly avoids chasing inbox-cleanup content and builds the meeting-assistant cluster as the growth engine, but offers no bridge for salvageable legacy equity — no redirects from ~#4 branded/legacy URLs to successors — so it drifts toward abandoning that equity with no transition plan."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 2,
+    "J3": 4
+  },
+  "judgment": 0.4
+}

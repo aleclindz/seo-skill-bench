@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "GSC exports show 40 top queries and 13 top pages, all InboxZap-era... zero overlap with Lumina's actual positioning; live site = meeting assistant, repo partially stale",
+          "rationale": "Explicitly identifies the pivot (live site = AI meeting assistant, GSC = legacy InboxZap inbox-cleanup demand, repo = stale), states the implication, and frames every recommendation — audit, migration, content roadmap — around that reality."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "`/blog/post-1` — 3900 impr, 2 clicks, pos 42.3; ... per-post list with impressions/clicks/positions; 1 harvest (homepage, 600 impr, pos 4.5) · 52 sunset",
+          "rationale": "Walks all 12 legacy posts asset-by-asset citing real impressions/clicks/positions from the export and assigns an explicit disposition with reasoning (sunset/noindex, not 301, justified by pos 42–58 and near-zero clicks); only shortfall is grouping queries rather than fully per-asset."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "redirecting to the homepage would just be a mass irrelevant-redirect pattern (soft-404-like), not real equity transfer; harvest the homepage for residual branded 'inboxzap' searches + brand-bridge line, build Lumina cluster once /blog renders",
+          "rationale": "Articulates the tension explicitly and lands a defensible middle: preserves the one piece of bridgeable branded equity (homepage + rebrand note), declines dishonest mass redirects of off-topic equity, and sequences the transition (fix pipeline → sunset legacy → forward content), rather than blindly chasing or torching all legacy."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina's live site is currently sitting on **InboxZap's** entire SEO history — a prior, unrelated product (consumer email-cleanup tool)... GSC exports show 40 top queries and 13 top pages, all InboxZap-era... zero overlap with Lumina's actual positioning",
+          "rationale": "Explicitly nails the pivot (live = meeting assistant, GSC = legacy inbox demand, repo = partially stale), states the implication, and frames every recommendation around it — even catching and overriding an automated classifier that misread the pivot."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "`/blog/post-1` — 3900 impr, 2 clicks, pos 42.3 ... 1 harvest (homepage, brand-bridge) · 52 sunset ... Why not redirect: avg. position is 38–65 ... no relevant Lumina page exists to honestly receive this traffic",
+          "rationale": "Walks the legacy inventory asset-by-asset with real impressions/clicks/positions, assigns dispositions (harvest homepage, sunset/noindex the 12 posts) with explicit reasoning for rejecting 301s; minor ding that all 12 posts collapse to one disposition, though it's data-justified."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "preserve the one piece of bridgeable old-brand (\"InboxZap\") demand; the 12 orphaned blog posts and 37 associated legacy queries are off-strategy... should be sunset (noindexed), not refreshed... next up would be forward keyword research for Lumina's actual positioning",
+          "rationale": "Articulates the tension explicitly and lands a defensible middle path — harvest residual branded equity, sunset off-topic content without torching it (noindex, leave URLs live), and sequences building the meeting-assistant engine after unblocking the pipeline."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Lumina's live site is currently sitting on **InboxZap's** entire SEO history — a prior, unrelated product... zero overlap with Lumina's actual positioning",
+          "rationale": "Explicitly nails the pivot (live = meeting assistant, GSC = legacy InboxZap inbox demand, repo = stale), states implications, and frames every recommendation around it — even reconciling the stale layout.tsx brand."
+        },
+        "J2": {
+          "score": 9,
+          "basis": "`/blog/post-1` — 3900 impr, 2 clicks, pos 42.3 ... 1 harvest (homepage, brand-bridge) · 52 sunset",
+          "rationale": "Walks the full legacy inventory post-by-post with real GSC impressions/positions and assigns explicit dispositions, with reasoned justification for sunset-over-redirect; only slightly less than perfect since every asset lands on one disposition (sunset) rather than mixed tiers, though the data defends it."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "preserve/redirect what has salvageable equity... the 12 orphaned blog posts and 37 associated legacy queries are off-strategy... should be sunset (noindexed), not refreshed",
+          "rationale": "Articulates the tension explicitly, harvests the one bridgeable branded-demand asset (homepage rebrand line), noindexes (not torches) decayed off-topic posts, and sequences blog-pipeline fix → migration → forward Lumina cluster — avoiding both failure modes."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 9,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

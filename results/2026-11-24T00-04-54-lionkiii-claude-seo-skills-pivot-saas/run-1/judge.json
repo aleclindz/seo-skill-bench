@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from \"InboxZap\" (an email-cleanup tool) to \"Lumina\" (an AI meeting assistant)... GSC's top queries are almost entirely old-business terms... ranking at position 40-60 with near-zero clicks — the 12 existing blog posts are 100% about the dead product",
+          "rationale": "Explicitly identifies the pivot across all three sources (live=meeting assistant, GSC=legacy inbox demand, repo=half-migrated), states the implication, and frames every recommendation around the new positioning."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Replaced the 12 off-topic legacy posts (which were getting thousands of impressions but no relevant audience) with 301 redirects to /blog",
+          "rationale": "Applies a single blanket 301 to the blog hub for all 12 posts rather than per-asset harvest/redirect/sunset decisions; cites only aggregate GSC figures (pos 40-60, thousands of impressions) not per-post numbers, and redirecting topically-dead posts to a hub risks soft-404 treatment."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "`inboxzap`/`inboxzap app` brand queries still convert at position ~4-8, so there's real residual equity being wasted... a Q&A entry on the InboxZap→Lumina rename that captures that branded search intent instead of losing it",
+          "rationale": "Avoids both failure modes: preserves branded equity via a rename FAQ and bridge post, redirects dead legacy URLs, and builds the meeting-assistant cluster as the growth engine; weakened only by the blunt all-to-hub redirect rather than mapping equity to specific successors."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from \"InboxZap\" (an email-cleanup tool) to \"Lumina\" (an AI meeting assistant), and the migration was left half-finished... GSC's top queries are almost entirely old-business terms... the 12 existing blog posts are 100% about the dead product and structurally can't rank for anything Lumina actually sells",
+          "rationale": "Explicitly nails all three sources: live site = meeting assistant, GSC = legacy inbox demand, repo = half-finished migration, and frames every recommendation around that reality including residual InboxZap brand equity."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Replaced the 12 off-topic legacy posts... with 301 redirects to /blog... Pre-pivot InboxZap blog posts... have no equivalent on the Lumina meeting-assistant site. Send them to the blog hub instead",
+          "rationale": "Makes a clear, reasoned disposition (blanket 301 to /blog hub) and preserves branded InboxZap intent via an FAQ/story post, but applies one uniform treatment to all 12 rather than walking them asset-by-asset with per-post GSC impressions/positions, so it falls short of the data-justified tiered anchor."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "`inboxzap`/`inboxzap app` brand queries still convert at position ~4-8, so there's real residual equity being wasted... build 5 new posts actually targeting Lumina's ICP keywords... plus one post telling the InboxZap→Lumina story directly",
+          "rationale": "Clearly avoids both failure modes: doesn't chase dead inbox-cleanup content, doesn't torch equity blindly (redirects legacy URLs, captures branded search via the rename story/FAQ), and builds the meeting cluster as the growth engine; slightly short of a fully sequenced transition plan."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from \"InboxZap\" (an email-cleanup tool) to \"Lumina\" (an AI meeting assistant)... GSC's top queries are almost entirely old-business terms... ranking at position 40-60 with near-zero clicks — the 12 existing blog posts are 100% about the dead product and structurally can't rank for anything Lumina actually sells",
+          "rationale": "Explicitly names the pivot, identifies live=meeting assistant vs GSC=legacy inbox demand vs repo=half-finished migration, and frames every recommendation around the new positioning."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "Replaced the 12 off-topic legacy posts... with 301 redirects to /blog, and added 5 new posts... plus one post telling the InboxZap→Lumina story; and preserved inboxzap brand intent via FAQ/blog. Also notes 'inboxzap'/'inboxzap app' brand queries still convert at position ~4-8",
+          "rationale": "Makes an explicit disposition (blanket 301 of all 12 legacy posts to /blog) and salvages brand equity via a rename post, but treats the 12 posts as one undifferentiated tier rather than citing per-asset impressions/positions; no asset-by-asset, data-justified harvest/sunset split."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "there's real residual equity being wasted... Replaced the 12 off-topic legacy posts... with 301 redirects to /blog... plus one post telling the InboxZap→Lumina story directly... captures that branded search intent instead of losing it to confusion",
+          "rationale": "Avoids both failure modes: builds the meeting-assistant cluster as the growth engine while redirecting legacy URLs and capturing branded InboxZap intent via a bridging rename post rather than hard-404ing equity; slightly short of a fully sequenced transition with equity triage."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 6,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

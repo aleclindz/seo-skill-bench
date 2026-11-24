@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant)... the GSC export shows the *only* clicks this site gets are branded searches for \"inboxzap\" (18 clicks)",
+          "rationale": "Explicitly identifies the pivot from live content, treats the inbox GSC history as legacy branded/stale demand, and frames every recommendation (brand metadata, FAQ, redirects, new cluster) around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "12 old blog posts about email cleanup ... get thousands of impressions but near-zero clicks (position 40-58) ... Added a 301 redirect (/blog/post-:id → /blog) so that stale, topically-irrelevant indexed content consolidates",
+          "rationale": "Grounds a disposition in real GSC impression/position bands, but treats all 12 as one undifferentiated tier with a single blanket 301 to /blog — no per-asset or tiered harvest/repurpose/keep reasoning, so it lands mid-range."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "consolidates instead of diluting the domain's relevance for meeting-assistant queries ... Added a \"What happened to InboxZap?\" FAQ ... wrote 3 seed blog posts actually about Lumina's product",
+          "rationale": "Avoids both failure modes: doesn't double down on inbox content, and bridges equity via 301s + the InboxZap-rebrand FAQ/footer rather than torching it, while building the meeting cluster as the growth engine — though the transition sequencing is only lightly articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), and the migration left the SEO layer broken and half-updated",
+          "rationale": "Explicitly identifies the pivot, correctly reads the live site as the meeting assistant and treats inbox-cleanup GSC history as legacy, and frames every recommendation around that reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "12 old blog posts about email cleanup ... get thousands of impressions but near-zero clicks (position 40-58) ... Added a 301 redirect (/blog/post-:id → /blog)",
+          "rationale": "Cites real aggregate GSC numbers and makes a reasoned disposition (301 consolidate) justified by topical irrelevance, but applies one blanket redirect to all 12 rather than per-asset/tiered harvest-vs-redirect-vs-sunset decisions."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "consolidates instead of diluting the domain's relevance for meeting-assistant queries ... Added a 'What happened to InboxZap?' FAQ ... wrote 3 seed blog posts actually about Lumina's product",
+          "rationale": "Lands a defensible middle path: harvests the salvageable branded equity (InboxZap FAQ/footer) while redirecting topically-dead legacy posts and building the meeting-assistant cluster as the growth engine, explicitly noting 3 posts is only a start and sustained cadence is needed."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant)... Irrelevant legacy content: 12 old blog posts about email cleanup... have nothing to do with the new product",
+          "rationale": "Explicitly identifies the pivot from the live product, classifies GSC inbox queries as legacy demand (the only clicks are branded 'inboxzap' searches), and frames every fix around the meeting-assistant reality including a rebrand FAQ to catch legacy branded traffic."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "12 old blog posts about email cleanup... get thousands of impressions but near-zero clicks (position 40-58)... Added a 301 redirect (/blog/post-:id → /blog)",
+          "rationale": "Cites real GSC figures and makes a defensible blanket disposition (301 all 12 to /blog as topically irrelevant), but treats the inventory as one undifferentiated block rather than walking it asset-by-asset or in tiers, with no harvest/repurpose consideration for any individual post."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "consolidates instead of diluting the domain's relevance for meeting-assistant queries... wrote 3 seed blog posts actually about Lumina's product... 3 seed posts is a start, not a content program",
+          "rationale": "Names the tension and lands a middle path — redirect salvageable branded equity via the rebrand FAQ, 301 irrelevant legacy content instead of 404ing it, and seed the new cluster — but the transition is lightly sequenced and leans on a blanket redirect rather than preserving any legacy post's ranking equity."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 5,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

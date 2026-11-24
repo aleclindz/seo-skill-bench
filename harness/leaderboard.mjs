@@ -72,6 +72,7 @@ for (const [skillId, { dir }] of bySkill) {
     const judge = fs.existsSync(path.join(runDir, 'judge.json')) ? readJson(path.join(runDir, 'judge.json')) : null;
     if (!score || !stats) continue;
     model = stats.model || model;
+    const activation = fs.existsSync(path.join(runDir, 'activation.json')) ? readJson(path.join(runDir, 'activation.json')) : null;
 
     const withinBudget = stats.usage?.num_turns != null ? stats.usage.num_turns < (stats.max_turns || 80) : stats.exit === 0;
     const execution = (stats.files_changed > 0 ? 0.5 : 0) + (withinBudget ? 0.5 : 0);
@@ -84,6 +85,8 @@ for (const [skillId, { dir }] of bySkill) {
       judgment,
       execution,
       wall_ms: stats.wall_ms,
+      // null = no activation trace for this run (runs made before 2026-11-23).
+      fired: activation && activation.session_log_found ? activation.fired : null,
       cost_usd: stats.usage?.total_cost_usd ?? null,
       composite_det: 40 * score.detection + 25 * score.trap_avoidance + 10 * execution,
       composite: judgment == null ? null : 40 * score.detection + 25 * score.trap_avoidance + 25 * judgment + 10 * execution,
@@ -105,6 +108,12 @@ for (const [skillId, { dir }] of bySkill) {
     spread_det: [Math.min(...perRun.map((r) => r.composite_det)), Math.max(...perRun.map((r) => r.composite_det))],
     median_wall_s: median(perRun.map((r) => r.wall_ms)) / 1000,
     median_cost_usd: perRun.every((r) => r.cost_usd != null) ? median(perRun.map((r) => r.cost_usd)) : null,
+    // Activation (harness/activation.mjs): in how many runs the installed skill
+    // was invoked or its files were read. Reporting only, outside the composite.
+    // Omitted when any run lacks a trace, and for the no-skill baseline.
+    ...(skillId !== 'vanilla' && perRun.every((r) => r.fired != null)
+      ? { skill_fired_runs: perRun.filter((r) => r.fired).length }
+      : {}),
   });
 }
 
@@ -143,11 +152,11 @@ const lines = [
     ? '> Some entrants have judgment pending — their score is the **75-point deterministic composite** (detection + traps + execution). Full 100-point composites appear once the blind judge panel has run.'
     : '> Full 100-point composite (detection 40 / trap avoidance 25 / judgment 25 / execution 10), median of all runs.',
   '',
-  '| # | Skill | Composite | Detection | Trap avoidance | Judgment | Execution | Footprint | Resident | Runs | Median time | Median cost |',
-  '|--:|-------|:--------:|:---------:|:--------------:|:--------:|:---------:|:---------:|:--------:|:----:|:-----------:|:-----------:|',
+  '| # | Skill | Composite | Detection | Trap avoidance | Judgment | Execution | Skill fired | Footprint | Resident | Runs | Median time | Median cost |',
+  '|--:|-------|:--------:|:---------:|:--------------:|:--------:|:---------:|:-----------:|:---------:|:--------:|:----:|:-----------:|:-----------:|',
   ...rows.map(
     (r, i) =>
-      `| ${i + 1} | ${r.name} | **${fmt(r.composite ?? r.composite_det)}${r.composite == null ? ' /75*' : ''}** | ${pct(r.detection)} | ${pct(r.trap_avoidance)} | ${r.judgment == null ? 'pending' : fmt(r.judgment * 10, 1) + '/10'} | ${pct(r.execution)} | ${r.footprint_band ?? '—'} | ${r.resident_tokens != null ? r.resident_tokens + 't' : '—'} | ${r.runs} | ${fmt(r.median_wall_s, 0)}s | ${r.median_cost_usd == null ? '—' : '$' + r.median_cost_usd.toFixed(2)} |`
+      `| ${i + 1} | ${r.name} | **${fmt(r.composite ?? r.composite_det)}${r.composite == null ? ' /75*' : ''}** | ${pct(r.detection)} | ${pct(r.trap_avoidance)} | ${r.judgment == null ? 'pending' : fmt(r.judgment * 10, 1) + '/10'} | ${pct(r.execution)} | ${r.skill_fired_runs == null ? '—' : r.skill_fired_runs + ' of ' + r.runs} | ${r.footprint_band ?? '—'} | ${r.resident_tokens != null ? r.resident_tokens + 't' : '—'} | ${r.runs} | ${fmt(r.median_wall_s, 0)}s | ${r.median_cost_usd == null ? '—' : '$' + r.median_cost_usd.toFixed(2)} |`
   ),
   '',
   anyPending ? '\\* deterministic composite out of 75 (judgment pending)' : '',
@@ -157,6 +166,7 @@ const lines = [
   '- **Detection** — weighted share of the fixture\'s planted defects the skill actually found.',
   '- **Trap avoidance** — 100% means zero hallucination events (never recommended "fixing" something that is demonstrably already fine).',
   '- **Judgment** — blind panel median on the fixture\'s pre-registered judgment questions.',
+  '- **Skill fired** — in how many runs the installed skill was invoked (the Skill tool) or its files were read. Outside the composite. The prompt is uncoached, so a skill that never fires is being scored as the model alone; read its row against the baseline. Per-run receipts: `activation.json`; method: `node harness/activation.mjs`.',
   '- **Footprint / Resident** — context cost, deliberately OUTSIDE the composite: Resident is the tokens the entrant\'s installed skill descriptions occupy in the system prompt of EVERY message (whether or not a skill fires; a collection pays per skill), banded light ≤280t / medium ≤1000t / heavy >1000t against the 50–280t per-skill range measured in "@skills: Attention Is All You Have" (Yin et al., 2026). Heavy resident footprints dilute the trigger reliability of everything else installed. Full numbers (activation + bundle tokens) in results/footprint.json; method + regeneration: `node harness/footprint.mjs`.',
   '- Scores are medians across runs; a skill that only performs sometimes is an unreliable skill.',
   '- Reproduce any row: `node harness/run.mjs --skill <id> --fixture ' + fixture + ' --runs 3`.',

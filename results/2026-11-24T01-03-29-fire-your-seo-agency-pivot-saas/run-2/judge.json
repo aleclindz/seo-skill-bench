@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted products — it used to be InboxZap ... and is now Lumina ... The GSC export is almost entirely legacy InboxZap queries ... irrelevant to the current product",
+          "rationale": "Explicitly names the pivot across live site, GSC history, and repo, states the implication, and frames every recommendation around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 6,
+          "basis": "301'd them to /blog instead of faking relevance ... Their ranking queries (gmail storage full, mass delete emails) are about a product this company no longer builds",
+          "rationale": "Issues a data-justified disposition (blanket 301 of the 12 slugs, harvest of the branded 'inboxzap' cluster into a dedicated rebrand post), but treats the 12 posts as one tier rather than walking them asset-by-asset with each post's real impressions/positions."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "preserve/redirect what has salvageable equity ... 301'd them to /blog ... build the meeting-assistant cluster ... existing branded search equity isn't wasted",
+          "rationale": "Explicitly names the tension and lands a defensible middle path: redirect/harvest salvageable equity (branded InboxZap demand), sunset unsalvageable intent, and build the new cluster as the growth engine with a sequenced measurement plan."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted products — it used to be InboxZap ... and is now Lumina (AI meeting assistant). The GSC export is almost entirely legacy InboxZap queries ... that are irrelevant to the current product",
+          "rationale": "Explicitly names the pivot, labels GSC history as legacy InboxZap demand, notes the repo was partially stale (missing routes, stale metadata), and frames every recommendation around the meeting-assistant reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301'd them to /blog instead of faking relevance ... Their ranking queries (gmail storage full, mass delete emails) are about a product this company no longer builds",
+          "rationale": "Applies a single blanket 301 for all 12 legacy posts with sound reasoning, plus a separate harvest decision for the branded 'inboxzap' cluster (14 clicks, pos ~4), but does not walk the inventory asset-by-asset citing per-post impressions/positions from the export."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Homepage 'Looking for InboxZap?' section + dedicated /blog/inboxzap-is-now-lumina page + FAQ entry, so that existing branded search equity isn't wasted ... Did not try to resurrect the 12 old InboxZap blog posts' content",
+          "rationale": "Explicitly rejects both failure modes — refuses to chase dead inbox-cleanup intent, yet preserves salvageable branded equity via redirect/bridge content while building the meeting-assistant cluster as the growth engine, with a Day-14 measurement sequence."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this SaaS pivoted products — it used to be **InboxZap** (email cleanup / inbox-zero tool) and is now **Lumina** (AI meeting assistant). The GSC export is almost entirely legacy InboxZap queries... that are irrelevant to the current product",
+          "rationale": "Explicitly names the pivot, identifies GSC as legacy demand and the live product as the meeting assistant, and frames every recommendation (metadata, redirects, new cluster) around that reality."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "301'd them to `/blog` instead of faking relevance... retiredPosts = Array.from({ length: 12 }...destination: '/blog', permanent: true",
+          "rationale": "Gives the 12 legacy posts an explicit disposition (blanket 301 to /blog) with reasoning, and carves out the branded 'inboxzap' query for harvest via a dedicated rebrand post, but it does not walk the inventory asset-by-asset or cite per-post impressions/positions from the export — it's a single blanket decision rather than data-justified tiers."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Homepage 'Looking for InboxZap?' section + dedicated `/blog/inboxzap-is-now-lumina` page + FAQ entry, so that existing branded search equity isn't wasted... 301'd them to `/blog` instead of faking relevance",
+          "rationale": "Lands a defensible middle path: redirects/salvages the branded equity worth keeping, refuses to chase dead inbox-cleanup intent, and builds the meeting-assistant cluster as the growth engine with a sequenced measurement plan."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 5,
+    "J3": 9
+  },
+  "judgment": 0.9
+}

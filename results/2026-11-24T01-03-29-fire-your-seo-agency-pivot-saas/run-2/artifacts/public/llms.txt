@@ -1,0 +1,22 @@
+# Lumina
+
+> Lumina is an AI meeting assistant for teams. It joins Zoom, Google Meet, and Microsoft
+> Teams calls, transcribes them, and turns the conversation into a summary with decisions
+> and action items. Free for teams up to 5 people.
+
+Lumina was formerly named InboxZap, an inbox-cleanup tool. InboxZap is no longer developed;
+see /blog/inboxzap-is-now-lumina for what changed.
+
+## Primary pages
+
+- [Home](https://lumina.example/): product overview and how it works
+- [Features](https://lumina.example/features): full feature list
+- [Pricing](https://lumina.example/pricing): plans, including the free tier for teams up to 5
+- [FAQ](https://lumina.example/faq): pricing, consent, supported call tools, and the InboxZap-to-Lumina transition
+
+## Blog — questions answered with a direct answer and supporting detail
+
+- [Meeting Minutes Template: The 5 Fields You Actually Need](https://lumina.example/blog/meeting-minutes-template)
+- [AI Meeting Assistant vs. Manual Notes: Which Catches More?](https://lumina.example/blog/ai-meeting-assistant-vs-manual-notes)
+- [How to Turn a Meeting Into Action Items, Not Just Notes](https://lumina.example/blog/turning-meetings-into-action-items)
+- [What Happened to InboxZap? It's Now Lumina](https://lumina.example/blog/inboxzap-is-now-lumina)
