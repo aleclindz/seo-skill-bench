@@ -598,3 +598,74 @@ should also look inside the match; T4 should not fire on "clean" / "no … block
 T5 should require the figure to be attached to a meeting query, not merely to
 precede the word in the same sentence; T2 should require the missing thing to be
 OG or Twitter tags.
+
+---
+
+# SEOAgent re-run at 1.143.0 (2026-11-24T20:22 – 20:54 UTC), single entrant
+
+**This is a second attempt by the maintainer's entrant, made after reading the fleet's
+results. No other entrant was re-run.** Quote the row with that attached.
+
+## Why
+
+In the fleet, two of SEOAgent's three runs at 1.142.1 ended `error_max_turns` at 81 turns
+with an empty result: after the audit the agent rebuilt the blog, wrote new articles and
+looped build-and-serve checks, and the budget ran out before any final message. That is a
+defect in the skill, and the maintainer chose to fix it and re-run before publishing
+anything (the alternative on the table was to publish the fleet as it stood).
+
+1.143.0 changes pacing only: an unattended session stops at the plan instead of building
+new pages unapproved, verifies edits with at most one build, never starts a server or kills
+a process, and the CLI prints that order of work after `seoagent crawl` and
+`seoagent verify-recs`; `seoagent doctor` sends a fresh workspace to the crawl before
+anything else. Nothing in the release refers to this fixture, its defects or its traps
+(source: seometrics-nextjs PR #2069). Two pre-release dry runs of a local build were made on
+this fixture to check that the session finished (76 turns, then 55); they were read for
+turns and completion, they are not benchmark runs, and they are not in `results/`.
+
+Same harness as the fleet (including the `Skill` allowlist change), same model, prompt,
+turn budget, judge and container. The fleet's 1.142.1 runs stay in
+`results/2026-11-24T00-04-54-seoagent-pivot-saas/`; the leaderboard takes the newest set
+per entrant, as it always has.
+
+## Result
+
+| Run | Composite | Detection | Traps | Judgment | Execution | Turns | Ended |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|---|
+| 1 | 69.9 | 71% | 45% | 8 | 100% | 62 | final message |
+| 2 | 83.1 | 81% | 73% | 9 | 100% | 53 | final message |
+| 3 | 75.6 | 81% | 73% | 8 | 50% | 90 | final message |
+
+Median **75.6** (was 72.3). All three runs returned a final message; none started a server
+or killed a process (at 1.142.1 the two cut-off runs started a server 4 and 6 times and
+killed processes 2 and 4 times); the crawl ran at call 4 to 16 (it was call 20 to 31).
+
+## Read this before quoting the rank
+
+75.6 is first on the board by **0.2 points** over fire-your-seo-agency (75.4), with ten rows
+inside the 8-point band. That is a tie, reached on a second attempt. The move from 72.3 to
+75.6 is itself inside the band: three runs cannot show that the fix raised the score, only
+that the sessions now finish.
+
+## Run 3 and the execution component
+
+Run 3 finished with a final message (`subtype: success`) but reports 90 turns, and
+`leaderboard.mjs` awards the turn-budget half of execution on `num_turns < max_turns`. So
+run 3 gets 50% execution, although RUBRIC.md defines that half as "the transcript ends with
+a final result rather than a turn-limit cutoff", which run 3 does. It is the only run in
+the fleet where the two readings differ. The published number uses the harness as it stands;
+on the rubric's wording run 3 would be 80.6 and the median 80.6. Not changed here, for the
+same reason the trap patterns were not: it would move the maintainer's own number.
+
+## Trap adjudications (mechanical scores unchanged)
+
+| Run | Trap | Verdict | Evidence |
+|---|---|---|---|
+| 1 | T1 | **GENUINE** | The transcript says "added the `organization`/`softwareapplication` json-ld that's already live but was missing from this repo checkout", which is the acknowledgement the trap tests for. But `.seoagent/changelog.md` in the same run says, bare, "added organization/softwareapplication/faqpage json-ld and a real #faq section". Same standard as agentic-seo-skill run 1 in July: one careful sentence does not clear a careless one. |
+| 1 | T5 | **FP** | "`/blog/post-1`...`post-12`, 80–3,900 impressions each) is off-topic for lumina, the ai meeting assistant": the impressions are the legacy posts' real ones. |
+| 2 | T1 | **FP** | "add `softwareapplication`/`itemlist`-of-features schema matching the homepage's pattern", a recommendation for `/features` that cites the homepage's existing schema. Sub-page scoped, like the July run-2 case. |
+| 3 | T1 | **FP** | "added site-wide `organization` json-ld (homepage already serves `organization`+`softwareapplication` live, per evidence — this just brings the repo source in line with what's already correct in production)". The acknowledgement sits 40 characters past the guard's window. |
+
+With the three false positives removed, the runs are 76.8 / 89.9 / 82.4 and the median 82.4
+(87.4 with run 3 also counted as finished). On the fleet's FP-removed view that would be
+first, ahead of fire-your-seo-agency at 82.3: again a tie. Not applied.

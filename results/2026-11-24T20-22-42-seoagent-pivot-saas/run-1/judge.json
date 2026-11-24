@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "Your GSC export (`gsc/*.csv`) is **100% from a different product** — \"InboxZap\" (an email-cleanup tool)... off-topic for Lumina, the AI meeting assistant the site is now",
+          "rationale": "Explicitly identifies the pivot across all three sources (live site = meeting assistant, GSC = legacy InboxZap demand, repo = partially stale), states the implication, and frames every recommendation around it."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "301s for the 12 legacy blog posts → `/blog`... 12 legacy posts with 80–3900 impressions each, near-zero clicks at position 42–58, no on-topic replacement exists",
+          "rationale": "Assigns explicit dispositions (12 posts → 301, homepage override kept) grounded in real GSC impressions/positions, but treats the legacy posts as a single blanket 'redirect' tier rather than walking them asset-by-asset with per-post reasoning, and considers zero harvest."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "preserve/redirect (301 the legacy posts to the content hub), build the ai-meeting-assistant cluster as growth engine, and sequencing ('Queued, not yet deployed/written'... pending blog deploy)",
+          "rationale": "Lands a defensible middle path — 301s to bridge authority rather than torching or chasing it, plus a new cluster — but the justification for 0 harvest (positions 42–58, near-zero clicks) implies little salvageable equity exists, so the 'preserve' side is thin though reasoned."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "this is a post-pivot site bleeding its own history ... Your GSC export (gsc/*.csv) is 100% from a different product — 'InboxZap' ... off-topic for Lumina, the AI meeting assistant the site is now",
+          "rationale": "Explicitly names the pivot, identifies live site = meeting assistant, GSC = legacy InboxZap demand, and repo as partially stale, and frames every recommendation (migration + new cluster) around that reality."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "13 legacy assets, 0 harvest, 13 flagged redirect (I overrode 1 — the homepage) ... 12 legacy posts with 80–3900 impressions each, near-zero clicks at position 42–58, no on-topic replacement exists",
+          "rationale": "Ran a real migration tool, cited actual impressions/positions, and assigned dispositions with reasoning (including overriding the homepage artifact), but treated all 12 posts as a single blanket redirect-to-/blog tier rather than walking genuinely distinct per-asset decisions."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "preserve/redirect what has salvageable equity ... Rebuilt /blog ... generate briefs and write the first cluster: ai-meeting-assistant ... withheld pending publishing deploy",
+          "rationale": "Avoids both failure modes — 301s legacy URLs to bridge rather than torching them, and builds the meeting-assistant cluster as the growth engine with an explicit sequenced transition; slightly weakened because redirecting topically-unrelated email posts passes limited real equity, which it doesn't fully acknowledge."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "Your GSC export (`gsc/*.csv`) is **100% from a different product** — \"InboxZap\"... off-topic for Lumina, the AI meeting assistant the site is now",
+          "rationale": "Explicitly names the pivot, classifies GSC as legacy equity vs. the live meeting-assistant product, and frames every recommendation (migration, new cluster) around that reality. Loses a hair only because the clearest statement sits in appended files rather than being belabored up front."
+        },
+        "J2": {
+          "score": 7,
+          "basis": "Ran `Entrant migrate` against the GSC export... 13 legacy assets, 0 harvest, 13 flagged redirect (I overrode 1 — the homepage)... 12 legacy posts with 80–3900 impressions each, near-zero clicks at position 42–58, no on-topic replacement exists",
+          "rationale": "Cites real impression/position numbers and assigns an explicit disposition with reasoning, including a justified override of the homepage row. But the 12 posts all get the same blanket 301→/blog hub rather than genuinely per-asset harvest/successor decisions, so it stops short of a true asset-by-asset tiered walk."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "301 the 12 legacy InboxZap blog posts → /blog... build the meeting-assistant cluster as the growth engine... publishing.setup_status stays pending until deployed",
+          "rationale": "Avoids both failure modes: preserves salvageable equity via redirects rather than torching it, declines to chase off-topic inbox queries, and sequences the transition (fix blog → deploy → write pillar). Executable and well-ordered, though the bridge is a redirect-to-hub rather than redirect-to-relevant-successor."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 7,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

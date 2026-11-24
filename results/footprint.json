@@ -68,11 +68,11 @@
     "seoagent": {
       "skill_count": 1,
       "resident_tokens": 135,
-      "activation_tokens_max": 4370,
-      "body_words_max": 2500,
-      "bundle_tokens": 72231,
+      "activation_tokens_max": 4367,
+      "body_words_max": 2499,
+      "bundle_tokens": 72472,
       "footprint_band": "light",
-      "source": "@seoagent-official/seoagent@1.142.1"
+      "source": "@seoagent-official/seoagent@1.143.0"
     },
     "marketingskills": {
       "skill_count": 53,

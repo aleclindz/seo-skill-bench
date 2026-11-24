@@ -6,12 +6,12 @@ Fixture: **pivot-saas** · Model: **claude-sonnet-5** · Rubric: **v1.0.0** · U
 
 | # | Skill | Composite | Detection | Trap avoidance | Judgment | Execution | Skill fired | Footprint | Resident | Runs | Median time | Median cost |
 |--:|-------|:--------:|:---------:|:--------------:|:--------:|:---------:|:-----------:|:---------:|:--------:|:----:|:-----------:|:-----------:|
-| 1 | Fire Your SEO Agency (leopard627) | **75.4** | 62% | 100% | 9.0/10 | 100% | 3 of 3 | light | 144t | 3 | 546s | $1.36 |
-| 2 | Open SEO MCP Skills (Ryze AI) | **74.8** | 62% | 100% | 6.0/10 | 100% | 2 of 3 | medium | 540t | 3 | 434s | $1.17 |
-| 3 | SEO Skills (Illyism) | **74.3** | 71% | 100% | 7.0/10 | 100% | 2 of 3 | heavy | 2970t | 3 | 476s | $1.23 |
-| 4 | Vanilla baseline (no skill) | **74.0** | 48% | 100% | 7.0/10 | 100% | — | — | — | 3 | 454s | $1.03 |
-| 5 | GEO-SEO Claude (zubair-trabzada) | **72.9** | 62% | 73% | 8.0/10 | 100% | 0 of 3 | heavy | 1102t | 3 | 545s | $1.49 |
-| 6 | SEOAgent | **72.3** | 67% | 91% | 9.0/10 | 50% | 3 of 3 | light | 135t | 3 | 939s | $3.47 |
+| 1 | SEOAgent | **75.6** | 81% | 73% | 8.0/10 | 100% | 3 of 3 | light | 135t | 3 | 619s | $2.05 |
+| 2 | Fire Your SEO Agency (leopard627) | **75.4** | 62% | 100% | 9.0/10 | 100% | 3 of 3 | light | 144t | 3 | 546s | $1.36 |
+| 3 | Open SEO MCP Skills (Ryze AI) | **74.8** | 62% | 100% | 6.0/10 | 100% | 2 of 3 | medium | 540t | 3 | 434s | $1.17 |
+| 4 | SEO Skills (Illyism) | **74.3** | 71% | 100% | 7.0/10 | 100% | 2 of 3 | heavy | 2970t | 3 | 476s | $1.23 |
+| 5 | Vanilla baseline (no skill) | **74.0** | 48% | 100% | 7.0/10 | 100% | — | — | — | 3 | 454s | $1.03 |
+| 6 | GEO-SEO Claude (zubair-trabzada) | **72.9** | 62% | 73% | 8.0/10 | 100% | 0 of 3 | heavy | 1102t | 3 | 545s | $1.49 |
 | 7 | claude-seo | **72.3** | 62% | 100% | 7.0/10 | 100% | 0 of 3 | heavy | 2690t | 3 | 566s | $1.35 |
 | 8 | claude-seo-skill (mangollc) | **69.7** | 48% | 73% | 7.0/10 | 100% | 1 of 3 | heavy | 1315t | 3 | 391s | $1.06 |
 | 9 | Agentic SEO Skill | **67.9** | 71% | 73% | 6.0/10 | 100% | 2 of 3 | light | 106t | 3 | 481s | $1.41 |

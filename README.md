@@ -13,26 +13,31 @@ An open benchmark for comparing **SEO skills for Claude Code** (and other coding
 ## Current leaderboard
 
 Full board with per-component scores in [`LEADERBOARD.md`](LEADERBOARD.md) · live version at
-[seoagent.com/seo-skill-benchmark](https://seoagent.com/seo-skill-benchmark) · fixture `pivot-saas`, full fleet of 2026-11-23/24 (15 entrants × 3 runs).
+[seoagent.com/seo-skill-benchmark](https://seoagent.com/seo-skill-benchmark) · fixture `pivot-saas`, full fleet of 2026-11-23/24 (15 entrants × 3 runs); SEOAgent re-run 2026-11-24 at 1.143.0.
 
 | # | Skill | Composite | Detection | Trap avoidance | Judgment | Skill fired |
 |--:|-------|:---------:|:---------:|:--------------:|:--------:|:-----------:|
-| 1 | Fire Your SEO Agency (leopard627) | **75.4** | 62% | 100% | 9.0/10 | 3 of 3 |
-| 2 | Open SEO MCP Skills (Ryze AI) | 74.8 | 62% | 100% | 6.0/10 | 2 of 3 |
-| 3 | SEO Skills (Illyism) | 74.3 | 71% | 100% | 7.0/10 | 2 of 3 |
-| 4 | *Vanilla baseline (no skill)* | 74.0 | 48% | 100% | 7.0/10 | n/a |
-| 5 | GEO-SEO Claude (zubair-trabzada) | 72.9 | 62% | 73% | 8.0/10 | 0 of 3 |
-| 6 | SEOAgent | 72.3 | 67% | 91% | 9.0/10 | 3 of 3 |
+| 1 | SEOAgent (1.143.0, re-run after the fleet) | **75.6** | 81% | 73% | 8.0/10 | 3 of 3 |
+| 2 | Fire Your SEO Agency (leopard627) | 75.4 | 62% | 100% | 9.0/10 | 3 of 3 |
+| 3 | Open SEO MCP Skills (Ryze AI) | 74.8 | 62% | 100% | 6.0/10 | 2 of 3 |
+| 4 | SEO Skills (Illyism) | 74.3 | 71% | 100% | 7.0/10 | 2 of 3 |
+| 5 | *Vanilla baseline (no skill)* | 74.0 | 48% | 100% | 7.0/10 | n/a |
+| 6 | GEO-SEO Claude (zubair-trabzada) | 72.9 | 62% | 73% | 8.0/10 | 0 of 3 |
 | 7 | claude-seo | 72.3 | 62% | 100% | 7.0/10 | 0 of 3 |
 
 Medians of 3 runs; observed fleet-to-fleet variance is roughly ±8, so treat gaps inside
-that band as ties. **The top ten rows of this fleet, the no-skill baseline among them, are
-inside that band, and 11 of 14 skills score below the baseline.** The installed skill fired
-in 23 of 42 runs; three entrants' skills never fired at all, which means those rows measure
-the model alone ([how activation is recorded](harness/activation.mjs)). The maintainer's
-own skill is an entrant — see [Disclosure](#disclosure). It led the July fleet at 84.9 and
-is sixth here at 72.3; it has also finished dead last on this same benchmark
-([adjudication history](results/ADJUDICATIONS.md)).
+that band as ties. **The top ten rows, the no-skill baseline among them, are inside that
+band: first place here is a 0.2-point lead, which is no lead.** 10 of 14 skills score below
+the baseline. The installed skill fired in 23 of 42 fleet runs; three entrants' skills never
+fired at all, which means those rows measure the model alone
+([how activation is recorded](harness/activation.mjs)).
+
+The maintainer's own skill is an entrant — see [Disclosure](#disclosure). **Its row is a
+second attempt.** In the fleet it scored 72.3 (sixth) at 1.142.1: two of three runs ran into
+the turn budget and returned no final answer. We fixed that in the skill, released 1.143.0
+and re-ran our entrant alone; no other entrant got a second attempt, and both sets of runs
+are in `results/`. It led the July fleet at 84.9, and it has also finished dead last on this
+same benchmark ([adjudication history](results/ADJUDICATIONS.md)).
 
 There is no good way to compare Claude Code skills today. GitHub stars measure marketing,
 not correctness. A skill's README tells you what its author hoped it would do, not what it

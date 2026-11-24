@@ -4,6 +4,30 @@
   "updated": "2026-11-24",
   "rows": [
     {
+      "skill": "seoagent",
+      "name": "SEOAgent",
+      "runs": 3,
+      "model": "claude-sonnet-5",
+      "detection": 0.8095238095238095,
+      "trap_avoidance": 0.7272727272727273,
+      "judgment": 0.8,
+      "execution": 1,
+      "composite": 75.56277056277057,
+      "composite_det": 55.56277056277057,
+      "spread_det": [
+        49.935064935064936,
+        60.56277056277057
+      ],
+      "median_wall_s": 618.815,
+      "median_cost_usd": 2.0466228000000006,
+      "skill_fired_runs": 3,
+      "skill_count": 1,
+      "resident_tokens": 135,
+      "activation_tokens_max": 4367,
+      "bundle_tokens": 72472,
+      "footprint_band": "light"
+    },
+    {
       "skill": "fire-your-seo-agency",
       "name": "Fire Your SEO Agency (leopard627)",
       "runs": 3,
@@ -116,30 +140,6 @@
       "activation_tokens_max": 5682,
       "bundle_tokens": 55949,
       "footprint_band": "heavy"
-    },
-    {
-      "skill": "seoagent",
-      "name": "SEOAgent",
-      "runs": 3,
-      "model": "claude-sonnet-5",
-      "detection": 0.6666666666666666,
-      "trap_avoidance": 0.9090909090909091,
-      "judgment": 0.9,
-      "execution": 0.5,
-      "composite": 72.34848484848484,
-      "composite_det": 54.39393939393939,
-      "spread_det": [
-        49.848484848484844,
-        68.91774891774892
-      ],
-      "median_wall_s": 939.007,
-      "median_cost_usd": 3.4675458000000003,
-      "skill_fired_runs": 3,
-      "skill_count": 1,
-      "resident_tokens": 135,
-      "activation_tokens_max": 4370,
-      "bundle_tokens": 72231,
-      "footprint_band": "light"
     },
     {
       "skill": "claude-seo",
