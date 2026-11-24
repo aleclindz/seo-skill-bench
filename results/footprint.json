@@ -1,0 +1,132 @@
+{
+  "updated": "2026-11-24",
+  "tokenizer": "chars/4",
+  "entrants": {
+    "agentic-seo-skill": {
+      "skill_count": 1,
+      "resident_tokens": 106,
+      "activation_tokens_max": 4826,
+      "body_words_max": 2381,
+      "bundle_tokens": 88288,
+      "footprint_band": "light",
+      "source": "Bhanunamikaze/Agentic-SEO-Skill@445c46c"
+    },
+    "claude-seo": {
+      "skill_count": 35,
+      "resident_tokens": 2690,
+      "activation_tokens_max": 5654,
+      "body_words_max": 3210,
+      "bundle_tokens": 217679,
+      "footprint_band": "heavy",
+      "source": "AgriciDaniel/claude-seo@468ed5b"
+    },
+    "seo-geo-claude-skills": {
+      "skill_count": 20,
+      "resident_tokens": 20,
+      "activation_tokens_max": 278,
+      "body_words_max": 87,
+      "bundle_tokens": 4903,
+      "footprint_band": "light",
+      "source": "aaron-he-zhu/seo-geo-claude-skills@3a1578a"
+    },
+    "mango-claude-seo-skill": {
+      "skill_count": 6,
+      "resident_tokens": 1315,
+      "activation_tokens_max": 3885,
+      "body_words_max": 2197,
+      "bundle_tokens": 19433,
+      "footprint_band": "heavy",
+      "source": "mangollc/claude-seo-skill@3906ecc"
+    },
+    "lhitches-claude-seo-skills": {
+      "skill_count": 2,
+      "resident_tokens": 358,
+      "activation_tokens_max": 1510,
+      "body_words_max": 980,
+      "bundle_tokens": 22299,
+      "footprint_band": "medium",
+      "source": "lhitches/claude-seo-skills@dd7f9f4"
+    },
+    "lionkiii-claude-seo-skills": {
+      "skill_count": 53,
+      "resident_tokens": 4848,
+      "activation_tokens_max": 4852,
+      "body_words_max": 2770,
+      "bundle_tokens": 113529,
+      "footprint_band": "heavy",
+      "source": "lionkiii/claude-seo-skills@e8347fc"
+    },
+    "distribb-skill": {
+      "skill_count": 2,
+      "resident_tokens": 439,
+      "activation_tokens_max": 33661,
+      "body_words_max": 18646,
+      "bundle_tokens": 104182,
+      "footprint_band": "medium",
+      "source": "Bomx/distribb-skill@01bbede"
+    },
+    "seoagent": {
+      "skill_count": 1,
+      "resident_tokens": 135,
+      "activation_tokens_max": 4370,
+      "body_words_max": 2500,
+      "bundle_tokens": 72231,
+      "footprint_band": "light",
+      "source": "@seoagent-official/seoagent@1.142.1"
+    },
+    "marketingskills": {
+      "skill_count": 53,
+      "resident_tokens": 4858,
+      "activation_tokens_max": 9301,
+      "body_words_max": 5425,
+      "bundle_tokens": 863033,
+      "footprint_band": "heavy",
+      "source": "coreyhaines31/marketingskills@8fd2fca"
+    },
+    "illyism-seo-skills": {
+      "skill_count": 30,
+      "resident_tokens": 2970,
+      "activation_tokens_max": 4165,
+      "body_words_max": 2201,
+      "bundle_tokens": 77557,
+      "footprint_band": "heavy",
+      "source": "Illyism/seo-skills@a158c36"
+    },
+    "geo-seo-claude": {
+      "skill_count": 16,
+      "resident_tokens": 1102,
+      "activation_tokens_max": 5682,
+      "body_words_max": 3345,
+      "bundle_tokens": 55949,
+      "footprint_band": "heavy",
+      "source": "zubair-trabzada/geo-seo-claude@989cae0"
+    },
+    "open-seo-mcp-skills": {
+      "skill_count": 8,
+      "resident_tokens": 540,
+      "activation_tokens_max": 601,
+      "body_words_max": 317,
+      "bundle_tokens": 4804,
+      "footprint_band": "medium",
+      "source": "ryze-ai-adgent/open-seo-mcp-skills@f587b0a"
+    },
+    "fire-your-seo-agency": {
+      "skill_count": 1,
+      "resident_tokens": 144,
+      "activation_tokens_max": 1005,
+      "body_words_max": 779,
+      "bundle_tokens": 21512,
+      "footprint_band": "light",
+      "source": "leopard627/fire-your-seo-agency@4b996ea"
+    },
+    "jeffli-seo-audit-skill": {
+      "skill_count": 2,
+      "resident_tokens": 157,
+      "activation_tokens_max": 4721,
+      "body_words_max": 2609,
+      "bundle_tokens": 12949,
+      "footprint_band": "light",
+      "source": "jeffli1993/seo-audit-skill@523bdfb"
+    }
+  }
+}

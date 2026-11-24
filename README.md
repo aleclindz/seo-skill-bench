@@ -13,19 +13,25 @@ An open benchmark for comparing **SEO skills for Claude Code** (and other coding
 ## Current leaderboard
 
 Full board with per-component scores in [`LEADERBOARD.md`](LEADERBOARD.md) · live version at
-[seoagent.com/seo-skill-benchmark](https://seoagent.com/seo-skill-benchmark) · fixture `pivot-saas`, updated 2026-10-19.
+[seoagent.com/seo-skill-benchmark](https://seoagent.com/seo-skill-benchmark) · fixture `pivot-saas`, full fleet of 2026-11-23/24 (15 entrants × 3 runs).
 
-| # | Skill | Composite | Detection | Trap avoidance | Judgment |
-|--:|-------|:---------:|:---------:|:--------------:|:--------:|
-| 1 | SEOAgent | **81.3** | 71% | 91% | 9.0/10 |
-| 2 | claude-seo-skills (lhitches) | 76.0 | 52% | 100% | 8.0/10 |
-| 3 | Agentic SEO Skill | 75.4 | 71% | 73% | 9.0/10 |
-| 4 | *Vanilla baseline (no skill)* | 73.0 | 71% | 100% | 6.0/10 |
-| 5 | claude-seo-skill (mangollc) | 70.4 | 67% | 73% | 7.0/10 |
+| # | Skill | Composite | Detection | Trap avoidance | Judgment | Skill fired |
+|--:|-------|:---------:|:---------:|:--------------:|:--------:|:-----------:|
+| 1 | Fire Your SEO Agency (leopard627) | **75.4** | 62% | 100% | 9.0/10 | 3 of 3 |
+| 2 | Open SEO MCP Skills (Ryze AI) | 74.8 | 62% | 100% | 6.0/10 | 2 of 3 |
+| 3 | SEO Skills (Illyism) | 74.3 | 71% | 100% | 7.0/10 | 2 of 3 |
+| 4 | *Vanilla baseline (no skill)* | 74.0 | 48% | 100% | 7.0/10 | n/a |
+| 5 | GEO-SEO Claude (zubair-trabzada) | 72.9 | 62% | 73% | 8.0/10 | 0 of 3 |
+| 6 | SEOAgent | 72.3 | 67% | 91% | 9.0/10 | 3 of 3 |
+| 7 | claude-seo | 72.3 | 62% | 100% | 7.0/10 | 0 of 3 |
 
 Medians of 3 runs; observed fleet-to-fleet variance is roughly ±8, so treat gaps inside
-that band as ties. The maintainer's own skill is an entrant — see [Disclosure](#disclosure),
-and note it once finished dead last on this same benchmark
+that band as ties. **The top ten rows of this fleet, the no-skill baseline among them, are
+inside that band, and 11 of 14 skills score below the baseline.** The installed skill fired
+in 23 of 42 runs; three entrants' skills never fired at all, which means those rows measure
+the model alone ([how activation is recorded](harness/activation.mjs)). The maintainer's
+own skill is an entrant — see [Disclosure](#disclosure). It led the July fleet at 84.9 and
+is sixth here at 72.3; it has also finished dead last on this same benchmark
 ([adjudication history](results/ADJUDICATIONS.md)).
 
 There is no good way to compare Claude Code skills today. GitHub stars measure marketing,

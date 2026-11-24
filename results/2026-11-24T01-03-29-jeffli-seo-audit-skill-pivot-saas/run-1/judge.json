@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "This is Lumina, an AI meeting assistant, that pivoted from a previous product called InboxZap... Those 12 indexed posts were about the old product (inbox zero, bulk-deleting Gmail, unsubscribing)... explaining the GSC pattern of huge impressions (40k+) but near-zero clicks at positions 40-65: thin/off-topic content for a business that no longer sells that.",
+          "rationale": "Explicitly identifies the pivot from live site vs. the legacy GSC demand and ties the impressions/position pattern to the product no longer existing; frames the new cluster around the meeting-assistant reality. Falls just short of a 10 only because the repo-staleness and full strategic framing are lighter."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Added a 301 redirect for the old /blog/post-1..post-12 URLs to /blog (next.config.js) instead of leaving already-indexed URLs to 404.",
+          "rationale": "Issues a single blanket 301 for all 12 posts to /blog with aggregate reasoning (40k+ impressions, positions 40-65) rather than per-asset harvest/redirect/keep/sunset decisions citing individual URLs' numbers; no topical redirects to relevant successors and no asset-by-asset or tiered disposition."
+        },
+        "J3": {
+          "score": 7,
+          "basis": "one FAQ entry explicitly addressing 'Is Lumina the same as InboxZap?' to honestly capture that residual brand-search traffic instead of losing it... 6 new posts targeting keywords that actually fit the current product... Added a 301 redirect... instead of leaving already-indexed URLs to 404.",
+          "rationale": "Avoids both failure modes — preserves salvageable equity via 301s and brand-query capture while building the meeting-assistant cluster as the growth engine — but the transition is a blanket redirect to /blog rather than equity-preserving topical mapping, and the tension is only lightly articulated."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is Lumina, an AI meeting assistant, that pivoted from a previous product called InboxZap... Those 12 indexed posts were about the old product (inbox zero, bulk-deleting Gmail, unsubscribing from newsletters) — explaining the GSC pattern of huge impressions (40k+) but near-zero clicks at positions 40-65: thin/off-topic content for a business that no longer sells that.",
+          "rationale": "Explicitly names the pivot, correctly reads the live site as the meeting assistant, the GSC history as legacy inbox demand, and frames every recommendation (title fix, new cluster, redirects, FAQ) around that reality."
+        },
+        "J2": {
+          "score": 3,
+          "basis": "Added a 301 redirect for the old /blog/post-1..post-12 URLs to /blog (next.config.js) instead of leaving already-indexed URLs to 404.",
+          "rationale": "Assigns a single blanket disposition — 301 all 12 to the /blog index — and references the GSC pattern only in aggregate (40k+ impressions, positions 40-65); it never walks the inventory asset-by-asset or tiers by real per-URL numbers, nor harvests any salvageable query equity into relevant successors."
+        },
+        "J3": {
+          "score": 6,
+          "basis": "one FAQ entry explicitly addressing 'Is Lumina the same as InboxZap?' to honestly capture that residual brand-search traffic instead of losing it... Rebuilt the blog... targeting keywords that actually fit the current product (meeting notes, action items, Zoom transcription)",
+          "rationale": "Lands a defensible middle path — builds the meeting-assistant cluster as the growth engine, redirects rather than torches legacy URLs, and preserves brand-search equity via the FAQ — but doesn't explicitly articulate the equity-vs-relevance tension or distinguish which legacy impressions were worth salvaging versus dumping wholesale to /blog."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 10,
+          "basis": "This is Lumina, an AI meeting assistant, that pivoted from a previous product called InboxZap... Those 12 indexed posts were about the old product... explaining the GSC pattern of huge impressions (40k+) but near-zero clicks at positions 40-65: thin/off-topic content for a business that no longer sells that.",
+          "rationale": "Explicitly names the pivot, reads the live site as the meeting assistant, diagnoses the GSC impressions as legacy inbox demand, and frames every change around the current product."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "Added a 301 redirect for the old /blog/post-1..post-12 URLs to /blog... instead of leaving already-indexed URLs to 404.",
+          "rationale": "References the aggregate GSC pattern (40k+ impressions, positions 40-65) and reasons they're off-topic, but applies one blanket 301 of all 12 to the /blog index — no asset-by-asset disposition, no tiering, no harvest of any salvageable post, and redirecting to a generic index rather than relevant successors leaks equity."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "one FAQ entry explicitly addressing 'Is Lumina the same as InboxZap?' to honestly capture that residual brand-search traffic instead of losing it... Rebuilt the blog... targeting keywords that actually fit the current product.",
+          "rationale": "Avoids both failure modes: builds the meeting-assistant cluster as the growth engine while preserving legacy equity via 301s and a brand-bridge FAQ; docked slightly because redirecting all legacy equity to a bare /blog index is a weaker bridge than topical successor targets."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 10,
+    "J2": 4,
+    "J3": 7
+  },
+  "judgment": 0.7
+}

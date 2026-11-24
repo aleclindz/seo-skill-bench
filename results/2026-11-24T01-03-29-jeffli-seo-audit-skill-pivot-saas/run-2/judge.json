@@ -1,0 +1,76 @@
+{
+  "fixture": "pivot-saas",
+  "cross_model": false,
+  "panel_size": 3,
+  "judges": [
+    {
+      "lens": "evidence",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), but the migration was left half-finished, which is why organic traffic is stuck — Google doesn't know what the site is about anymore",
+          "rationale": "Explicitly identifies the pivot, distinguishes live product (meeting assistant) from the stale repo, treats inbox-cleanup posts as legacy, and frames every fix around the new positioning. Falls just short of 10 only because it ties the diagnosis to the repo/title mismatch more than to an explicit reading of the GSC legacy-demand data."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "the 12 legacy posts (email cleanup) are 100% off-topic ... that mismatch is why they rank page 4–5 despite real search volume, and why their 6 total clicks never convert ... I kept the URLs live, fixed their crawlability, and added a one-line bridge note on each",
+          "rationale": "Makes one blanket disposition (keep-live + bridge note) across all 12 posts rather than walking them asset-by-asset or in data-justified tiers; the GSC grounding is thin ('page 4–5', '6 total clicks') and not cited per-asset, and it defers the 301 decision rather than making it."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "Rather than deleting/redirecting that already-indexed content ... I kept the URLs live ... I also seeded two genuinely on-topic posts ... If you'd rather 301 the legacy posts away entirely to consolidate topical authority faster, that's a bigger one-way call worth discussing",
+          "rationale": "Articulates the tension explicitly and lands a defensible middle path — preserve legacy equity via live URLs + bridge links while building the meeting-assistant cluster as the growth engine, with the aggressive 301 option flagged as a reversible-cost decision. Not full marks because the transition isn't sequenced and the equity-preservation rests on a blanket choice."
+        }
+      }
+    },
+    {
+      "lens": "strategy",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), but the migration was left half-finished, which is why organic traffic is stuck — Google doesn't know what the site is about anymore",
+          "rationale": "Explicitly names the pivot, treats inbox-cleanup posts as legacy/off-topic for the new product, and frames every fix (title tag, blog, FAQ) around the meeting-assistant reality. Loses a point for not explicitly tagging the repo as partially stale beyond the title mismatch."
+        },
+        "J2": {
+          "score": 4,
+          "basis": "the 12 legacy posts (email cleanup) are 100% off-topic ... that mismatch is *why* they rank page 4–5 despite real search volume, and why their 6 total clicks never convert ... I kept the URLs live, fixed their crawlability, and added a one-line bridge note on each",
+          "rationale": "Makes an explicit, defensible blanket disposition (keep-live + bridge note, flag 301 as a bigger call) but treats all 12 as one block with only aggregate GSC figures; no per-asset or data-tiered walk citing individual impressions/positions, which is what anchor_10 requires."
+        },
+        "J3": {
+          "score": 9,
+          "basis": "Rather than deleting/redirecting that already-indexed content ... I kept the URLs live ... added a one-line bridge note ... plus an \"Is Lumina the same as InboxZap?\" FAQ ... I also seeded two genuinely on-topic posts ... If you'd rather 301 the legacy posts away entirely ... that's a bigger one-way call worth discussing",
+          "rationale": "Names the tension explicitly and lands a clear middle path: preserve/bridge salvageable brand equity, build the meeting-assistant cluster as the growth engine, and defer the irreversible 301 decision — avoiding both failure modes."
+        }
+      }
+    },
+    {
+      "lens": "practicality",
+      "model": "claude-opus-4-8",
+      "scores": {
+        "J1": {
+          "score": 9,
+          "basis": "this SaaS pivoted from \"InboxZap\" (email cleanup) to \"Lumina\" (AI meeting assistant), but the migration was left half-finished... the 12 legacy posts (email cleanup) are 100% off-topic for a meeting-assistant product",
+          "rationale": "Explicitly names the pivot, treats inbox queries as legacy demand, and frames every fix (title tag, blog, bridge notes, new on-topic posts) around the meeting-assistant reality. Falls just short of fully mapping live-vs-GSC-vs-repo as three distinct signals."
+        },
+        "J2": {
+          "score": 5,
+          "basis": "Rather than deleting/redirecting that already-indexed content... I kept the URLs live, fixed their crawlability, and added a one-line bridge note on each... If you'd rather 301 the legacy posts away entirely... that's a bigger one-way call",
+          "rationale": "Applies one uniform disposition (keep-live + bridge note, sitemap priority 0.3) to all 12 as a tier, with only aggregate data ('6 total clicks', 'page 4–5') — no per-asset impressions/positions driving individual harvest/redirect/sunset calls."
+        },
+        "J3": {
+          "score": 8,
+          "basis": "it does carry some brand-relevant impressions... I kept the URLs live... plus an 'Is Lumina the same as InboxZap?' FAQ to capture brand-confused searchers. I also seeded two genuinely on-topic posts... targeting real Lumina-relevant intent",
+          "rationale": "Clearly articulates the tension and lands a defensible middle path — preserve salvageable equity, bridge authority, build the new cluster, and sequence a possible later 301 — avoiding both failure modes."
+        }
+      }
+    }
+  ],
+  "per_question": {
+    "J1": 9,
+    "J2": 4,
+    "J3": 8
+  },
+  "judgment": 0.8
+}

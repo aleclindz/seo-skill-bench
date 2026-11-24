@@ -1,0 +1,22 @@
+import type { MetadataRoute } from 'next';
+import { posts } from '../content/posts';
+
+const BASE = 'https://lumina.example';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const staticEntries: MetadataRoute.Sitemap = [
+    { url: `${BASE}/`, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${BASE}/features`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/pricing`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/blog`, changeFrequency: 'weekly', priority: 0.6 },
+  ];
+
+  const postEntries: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: p.dataAsOf,
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  }));
+
+  return [...staticEntries, ...postEntries];
+}
